@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>2026 春《程序设计基础》练习题</title>
+  <style>
+    :root{--ink:#17212b;--navy:#14324a;--blue:#2667a5;--paper:#f4f1e9;--card:#fff;--line:#d9dee3;--green:#287452;--red:#b33b3b;--gold:#d49b32}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 "Microsoft YaHei","PingFang SC",sans-serif}.wrap{max-width:1040px;margin:auto}.hero{background:linear-gradient(125deg,#122b42,#275b70);color:#fff;padding:52px 22px}.hero h1{font-size:clamp(34px,5vw,56px);margin:5px 0}.hero p{color:#d8e9ec}.meta{display:flex;gap:10px;flex-wrap:wrap}.meta span{border:1px solid #ffffff55;border-radius:99px;padding:5px 11px}
+    nav{position:sticky;top:0;z-index:9;background:#ffffffed;border-bottom:1px solid var(--line);padding:10px 18px}nav .wrap{display:flex;gap:15px;overflow:auto}nav a{color:var(--navy);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap}
+    main{padding:28px 18px 70px}.section{margin:30px 0 58px;scroll-margin-top:65px}.section h2{font-size:29px;color:var(--navy);border-bottom:3px solid var(--gold);padding-bottom:8px}.q{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px;margin:12px 0}.q p{margin:0 0 9px}.opts{display:grid;grid-template-columns:1fr 1fr;gap:5px 14px}.opts label{padding:5px 8px;border-radius:6px;cursor:pointer}.opts label:hover{background:#edf5f7}code{font-family:Consolas,monospace;background:#edf1f3;padding:.1em .32em;border-radius:4px}pre{background:#17222e;color:#edf4f5;padding:15px;border-radius:9px;overflow:auto}.blank{display:inline-block;min-width:120px;border-bottom:1px solid #333}.actions{position:sticky;bottom:14px;display:flex;justify-content:center;gap:10px;z-index:8}button{border:0;border-radius:99px;background:var(--blue);color:white;font-weight:800;padding:12px 22px;box-shadow:0 5px 18px #173a5c38;cursor:pointer}button.secondary{background:#56636d}.result{display:none;background:#eaf7ef;border-left:5px solid var(--green);padding:16px 18px;margin:18px 0;border-radius:8px;font-weight:800}.correct{outline:2px solid var(--green)}.wrong{outline:2px solid var(--red)}details{background:#fff;border:1px solid var(--line);border-radius:11px;padding:12px 16px;margin:11px 0}summary{font-weight:800;color:var(--navy);cursor:pointer}.answer{color:var(--green);font-weight:800}.rubric{background:#fff7df;border-left:5px solid var(--gold);padding:13px 16px;border-radius:7px}.pagebreak{break-before:page}
+    @media(max-width:700px){.opts{grid-template-columns:1fr}.section h2{font-size:25px}}@media print{nav,.actions{display:none}.hero{background:#fff;color:#000;padding:20px;border-bottom:2px solid #000}.hero p{color:#222}body{background:#fff;font-size:12px}.q,details,pre{break-inside:avoid}.section{margin-bottom:28px}main{padding:10px 22px}}
+  </style>
+</head>
+<body>
+<header class="hero"><div class="wrap"><div>2026 SPRING · MOCK TEST</div><h1>程序设计基础练习题</h1><p>题型按老师提纲编排。选择题和判断题可自动评分；主观题答案集中放在文末，建议先独立完成。</p><div class="meta"><span>建议用时 110 分钟</span><span>选择 40 题</span><span>填空 10 题</span><span>判断 10 题</span><span>简答 5 题</span><span>应用 2 题</span></div></div></header>
+<nav><div class="wrap"><a href="#choice">选择题</a><a href="#fill">填空题</a><a href="#judge">判断题</a><a href="#short">简答题</a><a href="#apply">应用题</a><a href="#answers">答案解析</a></div></nav>
+<main class="wrap">
+<div class="rubric"><strong>答题说明：</strong>选择题每题只有一个正确答案。页面自动评分只统计选择题和判断题，共 50 分；填空及主观题请对照答案自评。</div>
+<section id="choice" class="section"><h2>一、选择题（40 × 1 分）</h2>
+  <div class="q" data-answer="B"><p>1. 下列合法的 Python 标识符是（ ）。</p><div class="opts"><label><input type="radio" name="q1" value="A"> A. 2name</label><label><input type="radio" name="q1" value="B"> B. student_name</label><label><input type="radio" name="q1" value="C"> C. class</label><label><input type="radio" name="q1" value="D"> D. first-name</label></div></div>
+  <div class="q" data-answer="C"><p>2. <code>type(3.0)</code> 的结果是（ ）。</p><div class="opts"><label><input type="radio" name="q2" value="A"> A. int</label><label><input type="radio" name="q2" value="B"> B. complex</label><label><input type="radio" name="q2" value="C"> C. float</label><label><input type="radio" name="q2" value="D"> D. bool</label></div></div>
+  <div class="q" data-answer="C"><p>3. 表达式 <code>2 + 3 * 4 ** 2</code> 的值是（ ）。</p><div class="opts"><label><input type="radio" name="q3" value="A"> A. 80</label><label><input type="radio" name="q3" value="B"> B. 100</label><label><input type="radio" name="q3" value="C"> C. 50</label><label><input type="radio" name="q3" value="D"> D. 52</label></div></div>
+  <div class="q" data-answer="B"><p>4. <code>17 // 5</code> 与 <code>17 % 5</code> 的结果分别是（ ）。</p><div class="opts"><label><input type="radio" name="q4" value="A"> A. 3.4，2</label><label><input type="radio" name="q4" value="B"> B. 3，2</label><label><input type="radio" name="q4" value="C"> C. 2，3</label><label><input type="radio" name="q4" value="D"> D. 3，0</label></div></div>
+  <div class="q" data-answer="C"><p>5. 执行 <code>int("3.14")</code> 会（ ）。</p><div class="opts"><label><input type="radio" name="q5" value="A"> A. 得到 3</label><label><input type="radio" name="q5" value="B"> B. 得到 3.14</label><label><input type="radio" name="q5" value="C"> C. 引发 ValueError</label><label><input type="radio" name="q5" value="D"> D. 得到字符串 "3"</label></div></div>
+  <div class="q" data-answer="A"><p>6. <code>eval("8+2**3")</code> 的值是（ ）。</p><div class="opts"><label><input type="radio" name="q6" value="A"> A. 16</label><label><input type="radio" name="q6" value="B"> B. 1000</label><label><input type="radio" name="q6" value="C"> C. "8+2**3"</label><label><input type="radio" name="q6" value="D"> D. 14</label></div></div>
+  <div class="q" data-answer="D"><p>7. 关于浮点数比较，较稳妥的写法是（ ）。</p><div class="opts"><label><input type="radio" name="q7" value="A"> A. a is b</label><label><input type="radio" name="q7" value="B"> B. str(a)==str(b)</label><label><input type="radio" name="q7" value="C"> C. a=b</label><label><input type="radio" name="q7" value="D"> D. abs(a-b)&lt;1e-9</label></div></div>
+  <div class="q" data-answer="B"><p>8. Python 中不存在的直接循环结构是（ ）。</p><div class="opts"><label><input type="radio" name="q8" value="A"> A. for</label><label><input type="radio" name="q8" value="B"> B. do...while</label><label><input type="radio" name="q8" value="C"> C. while</label><label><input type="radio" name="q8" value="D"> D. 嵌套循环</label></div></div>
+  <div class="q" data-answer="C"><p>9. <code>list(range(2,8,2))</code> 是（ ）。</p><div class="opts"><label><input type="radio" name="q9" value="A"> A. [2,4,6,8]</label><label><input type="radio" name="q9" value="B"> B. [2,3,4,5,6,7]</label><label><input type="radio" name="q9" value="C"> C. [2,4,6]</label><label><input type="radio" name="q9" value="D"> D. [0,2,4,6]</label></div></div>
+  <div class="q" data-answer="A"><p>10. 在循环中，<code>continue</code> 的作用是（ ）。</p><div class="opts"><label><input type="radio" name="q10" value="A"> A. 跳过本次剩余语句，进入下一次循环</label><label><input type="radio" name="q10" value="B"> B. 结束整个循环</label><label><input type="radio" name="q10" value="C"> C. 结束程序</label><label><input type="radio" name="q10" value="D"> D. 返回函数值</label></div></div>
+  <div class="q" data-answer="D"><p>11. 循环的 <code>else</code> 子句不执行的情况是（ ）。</p><div class="opts"><label><input type="radio" name="q11" value="A"> A. 循环执行 0 次</label><label><input type="radio" name="q11" value="B"> B. 正常遍历结束</label><label><input type="radio" name="q11" value="C"> C. 遇到 continue</label><label><input type="radio" name="q11" value="D"> D. 遇到 break 退出</label></div></div>
+  <div class="q" data-answer="C"><p>12. <code>"Python"[1:5:2]</code> 的结果是（ ）。</p><div class="opts"><label><input type="radio" name="q12" value="A"> A. "Pto"</label><label><input type="radio" name="q12" value="B"> B. "ytho"</label><label><input type="radio" name="q12" value="C"> C. "yh"</label><label><input type="radio" name="q12" value="D"> D. "to"</label></div></div>
+  <div class="q" data-answer="B"><p>13. <code>ord("b")</code> 的值是（ ）。</p><div class="opts"><label><input type="radio" name="q13" value="A"> A. "98"</label><label><input type="radio" name="q13" value="B"> B. 98</label><label><input type="radio" name="q13" value="C"> C. "b"</label><label><input type="radio" name="q13" value="D"> D. 97</label></div></div>
+  <div class="q" data-answer="A"><p>14. 字符串方法中，找不到目标时返回 -1 的是（ ）。</p><div class="opts"><label><input type="radio" name="q14" value="A"> A. find</label><label><input type="radio" name="q14" value="B"> B. index</label><label><input type="radio" name="q14" value="C"> C. count</label><label><input type="radio" name="q14" value="D"> D. replace</label></div></div>
+  <div class="q" data-answer="C"><p>15. 以下关于字符串的说法正确的是（ ）。</p><div class="opts"><label><input type="radio" name="q15" value="A"> A. 可通过 s[0]="a" 修改</label><label><input type="radio" name="q15" value="B"> B. split 返回字符串</label><label><input type="radio" name="q15" value="C"> C. 字符串是不可变对象</label><label><input type="radio" name="q15" value="D"> D. 不支持切片</label></div></div>
+  <div class="q" data-answer="D"><p>16. <code>random.randint(1,6)</code> 可能产生（ ）。</p><div class="opts"><label><input type="radio" name="q16" value="A"> A. 0</label><label><input type="radio" name="q16" value="B"> B. 6.0</label><label><input type="radio" name="q16" value="C"> C. 7</label><label><input type="radio" name="q16" value="D"> D. 6</label></div></div>
+  <div class="q" data-answer="B"><p>17. 递归函数必须具有（ ）。</p><div class="opts"><label><input type="radio" name="q17" value="A"> A. 全局变量</label><label><input type="radio" name="q17" value="B"> B. 递归出口</label><label><input type="radio" name="q17" value="C"> C. while 循环</label><label><input type="radio" name="q17" value="D"> D. lambda 表达式</label></div></div>
+  <div class="q" data-answer="A"><p>18. 无 <code>return</code> 语句的函数默认返回（ ）。</p><div class="opts"><label><input type="radio" name="q18" value="A"> A. None</label><label><input type="radio" name="q18" value="B"> B. 0</label><label><input type="radio" name="q18" value="C"> C. False</label><label><input type="radio" name="q18" value="D"> D. 空字符串</label></div></div>
+  <div class="q" data-answer="C"><p>19. 定义 <code>def f(a,b=6,c=8)</code> 后，合法调用是（ ）。</p><div class="opts"><label><input type="radio" name="q19" value="A"> A. f()</label><label><input type="radio" name="q19" value="B"> B. f(a=2,3)</label><label><input type="radio" name="q19" value="C"> C. f(2,c=3)</label><label><input type="radio" name="q19" value="D"> D. f(2,a=3)</label></div></div>
+  <div class="q" data-answer="D"><p>20. 形参 <code>*args</code> 在函数内接收到的是（ ）。</p><div class="opts"><label><input type="radio" name="q20" value="A"> A. 列表</label><label><input type="radio" name="q20" value="B"> B. 字典</label><label><input type="radio" name="q20" value="C"> C. 集合</label><label><input type="radio" name="q20" value="D"> D. 元组</label></div></div>
+  <div class="q" data-answer="B"><p>21. 形参 <code>**kwargs</code> 在函数内接收到的是（ ）。</p><div class="opts"><label><input type="radio" name="q21" value="A"> A. 元组</label><label><input type="radio" name="q21" value="B"> B. 字典</label><label><input type="radio" name="q21" value="C"> C. 列表</label><label><input type="radio" name="q21" value="D"> D. 字符串</label></div></div>
+  <div class="q" data-answer="A"><p>22. 要在函数内部修改全局变量绑定，应使用（ ）。</p><div class="opts"><label><input type="radio" name="q22" value="A"> A. global</label><label><input type="radio" name="q22" value="B"> B. import</label><label><input type="radio" name="q22" value="C"> C. return</label><label><input type="radio" name="q22" value="D"> D. nonlocal（任何情况）</label></div></div>
+  <div class="q" data-answer="C"><p>23. 执行 <code>[3,5,8]*2</code> 的结果是（ ）。</p><div class="opts"><label><input type="radio" name="q23" value="A"> A. [6,10,16]</label><label><input type="radio" name="q23" value="B"> B. [[3,5,8],[3,5,8]]</label><label><input type="radio" name="q23" value="C"> C. [3,5,8,3,5,8]</label><label><input type="radio" name="q23" value="D"> D. 报错</label></div></div>
+  <div class="q" data-answer="D"><p>24. 若 <code>a=[1,2]</code>，执行 <code>a.append([3,4])</code> 后 a 是（ ）。</p><div class="opts"><label><input type="radio" name="q24" value="A"> A. [1,2,3,4]</label><label><input type="radio" name="q24" value="B"> B. [3,4,1,2]</label><label><input type="radio" name="q24" value="C"> C. [[1,2],[3,4]]</label><label><input type="radio" name="q24" value="D"> D. [1,2,[3,4]]</label></div></div>
+  <div class="q" data-answer="A"><p>25. 会返回新列表而不修改原列表的是（ ）。</p><div class="opts"><label><input type="radio" name="q25" value="A"> A. sorted(a)</label><label><input type="radio" name="q25" value="B"> B. a.sort()</label><label><input type="radio" name="q25" value="C"> C. a.append(x)</label><label><input type="radio" name="q25" value="D"> D. a.remove(x)</label></div></div>
+  <div class="q" data-answer="B"><p>26. <code>b=a.copy()</code> 对嵌套列表进行的是（ ）。</p><div class="opts"><label><input type="radio" name="q26" value="A"> A. 完全深拷贝</label><label><input type="radio" name="q26" value="B"> B. 浅拷贝</label><label><input type="radio" name="q26" value="C"> C. 不创建新对象</label><label><input type="radio" name="q26" value="D"> D. 类型转换</label></div></div>
+  <div class="q" data-answer="C"><p>27. 单元素元组的正确写法是（ ）。</p><div class="opts"><label><input type="radio" name="q27" value="A"> A. (3)</label><label><input type="radio" name="q27" value="B"> B. [3,]</label><label><input type="radio" name="q27" value="C"> C. (3,)</label><label><input type="radio" name="q27" value="D"> D. {3,}</label></div></div>
+  <div class="q" data-answer="D"><p>28. 以下可以作为字典键的是（ ）。</p><div class="opts"><label><input type="radio" name="q28" value="A"> A. [1,2]</label><label><input type="radio" name="q28" value="B"> B. {1,2}</label><label><input type="radio" name="q28" value="C"> C. {"a":1}</label><label><input type="radio" name="q28" value="D"> D. (1,2)</label></div></div>
+  <div class="q" data-answer="A"><p>29. <code>key in d</code> 判断的是（ ）。</p><div class="opts"><label><input type="radio" name="q29" value="A"> A. 键是否存在</label><label><input type="radio" name="q29" value="B"> B. 值是否存在</label><label><input type="radio" name="q29" value="C"> C. 键值对是否存在</label><label><input type="radio" name="q29" value="D"> D. 字典是否为空</label></div></div>
+  <div class="q" data-answer="C"><p>30. <code>d.get("x",0)</code> 在键 "x" 不存在时返回（ ）。</p><div class="opts"><label><input type="radio" name="q30" value="A"> A. None</label><label><input type="radio" name="q30" value="B"> B. 报错</label><label><input type="radio" name="q30" value="C"> C. 0</label><label><input type="radio" name="q30" value="D"> D. "x"</label></div></div>
+  <div class="q" data-answer="B"><p>31. 创建空集合应写（ ）。</p><div class="opts"><label><input type="radio" name="q31" value="A"> A. {}</label><label><input type="radio" name="q31" value="B"> B. set()</label><label><input type="radio" name="q31" value="C"> C. []</label><label><input type="radio" name="q31" value="D"> D. ()</label></div></div>
+  <div class="q" data-answer="D"><p>32. 集合运算 <code>A ^ B</code> 表示（ ）。</p><div class="opts"><label><input type="radio" name="q32" value="A"> A. 交集</label><label><input type="radio" name="q32" value="B"> B. 并集</label><label><input type="radio" name="q32" value="C"> C. A 对 B 的差集</label><label><input type="radio" name="q32" value="D"> D. 对称差</label></div></div>
+  <div class="q" data-answer="C"><p>33. 删除集合中可能不存在的元素且不希望报错，应使用（ ）。</p><div class="opts"><label><input type="radio" name="q33" value="A"> A. remove</label><label><input type="radio" name="q33" value="B"> B. pop</label><label><input type="radio" name="q33" value="C"> C. discard</label><label><input type="radio" name="q33" value="D"> D. del set[x]</label></div></div>
+  <div class="q" data-answer="A"><p>34. <code>open("a.txt")</code> 默认模式是（ ）。</p><div class="opts"><label><input type="radio" name="q34" value="A"> A. r</label><label><input type="radio" name="q34" value="B"> B. r+</label><label><input type="radio" name="q34" value="C"> C. w</label><label><input type="radio" name="q34" value="D"> D. a</label></div></div>
+  <div class="q" data-answer="B"><p>35. 会在打开时清空原文件内容的模式是（ ）。</p><div class="opts"><label><input type="radio" name="q35" value="A"> A. a</label><label><input type="radio" name="q35" value="B"> B. w</label><label><input type="radio" name="q35" value="C"> C. r</label><label><input type="radio" name="q35" value="D"> D. r+</label></div></div>
+  <div class="q" data-answer="D"><p>36. <code>readlines()</code> 返回（ ）。</p><div class="opts"><label><input type="radio" name="q36" value="A"> A. 一个字符</label><label><input type="radio" name="q36" value="B"> B. 一个整数</label><label><input type="radio" name="q36" value="C"> C. 整个文件组成的一个字符串</label><label><input type="radio" name="q36" value="D"> D. 各行字符串组成的列表</label></div></div>
+  <div class="q" data-answer="C"><p>37. 关于 <code>writelines()</code>，正确的是（ ）。</p><div class="opts"><label><input type="radio" name="q37" value="A"> A. 参数只能是一个字符串</label><label><input type="radio" name="q37" value="B"> B. 自动为每项添加换行</label><label><input type="radio" name="q37" value="C"> C. 写入字符串序列且不自动加换行</label><label><input type="radio" name="q37" value="D"> D. 只能写 CSV</label></div></div>
+  <div class="q" data-answer="A"><p>38. 文件读到末尾后要回到开头，可用（ ）。</p><div class="opts"><label><input type="radio" name="q38" value="A"> A. seek(0)</label><label><input type="radio" name="q38" value="B"> B. tell(0)</label><label><input type="radio" name="q38" value="C"> C. read(0)</label><label><input type="radio" name="q38" value="D"> D. reset()</label></div></div>
+  <div class="q" data-answer="B"><p>39. <code>try</code> 中没有发生异常时执行的可选子句是（ ）。</p><div class="opts"><label><input type="radio" name="q39" value="A"> A. except</label><label><input type="radio" name="q39" value="B"> B. else</label><label><input type="radio" name="q39" value="C"> C. raise</label><label><input type="radio" name="q39" value="D"> D. assert</label></div></div>
+  <div class="q" data-answer="D"><p>40. CSV 的 <code>writerows(rows)</code> 用于（ ）。</p><div class="opts"><label><input type="radio" name="q40" value="A"> A. 读取一行</label><label><input type="radio" name="q40" value="B"> B. 读取多行</label><label><input type="radio" name="q40" value="C"> C. 写入一个字段</label><label><input type="radio" name="q40" value="D"> D. 写入多行</label></div></div>
+</section>
+
+<section id="fill" class="section"><h2>二、填空题（10 × 1 分）</h2>
+  <div class="q"><p>1. Python 的三种基本控制结构是顺序结构、<span class="blank"></span>结构和循环结构。</p></div>
+  <div class="q"><p>2. 表达式 <code>chr(65)</code> 的值为 <span class="blank"></span>。</p></div>
+  <div class="q"><p>3. 对列表 <code>a</code> 原地升序排序的方法是 <span class="blank"></span>。</p></div>
+  <div class="q"><p>4. 跳过当前这一次循环、继续下一次循环的语句是 <span class="blank"></span>。</p></div>
+  <div class="q"><p>5. 在函数定义中，收集额外关键字实参通常写为 <span class="blank"></span>。</p></div>
+  <div class="q"><p>6. 列表生成式 <code>[i*i for i in range(1,4)]</code> 的结果是 <span class="blank"></span>。</p></div>
+  <div class="q"><p>7. 字典方法 <span class="blank"></span> 可在键不存在时返回指定默认值。</p></div>
+  <div class="q"><p>8. 集合的交集运算符是 <span class="blank"></span>。</p></div>
+  <div class="q"><p>9. 文件对象的 <span class="blank"></span> 方法可将文件指针移到指定位置。</p></div>
+  <div class="q"><p>10. 捕获“字符串无法转换为整数”这类异常通常使用 <span class="blank"></span>。</p></div>
+</section>
+
+<section id="judge" class="section"><h2>三、判断题（10 × 1 分）</h2>
+  <div class="q" data-answer="F"><p>1. Python 变量可以不赋值直接参与计算。</p><div class="opts"><label><input type="radio" name="j1" value="T"> 正确</label><label><input type="radio" name="j1" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="T"><p>2. 字符串和元组都是不可变对象。</p><div class="opts"><label><input type="radio" name="j2" value="T"> 正确</label><label><input type="radio" name="j2" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="F"><p>3. <code>break</code> 只跳过当前一次循环。</p><div class="opts"><label><input type="radio" name="j3" value="T"> 正确</label><label><input type="radio" name="j3" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="T"><p>4. <code>random.random()</code> 的返回值可能是 0.0，但小于 1.0。</p><div class="opts"><label><input type="radio" name="j4" value="T"> 正确</label><label><input type="radio" name="j4" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="F"><p>5. <code>list.sort()</code> 返回排好序的新列表。</p><div class="opts"><label><input type="radio" name="j5" value="T"> 正确</label><label><input type="radio" name="j5" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="T"><p>6. 字典的值可以是列表。</p><div class="opts"><label><input type="radio" name="j6" value="T"> 正确</label><label><input type="radio" name="j6" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="F"><p>7. <code>{}</code> 表示空集合。</p><div class="opts"><label><input type="radio" name="j7" value="T"> 正确</label><label><input type="radio" name="j7" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="F"><p>8. <code>a.copy()</code> 对任何嵌套列表都是完全深拷贝。</p><div class="opts"><label><input type="radio" name="j8" value="T"> 正确</label><label><input type="radio" name="j8" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="T"><p>9. 以 <code>a</code> 模式打开不存在的文件会创建新文件。</p><div class="opts"><label><input type="radio" name="j9" value="T"> 正确</label><label><input type="radio" name="j9" value="F"> 错误</label></div></div>
+  <div class="q" data-answer="T"><p>10. <code>finally</code> 子句无论是否发生异常通常都会执行。</p><div class="opts"><label><input type="radio" name="j10" value="T"> 正确</label><label><input type="radio" name="j10" value="F"> 错误</label></div></div>
+</section>
+
+<section id="short" class="section pagebreak"><h2>四、简答题（5 × 4 分）</h2>
+  <div class="q"><p>1. 简述 <code>for</code> 循环与 <code>while</code> 循环的适用场景，并说明 <code>break</code> 与 <code>continue</code> 的区别。</p></div>
+  <div class="q"><p>2. 简述递归函数的两个核心要素，并解释为什么必须有递归出口。</p></div>
+  <div class="q"><p>3. 比较列表与元组的相同点和不同点。</p></div>
+  <div class="q"><p>4. 说明位置参数、关键字参数、默认值参数、<code>*args</code> 与 <code>**kwargs</code> 的含义。</p></div>
+  <div class="q"><p>5. 比较文件模式 <code>r</code>、<code>w</code>、<code>a</code> 的主要区别。</p></div>
+</section>
+
+<section id="apply" class="section"><h2>五、应用题（2 × 10 分）</h2>
+  <div class="q"><p><strong>1. 成绩统计。</strong>输入一行若干整数成绩，以空格分隔。编程输出平均分（保留 2 位小数）、最高分、最低分、及格人数（成绩 ≥ 60），并用字典统计 A（≥90）、B（80-89）、C（70-79）、D（60-69）、F（&lt;60）各等级人数。</p><pre><code>示例输入：95 82 76 60 59 88
+示例输出：
+平均分：76.67
+最高分：95
+最低分：59
+及格人数：5
+等级统计：{'A': 1, 'B': 2, 'C': 1, 'D': 1, 'F': 1}</code></pre></div>
+  <div class="q"><p><strong>2. 文件词频。</strong>文本文件 <code>data.txt</code> 中每行包含若干英文单词，单词之间以空格分隔。编写程序统计每个单词出现次数（忽略大小写），将结果按单词字母顺序写入 <code>result.csv</code>，每行格式为“单词,次数”。要求合理处理文件不存在异常。</p></div>
+</section>
+
+<section id="answers" class="section pagebreak"><h2>六、答案与评分参考</h2>
+  <details><summary>选择题答案</summary><p class="answer">1-10：B C C B C A D B C A<br>11-20：D C B A C D B A C D<br>21-30：B A C D A B C D A C<br>31-40：B D C A B D C A B D</p></details>
+  <details><summary>填空题答案</summary><ol><li>选择（或分支）</li><li><code>'A'</code></li><li><code>a.sort()</code></li><li><code>continue</code></li><li><code>**kwargs</code></li><li><code>[1,4,9]</code></li><li><code>get</code></li><li><code>&</code></li><li><code>seek</code></li><li><code>ValueError</code></li></ol></details>
+  <details><summary>判断题答案与提示</summary><p class="answer">1-10：错、对、错、对、错、对、错、错、对、对</p><p>3：<code>break</code> 结束整个当前循环，<code>continue</code> 才是跳过当次。5：<code>sort()</code> 原地排序并返回 <code>None</code>。7：<code>{}</code> 是空字典。8：<code>copy()</code> 是浅拷贝。</p></details>
+  <details><summary>简答题参考要点</summary><ol><li><code>for</code> 用于遍历可迭代对象或次数较明确的循环；<code>while</code> 由条件控制。<code>break</code> 立即结束循环，<code>continue</code> 跳过本次剩余语句。</li><li>递归出口和递归步骤。出口负责终止；递归步骤必须让问题规模缩小并逐渐接近出口，否则会无限递归并触发错误。</li><li>相同：都是序列，支持索引、切片、遍历，可存放不同类型对象。不同：列表可变、有增删改方法，用方括号；元组不可变，通常用圆括号，单元素需逗号。</li><li>位置参数按顺序对应；关键字参数按名称对应；默认值参数可在调用时省略；<code>*args</code> 收集额外位置参数为元组；<code>**kwargs</code> 收集额外关键字参数为字典。</li><li><code>r</code> 只读，文件不存在报错；<code>w</code> 只写，不存在则创建，存在则清空；<code>a</code> 追加写，不存在则创建，原内容保留且写入位于末尾。</li></ol></details>
+  <details><summary>应用题 1 参考程序</summary><pre><code>scores = list(map(int, input().split()))
+levels = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}
+
+for s in scores:
+    if s >= 90:
+        levels['A'] += 1
+    elif s >= 80:
+        levels['B'] += 1
+    elif s >= 70:
+        levels['C'] += 1
+    elif s >= 60:
+        levels['D'] += 1
+    else:
+        levels['F'] += 1
+
+print(f"平均分：{sum(scores)/len(scores):.2f}")
+print("最高分：", max(scores), sep="")
+print("最低分：", min(scores), sep="")
+print("及格人数：", sum(s >= 60 for s in scores), sep="")
+print("等级统计：", levels, sep="")</code></pre><p>评分点：正确输入与转换 2 分；平均/最值/及格统计 3 分；分支与字典统计 4 分；输出清楚 1 分。若考虑空输入可酌情加分。</p></details>
+  <details><summary>应用题 2 参考程序</summary><pre><code>import csv
+
+counts = {}
+try:
+    with open("data.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            for word in line.lower().split():
+                counts[word] = counts.get(word, 0) + 1
+except FileNotFoundError:
+    print("data.txt 不存在")
+else:
+    with open("result.csv", "w", encoding="utf-8", newline="") as f:
+        writer = csv.writer(f)
+        for word in sorted(counts):
+            writer.writerow([word, counts[word]])
+    print("统计完成")</code></pre><p>评分点：文件读取与 <code>with</code> 2 分；忽略大小写和分词 2 分；字典计数 2 分；排序及 CSV 写入 3 分；异常处理 1 分。</p></details>
+</section>
+</main>
+<div class="actions"><button onclick="grade()">自动评分（选择+判断）</button><button class="secondary" onclick="resetAll()">清空作答</button></div>
+<script>
+function grade(){
+  const qs=[...document.querySelectorAll('.q[data-answer]')];let score=0,done=0;
+  qs.forEach(q=>{q.classList.remove('correct','wrong');const pick=q.querySelector('input:checked');if(pick){done++;if(pick.value===q.dataset.answer){score++;q.classList.add('correct')}else q.classList.add('wrong')}});
+  let box=document.querySelector('.result');if(!box){box=document.createElement('div');box.className='result';document.querySelector('#choice').before(box)}
+  box.style.display='block';box.textContent=`客观题得分：${score} / ${qs.length}；已作答 ${done} 题。绿色为正确，红色为错误。`;box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetAll(){document.querySelectorAll('input').forEach(x=>x.checked=false);document.querySelectorAll('.q').forEach(q=>q.classList.remove('correct','wrong'));const r=document.querySelector('.result');if(r)r.style.display='none'}
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>2026 春《程序设计基础》复习资料</title>
+  <style>
+    :root{--ink:#17212b;--muted:#5c6975;--paper:#f6f3ec;--card:#fff;--navy:#14324a;--blue:#2563a6;--cyan:#dff3f4;--gold:#d49b32;--red:#b83a3a;--line:#d9dee3;--code:#17222e}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.75 "Microsoft YaHei","PingFang SC",sans-serif}
+    .hero{color:#fff;background:linear-gradient(125deg,#102b40 0%,#174d64 70%,#297b87 100%);padding:64px 24px 52px;position:relative;overflow:hidden}
+    .hero:after{content:"PY";position:absolute;right:5%;bottom:-110px;font:800 280px/1 Arial;color:#ffffff0c}
+    .wrap{max-width:1120px;margin:auto}.eyebrow{letter-spacing:.18em;color:#9ed8db;font-weight:700}.hero h1{font-size:clamp(34px,5vw,64px);line-height:1.1;margin:12px 0}.hero p{max-width:760px;color:#d8e9eb;font-size:18px}.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.chip{padding:7px 13px;border:1px solid #ffffff4a;border-radius:99px;background:#ffffff10}
+    nav{position:sticky;top:0;z-index:10;background:#fffefbee;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}nav .wrap{display:flex;gap:18px;overflow:auto;padding:11px 20px}nav a{color:var(--navy);text-decoration:none;white-space:nowrap;font-weight:700;font-size:14px}
+    main{padding:30px 20px 80px}.section{margin:36px auto 64px;scroll-margin-top:70px}.kicker{font-size:13px;letter-spacing:.15em;color:var(--blue);font-weight:800}.section h2{font-size:30px;line-height:1.25;margin:5px 0 20px;color:var(--navy)}h3{color:var(--navy);margin-top:26px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 7px 22px #1525350a}.card h3{margin-top:0}.accent{border-top:5px solid var(--gold)}.exam{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.big-number{font:800 42px/1 Arial;color:var(--blue)}.tag{display:inline-block;padding:2px 9px;margin:2px;border-radius:99px;background:var(--cyan);color:#174f58;font-size:13px;font-weight:700}
+    .callout{border-left:5px solid var(--gold);background:#fff7df;padding:15px 18px;border-radius:8px;margin:18px 0}.danger{border-left-color:var(--red);background:#fff0ee}.ok{border-left-color:#31805a;background:#edf9f1}
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;margin:14px 0 22px}th,td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{background:#eaf1f5;color:var(--navy)}tr:last-child td{border-bottom:0}
+    code{font-family:Consolas,"Cascadia Code",monospace;background:#edf1f3;padding:.12em .35em;border-radius:4px}pre{background:var(--code);color:#e9f1f4;padding:17px 19px;border-radius:12px;overflow:auto;line-height:1.55}pre code{background:none;padding:0}.kw{color:#8bd5ff}.st{color:#f6c177}.cm{color:#8293a1}.fn{color:#b8e994}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.check li{margin:7px 0}.formula{font:700 18px Consolas,monospace;color:#173b55;background:#eef7f8;padding:13px;border-radius:9px}.mini{font-size:14px;color:var(--muted)}details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 15px;margin:9px 0}summary{cursor:pointer;font-weight:800;color:var(--navy)}.footer{background:#102b40;color:#d7e7e9;padding:28px 20px}.footer p{max-width:1120px;margin:auto}
+    @media(max-width:760px){.exam,.two{grid-template-columns:1fr}.hero{padding-top:42px}.section h2{font-size:26px}th,td{padding:9px;font-size:14px}}
+    @media print{nav{display:none}.hero{padding:30px;color:#000;background:#fff;border-bottom:3px solid #000}.hero p,.eyebrow{color:#222}.chip{border-color:#555}.section{break-inside:auto;margin-bottom:28px}.card,table,pre,details{break-inside:avoid;box-shadow:none}body{background:#fff;font-size:12px}.wrap{max-width:none}main{padding:10px 22px}.footer{background:#fff;color:#000}}
+  </style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">2026 SPRING · FINAL REVIEW</div>
+    <h1>程序设计基础<br>期末复习资料</h1>
+    <p>以老师 14 页复习提纲为主线，结合《Python语言程序设计教程（第2版）》与《Python语言程序设计实践教程》补充解释、代码模板和易错点。</p>
+    <div class="chips"><span class="chip">考试：7 月 13 日 10:20-12:10</span><span class="chip">Python 基础</span><span class="chip">数据结构</span><span class="chip">函数</span><span class="chip">文件与异常</span></div>
+  </div>
+</header>
+<nav><div class="wrap">
+  <a href="#exam">考试信息</a><a href="#pitfalls">必看纠错</a><a href="#basic">基础语法</a><a href="#control">控制结构</a><a href="#string">字符串</a><a href="#algorithm">算法</a><a href="#function">函数</a><a href="#sequence">列表与元组</a><a href="#mapping">字典与集合</a><a href="#file">文件与异常</a><a href="#quick">考前速记</a>
+</div></nav>
+<main class="wrap">
+  <section id="exam" class="section">
+    <div class="kicker">01 · EXAM MAP</div><h2>先看考试地图</h2>
+    <div class="exam">
+      <div class="card accent"><h3>题型与分值</h3>
+        <table><tr><th>题型</th><th>数量 × 分值</th><th>策略</th></tr>
+          <tr><td>选择</td><td>40 × 1</td><td>重点抓概念、输出结果、方法区别</td></tr>
+          <tr><td>填空</td><td>10 × 1</td><td>熟记语法结构和函数名</td></tr>
+          <tr><td>判断</td><td>10 × 1</td><td>警惕“总是、只能、一定”等绝对表述</td></tr>
+          <tr><td>简答</td><td>约 20 分</td><td>按“定义 + 特点 + 对比/例子”作答</td></tr>
+          <tr><td>应用</td><td>2 × 10</td><td>先写输入/处理/输出，再补边界</td></tr>
+        </table>
+        <p class="mini">提纲第 1、2 页对“简答”数量的记录略有差异，但总分均约为 20 分；复习时按 5 道题准备更稳妥。</p>
+      </div>
+      <div class="card"><div class="big-number">110 min</div><h3>建议时间分配</h3>
+        <p><span class="tag">选择 28 分钟</span><span class="tag">填空判断 15 分钟</span><span class="tag">简答 22 分钟</span><span class="tag">应用 35 分钟</span><span class="tag">检查 10 分钟</span></p>
+        <div class="callout"><strong>携带：</strong>纸、笔、橡皮、带清晰头像的证件。记住准考证号：<strong>17 + 学号后六位</strong>。</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pitfalls" class="section">
+    <div class="kicker">02 · ERROR ALERT</div><h2>提纲中必须纠正的 3 个点</h2>
+    <div class="callout danger"><strong>这些不是小细节。</strong>以下按 Python 标准语义整理；原提纲扫描页中的相关说法疑似笔误或概念混用。</div>
+    <div class="grid">
+      <div class="card"><h3>① open 默认是 <code>"r"</code></h3><p><code>open("a.txt")</code> 等价于只读文本模式 <code>open("a.txt","r")</code>，不是 <code>"r+"</code>。文件不存在会报错。</p></div>
+      <div class="card"><h3>② <code>copy()</code> 是浅拷贝</h3><p><code>b=a.copy()</code> 或 <code>b=a[:]</code> 创建新外层列表，但嵌套的可变元素仍共享引用。真正的深拷贝用 <code>copy.deepcopy(a)</code>。</p></div>
+      <div class="card"><h3>③ 集合 <code>^</code> 是对称差</h3><p><code>A ^ B</code> 得到只属于其中一个集合的元素，不是通常意义上的“补集”。差集是 <code>A-B</code>。</p></div>
+    </div>
+  </section>
+
+  <section id="basic" class="section">
+    <div class="kicker">03 · BASICS</div><h2>基础语法、类型与运算</h2>
+    <div class="two">
+      <div>
+        <h3>运行与导入</h3>
+        <ul class="check"><li>常见运行方式：交互式（逐句执行）和文件式（保存为 <code>.py</code> 后整体执行）。</li><li><code>import math</code> 后用 <code>math.sqrt(9)</code>。</li><li><code>from math import sqrt</code> 后直接用 <code>sqrt(9)</code>。</li></ul>
+        <pre><code><span class="kw">import</span> math
+<span class="kw">from</span> random <span class="kw">import</span> randint
+print(math.sqrt(16), randint(1, 6))</code></pre>
+      </div>
+      <div>
+        <h3>标识符与赋值</h3>
+        <ul class="check"><li>变量名可含字母、数字、下划线，不能以数字开头，不能是关键字，区分大小写。</li><li>变量必须先赋值后使用。</li><li>链式赋值：<code>a=b=c=2</code>；解包：<code>a,b,c=[2,7,3]</code>。</li><li>交换：<code>a,b=b,a</code>，无需临时变量。</li></ul>
+      </div>
+    </div>
+    <h3>常见类型</h3>
+    <table><tr><th>类别</th><th>类型</th><th>可变性</th><th>要点</th></tr>
+      <tr><td>数值</td><td><code>int float complex</code></td><td>不可变</td><td><code>/</code> 真除；<code>//</code> 整除；<code>**</code> 乘方；<code>%</code> 求余</td></tr>
+      <tr><td>逻辑</td><td><code>bool</code></td><td>不可变</td><td><code>True</code>、<code>False</code>；逻辑运算 <code>not and or</code></td></tr>
+      <tr><td>序列</td><td><code>str list tuple</code></td><td>列表可变，其余不可变</td><td>支持索引、切片、遍历（集合/字典不是序列）</td></tr>
+      <tr><td>映射</td><td><code>dict</code></td><td>可变</td><td>键唯一且必须可哈希，按键访问</td></tr>
+      <tr><td>集合</td><td><code>set</code></td><td>可变</td><td>元素唯一、无序，元素必须可哈希</td></tr>
+    </table>
+    <h3>转换、输入输出与比较</h3>
+    <div class="grid">
+      <div class="card"><h3>转换</h3><p><code>int("300")</code> 可行；<code>int("3.1")</code> 报错；<code>float("3.13e3")</code> 得 <code>3130.0</code>；<code>eval("8+2**3")</code> 得 <code>16</code>。</p></div>
+      <div class="card"><h3>字符编码</h3><p><code>chr(97)</code> 得 <code>'a'</code>；<code>ord('b')</code> 得 <code>98</code>。字符串按 Unicode 编码逐字符比较。</p></div>
+      <div class="card"><h3>浮点误差</h3><p>不要用 <code>0.1+0.2==0.3</code> 判断近似相等。用 <code>abs(a-b)&lt;1e-9</code> 或 <code>math.isclose()</code>。</p></div>
+    </div>
+    <div class="callout"><strong>优先级：</strong>大体记作数学运算 &gt; 比较/成员/身份运算 &gt; <code>not</code> &gt; <code>and</code> &gt; <code>or</code>。不确定时加括号。</div>
+  </section>
+
+  <section id="control" class="section">
+    <div class="kicker">04 · FLOW CONTROL</div><h2>顺序、选择、循环</h2>
+    <div class="grid"><div class="card"><h3>三种基本结构</h3><p>顺序结构、选择结构、循环结构。Python 没有 <code>do...while</code>；可用 <code>while True</code> 配合 <code>break</code> 模拟“至少执行一次”。</p></div><div class="card"><h3>分支</h3><p>单分支 <code>if</code>、双分支 <code>if...else</code>、多分支 <code>if...elif...else</code>。条件表达式：<code>x if condition else y</code>。</p></div><div class="card"><h3>循环</h3><p><code>for</code> 适合遍历或次数已知；<code>while</code> 由条件控制。<code>break</code> 结束循环，<code>continue</code> 跳过本次。</p></div></div>
+    <pre><code><span class="cm"># 多分支</span>
+score = int(input())
+<span class="kw">if</span> score >= 90:
+    grade = <span class="st">"A"</span>
+<span class="kw">elif</span> score >= 60:
+    grade = <span class="st">"及格"</span>
+<span class="kw">else</span>:
+    grade = <span class="st">"不及格"</span>
+
+<span class="cm"># 条件表达式</span>
+print(<span class="st">"偶数"</span> <span class="kw">if</span> n % 2 == 0 <span class="kw">else</span> <span class="st">"奇数"</span>)</code></pre>
+    <h3><code>range()</code> 与循环 <code>else</code></h3>
+    <table><tr><th>表达式</th><th>产生的整数</th></tr><tr><td><code>range(5)</code></td><td>0, 1, 2, 3, 4</td></tr><tr><td><code>range(2,6)</code></td><td>2, 3, 4, 5</td></tr><tr><td><code>range(5,0,-2)</code></td><td>5, 3, 1</td></tr></table>
+    <div class="callout ok">循环的 <code>else</code> 在循环“正常结束”时执行；若因 <code>break</code> 退出则不执行。<code>continue</code> 不会阻止最终执行 <code>else</code>。</div>
+  </section>
+
+  <section id="string" class="section">
+    <div class="kicker">05 · STRING</div><h2>字符串、索引与切片</h2>
+    <div class="formula">s[m:n:d]：从 m 开始，到 n 之前结束，步长为 d</div>
+    <p>字符串是不可变对象。任何“修改”字符串的方法都返回新字符串，原字符串不变。</p>
+    <table><tr><th>操作/方法</th><th>作用</th><th>示例结果</th></tr>
+      <tr><td><code>s[0]</code> / <code>s[-1]</code></td><td>正向/反向索引</td><td><code>"Python"[-1] → "n"</code></td></tr>
+      <tr><td><code>s[1:5:2]</code></td><td>切片，右端不含</td><td><code>"Python"[1:5:2] → "yh"</code></td></tr>
+      <tr><td><code>upper/lower</code></td><td>大小写转换</td><td>返回新字符串</td></tr>
+      <tr><td><code>split(sep)</code></td><td>分割</td><td>返回列表</td></tr>
+      <tr><td><code>replace(old,new)</code></td><td>替换</td><td>返回新字符串</td></tr>
+      <tr><td><code>find/index</code></td><td>查找</td><td><code>find</code> 找不到返回 -1；<code>index</code> 报错</td></tr>
+      <tr><td><code>count</code></td><td>计数</td><td>返回出现次数</td></tr>
+      <tr><td><code>format</code></td><td>格式化</td><td><code>"{:.2f}".format(3.1415)</code></td></tr>
+    </table>
+    <pre><code>s = <span class="st">"abcdbbefbbbg"</span>
+print(s.split(<span class="st">"b"</span>))
+print(s.replace(<span class="st">"b"</span>, <span class="st">""</span>))
+print(s[::-1])      <span class="cm"># 逆序</span></code></pre>
+  </section>
+
+  <section id="algorithm" class="section">
+    <div class="kicker">06 · ALGORITHM</div><h2>迭代、枚举、递归与 random</h2>
+    <div class="grid">
+      <div class="card"><h3>迭代三要素</h3><ol><li>迭代初值</li><li>迭代关系式</li><li>迭代终止条件</li></ol><p>例：阶乘中初值 <code>fac=1</code>，关系式 <code>fac*=i</code>，终止由 <code>range(1,n+1)</code> 控制。</p></div>
+      <div class="card"><h3>枚举法</h3><p>把可能情况逐一测试，筛选满足条件的结果。应用题常见：百钱买百鸡、数字组合、整除问题。</p></div>
+      <div class="card"><h3>递归两要素</h3><ol><li>递归出口</li><li>递归步骤（规模变小）</li></ol><p>缺出口会无限递归；递归调用必须逐步接近出口。</p></div>
+    </div>
+    <pre><code><span class="kw">def</span> <span class="fn">fib</span>(n):
+    <span class="kw">if</span> n == 1 <span class="kw">or</span> n == 2:   <span class="cm"># 递归出口</span>
+        <span class="kw">return</span> 1
+    <span class="kw">return</span> fib(n-1) + fib(n-2) <span class="cm"># 递归步骤</span></code></pre>
+    <h3><code>random</code> 高频函数</h3>
+    <table><tr><th>函数</th><th>范围/作用</th></tr><tr><td><code>random.random()</code></td><td>[0.0, 1.0)</td></tr><tr><td><code>random.randint(a,b)</code></td><td>[a, b]，两端都包含</td></tr><tr><td><code>random.randrange(b)</code></td><td>从 <code>range(b)</code> 中随机取值，即 0 到 b-1</td></tr><tr><td><code>random.sample(seq,k)</code></td><td>无放回抽取 k 个元素，返回列表</td></tr></table>
+  </section>
+
+  <section id="function" class="section">
+    <div class="kicker">07 · FUNCTIONS</div><h2>函数、参数、作用域与 lambda</h2>
+    <table><tr><th>概念</th><th>规则</th></tr>
+      <tr><td>位置参数</td><td>按顺序对应；调用时通常放在关键字参数之前</td></tr>
+      <tr><td>关键字参数</td><td>按形参名传递，如 <code>f(3, c=8)</code>；同一参数不能重复赋值</td></tr>
+      <tr><td>默认值参数</td><td>定义时一般放在无默认值参数之后</td></tr>
+      <tr><td><code>*args</code></td><td>收集额外位置实参为元组</td></tr>
+      <tr><td><code>**kwargs</code></td><td>收集额外关键字实参为字典</td></tr>
+      <tr><td>返回值</td><td>无 <code>return</code> 或只写 <code>return</code> 时返回 <code>None</code>；可返回任意类型</td></tr>
+    </table>
+    <pre><code><span class="kw">def</span> <span class="fn">volume</span>(width, height=5, length=8):
+    <span class="kw">return</span> width * height * length
+
+print(volume(3))
+print(volume(3, length=10))
+
+f = <span class="kw">lambda</span> x, y: x - y
+print(f(8, 3))</code></pre>
+    <div class="two"><div class="card"><h3>作用域</h3><p>函数内赋值的名字通常是局部变量，函数外定义的是全局变量。函数内部读取同名变量时按局部优先；需要在函数内修改全局变量时使用 <code>global</code>。</p></div><div class="card"><h3>参数可变性</h3><p>传入可变对象（如列表）并修改其内容，调用者可看到变化；给形参重新绑定新对象，不会让外部变量也改绑。</p></div></div>
+  </section>
+
+  <section id="sequence" class="section">
+    <div class="kicker">08 · SEQUENCES</div><h2>列表、元组、生成式与复制</h2>
+    <table><tr><th>操作</th><th>是否修改原列表</th><th>说明</th></tr>
+      <tr><td><code>append(x)</code></td><td>是</td><td>把 x 作为一个元素追加</td></tr><tr><td><code>extend(iterable)</code></td><td>是</td><td>逐个追加可迭代对象中的元素</td></tr><tr><td><code>insert(i,x)</code></td><td>是</td><td>在位置 i 插入</td></tr><tr><td><code>remove(x)</code></td><td>是</td><td>删除第一个值为 x 的元素，找不到报错</td></tr><tr><td><code>pop([i])</code></td><td>是</td><td>删除并返回元素，默认最后一个</td></tr><tr><td><code>sort()</code></td><td>是</td><td>原地排序，返回 <code>None</code></td></tr><tr><td><code>sorted(x)</code></td><td>否</td><td>返回新列表</td></tr><tr><td><code>+、*</code></td><td>否</td><td>产生新列表</td></tr>
+    </table>
+    <pre><code>nums = [3, 5, 8]
+nums.append([1, 2])  <span class="cm"># [3,5,8,[1,2]]</span>
+nums = [3, 5, 8]
+nums.extend([1, 2])  <span class="cm"># [3,5,8,1,2]</span>
+
+squares = [i*i <span class="kw">for</span> i <span class="kw">in</span> range(1, 11) <span class="kw">if</span> i % 2 == 0]</code></pre>
+    <h3>浅拷贝图景</h3>
+    <table><tr><th>写法</th><th>外层是否同一对象</th><th>嵌套可变元素是否共享</th></tr><tr><td><code>b=a</code></td><td>是</td><td>是</td></tr><tr><td><code>b=a.copy()</code> / <code>a[:]</code></td><td>否</td><td>是（浅拷贝）</td></tr><tr><td><code>b=copy.deepcopy(a)</code></td><td>否</td><td>否（深拷贝）</td></tr></table>
+    <div class="callout"><strong>元组：</strong>元组本身不可变，因此没有 <code>append/extend/insert/remove/pop</code> 等修改方法；但元组中的可变元素（如列表）内部仍可修改。单元素元组要写成 <code>(3,)</code>。</div>
+  </section>
+
+  <section id="mapping" class="section">
+    <div class="kicker">09 · DICT & SET</div><h2>字典与集合</h2>
+    <div class="two"><div>
+      <h3>字典</h3><ul class="check"><li>键唯一且必须可哈希（通常用数值、字符串、元组），值可为任意类型。</li><li><code>d[key]</code> 找不到会报错；<code>d.get(key,default)</code> 返回默认值。</li><li><code>key in d</code> 判断的是键。</li><li><code>keys()</code>、<code>values()</code>、<code>items()</code> 分别遍历键、值、键值对。</li><li><code>update()</code> 合并字典，同名键被新值覆盖。</li></ul>
+      <pre><code>counts = {}
+<span class="kw">for</span> ch <span class="kw">in</span> <span class="st">"banana"</span>:
+    counts[ch] = counts.get(ch, 0) + 1
+
+<span class="kw">for</span> k, v <span class="kw">in</span> counts.items():
+    print(k, v)</code></pre>
+    </div><div>
+      <h3>集合</h3><ul class="check"><li>无序、元素唯一；适合去重与成员判断。</li><li><code>set()</code> 是空集合；<code>{}</code> 是空字典。</li><li><code>add(x)</code> 加一个元素；<code>update(iterable)</code> 加多个。</li><li><code>remove(x)</code> 不存在时报错；<code>discard(x)</code> 不存在也不报错。</li></ul>
+      <table><tr><th>运算</th><th>含义</th></tr><tr><td><code>A & B</code></td><td>交集</td></tr><tr><td><code>A | B</code></td><td>并集</td></tr><tr><td><code>A - B</code></td><td>差集</td></tr><tr><td><code>A ^ B</code></td><td>对称差</td></tr></table>
+    </div></div>
+  </section>
+
+  <section id="file" class="section">
+    <div class="kicker">10 · FILES</div><h2>文件、CSV 与异常</h2>
+    <table><tr><th>模式</th><th>可读</th><th>可写</th><th>不存在</th><th>原内容</th></tr>
+      <tr><td><code>r</code></td><td>✓</td><td>×</td><td>报错</td><td>保留</td></tr><tr><td><code>r+</code></td><td>✓</td><td>✓</td><td>报错</td><td>保留，指针起始在开头</td></tr><tr><td><code>w</code></td><td>×</td><td>✓</td><td>新建</td><td>清空</td></tr><tr><td><code>w+</code></td><td>✓</td><td>✓</td><td>新建</td><td>清空</td></tr><tr><td><code>a</code></td><td>×</td><td>✓</td><td>新建</td><td>保留，写入追加到末尾</td></tr><tr><td><code>a+</code></td><td>✓</td><td>✓</td><td>新建</td><td>保留，写入追加到末尾</td></tr>
+    </table>
+    <div class="grid"><div class="card"><h3>读取</h3><p><code>read()</code>：读内容为字符串；<code>readline()</code>：读一行为字符串；<code>readlines()</code>：读多行为字符串列表。</p></div><div class="card"><h3>写入</h3><p><code>write(s)</code> 写一个字符串；<code>writelines(seq)</code> 写一组字符串，<strong>不会自动添加换行</strong>。</p></div><div class="card"><h3>文件指针</h3><p>读完后指针在文件末尾，再读通常为空。用 <code>seek(0)</code> 回到开头。</p></div></div>
+    <pre><code><span class="kw">with</span> open(<span class="st">"data.txt"</span>, <span class="st">"r"</span>, encoding=<span class="st">"utf-8"</span>) <span class="kw">as</span> f:
+    text = f.read()
+
+<span class="kw">try</span>:
+    n = int(input())
+<span class="kw">except</span> ValueError:
+    print(<span class="st">"输入不是整数"</span>)
+<span class="kw">else</span>:
+    print(<span class="st">"平方为"</span>, n*n)
+<span class="kw">finally</span>:
+    print(<span class="st">"无论是否异常都会执行"</span>)</code></pre>
+    <h3>CSV</h3><p><code>csv.reader(f)</code> 每次迭代得到一行列表；<code>writer.writerow(row)</code> 写一行；<code>writer.writerows(rows)</code> 写多行。Windows 写 CSV 常用 <code>newline=""</code> 避免空行。</p>
+  </section>
+
+  <section id="quick" class="section">
+    <div class="kicker">11 · FINAL CHECK</div><h2>考前 15 分钟速记</h2>
+    <div class="grid">
+      <div class="card accent"><h3>边界</h3><ul><li>切片和 <code>range</code> 都是“左含右不含”</li><li><code>randint(a,b)</code> 两端都含</li><li>索引越界报错，切片越界通常不报错</li></ul></div>
+      <div class="card accent"><h3>返回值</h3><ul><li><code>list.sort()</code> 返回 <code>None</code></li><li><code>sorted()</code> 返回新列表</li><li>无 <code>return</code> 的函数返回 <code>None</code></li></ul></div>
+      <div class="card accent"><h3>可变性</h3><ul><li>可变：列表、字典、集合</li><li>不可变：数值、布尔、字符串、元组</li><li>元组内可包含可变对象</li></ul></div>
+      <div class="card accent"><h3>高频区别</h3><ul><li><code>break</code> vs <code>continue</code></li><li><code>append</code> vs <code>extend</code></li><li><code>find</code> vs <code>index</code></li><li><code>remove</code> vs <code>discard</code></li></ul></div>
+    </div>
+    <details><summary>应用题通用答题模板</summary><ol><li>明确输入数据与输出要求。</li><li>给变量初始化（计数器、累加器、最值等）。</li><li>选择循环或递归，写清终止条件。</li><li>在循环内判断并更新状态。</li><li>输出结果，检查空数据、0、负数、边界值。</li></ol></details>
+    <details><summary>简答题通用表达</summary><p>先给定义，再列 2-3 个特征，最后用一句对比或代码例子收束。例如问“列表与元组的区别”：二者都是序列，都支持索引、切片和遍历；列表可变且有多种原地修改方法，元组不可变；列表用方括号，元组通常用圆括号。</p></details>
+  </section>
+</main>
+<footer class="footer"><p>整理依据：老师《2026 春程序设计基础复习》14 页提纲（主线）+《Python语言程序设计教程（第2版）》相关章节 +《Python语言程序设计实践教程》实验目录。建议配套打开“练习题”HTML 完成一次 110 分钟模拟。</p></footer>
+</body>
+</html>

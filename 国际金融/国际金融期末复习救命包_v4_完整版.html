@@ -1,0 +1,491 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>国际金融期末复习救命包 v4 完整版</title><style>
+@font-face{font-family:NotoCJK;src:url('file:///usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc')}@font-face{font-family:NotoCJK;font-weight:700;src:url('file:///usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc')}
+:root{--bg:#f5f7fb;--paper:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--blue:#2563eb;--red:#dc2626;--orange:#f97316;--green:#059669;--amber:#ca8a04;--slate:#475569}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);font-family:NotoCJK,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);line-height:1.68;font-size:15.5px} a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+#top{position:absolute;top:0}.progressbar{position:fixed;top:0;left:0;height:4px;background:#2563eb;width:0%;z-index:100}.layout{display:grid;grid-template-columns:320px 1fr;gap:22px;max-width:1500px;margin:0 auto;padding:18px}.sidebar{position:sticky;top:14px;align-self:start;height:calc(100vh - 28px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 34px rgba(15,23,42,.08);padding:16px}.sidebar h1{font-size:21px;margin:0 0 6px;line-height:1.2}.subtitle{font-size:13px;color:var(--muted);margin-bottom:10px}.search{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px;outline:none;margin:8px 0}.btnrow{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 12px}button{font-family:inherit;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 10px;font-size:13px;cursor:pointer}button:hover{background:#f3f4f6}.toc{list-style:none;margin:0;padding:0;font-size:13.2px}.toc li{margin:2px 0}.toc a{display:block;color:#111827;padding:5px 8px;border-radius:8px}.toc a:hover{background:#eff6ff;text-decoration:none}.toc a.active{background:#dbeafe;color:#1d4ed8;font-weight:700}.content{min-width:0}.hero{background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff;border-radius:24px;padding:32px 36px;margin-bottom:18px;box-shadow:0 16px 40px rgba(15,23,42,.20)}.hero h1{font-size:34px;margin:0 0 8px;line-height:1.15}.hero p{margin:5px 0;color:#dbeafe}.pill{display:inline-block;background:rgba(255,255,255,.14);padding:5px 10px;border-radius:999px;font-size:13px;margin:8px 4px 0 0}
+.study-section{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 28px;margin:18px 0;box-shadow:0 10px 25px rgba(15,23,42,.055)}.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:11px;margin-bottom:15px}.section-head label{white-space:nowrap;color:var(--muted);font-size:13px}h2{font-size:24px;line-height:1.25;margin:0;color:#0f172a}h3{font-size:18px;line-height:1.3;margin:20px 0 8px;color:#111827}p{margin:7px 0 12px}.muted{color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;background:#fff;border-radius:10px;overflow:hidden}th,td{border:1px solid #d1d5db;padding:9px 10px;vertical-align:top}th{background:#f3f4f6;font-weight:700}.card,.note,.warn,.answer,.example,.cheat,.source-note,.big-answer{border-radius:14px;padding:13px 15px;margin:12px 0}.card{background:#fff;border:1px solid var(--line)}.note,.source-note{background:#eef6ff;border-left:5px solid var(--blue)}.warn{background:#fff7ed;border-left:5px solid var(--red)}.answer{background:#f8fafc;border-left:5px solid var(--slate)}.example{background:#f0fdf4;border-left:5px solid var(--green)}.cheat{background:#fefce8;border-left:5px solid var(--amber)}.big-answer{background:#eef2ff;border-left:5px solid #4f46e5;font-size:16px}.grid{display:grid;gap:12px}.grid.two{grid-template-columns:1fr 1fr}.formula{display:block;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:10px;padding:10px 12px;margin:9px 0;font-weight:700}.badge{display:inline-block;border-radius:999px;padding:2px 8px;font-size:12px;font-weight:700}.badge.red{background:#fee2e2;color:#991b1b}.badge.orange{background:#ffedd5;color:#9a3412}.badge.yellow{background:#fef9c3;color:#854d0e}.badge.gray{background:#e5e7eb;color:#374151}.glossary{display:grid;grid-template-columns:1fr 1fr;gap:10px}.glossary div{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px 12px}.qa{border:1px solid var(--line);border-radius:14px;padding:10px 12px;margin:12px 0;background:#fff}.qa h3{margin-top:4px}.dense-list{columns:2;column-gap:32px}.dense-list li{break-inside:avoid;margin:4px 0}.quiz details{break-inside:avoid}.src{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:8px 0;font-size:13px;word-break:break-all}.src span{color:#475569}.backtop{display:inline-block;margin-top:10px;font-size:13px;color:var(--muted)}details{border:1px solid var(--line);background:#fff;border-radius:12px;margin:10px 0;padding:10px 12px}summary{cursor:pointer;font-weight:700}
+mark{background:#fde68a;border-radius:3px;padding:0 2px}
+@media (max-width:980px){.layout{display:block;padding:10px}.sidebar{position:relative;height:auto;margin-bottom:12px}.grid.two,.glossary{grid-template-columns:1fr}.dense-list{columns:1}.hero h1{font-size:28px}.study-section{padding:20px 16px}}
+@media print{@page{size:A4;margin:14mm 12mm}body{background:#fff;font-size:11.2px;line-height:1.55}.layout{display:block;padding:0;max-width:none}.sidebar,.btnrow,.search,.section-head label,.backtop,.progressbar{display:none!important}.hero{box-shadow:none;border-radius:0;background:#fff!important;color:#111;border-bottom:2px solid #111;padding:0 0 10px;margin:0 0 10px}.hero p{color:#333}.pill{background:#eee;color:#111}.study-section{box-shadow:none;border:0;border-radius:0;padding:0;margin:0 0 12px;break-inside:auto;page-break-inside:auto}.section-head{break-after:avoid;margin-bottom:6px;padding-bottom:5px}h2{font-size:17px}h3{font-size:13.2px;break-after:avoid;margin:12px 0 5px}table,.answer,.example,.warn,.note,.source-note,.big-answer,.card,.cheat,.qa{break-inside:avoid}.glossary{grid-template-columns:1fr}.dense-list{columns:1}details{display:block;break-inside:avoid}details>summary{display:block}}
+</style></head><body><div id="top"></div><div class="progressbar" id="progressbar"></div><div class="layout"><aside class="sidebar"><h1>国际金融救命包 v4</h1><div class="subtitle">完整版：可跳转目录 / 搜索 / 勾选进度 / 适合不看书PPT</div><input class="search" id="search" placeholder="搜索：欧洲货币、J曲线、不可能三角…"><div class="btnrow"><button id="expandAll">展开答案</button><button id="collapseAll">收起答案</button><button onclick="window.print()">打印/PDF</button></div><ul class="toc"><li><a href='#sec-00'>0. 使用说明：这版解决什么问题</a></li><li><a href='#sec-01'>1. 考试范围、题型与保分策略</a></li><li><a href='#sec-02'>2. 第一篇第1-2章：外汇、汇率、外汇市场</a></li><li><a href='#sec-03'>3. 人民币汇率制度改革：开放性题素材</a></li><li><a href='#sec-04'>4. 第3章只考：远期汇率与利率平价</a></li><li><a href='#sec-05'>5. 第4章：离岸金融市场，最高危易错</a></li><li><a href='#sec-06'>6. PPP与实际汇率：简单计算+经济含义</a></li><li><a href='#sec-07'>7. 第10章：国际收支平衡表</a></li><li><a href='#sec-08'>8. 第10章：国际收支失衡与传统理论</a></li><li><a href='#sec-09'>9. 第11章：IS-LM-BP与蒙代尔-弗莱明模型</a></li><li><a href='#sec-10'>10. 第12章：汇率制度选择与不可能三角</a></li><li><a href='#sec-11'>11. 第12章：国际货币体系演变</a></li><li><a href='#sec-12'>12. 第14章：金融危机</a></li><li><a href='#sec-13'>13. 名词解释库：按5分题写</a></li><li><a href='#sec-14'>14. 简答题模板库：直接背这个</a></li><li><a href='#sec-15'>15. 计算题专题：考前必须练</a></li><li><a href='#sec-16'>16. 判断题/选择题易错点：背这些句子</a></li><li><a href='#sec-17'>17. 最后一天复习路线</a></li><li><a href='#sec-18'>18. 自测题：盖住答案自己说</a></li><li><a href='#sec-19'>19. 资料来源与使用原则</a></li></ul></aside><main class="content"><div class="hero"><h1>国际金融期末复习救命包 v4 完整版</h1><p>结合老师录音范围、教材/PPT、答题模板和权威网上资料。比v3更厚，适合当唯一复习资料。</p><span class="pill">目录可跳转</span><span class="pill">手机可用</span><span class="pill">计算题+简答题+名词解释</span><span class="pill">PDF可打印</span></div><section class='study-section' id='sec-00'><div class='section-head'><h2>0. 使用说明：这版解决什么问题</h2><label><input type='checkbox' data-done='sec-00'> 已复习</label></div>
+<div class="big-answer"><b>这版定位：</b>v4 是“完整学习版”，不是v3那种速背小抄。它保留可点击目录、搜索、勾选进度，同时把内容补厚，目标是让你不看书/PPT也能复习到正常应试水平。</div>
+<div class="grid two">
+  <div class="card"><h3>v4比v3增加了什么</h3><ul><li>每章都有“考什么、怎么答、易错点、例题”。</li><li>名词解释从20个扩到50+个。</li><li>简答题模板扩到20+道，按8分/15分写法区分。</li><li>计算题增加：利率平价、PPP/RER、国际收支借贷。</li><li>第12章和第14章明显扩充：不可能三角、三大货币体系、金融危机四代模型。</li><li>加入权威网上资料补强，但不扩大考试范围。</li></ul></div>
+  <div class="card"><h3>怎么用最省事</h3><ol><li>先看第1章确认范围。</li><li>背第13章名词解释库。</li><li>看第14章简答模板，尤其是带<span class="badge red">高频</span>的。</li><li>练第15章计算题。</li><li>最后一天只看第16、17章。</li></ol></div>
+</div>
+<div class="warn"><b>不要被“完整版”吓到：</b>考试不是让你全文背诵。你真正要背的是名词解释、简答模板和公式；前面章节是为了让你看得懂、能扩写。</div>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-01'><div class='section-head'><h2>1. 考试范围、题型与保分策略</h2><label><input type='checkbox' data-done='sec-01'> 已复习</label></div>
+<h3>1.1 题型分值</h3>
+<table><thead><tr><th>题型</th><th>数量</th><th>分值</th><th>策略</th></tr></thead><tbody>
+<tr><td>单选题</td><td>10道</td><td>10分</td><td>靠概念辨析，不追求满分。重点看易错判断。</td></tr>
+<tr><td>判断题</td><td>15道</td><td>约15分</td><td>今年新增/恢复，容易考“欧洲货币市场不是欧洲市场”这种坑。</td></tr>
+<tr><td>名词解释</td><td>5道</td><td>25分</td><td>最值得背。每个按“定义+核心特征+例子/意义”写。</td></tr>
+<tr><td>计算题</td><td>2道</td><td>12分</td><td>押：远期汇率/利率平价、PPP/RER、国际收支借贷记账。</td></tr>
+<tr><td>简答题</td><td>3道</td><td>约38分</td><td>两道15分+一道8分。老师说主观题能多写就多写，但别跑题。</td></tr>
+</tbody></table>
+<h3>1.2 范围总表：哪些看，哪些扔</h3>
+<table><thead><tr><th>板块</th><th>是否考</th><th>内容</th><th>优先级</th></tr></thead><tbody>
+<tr><td>第一篇第1章</td><td>考</td><td>外汇、汇率、标价法、外汇市场、汇率价格种类。</td><td><span class="badge red">高</span></td></tr>
+<tr><td>第一篇第2章</td><td>考</td><td>外汇市场形式、人民币汇率、人民币汇率制度改革。</td><td><span class="badge red">高</span></td></tr>
+<tr><td>第一篇第3章</td><td>只考远期汇率</td><td>外汇衍生品只看远期汇率；结合利率平价。</td><td><span class="badge red">必看</span></td></tr>
+<tr><td>第一篇第4章</td><td>考</td><td>离岸金融市场、欧洲货币市场、欧洲债券市场。</td><td><span class="badge red">极高</span></td></tr>
+<tr><td>第一篇第5章</td><td>不考</td><td>不用看。</td><td><span class="badge gray">放弃</span></td></tr>
+<tr><td>第二篇</td><td>全部不考</td><td>不用看。</td><td><span class="badge gray">放弃</span></td></tr>
+<tr><td>第10章</td><td>全章必考</td><td>国际收支平衡表、项目分析、国际收支理论。</td><td><span class="badge red">极高</span></td></tr>
+<tr><td>第11章</td><td>重点</td><td>IS-LM-BP、蒙代尔-弗莱明模型；两国模型不考。</td><td><span class="badge red">高</span></td></tr>
+<tr><td>第12章</td><td>考</td><td>汇率制度选择、不可能三角、金本位/布雷顿森林/牙买加体系。</td><td><span class="badge orange">中高</span></td></tr>
+<tr><td>第14章</td><td>考</td><td>金融危机定义、表现、历史事件、四代模型。</td><td><span class="badge orange">中高</span></td></tr>
+<tr><td>第15章</td><td>老师口头提到</td><td>若你教材里有这一章，按介绍性知识处理；优先级低于10、11、12、14。</td><td><span class="badge yellow">中</span></td></tr>
+</tbody></table>
+<h3>1.3 复习目标与对应材料</h3>
+<table><thead><tr><th>目标</th><th>看哪些部分</th><th>预期</th></tr></thead><tbody>
+<tr><td>只求不挂</td><td>第1、4、5、6、7、13、15、17章</td><td>抓名词、计算、国际收支，争取卷面40-60。</td></tr>
+<tr><td>稳妥及格</td><td>再加第8、9、10章和第14章高频简答</td><td>卷面60-75更稳。</td></tr>
+<tr><td>想考好</td><td>全看，尤其客观题易错和金融危机</td><td>冲75+，主观题扩展更有话写。</td></tr>
+</tbody></table>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-02'><div class='section-head'><h2>2. 第一篇第1-2章：外汇、汇率、外汇市场</h2><label><input type='checkbox' data-done='sec-02'> 已复习</label></div>
+<h3>2.1 外汇与汇率</h3>
+<table><thead><tr><th>概念</th><th>标准表述</th><th>考试提醒</th></tr></thead><tbody>
+<tr><td>外汇</td><td>以外币表示的、可用于国际结算的支付手段和金融资产。</td><td>不要只写“外国的钱”。外币存款、票据、债券等也可属于广义外汇。</td></tr>
+<tr><td>汇率</td><td>两种货币之间的兑换比率，也是一种货币用另一种货币表示的价格。</td><td>看到“升值/贬值”先判断标价法。</td></tr>
+<tr><td>直接标价法</td><td>用本国货币表示一定单位外国货币价格。</td><td>USD/CNY=7.20。数值上升，本币贬值。</td></tr>
+<tr><td>间接标价法</td><td>用外国货币表示一定单位本国货币价格。</td><td>数值上升，本币升值。</td></tr>
+</tbody></table>
+<div class="formula">直接标价法：S上升 = 外币更贵 = 本币贬值；S下降 = 外币更便宜 = 本币升值。</div>
+<h3>2.2 汇率价格种类</h3>
+<table><thead><tr><th>分类标准</th><th>种类</th><th>说明</th></tr></thead><tbody>
+<tr><td>银行/做市商报价</td><td>买入价、卖出价、中间价</td><td>买入价是银行买入外汇的价格；卖出价是银行卖出外汇的价格。卖出价通常高于买入价。</td></tr>
+<tr><td>交割时间</td><td>即期汇率、远期汇率</td><td>即期是成交后短期交割；远期是约定未来交割。</td></tr>
+<tr><td>数据频率</td><td>日、周、月、日内高频</td><td>日内5分钟也可能有开盘、收盘、中间价。开盘价是该区间最早成交价，不一定刚好卡在整点。</td></tr>
+<tr><td>制定方式</td><td>基本汇率、套算汇率</td><td>基本汇率是本币对关键货币的汇率，套算汇率由两个基础汇率推算。</td></tr>
+</tbody></table>
+<h3>2.3 外汇市场</h3>
+<ul>
+<li><b>外汇市场本质：</b>不同货币进行买卖和兑换的市场。</li>
+<li><b>市场结构：</b>以银行、金融机构、企业、央行等为主体，现代外汇市场多为场外市场（OTC），做市商报价。</li>
+<li><b>功能：</b>国际结算、套期保值、投机、套利、调节国际资金流动。</li>
+<li><b>客观题常考：</b>外汇市场不是必须有固定交易场所，OTC很重要。</li>
+</ul>
+<details open><summary>名词解释模板：汇率</summary><div class="answer">汇率是两种货币之间的兑换比率，是一种货币用另一种货币表示的价格。按照标价方法不同，可分为直接标价法和间接标价法；按照交割时间不同，可分为即期汇率和远期汇率。汇率变化反映两国货币相对价值变化，并影响国际贸易、资本流动和国际收支。</div></details>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-03'><div class='section-head'><h2>3. 人民币汇率制度改革：开放性题素材</h2><label><input type='checkbox' data-done='sec-03'> 已复习</label></div>
+<div class="source-note">外部补强：2005年中国人民银行公告明确，自2005年7月21日起，我国实行以市场供求为基础、参考一篮子货币进行调节、有管理的浮动汇率制度，人民币不再盯住单一美元。[见资料来源5]</div>
+<h3>3.1 主线</h3>
+<div class="big-answer"><b>一句话：</b>人民币汇率制度改革的方向，是从相对固定和行政管理较强的安排，逐步转向更重视市场供求、参考一篮子货币、有管理浮动和更高汇率弹性的制度。</div>
+<h3>3.2 必背时间线</h3>
+<table><thead><tr><th>阶段</th><th>主要内容</th><th>考试表达</th></tr></thead><tbody>
+<tr><td>1994年汇改</td><td>官方汇率与外汇调剂市场汇率并轨，实行以市场供求为基础的、有管理浮动汇率制度。</td><td>人民币汇率市场化改革的重要起点。</td></tr>
+<tr><td>1997-2005年前后</td><td>亚洲金融危机后人民币保持相对稳定，事实上对美元较稳定。</td><td>稳定预期，维护金融稳定。</td></tr>
+<tr><td>2005年7月21日汇改</td><td>不再单一盯住美元，参考一篮子货币，有管理浮动；美元兑人民币调整为8.11。</td><td>老师强调“人民币汇率”可用于开放题。</td></tr>
+<tr><td>2010年后</td><td>继续推进汇率形成机制改革，提高弹性。</td><td>危机后逐步恢复弹性化方向。</td></tr>
+<tr><td>2015年8月中间价机制改革</td><td>强调参考上日收盘价、外汇供求和国际主要货币变化。</td><td>中间价形成更市场化。</td></tr>
+</tbody></table>
+<h3>3.3 开放题怎么答</h3>
+<details open><summary>15分模板：评价人民币汇率制度改革</summary><div class="answer">人民币汇率制度改革体现了市场化、弹性化和宏观审慎管理相结合的方向。第一，改革增强了市场供求在汇率形成中的作用。2005年汇改后，人民币不再单一盯住美元，而是以市场供求为基础、参考一篮子货币进行调节，实行有管理的浮动汇率制度。第二，改革提高了人民币汇率弹性，使汇率更能反映国内外经济基本面和国际货币变化，有助于调节进出口和国际收支。第三，改革也服务于货币政策自主性。中国作为大型经济体，需要根据本国经济周期和宏观调控目标制定货币政策，因此不可能在资本完全自由流动、固定汇率和货币政策独立三者之间同时完全实现。第四，人民币汇率制度并非完全自由浮动，而是有管理浮动，这有助于防止短期资本流动和市场预期造成过度波动。总体看，人民币汇率改革是在开放经济条件下，在市场化、稳定性和政策自主性之间进行权衡。</div></details>
+<h3>3.4 可以套进很多题的句子</h3>
+<ul><li>人民币汇率制度体现了“不可能三角”中的政策取舍：中国重视货币政策自主性，因此资本流动和汇率弹性需要渐进安排。</li><li>参考一篮子货币比单一盯住美元更能反映贸易伙伴和综合竞争力。</li><li>有管理浮动不是固定汇率，也不是完全自由浮动，而是市场供求基础上的必要管理。</li></ul>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-04'><div class='section-head'><h2>4. 第3章只考：远期汇率与利率平价</h2><label><input type='checkbox' data-done='sec-04'> 已复习</label></div>
+<h3>4.1 远期汇率</h3>
+<div class="answer">远期汇率是外汇买卖双方在当前签订远期合约，约定在未来某一日期进行外汇交割时使用的汇率。它可以用于锁定未来汇率风险，也与两国利率差异密切相关。</div>
+<table><thead><tr><th>概念</th><th>解释</th></tr></thead><tbody>
+<tr><td>远期升水</td><td>远期汇率高于即期汇率。在直接标价法下，外币远期更贵。</td></tr>
+<tr><td>远期贴水</td><td>远期汇率低于即期汇率。在直接标价法下，外币远期更便宜。</td></tr>
+<tr><td>远期平价</td><td>远期汇率等于即期汇率。</td></tr>
+</tbody></table>
+<h3>4.2 抛补利率平价 CIP</h3>
+<div class="formula">精确式：F = S × (1 + i_d) / (1 + i_f)</div>
+<div class="formula">近似式：远期升贴水率 ≈ 本国利率 - 外国利率</div>
+<p>这里默认S是直接标价法：本币/外币。i_d是本国利率，i_f是外国利率。</p>
+<div class="answer"><b>经济含义：</b>在无套利条件下，把钱留在本国投资，和换成外币投资再用远期合约锁定未来汇率，两种策略的最终收益应该相同。如果不同，就会出现无风险套利，套利行为会推动即期汇率、远期汇率和利率调整，直到收益相等。</div>
+<h3>4.3 三步做题法</h3>
+<ol><li>先确认标价法：直接标价法还是间接标价法。</li><li>写公式：F = S × (1+i_d)/(1+i_f)。</li><li>代入计算后，必须判断升水/贴水和本币升贬值方向。</li></ol>
+<h3>4.4 例题</h3>
+<div class="example"><b>例1：</b>USD/CNY即期汇率S=7.20，中国年利率2%，美国年利率5%，求一年期远期汇率。<br><b>解：</b>F=7.20×1.02/1.05=6.994。<br><b>结论：</b>直接标价法下，F&lt;S，美元远期贴水，人民币远期升水。</div>
+<div class="example"><b>例2：</b>S=7.10，F=7.242，求远期升贴水率。<br><b>解：</b>(F-S)/S=(7.242-7.10)/7.10=2%。<br><b>结论：</b>外币远期升水2%。</div>
+<h3>4.5 判断套利方向：保底理解版</h3>
+<p>如果题目给出的F太高，说明未来外币卖得太贵，策略通常是：借本币 -> 换外币 -> 投资外币 -> 远期卖外币。若F太低，则反过来。考试若只是基础题，通常不会要求你完整写套利过程，能算F和判断升贴水更重要。</p>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-05'><div class='section-head'><h2>5. 第4章：离岸金融市场，最高危易错</h2><label><input type='checkbox' data-done='sec-05'> 已复习</label></div>
+<div class="warn"><b>老师反复强调：</b>欧洲货币市场、欧洲债券市场是一种离岸市场，不是欧洲的市场。去年很多人把“欧洲债券市场”写成“在欧洲的债券市场”，直接丢分。</div>
+<h3>5.1 三个核心概念</h3>
+<table><thead><tr><th>概念</th><th>5分名词解释</th><th>例子</th></tr></thead><tbody>
+<tr><td>离岸金融市场</td><td>指非居民之间以境外货币为交易对象，在货币发行国境外进行资金融通，并通常较少受货币发行国或所在地传统金融监管限制的国际金融市场。</td><td>在伦敦经营美元存贷款业务。</td></tr>
+<tr><td>欧洲货币市场</td><td>指在货币发行国境外经营该种货币存贷款业务的离岸货币市场。“欧洲”是历史名称，并不表示市场所在地必须在欧洲。</td><td>欧洲美元市场=美国境外美元存贷款市场。</td></tr>
+<tr><td>欧洲债券市场</td><td>指在债券面值货币发行国以外发行和流通国际债券的市场。其判断标准是发行地与计价货币发行国不同，而不是地理上位于欧洲。</td><td>在美国以外发行的美元债券。</td></tr>
+</tbody></table>
+<h3>5.2 欧洲债券 vs 外国债券</h3>
+<table><thead><tr><th>类型</th><th>定义</th><th>例子</th></tr></thead><tbody>
+<tr><td>欧洲债券</td><td>在面值货币发行国以外发行的债券。</td><td>中国企业在伦敦发行美元债券。</td></tr>
+<tr><td>外国债券</td><td>外国发行人在某国市场发行以该国货币计价的债券。</td><td>外国企业在美国发行美元债券，叫扬基债券。</td></tr>
+</tbody></table>
+<h3>5.3 主观题模板</h3>
+<details open><summary>名词解释：欧洲货币市场</summary><div class="answer">欧洲货币市场是指在货币发行国境外经营该种货币存贷款业务的离岸金融市场。“欧洲”只是历史名称，并不表示市场必须位于欧洲。比如美国境外经营美元存贷款业务形成的欧洲美元市场，就属于欧洲货币市场。其特点是交易货币为境外货币、交易主体多为非居民、监管相对宽松。</div></details>
+<details open><summary>简答：为什么欧洲债券市场不是欧洲的债券市场？</summary><div class="answer">欧洲债券市场属于离岸金融市场。“欧洲”是历史形成的名称，不是地理概念。判断欧洲债券的关键，不是债券是否在欧洲发行，而是债券发行地点是否在债券面值货币发行国之外。比如在美国境外发行的美元债券，就可以称为欧洲美元债券。因此，欧洲债券市场本质上是国际离岸债券市场，而不是位于欧洲的债券市场。</div></details>
+<h3>5.4 客观题坑点</h3>
+<ul><li>“欧洲货币市场一定在欧洲。”错。</li><li>“欧洲美元是欧洲国家发行的美元。”错。</li><li>“欧洲债券是欧洲发行人发行的债券。”错。</li><li>“离岸金融市场一定不受任何监管。”错，是监管相对宽松，不是完全无监管。</li></ul>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-06'><div class='section-head'><h2>6. PPP与实际汇率：简单计算+经济含义</h2><label><input type='checkbox' data-done='sec-06'> 已复习</label></div>
+<div class="source-note">外部补强：IMF将PPP解释为一种汇率，即为了在两国购买同样数量的商品和服务，需要把一国货币兑换为另一国货币的比率。[见资料来源2]</div>
+<h3>6.1 一价定律</h3>
+<div class="answer">一价定律认为，在没有运输成本、关税和贸易壁垒，且商品同质可贸易的情况下，同一种商品用同一种货币表示的价格应当相等。若价格不同，会发生商品套利。</div>
+<h3>6.2 绝对PPP与相对PPP</h3>
+<table><thead><tr><th>类型</th><th>公式</th><th>含义</th><th>考试句子</th></tr></thead><tbody>
+<tr><td>绝对购买力平价</td><td>S = P / P*</td><td>名义汇率由两国价格水平决定。</td><td>本国价格越高，本币长期越倾向贬值。</td></tr>
+<tr><td>相对购买力平价</td><td>ΔS/S ≈ π - π*</td><td>汇率变动率约等于两国通胀率差。</td><td>本国通胀高于外国，本币应贬值。</td></tr>
+</tbody></table>
+<h3>6.3 实际汇率 RER</h3>
+<div class="formula">Q = S × P* / P</div>
+<p>在直接标价法下，Q可理解为外国商品相对于本国商品的价格，也可用来衡量本国产品的国际竞争力。</p>
+<table><thead><tr><th>Q变化</th><th>含义</th><th>竞争力</th></tr></thead><tbody>
+<tr><td>Q上升</td><td>外国商品相对更贵，本国商品相对更便宜</td><td>本国竞争力增强，实际贬值</td></tr>
+<tr><td>Q下降</td><td>外国商品相对更便宜，本国商品相对更贵</td><td>本国竞争力下降，实际升值</td></tr>
+</tbody></table>
+<h3>6.4 例题</h3>
+<div class="example"><b>绝对PPP：</b>中国一篮子商品价格P=720元，美国同一篮子价格P*=100美元。PPP汇率S=P/P*=7.2元/美元。</div>
+<div class="example"><b>相对PPP：</b>中国通胀5%，美国通胀2%，则人民币相对美元长期大约贬值3%。直接标价法下，USD/CNY大约上升3%。</div>
+<div class="example"><b>实际汇率：</b>S=7.2，P*=100，P=720，则Q=7.2×100/720=1。若S升至8且价格不变，则Q=8×100/720=1.11，本国实际贬值，竞争力增强。</div>
+<h3>6.5 PPP为什么现实中不完全成立</h3>
+<ul><li>不同国家商品篮子和消费权重不同。</li><li>存在运输成本、关税、配额等贸易壁垒。</li><li>很多服务、房租、理发等不可贸易。</li><li>短期价格粘性，汇率还受资本流动、预期和政策影响。</li><li>商品不是完全同质，品牌、质量和税制不同。</li></ul>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-07'><div class='section-head'><h2>7. 第10章：国际收支平衡表</h2><label><input type='checkbox' data-done='sec-07'> 已复习</label></div>
+<div class="source-note">外部补强：IMF BPM6提供跨境交易和国际收支头寸的国际统一记录框架，是国际收支统计的权威口径。[见资料来源1]</div>
+<h3>7.1 国际收支定义</h3>
+<div class="answer">国际收支是指一国居民与非居民在一定时期内发生的全部经济交易。它不是某一天的余额，而是一个时期内的流量；它强调居民与非居民之间的交易，而不是国籍。</div>
+<h3>7.2 居民与非居民</h3>
+<ul><li><b>居民：</b>在本国经济领土内具有经济利益中心的单位或个人。</li><li><b>非居民：</b>经济利益中心不在本国的单位或个人。</li><li><b>考试提醒：</b>判断居民/非居民看经济利益中心，不简单看护照国籍。</li></ul>
+<h3>7.3 国际收支平衡表结构</h3>
+<table><thead><tr><th>账户</th><th>包含内容</th><th>记忆法</th></tr></thead><tbody>
+<tr><td>经常账户</td><td>货物、服务、初次收入、二次收入/经常转移</td><td>真实资源和收入转移。</td></tr>
+<tr><td>资本账户</td><td>资本转移、非生产非金融资产交易</td><td>通常金额较小。</td></tr>
+<tr><td>金融账户</td><td>直接投资、证券投资、金融衍生品、其他投资、储备资产</td><td>金融资产和负债变化。</td></tr>
+<tr><td>净误差与遗漏</td><td>统计误差调整</td><td>让账面平衡。</td></tr>
+</tbody></table>
+<h3>7.4 经常账户详细</h3>
+<table><thead><tr><th>项目</th><th>内容</th><th>例子</th></tr></thead><tbody>
+<tr><td>货物</td><td>有形商品进出口</td><td>汽车、手机、石油。</td></tr>
+<tr><td>服务</td><td>服务贸易</td><td>旅游、教育、运输、保险、咨询。</td></tr>
+<tr><td>初次收入</td><td>生产要素收入</td><td>工资、利息、股息、利润。</td></tr>
+<tr><td>二次收入</td><td>无偿转移</td><td>侨汇、援助、捐赠。</td></tr>
+</tbody></table>
+<h3>7.5 借贷记账：最好拿分的计算/判断</h3>
+<div class="formula">贷方 Credit (+)：本国从国外收到钱/外汇流入/对外负债增加/对外资产减少。</div>
+<div class="formula">借方 Debit (-)：本国向国外付款/外汇流出/对外资产增加/对外负债减少。</div>
+<table><thead><tr><th>交易</th><th>账户</th><th>方向</th><th>理由</th></tr></thead><tbody>
+<tr><td>本国企业出口商品收到美元</td><td>经常账户-货物</td><td>贷方+</td><td>外汇流入。</td></tr>
+<tr><td>本国企业进口机器支付美元</td><td>经常账户-货物</td><td>借方-</td><td>外汇流出。</td></tr>
+<tr><td>外国游客来中国旅游消费</td><td>经常账户-服务</td><td>贷方+</td><td>本国提供服务并收到外汇。</td></tr>
+<tr><td>中国学生赴美留学交学费</td><td>经常账户-服务</td><td>借方-</td><td>购买外国教育服务。</td></tr>
+<tr><td>中国企业收到海外投资股息</td><td>经常账户-初次收入</td><td>贷方+</td><td>从国外取得投资收益。</td></tr>
+<tr><td>中国居民向国外亲属汇款</td><td>经常账户-二次收入</td><td>借方-</td><td>对外无偿转移。</td></tr>
+<tr><td>外国企业来华设厂投资</td><td>金融账户-直接投资</td><td>贷方+</td><td>外资流入，本国对外负债增加。</td></tr>
+<tr><td>中国居民购买美国股票</td><td>金融账户-证券投资</td><td>借方-</td><td>本国对外资产增加。</td></tr>
+</tbody></table>
+<details open><summary>简答模板：国际收支平衡表主要内容</summary><div class="answer">国际收支平衡表是系统记录一国居民与非居民在一定时期内全部经济交易的统计报表。它主要包括经常账户、资本账户、金融账户、储备资产以及净误差与遗漏。经常账户记录货物、服务、初次收入和二次收入；资本账户记录资本转移和非生产非金融资产交易；金融账户记录直接投资、证券投资、金融衍生品、其他投资和储备资产等金融资产负债变化。国际收支平衡表采用复式记账原则，每笔交易以相同金额分别记入借方和贷方，因此从会计意义上总是平衡的。</div></details>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-08'><div class='section-head'><h2>8. 第10章：国际收支失衡与传统理论</h2><label><input type='checkbox' data-done='sec-08'> 已复习</label></div>
+<h3>8.1 国际收支失衡的一般原因</h3>
+<table><thead><tr><th>原因</th><th>解释</th><th>例子</th></tr></thead><tbody>
+<tr><td>经济周期</td><td>经济繁荣进口增加，可能导致经常账户恶化；经济衰退进口减少。</td><td>本国需求强，进口消费品增加。</td></tr>
+<tr><td>经济结构</td><td>产业竞争力、出口结构和进口依赖影响国际收支。</td><td>高端制造竞争力强，出口多。</td></tr>
+<tr><td>国民收入变化</td><td>收入上升通常增加进口需求。</td><td>收入越高，旅游、留学、进口消费增加。</td></tr>
+<tr><td>货币与价格因素</td><td>通胀、汇率、利率影响贸易和资本流动。</td><td>本币升值削弱出口竞争力。</td></tr>
+<tr><td>资本流动</td><td>国际利差、风险偏好和预期会影响金融账户。</td><td>美国加息导致资金回流美国。</td></tr>
+</tbody></table>
+<h3>8.2 弹性论</h3>
+<div class="answer">弹性论从进出口商品需求价格弹性角度分析汇率变动对贸易收支的影响。本币贬值会降低出口外币价格、提高进口本币价格，但贸易收支能否改善，取决于出口和进口数量对价格变化的反应程度。</div>
+<h3>8.3 马歇尔-勒纳条件</h3>
+<div class="formula">出口需求价格弹性绝对值 + 进口需求价格弹性绝对值 &gt; 1</div>
+<div class="answer">若满足马歇尔-勒纳条件，本币贬值会在长期改善贸易收支；若不满足，贬值不一定改善贸易收支，甚至可能恶化。</div>
+<h3>8.4 J曲线效应</h3>
+<div class="answer">J曲线效应指本币贬值后，贸易收支在短期内可能先恶化，经过一段时间后才逐渐改善。原因是合同已经签订、进出口数量调整滞后、消费者和企业改变购买行为需要时间。贸易收支变化路径像字母J。</div>
+<h3>8.5 吸收论</h3>
+<div class="formula">B = Y - A</div>
+<p>B为国际收支/贸易收支差额，Y为国民收入，A为国内吸收（消费+投资+政府支出）。</p>
+<div class="answer">吸收论认为，改善国际收支不能只看汇率，还要看一国总收入与总支出的关系。若国内吸收超过国民收入，就容易出现国际收支逆差；改善逆差可以通过提高产出或减少国内吸收实现。</div>
+<h3>8.6 货币论</h3>
+<div class="answer">货币论认为国际收支失衡本质上是货币市场失衡的结果。若一国货币供给超过货币需求，居民会增加支出和购买外国资产，导致国际收支逆差和外汇储备流失；若货币需求超过货币供给，则可能出现国际收支顺差。</div>
+<details open><summary>8分模板：马歇尔-勒纳条件与J曲线效应</summary><div class="answer">马歇尔-勒纳条件说明本币贬值改善贸易收支的长期条件：只有当出口需求价格弹性和进口需求价格弹性之和大于1时，本币贬值才会使出口收入增加、进口支出减少，从而改善贸易收支。J曲线效应说明贬值后的动态过程：短期内由于合同固定、价格粘性和进出口数量调整滞后，贸易收支可能先恶化；随着时间推移，出口数量增加、进口数量减少，贸易收支才逐渐改善。因此，马歇尔-勒纳条件强调长期能否改善，J曲线效应强调短期到长期的调整路径。</div></details>
+<details open><summary>15分模板：国际收支失衡原因及调节</summary><div class="answer">国际收支失衡是开放经济中的常见现象，其原因包括经济周期、经济结构、国民收入变化、价格和汇率变化、资本流动以及政策因素等。经济繁荣会提高进口需求，可能导致经常账户恶化；产业竞争力不足会削弱出口能力；本币升值会降低出口竞争力；国际利差和风险预期变化也会引发资本流入或流出。调节国际收支可以从贸易、收入、汇率和宏观政策等方面入手。弹性论强调通过汇率变化影响进出口，马歇尔-勒纳条件说明贬值改善贸易收支需要满足弹性条件；吸收论认为应提高国民收入或减少国内吸收；货币论则强调控制货币供求失衡。现实中，国际收支调节通常需要汇率政策、财政货币政策和结构性改革配合。</div></details>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-09'><div class='section-head'><h2>9. 第11章：IS-LM-BP与蒙代尔-弗莱明模型</h2><label><input type='checkbox' data-done='sec-09'> 已复习</label></div>
+<h3>9.1 模型用途</h3>
+<div class="answer">IS-LM-BP模型是在开放经济条件下分析商品市场、货币市场和国际收支同时均衡的模型。蒙代尔-弗莱明模型用它比较不同汇率制度下财政政策和货币政策的效果。</div>
+<h3>9.2 三条曲线</h3>
+<table><thead><tr><th>曲线</th><th>市场</th><th>斜率/形状</th><th>核心逻辑</th></tr></thead><tbody>
+<tr><td>IS</td><td>商品市场</td><td>向右下倾斜</td><td>利率下降刺激投资和总需求，收入上升。</td></tr>
+<tr><td>LM</td><td>货币市场</td><td>向右上倾斜</td><td>收入上升增加货币需求，需要更高利率保持货币市场均衡。</td></tr>
+<tr><td>BP</td><td>国际收支</td><td>资本不完全流动时右上倾斜；资本完全流动时水平</td><td>收入上升使进口增加、经常账户恶化，需要更高利率吸引资本流入。</td></tr>
+</tbody></table>
+<h3>9.3 BP曲线为什么右上倾斜</h3>
+<div class="answer">当收入上升时，进口需求增加，经常账户趋于恶化。为了维持国际收支平衡，需要更多资本流入弥补经常账户赤字。而资本流入通常需要更高的国内利率吸引。因此，收入越高，均衡所需利率越高，BP曲线向右上方倾斜。</div>
+<h3>9.4 资本完全流动</h3>
+<div class="answer">资本完全流动时，小国国内利率不能长期偏离世界利率。若国内利率高于世界利率，资本大量流入；若低于世界利率，资本大量流出。因此BP曲线表现为世界利率水平上的水平线。</div>
+<h3>9.5 政策效果：必背表</h3>
+<table><thead><tr><th>政策</th><th>浮动汇率制度</th><th>固定汇率制度</th></tr></thead><tbody>
+<tr><td>货币扩张</td><td>LM右移 -> 利率下降 -> 资本流出 -> 本币贬值 -> 净出口增加 -> 收入上升。货币政策较有效。</td><td>LM右移造成本币贬值压力 -> 央行卖出外汇、回收本币 -> LM回到原位。货币政策效果受限。</td></tr>
+<tr><td>财政扩张</td><td>IS右移 -> 利率上升 -> 资本流入 -> 本币升值 -> 净出口下降 -> 财政政策效果被部分抵消。</td><td>IS右移造成本币升值压力 -> 央行买入外汇、投放本币 -> LM右移 -> 收入进一步上升。财政政策较有效。</td></tr>
+</tbody></table>
+<h3>9.6 老师强调范围</h3>
+<ul><li>两国模型不考。</li><li>资本完全流动和资本不完全流动都在范围内。</li><li>其他班模型讲得少，大概率不会出特别复杂的大题，但可能考概念、曲线含义、政策效果。</li></ul>
+<details open><summary>15分模板：固定汇率和浮动汇率下政策效果比较</summary><div class="answer">在开放经济中，财政政策和货币政策效果取决于汇率制度。浮动汇率下，货币扩张使LM曲线右移，利率下降导致资本流出，本币贬值，净出口增加，收入上升，因此货币政策较有效；财政扩张使IS曲线右移，利率上升导致资本流入，本币升值，净出口下降，财政扩张效果被部分抵消。固定汇率下，货币扩张会带来本币贬值压力，央行为维持固定汇率卖出外汇、回收本币，货币供给减少，LM曲线回到原位，因此货币政策效果受限；财政扩张会带来本币升值压力，央行为维持汇率买入外汇、投放本币，使LM曲线右移，收入进一步增加，因此财政政策效果较强。由此可见，汇率制度会影响宏观政策有效性。</div></details>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-10'><div class='section-head'><h2>10. 第12章：汇率制度选择与不可能三角</h2><label><input type='checkbox' data-done='sec-10'> 已复习</label></div>
+<div class="source-note">外部补强：NBER关于三难选择的经典研究把汇率稳定、资本流动和货币政策自主之间的权衡作为开放经济长期历史经验来分析。[见资料来源3]</div>
+<h3>10.1 汇率制度分类</h3>
+<table><thead><tr><th>制度</th><th>特点</th><th>优点</th><th>缺点</th></tr></thead><tbody>
+<tr><td>固定汇率</td><td>货币当局承诺维持汇率在固定水平或窄幅区间。</td><td>降低汇率风险，有利于贸易和投资稳定。</td><td>需要外汇储备，货币政策自主性受限，易遭投机攻击。</td></tr>
+<tr><td>浮动汇率</td><td>汇率主要由市场供求决定。</td><td>货币政策自主性较强，汇率可吸收外部冲击。</td><td>汇率波动较大，企业面临风险。</td></tr>
+<tr><td>有管理浮动</td><td>市场供求为基础，央行必要时干预。</td><td>兼顾弹性与稳定。</td><td>透明度和政策可信度要求高。</td></tr>
+<tr><td>货币发行局/联系汇率</td><td>本币发行以外汇资产为支持，汇率高度稳定。</td><td>可信度强，汇率稳定。</td><td>货币政策独立性弱。</td></tr>
+</tbody></table>
+<h3>10.2 不可能三角</h3>
+<div class="formula">固定汇率 + 资本自由流动 + 货币政策独立性：三者不能同时完全实现，只能三选二。</div>
+<table><thead><tr><th>选择两个目标</th><th>必须放弃</th><th>典型例子</th><th>逻辑</th></tr></thead><tbody>
+<tr><td>固定汇率 + 资本自由流动</td><td>货币政策独立性</td><td>香港联系汇率制度</td><td>资本自由流动下，为维持汇率稳定，本地利率需跟随锚货币国家。</td></tr>
+<tr><td>固定汇率 + 货币政策独立</td><td>资本自由流动</td><td>有资本管制的经济体</td><td>否则利差会引发资本大规模流入/流出，冲击固定汇率。</td></tr>
+<tr><td>资本自由流动 + 货币政策独立</td><td>固定汇率</td><td>浮动汇率经济体</td><td>通过汇率波动吸收资本流动和政策差异。</td></tr>
+</tbody></table>
+<h3>10.3 香港联系汇率制度</h3>
+<div class="source-note">外部补强：HKMA说明香港联系汇率制度自1983年10月17日起实施，通过货币发行局制度将港元稳定在7.75-7.85港元兑1美元区间。[见资料来源4]</div>
+<div class="answer">香港选择了汇率稳定和资本自由流动，因此牺牲了较多货币政策自主性。由于港元与美元联系，香港利率通常要受美元利率影响。这个例子非常适合拿来解释不可能三角。</div>
+<h3>10.4 老师录音里的逻辑翻译成人话</h3>
+<ul><li>如果中国既要货币政策自主，又要汇率基本稳定，就不能完全放开资本自由流动，否则利差会导致大规模资本流动。</li><li>如果香港要维持联系汇率且资本自由流动，就不能完全按本地经济情况决定利率。</li><li>亚洲金融危机中，泰铢固定汇率受到攻击，是固定汇率、资本流动和储备约束之间矛盾的典型案例。</li></ul>
+<details open><summary>15分模板：不可能三角理论及案例</summary><div class="answer">不可能三角是开放经济宏观政策中的重要理论，指一个经济体无法同时实现固定汇率、资本自由流动和货币政策独立性三个目标，只能同时选择其中两个。若选择固定汇率和资本自由流动，资本可以自由进出，为维持汇率稳定，本国利率必须跟随锚货币国家，因而牺牲货币政策独立性，香港联系汇率制度就是典型例子。若选择固定汇率和货币政策独立，就必须限制资本自由流动，否则利差会引发大规模资本流动并冲击固定汇率。若选择资本自由流动和货币政策独立，就必须允许汇率浮动，由汇率变化吸收外部冲击。中国作为大型经济体重视货币政策自主性，因此在汇率制度和资本项目开放上采取渐进改革。不可能三角说明开放经济政策目标之间存在内在取舍。</div></details>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-11'><div class='section-head'><h2>11. 第12章：国际货币体系演变</h2><label><input type='checkbox' data-done='sec-11'> 已复习</label></div>
+<h3>11.1 金本位制度</h3>
+<div class="answer">金本位制度下，各国货币与黄金保持固定兑换关系，货币发行以黄金储备为基础。由于各国货币都与黄金挂钩，各国货币之间的汇率也由含金量决定，因此形成固定汇率关系。</div>
+<table><thead><tr><th>优点</th><th>缺点</th></tr></thead><tbody>
+<tr><td>汇率稳定，有利于国际贸易和资本流动；货币发行受黄金约束，长期通胀压力较小。</td><td>货币供给受黄金储备限制，缺乏货币政策自主性；黄金发现和流入流出会影响货币供给；经济衰退时调整代价大。</td></tr>
+</tbody></table>
+<h3>11.2 布雷顿森林体系</h3>
+<div class="answer">布雷顿森林体系是二战后建立的国际货币体系，其核心是美元与黄金按固定比价挂钩，其他国家货币与美元维持固定汇率，形成以美元为中心的固定汇率体系。它同时建立了IMF、世界银行等国际机构。</div>
+<h3>11.3 布雷顿森林体系为什么瓦解</h3>
+<ol><li>美国为国内经济和财政需要增加美元供给，美元对外负债扩大。</li><li>美元与黄金固定兑换，但美国黄金储备有限，美元信用受到怀疑。</li><li>其他国家经济恢复和货币升值压力增强，但固定汇率限制调整。</li><li>市场预期美元贬值，各国要求兑换黄金压力增加。</li><li>1971年美国停止美元兑换黄金，体系基础动摇，之后固定汇率体系瓦解。</li></ol>
+<h3>11.4 牙买加体系</h3>
+<div class="answer">牙买加体系是布雷顿森林体系瓦解后形成的国际货币体系，承认浮动汇率合法化，推动黄金非货币化，国际储备货币多元化。它提高了汇率制度选择的灵活性，但也带来了汇率波动和国际协调问题。</div>
+<h3>11.5 三大体系对比表</h3>
+<table><thead><tr><th>体系</th><th>核心锚</th><th>汇率制度</th><th>最大问题</th></tr></thead><tbody>
+<tr><td>金本位</td><td>黄金</td><td>固定汇率</td><td>货币供给受黄金约束，调整代价大。</td></tr>
+<tr><td>布雷顿森林</td><td>美元-黄金</td><td>以美元为中心的固定汇率</td><td>美元信用与黄金储备矛盾，特里芬难题。</td></tr>
+<tr><td>牙买加体系</td><td>多元储备资产</td><td>浮动汇率合法化</td><td>汇率波动和国际协调难度上升。</td></tr>
+</tbody></table>
+<details open><summary>15分模板：布雷顿森林体系及其瓦解</summary><div class="answer">布雷顿森林体系是二战后建立的国际货币体系，其核心是美元与黄金按固定比价挂钩，其他国家货币与美元保持固定汇率，因此形成以美元为中心的固定汇率制度。该体系有利于战后国际贸易和金融秩序恢复，并确立了IMF和世界银行等国际机构的作用。但它存在内在矛盾：一方面世界经济发展需要美元作为国际清偿和储备资产，另一方面美元过度发行又会削弱美元与黄金兑换的可信度。随着美国国际收支逆差扩大、对外美元负债增加和黄金储备不足，市场对美元信心下降。1971年美国停止美元兑换黄金，体系的核心基础被破坏，随后主要国家转向浮动汇率，布雷顿森林体系最终瓦解。</div></details>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-12'><div class='section-head'><h2>12. 第14章：金融危机</h2><label><input type='checkbox' data-done='sec-12'> 已复习</label></div>
+<div class="source-note">外部补强：IMF关于金融危机的资料通常把货币危机、银行危机、债务危机、突然停止等作为金融危机的重要类型；IMF WEO也强调危机常源于不可持续失衡、资产价格或汇率错配、金融部门脆弱和信心突然丧失。[见资料来源6、8]</div>
+<h3>12.1 金融危机定义</h3>
+<div class="answer">金融危机通常是指金融体系中全部或大部分金融指标出现急剧、短暂、超周期恶化的状态。它不一定只有股市崩盘，也可以表现为货币危机、银行危机、债务危机、资本外逃、资产价格暴跌等。</div>
+<h3>12.2 表现形式</h3>
+<table><thead><tr><th>类型</th><th>表现</th><th>关键词</th></tr></thead><tbody>
+<tr><td>货币危机</td><td>本币遭遇投机攻击、大幅贬值，固定汇率难以维持。</td><td>贬值、外储下降、投机攻击。</td></tr>
+<tr><td>银行危机</td><td>银行挤兑、不良资产暴露、金融机构破产或救助。</td><td>挤兑、流动性、坏账。</td></tr>
+<tr><td>债务危机</td><td>政府或私人部门无法按期偿还债务。</td><td>违约、主权债务、外债。</td></tr>
+<tr><td>资产市场危机</td><td>股票、债券、房地产等资产价格剧烈下跌。</td><td>泡沫破裂、财富缩水。</td></tr>
+<tr><td>资本突然停止</td><td>外资迅速撤出，融资中断。</td><td>资本外逃、美元流动性。</td></tr>
+</tbody></table>
+<h3>12.3 历史案例：记关键词即可</h3>
+<table><thead><tr><th>事件</th><th>关键词</th><th>可用于答题的句子</th></tr></thead><tbody>
+<tr><td>1997-98亚洲金融危机</td><td>固定汇率、短期外债、资本流动逆转、货币贬值</td><td>说明固定汇率与资本自由流动在金融脆弱条件下可能被投机攻击。</td></tr>
+<tr><td>2008全球金融危机</td><td>次贷、金融创新、杠杆、系统性风险</td><td>说明金融机构过度杠杆和资产价格泡沫会引发全球传染。</td></tr>
+<tr><td>欧洲债务危机</td><td>主权债务、欧元区、财政约束</td><td>说明货币联盟下财政失衡和金融市场信心变化会触发危机。</td></tr>
+</tbody></table>
+<h3>12.4 四代金融/货币危机模型</h3>
+<table><thead><tr><th>模型</th><th>核心解释</th><th>关键词</th><th>答题例子</th></tr></thead><tbody>
+<tr><td>第一代模型</td><td>宏观基本面不可持续。固定汇率下财政赤字和货币扩张导致外储流失，最终遭遇投机攻击。</td><td>基本面、财政赤字、储备耗尽。</td><td>如果题目说政府长期赤字、央行融资、外储下降，选第一代。</td></tr>
+<tr><td>第二代模型</td><td>危机可能由预期自我实现引发。政府在维持汇率和承受高失业/高利率之间权衡，市场预期会影响政府选择。</td><td>自我实现、多重均衡、政策权衡。</td><td>如果题目强调市场预期、政府放弃汇率承诺，选第二代。</td></tr>
+<tr><td>第三代模型</td><td>强调金融部门脆弱、资产负债表错配、短期外债和道德风险，资本流动逆转会放大危机。</td><td>银行、资产负债表、货币错配、短期外债。</td><td>亚洲金融危机常用第三代解释。</td></tr>
+<tr><td>第四代模型</td><td>强调全球金融网络、资产价格、流动性、金融传染和系统性风险。</td><td>传染、系统性风险、全球金融周期。</td><td>2008全球金融危机可用第四代/系统性风险解释。</td></tr>
+</tbody></table>
+<details open><summary>15分模板：金融危机及四代模型</summary><div class="answer">金融危机是金融体系中全部或大部分金融指标出现急剧、短暂、超周期恶化的状态，表现为货币危机、银行危机、债务危机、股市债市危机和资本突然停止等。第一代危机模型强调宏观基本面不可持续，例如固定汇率下长期财政赤字和货币扩张导致外汇储备流失，最终引发投机攻击。第二代模型强调预期和政策权衡，危机可能具有自我实现特征，当市场预期政府会放弃固定汇率时，投机攻击会迫使政府真的放弃。第三代模型强调金融部门脆弱性、资产负债表错配、短期外债和资本流动逆转，常用于解释亚洲金融危机。第四代模型更重视金融全球化背景下的系统性风险、资产价格泡沫、流动性冲击和跨国传染。现实金融危机通常由宏观失衡、金融结构脆弱、市场预期和外部冲击共同造成。</div></details>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-13'><div class='section-head'><h2>13. 名词解释库：按5分题写</h2><label><input type='checkbox' data-done='sec-13'> 已复习</label></div>
+<p class="muted">写法：第一句定义拿基础分；第二句特征/作用拿扩展分；第三句例子或易错提醒拿稳分。</p>
+<div class="glossary">
+<div><b>1. 外汇：</b>以外币表示的、可用于国际结算的支付手段和金融资产。它包括外币现金、外币存款、外币票据和外币有价证券等。</div>
+<div><b>2. 汇率：</b>两种货币之间的兑换比率，是一种货币用另一种货币表示的价格。汇率变动会影响贸易、资本流动和国际收支。</div>
+<div><b>3. 直接标价法：</b>以一定单位外国货币为标准，折算为若干单位本国货币的标价方法。直接标价法下汇率上升表示本币贬值。</div>
+<div><b>4. 间接标价法：</b>以一定单位本国货币为标准，折算为若干单位外国货币的标价方法。间接标价法下汇率上升表示本币升值。</div>
+<div><b>5. 即期汇率：</b>外汇买卖成交后在短期内交割所使用的汇率。通常对应即期外汇交易。</div>
+<div><b>6. 远期汇率：</b>外汇买卖双方约定在未来某一日期交割外汇时使用的汇率。它常用于规避汇率风险，并与利率平价相关。</div>
+<div><b>7. 远期升水：</b>远期汇率高于即期汇率的状态。在直接标价法下，意味着外币远期更贵。</div>
+<div><b>8. 远期贴水：</b>远期汇率低于即期汇率的状态。在直接标价法下，意味着外币远期更便宜。</div>
+<div><b>9. 利率平价：</b>在资本流动和无套利条件下，两国利率差异会通过远期汇率升贴水得到反映。其核心是本外币投资经汇率套保后的收益应相等。</div>
+<div><b>10. 抛补套利：</b>利用即期汇率、远期汇率和两国利率之间的偏离，通过借入一种货币、兑换投资另一种货币并远期锁汇获得无风险收益的行为。</div>
+<div><b>11. 离岸金融市场：</b>非居民之间以境外货币为交易对象，在货币发行国境外进行资金融通的国际金融市场。其监管通常相对宽松。</div>
+<div><b>12. 欧洲货币市场：</b>在货币发行国境外经营该种货币存贷款业务的离岸货币市场。“欧洲”是历史名称，不表示市场必须在欧洲。</div>
+<div><b>13. 欧洲债券市场：</b>在债券面值货币发行国以外发行和流通国际债券的市场。它不是地理意义上的欧洲债券市场。</div>
+<div><b>14. 外国债券：</b>外国借款人在某国债券市场发行的、以该国货币计价的债券。例如外国机构在美国发行美元债券。</div>
+<div><b>15. 购买力平价：</b>认为同一篮子商品在不同国家用同一货币表示的价格应相等，汇率由两国价格水平决定。</div>
+<div><b>16. 绝对购买力平价：</b>认为名义汇率等于两国价格水平之比，即S=P/P*。</div>
+<div><b>17. 相对购买力平价：</b>认为汇率变动率约等于两国通货膨胀率之差。本国通胀较高时，本币长期倾向贬值。</div>
+<div><b>18. 实际汇率：</b>名义汇率经过两国价格水平调整后的汇率，反映外国商品相对于本国商品的价格和本国产品国际竞争力。</div>
+<div><b>19. 国际收支：</b>一国居民与非居民在一定时期内发生的全部经济交易。它是流量概念，不是存量概念。</div>
+<div><b>20. 国际收支平衡表：</b>系统记录国际收支交易的统计报表，采用复式记账原则，包括经常账户、资本账户、金融账户等。</div>
+<div><b>21. 经常账户：</b>记录货物、服务、初次收入和二次收入等交易的账户。它反映一国真实资源交易和收入转移状况。</div>
+<div><b>22. 资本账户：</b>记录资本转移和非生产非金融资产交易的账户。通常规模相对较小。</div>
+<div><b>23. 金融账户：</b>记录直接投资、证券投资、金融衍生品、其他投资和储备资产等金融资产负债变动的账户。</div>
+<div><b>24. 储备资产：</b>由货币当局持有并可用于国际支付、干预外汇市场和维持信心的外部资产，如外汇储备、黄金等。</div>
+<div><b>25. 贸易差额：</b>一国货物和服务出口与进口之间的差额。出口大于进口为贸易顺差，反之为贸易逆差。</div>
+<div><b>26. 国际收支失衡：</b>一国国际收支中自主性交易出现持续顺差或逆差的状态，反映对外经济关系不平衡。</div>
+<div><b>27. 弹性论：</b>从进出口需求价格弹性角度分析汇率变动对贸易收支影响的理论。</div>
+<div><b>28. 马歇尔-勒纳条件：</b>出口和进口需求价格弹性绝对值之和大于1时，本币贬值才能改善贸易收支。</div>
+<div><b>29. J曲线效应：</b>本币贬值后贸易收支短期可能先恶化，长期才逐渐改善的动态过程。</div>
+<div><b>30. 吸收论：</b>认为国际收支差额取决于国民收入与国内吸收之间的差额，即B=Y-A。</div>
+<div><b>31. 货币论：</b>认为国际收支失衡本质上是货币供求失衡的结果，货币供给过多会导致逆差和储备流失。</div>
+<div><b>32. IS曲线：</b>表示商品市场均衡时收入和利率组合的曲线，通常向右下倾斜。</div>
+<div><b>33. LM曲线：</b>表示货币市场均衡时收入和利率组合的曲线，通常向右上倾斜。</div>
+<div><b>34. BP曲线：</b>表示国际收支均衡时收入和利率组合的曲线。资本不完全流动时通常向右上倾斜。</div>
+<div><b>35. 蒙代尔-弗莱明模型：</b>开放经济条件下分析财政政策、货币政策和汇率制度关系的IS-LM-BP模型。</div>
+<div><b>36. 资本完全流动：</b>资本可迅速跨境流动，国内利率难以偏离世界利率，BP曲线近似水平。</div>
+<div><b>37. 固定汇率制度：</b>货币当局承诺将本币汇率维持在固定水平或窄幅区间的汇率制度。</div>
+<div><b>38. 浮动汇率制度：</b>汇率主要由外汇市场供求决定，货币当局不承诺固定汇率水平的制度。</div>
+<div><b>39. 有管理浮动汇率制度：</b>以市场供求为基础形成汇率，货币当局在必要时进行管理和调节的制度。</div>
+<div><b>40. 不可能三角：</b>固定汇率、资本自由流动和货币政策独立性三者不能同时完全实现，只能同时选择其中两个。</div>
+<div><b>41. 货币政策独立性：</b>一国央行根据本国经济状况自主决定利率、货币供给等政策的能力。</div>
+<div><b>42. 资本自由流动：</b>资本可以较少限制地跨境流入和流出，包括直接投资、证券投资和其他金融投资。</div>
+<div><b>43. 金本位制度：</b>货币与黄金保持固定兑换关系，货币发行以黄金储备为基础的国际货币制度。</div>
+<div><b>44. 布雷顿森林体系：</b>二战后建立的以美元为中心的固定汇率体系，美元与黄金挂钩，其他货币与美元挂钩。</div>
+<div><b>45. 牙买加体系：</b>布雷顿森林体系瓦解后形成的国际货币体系，承认浮动汇率合法化和黄金非货币化。</div>
+<div><b>46. 特里芬难题：</b>储备货币发行国既要提供国际流动性，又要保持货币信用，两者之间存在矛盾。</div>
+<div><b>47. 联系汇率制度：</b>通过货币发行局机制将本币与某一锚货币维持稳定兑换关系的制度，香港是典型例子。</div>
+<div><b>48. 金融危机：</b>金融体系中全部或大部分金融指标出现急剧、短暂、超周期恶化的状态。</div>
+<div><b>49. 货币危机：</b>一国货币遭受投机攻击或大幅贬值，固定汇率难以维持的危机。</div>
+<div><b>50. 银行危机：</b>银行体系出现挤兑、流动性短缺、大量不良资产或金融机构破产的危机。</div>
+<div><b>51. 债务危机：</b>政府或私人部门无法按期偿还债务，导致信用收缩和金融动荡的危机。</div>
+<div><b>52. 系统性风险：</b>单个金融机构或市场冲击通过金融网络扩散，引发整个金融体系不稳定的风险。</div>
+</div>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-14'><div class='section-head'><h2>14. 简答题模板库：直接背这个</h2><label><input type='checkbox' data-done='sec-14'> 已复习</label></div>
+<p class="muted">考试主观题老师说能多写就多写，但要围绕题目。以下模板可以按题目删减。</p>
+<div class="qa"><h3><span class="badge red">高频</span> 1. 简述国际收支平衡表的主要内容</h3><div class="answer">国际收支平衡表是系统记录一国居民与非居民在一定时期内全部经济交易的统计报表。它主要包括经常账户、资本账户、金融账户、储备资产以及净误差与遗漏。经常账户记录货物、服务、初次收入和二次收入；资本账户记录资本转移和非生产非金融资产交易；金融账户记录直接投资、证券投资、金融衍生品、其他投资和储备资产等金融资产负债变化。国际收支平衡表采用复式记账原则，每笔交易以相同金额分别记入借方和贷方，因此从会计意义上总是平衡的。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 2. 欧洲货币市场为什么不是欧洲的货币市场？</h3><div class="answer">欧洲货币市场属于离岸金融市场。“欧洲”只是历史名称，不是地理概念。它指在货币发行国境外经营该种货币存贷款业务的市场。例如，在美国境外经营美元存贷款业务形成欧洲美元市场。因此，欧洲货币市场的本质是离岸货币市场，而不是位于欧洲的货币市场。答题时应突出“货币发行国境外”和“离岸”两个关键词。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 3. 简述欧洲债券市场</h3><div class="answer">欧洲债券市场是指在债券面值货币发行国以外发行和流通国际债券的市场。它属于离岸金融市场。“欧洲”并不表示市场位于欧洲，而是历史形成的名称。判断欧洲债券的关键是发行地点与债券计价货币发行国不同。例如，在美国以外发行的美元债券可以称为欧洲美元债券。欧洲债券市场有利于国际融资，但也可能受到汇率风险和国际资本流动影响。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 4. 马歇尔-勒纳条件和J曲线效应</h3><div class="answer">马歇尔-勒纳条件说明本币贬值改善贸易收支的长期条件：只有当出口需求价格弹性和进口需求价格弹性之和大于1时，本币贬值才会使出口收入增加、进口支出减少，从而改善贸易收支。J曲线效应说明贬值后的动态过程：短期内由于合同固定、价格粘性和进出口数量调整滞后，贸易收支可能先恶化；随着时间推移，出口数量增加、进口数量减少，贸易收支才逐渐改善。因此，马歇尔-勒纳条件强调长期能否改善，J曲线效应强调短期到长期的调整路径。</div></div>
+<div class="qa"><h3>5. 国际收支失衡的原因</h3><div class="answer">国际收支失衡的原因包括经济周期、经济结构、国民收入变化、价格和汇率变化、资本流动以及政策因素。经济繁荣会提高进口需求，可能导致经常账户恶化；产业竞争力不足会削弱出口能力；本币升值可能降低出口竞争力；国际利差和风险预期变化会引发资本流入或流出。国际收支调节需要汇率政策、财政货币政策和结构性改革配合。</div></div>
+<div class="qa"><h3>6. 弹性论、吸收论、货币论比较</h3><div class="answer">弹性论从进出口需求价格弹性角度分析汇率变化对贸易收支的影响，强调本币贬值能否改善贸易收支取决于马歇尔-勒纳条件。吸收论从国民收入和国内吸收关系解释国际收支，认为B=Y-A，改善国际收支需要提高收入或减少国内吸收。货币论认为国际收支失衡本质上是货币供求失衡的反映，货币供给过多会导致国际收支逆差和外汇储备流失。三者分别从价格弹性、总支出和货币市场角度解释国际收支问题。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 7. BP曲线为什么向右上倾斜？</h3><div class="answer">BP曲线表示国际收支均衡时收入和利率的组合。在资本不完全流动条件下，收入上升会增加进口需求，导致经常账户恶化。为了维持国际收支平衡，需要资本账户改善，即吸引更多资本流入。而资本流入通常需要更高的国内利率。因此，收入越高，维持国际收支均衡所需的利率越高，BP曲线向右上方倾斜。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 8. 固定汇率与浮动汇率下政策效果</h3><div class="answer">在浮动汇率下，货币扩张使LM曲线右移，利率下降导致资本流出，本币贬值，净出口增加，收入上升，因此货币政策较有效；财政扩张使IS曲线右移，利率上升导致资本流入，本币升值，净出口下降，财政政策效果被部分抵消。在固定汇率下，货币扩张会带来本币贬值压力，央行为维持汇率卖出外汇、回收本币，使货币供给回到原水平，因此货币政策效果受限；财政扩张会带来本币升值压力，央行为维持汇率买入外汇、投放本币，使财政政策效果增强。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 9. 不可能三角</h3><div class="answer">不可能三角指开放经济中固定汇率、资本自由流动和货币政策独立性三个目标不能同时完全实现，只能同时选择其中两个。若选择固定汇率和资本自由流动，就必须放弃货币政策独立性，例如香港联系汇率制度下利率受美元利率影响。若选择固定汇率和货币政策独立，就必须限制资本自由流动，否则利差会冲击固定汇率。若选择资本自由流动和货币政策独立，就必须实行浮动汇率，让汇率吸收外部冲击。该理论说明开放经济政策目标存在取舍。</div></div>
+<div class="qa"><h3>10. 香港联系汇率制度与不可能三角</h3><div class="answer">香港联系汇率制度通过货币发行局机制维持港元兑美元汇率稳定。香港资本自由流动程度较高，同时维持汇率稳定，因此在不可能三角中牺牲了较多货币政策自主性。香港利率通常受美元利率和资金流动影响，不能完全根据本地经济状况独立制定货币政策。这说明固定汇率、资本自由流动和货币政策独立性不能同时完全实现。</div></div>
+<div class="qa"><h3>11. 金本位制度</h3><div class="answer">金本位制度下，各国货币与黄金保持固定兑换关系，货币发行以黄金储备为基础。由于各国货币都与黄金挂钩，各国货币之间的汇率也由含金量决定，因此形成固定汇率关系。金本位有利于汇率稳定和国际贸易，但货币供给受黄金储备限制，货币政策缺乏自主性，经济衰退时调整代价较大。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 12. 布雷顿森林体系及瓦解</h3><div class="answer">布雷顿森林体系是二战后建立的以美元为中心的国际货币体系，其核心是美元与黄金按固定比价挂钩，其他国家货币与美元保持固定汇率。它有利于战后国际贸易和金融秩序恢复，并确立了IMF和世界银行等机构的作用。但随着美国国际收支逆差扩大、美元对外负债增加和黄金储备不足，美元与黄金兑换承诺难以维持。1971年美国停止美元兑换黄金，体系核心基础被破坏，随后主要国家转向浮动汇率，布雷顿森林体系最终瓦解。</div></div>
+<div class="qa"><h3>13. 牙买加体系</h3><div class="answer">牙买加体系是布雷顿森林体系瓦解后形成的国际货币体系。其主要内容包括承认浮动汇率合法化、黄金非货币化、储备资产多元化，并扩大特别提款权等国际储备资产的作用。牙买加体系提高了各国汇率制度选择的灵活性，但也带来了汇率波动加大和国际政策协调难度提高的问题。</div></div>
+<div class="qa"><h3><span class="badge red">高频</span> 14. 金融危机的定义和表现</h3><div class="answer">金融危机通常是指金融体系中全部或大部分金融指标出现急剧、短暂、超周期恶化的状态。它可以表现为货币危机、银行危机、债务危机、股市债市危机和资本突然停止等。货币危机表现为本币遭受投机攻击或大幅贬值；银行危机表现为银行挤兑、不良资产暴露和金融机构破产；债务危机表现为政府或私人部门无法按期偿还债务。现实中的金融危机往往具有传染性和系统性。</div></div>
+<div class="qa"><h3>15. 四代金融/货币危机模型</h3><div class="answer">第一代危机模型强调宏观基本面不可持续，例如固定汇率下财政赤字和货币扩张导致外汇储备流失，最终引发投机攻击。第二代模型强调预期和政策权衡，危机可能具有自我实现特征。第三代模型强调金融部门脆弱性、资产负债表错配、短期外债和资本流动逆转，常用于解释亚洲金融危机。第四代模型强调金融全球化背景下的系统性风险、资产价格泡沫、流动性冲击和跨国传染。现实危机通常是多种因素共同作用的结果。</div></div>
+<div class="qa"><h3>16. 人民币汇率制度改革</h3><div class="answer">人民币汇率制度改革体现了市场化、弹性化和宏观审慎管理相结合的方向。2005年后，人民币不再单一盯住美元，而是以市场供求为基础、参考一篮子货币进行调节，实行有管理浮动汇率制度。后续改革进一步完善中间价形成机制，提高市场供求作用。人民币汇率改革有利于增强汇率弹性、改善资源配置和维持货币政策自主性，但由于资本账户尚未完全开放，仍需要必要管理以防止过度波动。</div></div>
+<div class="qa"><h3>17. PPP为什么不一定成立？</h3><div class="answer">购买力平价在现实中不一定成立，原因包括不同国家消费篮子和权重不同，商品质量和品牌不同，存在运输成本、关税和非关税壁垒，许多服务和房地产等不可贸易，短期价格具有粘性，汇率还受到资本流动、预期和政策干预影响。因此PPP更适合作为长期汇率分析的基准，而不一定能准确解释短期汇率波动。</div></div>
+<div class="qa"><h3>18. 实际汇率的含义</h3><div class="answer">实际汇率是名义汇率经过两国价格水平调整后的汇率，通常表示外国商品相对于本国商品的价格。直接标价法下，实际汇率Q=S×P*/P。若Q上升，说明外国商品相对更贵、本国商品相对更便宜，本国实际贬值，国际竞争力增强；若Q下降，则本国实际升值，国际竞争力下降。实际汇率是分析贸易竞争力和经常账户变化的重要指标。</div></div>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-15'><div class='section-head'><h2>15. 计算题专题：考前必须练</h2><label><input type='checkbox' data-done='sec-15'> 已复习</label></div>
+<h3>15.1 远期汇率/利率平价</h3>
+<div class="formula">F = S × (1+i_d)/(1+i_f)</div>
+<div class="example"><b>题1：</b>即期汇率USD/CNY=7.00，中国年利率3%，美国年利率1%，求一年期远期汇率。<br><b>解：</b>F=7.00×1.03/1.01=7.139。<br><b>结论：</b>F&gt;S，美元远期升水，人民币远期贴水。</div>
+<div class="example"><b>题2：</b>即期汇率EUR/CNY=8.00，一年期远期汇率8.24，求欧元远期升贴水率。<br><b>解：</b>(8.24-8.00)/8.00=3%。<br><b>结论：</b>欧元远期升水3%。</div>
+<h3>15.2 PPP/RER计算</h3>
+<div class="formula">绝对PPP：S=P/P*</div>
+<div class="formula">实际汇率：Q=S×P*/P</div>
+<div class="example"><b>题3：</b>中国一篮子商品价格为700元，美国同一篮子商品价格为100美元，求PPP汇率。<br><b>解：</b>S=700/100=7元/美元。</div>
+<div class="example"><b>题4：</b>市场汇率S=7.5，P*=100，P=700，求实际汇率并解释。<br><b>解：</b>Q=7.5×100/700=1.071。Q&gt;1，说明外国商品相对较贵、本国商品相对便宜，本国实际贬值，竞争力较强。</div>
+<div class="example"><b>题5：</b>本国通胀6%，外国通胀2%，根据相对PPP，汇率如何变化？<br><b>解：</b>汇率变动率≈6%-2%=4%。直接标价法下，本币相对外国货币约贬值4%。</div>
+<h3>15.3 国际收支借贷题</h3>
+<table><thead><tr><th>题目</th><th>账户</th><th>借/贷</th><th>原因</th></tr></thead><tbody>
+<tr><td>本国企业出口100万美元商品</td><td>经常账户-货物</td><td>贷方+</td><td>收到外汇。</td></tr>
+<tr><td>本国企业进口50万美元设备</td><td>经常账户-货物</td><td>借方-</td><td>支付外汇。</td></tr>
+<tr><td>外国游客在本国消费2万美元</td><td>经常账户-服务</td><td>贷方+</td><td>服务出口。</td></tr>
+<tr><td>本国居民出国旅游消费1万美元</td><td>经常账户-服务</td><td>借方-</td><td>服务进口。</td></tr>
+<tr><td>外国企业在本国新建工厂投资500万美元</td><td>金融账户-直接投资</td><td>贷方+</td><td>资本流入，本国负债增加。</td></tr>
+<tr><td>本国居民买入美国股票10万美元</td><td>金融账户-证券投资</td><td>借方-</td><td>资本流出，本国对外资产增加。</td></tr>
+</tbody></table>
+<h3>15.4 综合练习</h3>
+<div class="example"><b>题：</b>某国出口货物200，进口货物150，服务出口40，服务进口60，收到海外投资收益20，支付外国投资者收益30，收到侨汇10，对外援助5。求经常账户余额。<br><b>解：</b>货物余额=200-150=50；服务余额=40-60=-20；收入余额=20-30=-10；经常转移=10-5=5。经常账户=50-20-10+5=25。<br><b>结论：</b>经常账户顺差25。</div>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-16'><div class='section-head'><h2>16. 判断题/选择题易错点：背这些句子</h2><label><input type='checkbox' data-done='sec-16'> 已复习</label></div>
+<ol class="dense-list">
+<li>欧洲货币市场不是位于欧洲的货币市场，而是离岸货币市场。</li>
+<li>欧洲债券市场不是位于欧洲的债券市场，而是在面值货币发行国以外发行债券的市场。</li>
+<li>离岸金融市场不是完全无监管，而是监管相对宽松。</li>
+<li>外汇不只是外币现金，还包括外币表示的支付手段和金融资产。</li>
+<li>直接标价法下，汇率上升表示本币贬值。</li>
+<li>间接标价法下，汇率上升表示本币升值。</li>
+<li>买入价和卖出价是站在银行/做市商角度，不是站在客户角度。</li>
+<li>卖出价通常高于买入价。</li>
+<li>远期汇率不是未来一定会出现的即期汇率，而是现在约定的未来交割汇率。</li>
+<li>CIP是无套利条件；UIP是预期条件，存在风险。</li>
+<li>本国利率高不代表本币一定即期升值，远期汇率会通过升贴水调整。</li>
+<li>购买力平价更适合长期分析，不一定解释短期汇率。</li>
+<li>绝对PPP是价格水平之比；相对PPP是通胀率差。</li>
+<li>实际汇率衡量国际竞争力。</li>
+<li>Q上升通常表示本国实际贬值、竞争力增强。</li>
+<li>国际收支是流量概念，不是存量概念。</li>
+<li>居民与非居民看经济利益中心，不简单看国籍。</li>
+<li>国际收支平衡表采用复式记账。</li>
+<li>出口记贷方，进口记借方。</li>
+<li>外国来本国投资通常是金融账户贷方。</li>
+<li>本国购买外国资产通常是金融账户借方。</li>
+<li>经常账户不仅包括货物贸易，还包括服务、收入和转移。</li>
+<li>资本账户和金融账户不是一回事。</li>
+<li>马歇尔-勒纳条件是长期条件。</li>
+<li>本币贬值不一定马上改善贸易收支，可能出现J曲线效应。</li>
+<li>吸收论公式是B=Y-A。</li>
+<li>货币论强调国际收支失衡是货币供求失衡。</li>
+<li>IS曲线是商品市场均衡。</li>
+<li>LM曲线是货币市场均衡。</li>
+<li>BP曲线是国际收支均衡。</li>
+<li>资本不完全流动时BP曲线通常向右上倾斜。</li>
+<li>资本完全流动时BP曲线近似水平。</li>
+<li>浮动汇率下货币政策较有效。</li>
+<li>固定汇率下货币政策效果受限。</li>
+<li>固定汇率下财政政策较有效。</li>
+<li>不可能三角不是说三个目标都不能实现，而是不能同时完全实现。</li>
+<li>香港联系汇率制度牺牲了较多货币政策自主性。</li>
+<li>中国重视货币政策自主性，因此资本流动开放是渐进的。</li>
+<li>金本位下各国货币与黄金挂钩。</li>
+<li>布雷顿森林体系是美元与黄金挂钩、其他货币与美元挂钩。</li>
+<li>布雷顿森林体系本质上仍是固定汇率体系。</li>
+<li>牙买加体系承认浮动汇率合法化。</li>
+<li>金融危机不只是股市危机。</li>
+<li>货币危机常表现为投机攻击和本币大幅贬值。</li>
+<li>银行危机常表现为挤兑和金融机构破产。</li>
+<li>第一代危机模型强调基本面不可持续。</li>
+<li>第二代危机模型强调自我实现预期。</li>
+<li>第三代危机模型强调金融部门脆弱和资产负债表错配。</li>
+<li>亚洲金融危机常用第三代模型解释。</li>
+<li>2008全球金融危机可用系统性风险、金融传染解释。</li>
+</ol>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-17'><div class='section-head'><h2>17. 最后一天复习路线</h2><label><input type='checkbox' data-done='sec-17'> 已复习</label></div>
+<h3>17.1 如果只有3小时</h3>
+<table><thead><tr><th>时间</th><th>任务</th><th>内容</th></tr></thead><tbody>
+<tr><td>0-40分钟</td><td>名词解释</td><td>欧洲货币、欧洲债券、离岸金融、国际收支、M-L条件、J曲线、不可能三角、金融危机。</td></tr>
+<tr><td>40-80分钟</td><td>计算题</td><td>利率平价、PPP/RER、国际收支借贷。</td></tr>
+<tr><td>80-140分钟</td><td>简答模板</td><td>国际收支表、政策效果、不可能三角、布雷顿森林、金融危机。</td></tr>
+<tr><td>140-170分钟</td><td>易错判断</td><td>刷第16章。</td></tr>
+<tr><td>170-180分钟</td><td>闭眼回忆</td><td>默写四个公式和七个高频名词。</td></tr>
+</tbody></table>
+<h3>17.2 如果有1天</h3>
+<ol><li>上午：第2-8章基础知识和第13章名词解释。</li><li>下午：第9-12章模型、制度、危机和第14章简答模板。</li><li>晚上：第15章计算题和第16章判断题。</li></ol>
+<h3>17.3 真的背不完时，背这些</h3>
+<div class="cheat"><b>七大名词：</b>欧洲货币市场、欧洲债券市场、国际收支、经常账户、远期汇率、马歇尔-勒纳条件、不可能三角。</div>
+<div class="cheat"><b>四个公式：</b>F=S×(1+i_d)/(1+i_f)；远期升贴水率=(F-S)/S；PPP：S=P/P*；RER：Q=S×P*/P。</div>
+<div class="cheat"><b>五个简答：</b>国际收支平衡表、不可能三角、固定/浮动汇率政策效果、布雷顿森林体系、金融危机四代模型。</div>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-18'><div class='section-head'><h2>18. 自测题：盖住答案自己说</h2><label><input type='checkbox' data-done='sec-18'> 已复习</label></div>
+<div class="quiz"><details open><summary>1. 欧洲货币市场是不是欧洲的货币市场？</summary><p>不是。它是在货币发行国境外经营该种货币存贷款业务的离岸货币市场。</p></details>
+<details open><summary>2. 欧洲债券市场的判断标准是什么？</summary><p>债券发行地点是否在面值货币发行国之外，而不是是否位于欧洲。</p></details>
+<details open><summary>3. 直接标价法下汇率上升代表什么？</summary><p>外币更贵，本币贬值。</p></details>
+<details open><summary>4. 利率平价公式是什么？</summary><p>F=S×(1+i_d)/(1+i_f)。</p></details>
+<details open><summary>5. 本国通胀高于外国，根据相对PPP，本币如何变化？</summary><p>本币长期倾向贬值。直接标价法下汇率上升。</p></details>
+<details open><summary>6. 国际收支贷方表示什么？</summary><p>外汇流入、从国外收到款项、对外负债增加或对外资产减少。</p></details>
+<details open><summary>7. 马歇尔-勒纳条件是什么？</summary><p>出口和进口需求价格弹性绝对值之和大于1时，本币贬值可改善贸易收支。</p></details>
+<details open><summary>8. J曲线效应是什么？</summary><p>本币贬值后贸易收支短期可能先恶化，长期才改善。</p></details>
+<details open><summary>9. BP曲线为什么向右上倾斜？</summary><p>收入上升使进口增加、经常账户恶化，需要更高利率吸引资本流入来维持国际收支平衡。</p></details>
+<details open><summary>10. 不可能三角是哪三个目标？</summary><p>固定汇率、资本自由流动、货币政策独立性。</p></details>
+<details open><summary>11. 香港在不可能三角中选择了哪两个？</summary><p>汇率稳定和资本自由流动，因此货币政策自主性较弱。</p></details>
+<details open><summary>12. 布雷顿森林体系核心是什么？</summary><p>美元与黄金挂钩，其他货币与美元挂钩。</p></details>
+<details open><summary>13. 金融危机有哪些表现？</summary><p>货币危机、银行危机、债务危机、资产市场危机、资本突然停止等。</p></details>
+<details open><summary>14. 第一代危机模型关键词？</summary><p>基本面不可持续、财政赤字、货币扩张、储备流失。</p></details>
+<details open><summary>15. 第三代危机模型关键词？</summary><p>金融部门脆弱、资产负债表错配、短期外债、资本流动逆转。</p></details></div>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section><section class='study-section' id='sec-19'><div class='section-head'><h2>19. 资料来源与使用原则</h2><label><input type='checkbox' data-done='sec-19'> 已复习</label></div>
+<h3>19.1 本资料怎么来的</h3>
+<ol><li><b>最高优先级：</b>老师录音转写，决定考试范围、题型和重点。</li><li><b>第二优先级：</b>你上传的教材和PPT，用来补公式、模型和课堂表达。</li><li><b>第三优先级：</b>我按考试题型整理的名词解释、简答模板和计算题。</li><li><b>外部权威资料：</b>只用于把概念讲准，例如IMF、NBER、HKMA、SAFE/PBOC、BIS等。</li></ol>
+<div class="warn"><b>重要：</b>网上资料只是补强，不代表额外扩大考试范围。考试仍以老师录音划定范围为准。</div>
+<h3>19.2 外部资料</h3>
+<div class='src'><b>[1] IMF BPM6</b><br>国际收支与国际投资头寸手册第六版，国际收支账户、跨境交易和头寸统计的权威框架。<br><span>https://www.imf.org/external/pubs/ft/bop/2007/bopman6.htm</span></div><div class='src'><b>[2] IMF Finance &amp; Development: Purchasing Power Parity</b><br>PPP的定义、用途和局限性说明。<br><span>https://www.imf.org/en/publications/fandd/issues/series/back-to-basics/purchasing-power-parity-ppp</span></div><div class='src'><b>[3] Obstfeld, Shambaugh &amp; Taylor / NBER: The Trilemma in History</b><br>不可能三角/三难选择的经典经验研究。<br><span>https://www.nber.org/papers/w10396</span></div><div class='src'><b>[4] HKMA: Linked Exchange Rate System</b><br>香港联系汇率制度、货币发行局机制、7.75-7.85港元兑1美元区间。<br><span>https://www.hkma.gov.hk/eng/key-functions/money/linked-exchange-rate-system/</span></div><div class='src'><b>[5] SAFE/PBOC: 2005人民币汇率形成机制改革公告</b><br>2005年7月21日起实行以市场供求为基础、参考一篮子货币进行调节、有管理的浮动汇率制度。<br><span>https://m.safe.gov.cn/safe/2005/0721/5683.html</span></div><div class='src'><b>[6] IMF eLibrary: Financial Crises - Explanations, Types, and Implications</b><br>金融危机类型与解释框架，包括货币危机、银行危机、债务危机等。<br><span>https://www.elibrary.imf.org/display/book/9781498382656/ch001.xml</span></div><div class='src'><b>[7] BIS: Hu Xiaolian - managed floating exchange rate regime</b><br>关于中国有管理浮动汇率制度的英文表述和政策逻辑。<br><span>https://www.bis.org/review/r100721d.pdf</span></div><div class='src'><b>[8] IMF WEO 1998 Chapter 4</b><br>金融危机常见起因：不可持续失衡、资产价格或汇率错配、信心突然丧失等。<br><span>https://www.imf.org/-/media/websites/imf/imported-flagship-issues/external/pubs/ft/weo/weo0598/pdf/_0598ch4pdf.pdf</span></div>
+<a class='backtop' href='#top'>↑ 回到顶部</a></section></main></div><script>
+const tocLinks=[...document.querySelectorAll('.toc a')];
+const sections=[...document.querySelectorAll('.study-section')];
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){tocLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}})},{rootMargin:'-35% 0px -55% 0px',threshold:0});sections.forEach(s=>obs.observe(s));
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();sections.forEach(sec=>{sec.style.display=!q||sec.textContent.toLowerCase().includes(q)?'block':'none';});tocLinks.forEach(a=>{const sec=document.querySelector(a.getAttribute('href'));a.parentElement.style.display=sec.style.display;});});
+document.getElementById('expandAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=true);
+document.getElementById('collapseAll').onclick=()=>document.querySelectorAll('details').forEach(d=>d.open=false);
+document.querySelectorAll('input[data-done]').forEach(cb=>{const k='if_v4_'+cb.dataset.done; cb.checked=localStorage.getItem(k)==='1'; cb.addEventListener('change',()=>localStorage.setItem(k,cb.checked?'1':'0'));});
+window.addEventListener('scroll',()=>{const h=document.documentElement; const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100; document.getElementById('progressbar').style.width=p+'%';});
+</script></body></html>
