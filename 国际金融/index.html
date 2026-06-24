@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f5f7fb">
-  <title>📚 Gavin期末复习资料</title>
+  <title>📖 国际金融 - Gavin期末复习资料</title>
   <style>
     :root {
       color-scheme: light;
@@ -17,13 +17,9 @@
       --shadow: 0 10px 30px rgba(16, 24, 40, 0.07);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      -webkit-text-size-adjust: 100%;
-    }
+    html { -webkit-text-size-adjust: 100%; }
 
     body {
       margin: 0;
@@ -64,32 +60,45 @@
       font-size: 0.95rem;
     }
 
-    .subjects {
-      display: grid;
-      gap: 14px;
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 12px;
+      list-style: none;
+    }
+
+    li + li {
+      border-top: 1px solid var(--border);
     }
 
     a {
       display: flex;
       align-items: center;
-      gap: 12px;
-      min-height: 64px;
-      padding: 16px 18px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      gap: 10px;
+      min-height: 56px;
+      padding: 12px 8px;
       color: var(--text);
-      background: var(--card);
-      box-shadow: var(--shadow);
       text-decoration: none;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
       -webkit-tap-highlight-color: transparent;
     }
 
-    a::before {
-      content: "📂";
+    .file::before {
+      content: "📄";
       flex: 0 0 auto;
-      font-size: 1.2rem;
+    }
+
+    .home::before {
+      content: "🏠";
+      flex: 0 0 auto;
     }
 
     a::after {
@@ -103,6 +112,7 @@
     a:active {
       color: var(--accent);
       background: #f0f5ff;
+      border-radius: 10px;
     }
 
     footer {
@@ -113,18 +123,13 @@
     }
 
     @media (min-width: 700px) {
-      body {
-        padding-top: 48px;
-      }
-
-      .subjects {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      body { padding-top: 48px; }
 
       a:hover,
       a:focus-visible {
         color: var(--accent);
         background: #f0f5ff;
+        border-radius: 10px;
         outline: none;
       }
     }
@@ -133,16 +138,17 @@
 <body>
   <main>
     <header>
-      <h1>📚 Gavin期末复习资料</h1>
-      <p class="subtitle">选择科目文件夹，进入对应复习资料目录。</p>
+      <h1>📖 国际金融</h1>
+      <p class="subtitle">本文件夹下的 HTML 复习资料。</p>
     </header>
 
-    <nav class="subjects" aria-label="科目文件夹">
-      <a href="国际金融/">国际金融</a>
-      <a href="财政学/">财政学</a>
-      <a href="程序设计/">程序设计</a>
-      <a href="概率论与数理统计/">概率论与数理统计</a>
-    </nav>
+    <section class="card" aria-label="国际金融资料列表">
+      <ul>
+        <li><a class="file" href="国际金融期末刷题包_v1_可交互.html">国际金融期末刷题包 v1 可交互</a></li>
+        <li><a class="file" href="国际金融期末复习救命包_v4_完整版.html">国际金融期末复习救命包 v4 完整版</a></li>
+        <li><a class="home" href="../">返回首页</a></li>
+      </ul>
+    </section>
 
     <footer>愿复习顺利，考试稳稳拿下 ✨</footer>
   </main>
