@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概率论与数理统计复习题2｜刷题学习版</title>
+<style>
+:root{
+  --bg:#f7f8fb;--paper:#ffffff;--ink:#172033;--muted:#5c667a;--line:#e5e8ef;--brand:#4357d8;--brand2:#eef1ff;--good:#0f7b54;--warn:#9a5b00;--bad:#a13030;--code:#f4f6fa;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans SC","PingFang SC","Microsoft YaHei",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.72;font-size:16px}
+header{background:linear-gradient(135deg,#2637b6,#6674ff);color:#fff;padding:34px 22px 28px} .wrap{max-width:1080px;margin:0 auto}.eyebrow{opacity:.88;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}h1{margin:8px 0 8px;font-size:32px;line-height:1.2} .subtitle{font-size:17px;opacity:.94;max-width:880px}.toolbar{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}.nav{display:flex;gap:8px;flex-wrap:wrap;padding:10px 0}.nav a,.nav button{border:1px solid var(--line);background:#fff;color:#273047;text-decoration:none;border-radius:999px;padding:7px 12px;font-size:14px;cursor:pointer}.nav a:hover,.nav button:hover{background:var(--brand2);border-color:#c8d0ff}.content{padding:24px 20px 60px}.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;margin:18px 0;padding:22px;box-shadow:0 6px 18px rgba(21,31,71,.04)}h2{font-size:25px;margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}h3{font-size:20px;margin:18px 0 8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}.mini{background:#fbfcff;border:1px solid var(--line);border-radius:14px;padding:14px}.tag{display:inline-block;border-radius:999px;background:var(--brand2);color:#2f42c9;font-weight:700;font-size:12px;padding:3px 8px;margin-right:6px}.tag.green{background:#e9f8f1;color:var(--good)}.tag.warn{background:#fff4dd;color:var(--warn)}.tag.red{background:#ffecec;color:var(--bad)}.q{border-left:5px solid var(--brand);padding-left:14px;background:#fbfcff;border-radius:12px;padding-top:12px;padding-bottom:12px;margin:14px 0}.q-title{font-weight:800;margin-bottom:6px}.ans{background:#f7faf8;border:1px solid #d7ecdf;border-radius:12px;padding:12px;margin:10px 0}.explain{background:#f6f8ff;border:1px solid #dfe4ff;border-radius:12px;padding:12px;margin:10px 0}.formula{font-family:"Times New Roman","Noto Serif SC",serif;background:var(--code);border:1px solid var(--line);border-radius:12px;padding:12px;overflow:auto;white-space:normal}.steps li{margin:4px 0}.note{background:#fff9ed;border:1px solid #ffe1a8;border-radius:12px;padding:12px;margin:10px 0}.problem{padding-top:8px;border-top:1px dashed var(--line);margin-top:18px}.hide .ans,.hide .explain,.hide .steps-box{display:none}.toggle-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pill{font-size:13px;border-radius:999px;padding:3px 9px;border:1px solid var(--line);background:#fff}.checklist label{display:block;margin:7px 0}.footer{color:var(--muted);font-size:13px;margin-top:24px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:760px){h1{font-size:26px}.content{padding:18px 12px 40px}.card{padding:16px}.two{grid-template-columns:1fr}.nav{overflow-x:auto;flex-wrap:nowrap;padding-left:10px;padding-right:10px}.nav a,.nav button{white-space:nowrap}.wrap{max-width:100%}}
+</style>
+<script>
+function toggleAnswers(){document.body.classList.toggle('hide')}
+function checkAll(cls, val){document.querySelectorAll('.'+cls+' input[type=checkbox]').forEach(x=>x.checked=val)}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Probability & Statistics Final Review</div>
+    <h1>概率论与数理统计复习题2｜刷题学习版</h1>
+    <div class="subtitle">根据你上传的《概率论与数理统计复习题2.pdf》整理：保留题目核心、补全答题套路、增加注释和“考试怎么写”。这份的目的不是好看，是让你刷题时直接知道套哪个模板。</div>
+  </div>
+</header>
+<div class="toolbar">
+  <div class="wrap nav">
+    <a href="#plan">刷题顺序</a><a href="#templates">六大模板</a><a href="#fill">填空/判断</a><a href="#choice">选择题</a><a href="#long">解答题</a><a href="#mistakes">易错点</a><button onclick="toggleAnswers()">显示/隐藏答案</button>
+  </div>
+</div>
+<main class="wrap content">
+<section id="plan" class="card">
+  <h2>一、这套题怎么刷最划算</h2>
+  <p>老师说考试题比练习题还简单，那你不要先去啃难概念。最稳的路线是：<b>先把这套题刷熟，再回头用板书 HTML 查公式。</b> 你要追求的不是“完全理解概率论”，而是看到题能立刻反应：这是全概率、这是密度函数、这是极大似然、这是 U/t 检验。</p>
+  <div class="grid">
+    <div class="mini"><span class="tag red">第1优先</span><b>解答题 L4/L7/L8/L9</b><br>连续密度、极大似然、假设检验、置信区间。最像期末大题。</div>
+    <div class="mini"><span class="tag warn">第2优先</span><b>解答题 L1/L2/L6</b><br>全概率贝叶斯、二维离散表。步骤固定，容易拿过程分。</div>
+    <div class="mini"><span class="tag green">第3优先</span><b>填空 + 选择</b><br>小题很多是送分公式：正态、卡方、条件概率、CLT。</div>
+  </div>
+  <div class="note"><b>刷法：</b>第一遍看答案学套路；第二遍盖住答案自己写；第三遍只看题目，30秒内说出“用哪个公式”。考试更简单的话，这个方法性价比最高。</div>
+</section>
+
+<section id="templates" class="card">
+  <h2>二、六大必背答题模板</h2>
+  <div class="grid">
+<div class="mini"><b>全概率 + 贝叶斯</b><br>先设 A=目标事件，Bi=来源分类；P(A)=ΣP(Bi)P(A|Bi)；P(Bk|A)=P(Bk)P(A|Bk)/P(A)。</div>
+<div class="mini"><b>连续密度题</b><br>先用 ∫f(x)dx=1 求参数；再分段写 F(x)；最后用 F(b)-F(a) 或直接积分求概率。</div>
+<div class="mini"><b>二维离散表</b><br>边缘分布=行/列求和；期望=值×概率求和；函数分布=按格子列举。</div>
+<div class="mini"><b>极大似然估计</b><br>L(θ)=样本概率相乘；lnL；求导=0；解 θ；必要时说明二阶导&lt;0。</div>
+<div class="mini"><b>置信区间</b><br>σ已知用 z：x̄±zα/2σ/√n；σ未知用 t：x̄±tα/2(n-1)s/√n。</div>
+<div class="mini"><b>假设检验</b><br>H0/H1 → 选统计量 → 找临界值 → 算统计量 → 比较 → 写题目化结论。</div>
+</div>
+</section>
+
+<section id="fill" class="card">
+  <h2>三、填空/判断题整理</h2>
+  <p>这些题主要是公式识别。不要花太多时间推导，直接记“触发词 - 公式”。</p>
+
+  <article class="problem" id="F1">
+    <div class="toggle-line"><span class="tag">F1</span><span class="tag green">必会</span><span class="pill">事件表示</span></div>
+    <div class="q"><div class="q-title">题目</div>设 A、B、C 为三个事件。用集合运算表示：①至少有一个发生；②恰有两个发生；③三个都发生。</div>
+    <div class="ans"><b>答案：</b>① A∪B∪C；② (A∩B∩C̄)∪(A∩B̄∩C)∪(Ā∩B∩C)；③ A∩B∩C。</div>
+    <div class="explain"><b>理解/注释：</b>“至少一个”就是并集；“恰有两个”要分三种情况：AB发生C不发生、AC发生B不发生、BC发生A不发生；“都发生”就是交集。考试看到“至少、至多、恰有”先翻译成集合语言。</div>
+  </article>
+
+  <article class="problem" id="F2">
+    <div class="toggle-line"><span class="tag">F2</span><span class="tag green">秒杀</span><span class="pill">加法公式</span></div>
+    <div class="q"><div class="q-title">题目</div>已知 P(A)=0.8，P(B)=0.4，P(A∩B)=0.3，求 P(A∪B)。</div>
+    <div class="ans"><b>答案：</b>P(A∪B)=0.8+0.4-0.3=0.9。</div>
+    <div class="explain"><b>理解/注释：</b>两个事件加法公式：P(A∪B)=P(A)+P(B)-P(A∩B)。交集被重复算了一次，所以要减掉。</div>
+  </article>
+
+  <article class="problem" id="F3">
+    <div class="toggle-line"><span class="tag">F3</span><span class="tag green">秒杀</span><span class="pill">加法公式反求交集</span></div>
+    <div class="q"><div class="q-title">题目</div>已知 P(A∪B)=0.8，P(A)=0.5，P(B)=0.6，求 P(A∩B)。</div>
+    <div class="ans"><b>答案：</b>P(A∩B)=0.5+0.6-0.8=0.3。</div>
+    <div class="explain"><b>理解/注释：</b>把加法公式变形：P(A∩B)=P(A)+P(B)-P(A∪B)。</div>
+  </article>
+
+  <article class="problem" id="F4">
+    <div class="toggle-line"><span class="tag">F4</span><span class="tag green">必会</span><span class="pill">独立事件</span></div>
+    <div class="q"><div class="q-title">题目</div>设 A、B 相互独立，P(A)=0.8，P(B)=0.4，求 P(A∩B̄)。</div>
+    <div class="ans"><b>答案：</b>P(A∩B̄)=P(A)P(B̄)=0.8×(1-0.4)=0.48。</div>
+    <div class="explain"><b>理解/注释：</b>独立事件的补事件也独立。P(B̄)=1-P(B)=0.6。</div>
+  </article>
+
+  <article class="problem" id="F5">
+    <div class="toggle-line"><span class="tag">F5</span><span class="tag green">必会</span><span class="pill">条件概率</span></div>
+    <div class="q"><div class="q-title">题目</div>已知 P(A|B)=0.8，P(A)=0.5，P(B)=0.6，求 P(A∩B) 与 P(B|A)。</div>
+    <div class="ans"><b>答案：</b>P(A∩B)=P(A|B)P(B)=0.8×0.6=0.48；P(B|A)=P(A∩B)/P(A)=0.48/0.5=0.96。</div>
+    <div class="explain"><b>理解/注释：</b>条件概率公式：P(A|B)=P(A∩B)/P(B)。先求交集，再反过来求 P(B|A)。</div>
+  </article>
+
+  <article class="problem" id="F6">
+    <div class="toggle-line"><span class="tag">F6</span><span class="tag green">秒杀</span><span class="pill">离散分布列</span></div>
+    <div class="q"><div class="q-title">题目</div>随机变量 X 的分布列为 X=-2,0,1,2；概率分别为 0.2,0.15,c,0.3。求 c。</div>
+    <div class="ans"><b>答案：</b>c=1-0.2-0.15-0.3=0.35。</div>
+    <div class="explain"><b>理解/注释：</b>离散分布列所有概率相加必须等于 1。</div>
+  </article>
+
+  <article class="problem" id="F7">
+    <div class="toggle-line"><span class="tag">F7</span><span class="tag green">常考</span><span class="pill">指数分布</span></div>
+    <div class="q"><div class="q-title">题目</div>设 X 的密度函数为 f(x)=3e^{-3x}, x&gt;0；x≤0 时为0。求 E(X)、Var(X)。</div>
+    <div class="ans"><b>答案：</b>X~Exp(3)，所以 E(X)=1/3，Var(X)=1/9。</div>
+    <div class="explain"><b>理解/注释：</b>指数分布参数为 λ 时：E(X)=1/λ，Var(X)=1/λ²。本题 λ=3。</div>
+  </article>
+
+  <article class="problem" id="F8">
+    <div class="toggle-line"><span class="tag">F8</span><span class="tag green">必背</span><span class="pill">标准正态分布</span></div>
+    <div class="q"><div class="q-title">题目</div>设 X~N(0,1)，Φ(x) 为标准正态分布函数，写出 Φ(x)+Φ(-x) 与 Φ(0)。</div>
+    <div class="ans"><b>答案：</b>Φ(x)+Φ(-x)=1；Φ(0)=1/2。</div>
+    <div class="explain"><b>理解/注释：</b>标准正态分布关于 0 对称。左边面积和右边面积互补。</div>
+  </article>
+
+  <article class="problem" id="F9">
+    <div class="toggle-line"><span class="tag">F9</span><span class="tag green">常考</span><span class="pill">正态线性组合</span></div>
+    <div class="q"><div class="q-title">题目</div>设 X~N(-2,4)，Y~N(1,6)，且 X、Y 独立。求 2X-3Y 的分布。</div>
+    <div class="ans"><b>答案：</b>2X-3Y ~ N(-7,70)。</div>
+    <div class="explain"><b>理解/注释：</b>均值：2×(-2)-3×1=-7；方差：2²×4+(-3)²×6=16+54=70。独立正态的线性组合仍为正态。</div>
+  </article>
+
+  <article class="problem" id="F10">
+    <div class="toggle-line"><span class="tag">F10</span><span class="tag green">常考</span><span class="pill">独立离散变量</span></div>
+    <div class="q"><div class="q-title">题目</div>设 X 与 Y 独立，且同分布：P(X=0)=0.5，P(X=1)=0.5。求 P{XY=0}。</div>
+    <div class="ans"><b>答案：</b>P{XY=0}=1-P(X=1,Y=1)=1-0.5×0.5=0.75。</div>
+    <div class="explain"><b>理解/注释：</b>XY=0 的反面是 XY≠0。因为 X、Y 只能取0或1，所以反面就是 X=1 且 Y=1。</div>
+  </article>
+
+  <article class="problem" id="F11">
+    <div class="toggle-line"><span class="tag">F11</span><span class="tag green">理解</span><span class="pill">相关系数</span></div>
+    <div class="q"><div class="q-title">题目</div>若两个随机变量满足完全负线性关系，例如 Y=a-bX 且 b&gt;0，求 Corr(X,Y)。</div>
+    <div class="ans"><b>答案：</b>Corr(X,Y)=-1。</div>
+    <div class="explain"><b>理解/注释：</b>相关系数等于 -1 表示完全负相关。板书/练习中这类题的关键是看出 Y 可以由 X 线性表示，且斜率为负。</div>
+  </article>
+
+  <article class="problem" id="F12">
+    <div class="toggle-line"><span class="tag">F12</span><span class="tag green">常考</span><span class="pill">矩估计</span></div>
+    <div class="q"><div class="q-title">题目</div>设 P(X=0)=θ，P(X=1)=1-θ，0&lt;θ&lt;1。根据样本均值 X̄，求 θ 的矩估计。</div>
+    <div class="ans"><b>答案：</b>E(X)=1-θ，令 X̄=1-θ，得 θ̂=1-X̄。</div>
+    <div class="explain"><b>理解/注释：</b>矩估计套路：先写总体均值 E(X)，再令 E(X)=样本均值 X̄，最后解参数。</div>
+  </article>
+
+  <article class="problem" id="F13">
+    <div class="toggle-line"><span class="tag">F13</span><span class="tag green">常考</span><span class="pill">已知方差的置信区间</span></div>
+    <div class="q"><div class="q-title">题目</div>设 X~N(μ,σ²)，已知 σ=2.1，n=16，样本均值 x̄=12。求 μ 的 0.95 置信区间。已知 z0.025=1.96。</div>
+    <div class="ans"><b>答案：</b>置信区间为 [10.971,13.029]。</div>
+    <div class="explain"><b>理解/注释：</b>已知 σ 用正态 U 区间：x̄±z_{α/2}·σ/√n = 12±1.96×2.1/4 = 12±1.029。</div>
+  </article>
+
+  <article class="problem" id="F14">
+    <div class="toggle-line"><span class="tag">F14</span><span class="tag green">必背</span><span class="pill">卡方分布</span></div>
+    <div class="q"><div class="q-title">题目</div>设 X~N(0,1)，Y~N(0,1)，且 X、Y 独立。写出 X²+Y² 与 (X+Y)²/2 的分布。</div>
+    <div class="ans"><b>答案：</b>X²+Y² ~ χ²(2)；(X+Y)²/2 ~ χ²(1)。</div>
+    <div class="explain"><b>理解/注释：</b>独立标准正态平方和服从卡方分布，自由度等于平方项个数。因为 X+Y~N(0,2)，所以 (X+Y)/√2~N(0,1)，其平方服从 χ²(1)。</div>
+  </article>
+</section>
+
+<section id="choice" class="card">
+  <h2>四、选择题整理</h2>
+  <p>选择题不用写长步骤，但你要知道为什么选它。下面按“题目核心 - 答案 - 秒杀理由”整理。</p>
+
+  <article class="problem" id="C1">
+    <div class="toggle-line"><span class="tag">C1</span><span class="pill">假设检验两类错误</span></div>
+    <div class="q"><div class="q-title">题目核心</div>第一类错误与第二类错误的定义。</div>
+    <div class="ans"><b>答案：</b>A</div>
+    <div class="explain"><b>秒杀理由：</b>第一类错误：H0 实际为真，却拒绝 H0。第二类错误：H0 实际为假，却接受/未拒绝 H0。这个几乎是概念送分题。</div>
+  </article>
+
+  <article class="problem" id="C2">
+    <div class="toggle-line"><span class="tag">C2</span><span class="pill">抽样分布</span></div>
+    <div class="q"><div class="q-title">题目核心</div>设 X~N(μ,σ²)，样本容量 n=36，样本方差 S²，判断 (35S²)/σ² 的卡方自由度。</div>
+    <div class="ans"><b>答案：</b>A</div>
+    <div class="explain"><b>秒杀理由：</b>正态总体中：(n-1)S²/σ² ~ χ²(n-1)。n=36，所以自由度 35。</div>
+  </article>
+
+  <article class="problem" id="C3">
+    <div class="toggle-line"><span class="tag">C3</span><span class="pill">中心极限定理</span></div>
+    <div class="q"><div class="q-title">题目核心</div>Xi 独立同分布，服从参数 λ 的泊松分布，判断标准化形式。</div>
+    <div class="ans"><b>答案：</b>B</div>
+    <div class="explain"><b>秒杀理由：</b>泊松分布 E(X)=λ，Var(X)=λ。和的均值 nλ，方差 nλ，所以标准化为 (ΣXi-nλ)/√(nλ)。</div>
+  </article>
+
+  <article class="problem" id="C4">
+    <div class="toggle-line"><span class="tag">C4</span><span class="pill">无偏估计与有效性</span></div>
+    <div class="q"><div class="q-title">题目核心</div>X~N(μ,1)，X1,X2,X3 为样本，比较多个 μ 的无偏估计量，选最有效的。</div>
+    <div class="ans"><b>答案：</b>D</div>
+    <div class="explain"><b>秒杀理由：</b>线性估计量 ΣaiXi 若 Σai=1，则无偏。方差为 Σai²。方差越小越有效。四个选项中 D 的权重平均方差最小：1/3。</div>
+  </article>
+
+  <article class="problem" id="C5">
+    <div class="toggle-line"><span class="tag">C5</span><span class="pill">概率为零不等于空集</span></div>
+    <div class="q"><div class="q-title">题目核心</div>设事件 A、B 满足 P(AB)=0，判断正确说法。</div>
+    <div class="ans"><b>答案：</b>C</div>
+    <div class="explain"><b>秒杀理由：</b>因为 A=(A∩B)∪(A∩B̄)，且两部分互斥，所以 P(A)=P(A∩B)+P(A∩B̄)=P(A∩B̄)。注意 P(AB)=0 不代表 AB 一定是空集。</div>
+  </article>
+</section>
+
+<section id="long" class="card">
+  <h2>五、解答题：标准答案 + 套路</h2>
+  <p>这一部分才是你最应该刷的。大题要练“格式”，不是只看懂结果。</p>
+
+  <article class="problem" id="L1">
+    <div class="toggle-line"><span class="tag">L1</span><span class="tag warn">高频模板</span><span class="pill">全概率公式 + 贝叶斯公式</span></div>
+    <div class="q"><div class="q-title">题目</div>某产品来自 I、II、III 三类设备，比例分别为 30%、40%、30%；次品率分别为 1%、0.5%、2%。随机抽取一件，求次品概率；若已知为次品，求其来自 II 类设备的概率。</div>
+    <div class="ans"><b>标准结果：</b>P(A)=0.3×0.01+0.4×0.005+0.3×0.02=0.011。P(B2|A)=0.4×0.005/0.011=2/11≈0.182。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>设 A=抽到次品，B1/B2/B3=来自 I/II/III 类设备。</li><li>先用全概率公式求 P(A)。</li><li>再用贝叶斯公式求 P(B2|A)。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>这类题考试最爱考。看到“来自几台机器/几家工厂/几批产品”，基本就是全概率 + 贝叶斯。</div>
+  </article>
+
+  <article class="problem" id="L2">
+    <div class="toggle-line"><span class="tag">L2</span><span class="tag warn">高频模板</span><span class="pill">全概率公式 + 贝叶斯公式</span></div>
+    <div class="q"><div class="q-title">题目</div>三台机床 B1、B2、B3 分别生产 30%、45%、25% 的零件，次品率分别为 2%、3%、2%。求随机零件为次品的概率；已知次品，求来自 B2 的概率。</div>
+    <div class="ans"><b>标准结果：</b>P(A)=0.3×0.02+0.45×0.03+0.25×0.02=0.0245。P(B2|A)=0.45×0.03/0.0245≈0.551。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>设 A=次品。</li><li>全概率：P(A)=ΣP(Bi)P(A|Bi)。</li><li>贝叶斯：P(B2|A)=P(B2)P(A|B2)/P(A)。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>和第1题完全同型。刷到这类题不要怕，机械套公式就能拿分。</div>
+  </article>
+
+  <article class="problem" id="L3">
+    <div class="toggle-line"><span class="tag">L3</span><span class="tag warn">常考</span><span class="pill">中心极限定理</span></div>
+    <div class="q"><div class="q-title">题目</div>某考试通过率为 0.65，有 200 名学生参加。写出独立同分布中心极限定理，并用它近似计算至少 120 人通过的概率。</div>
+    <div class="ans"><b>标准结果：</b>设 X~B(200,0.65)，np=130，np(1-p)=45.5。P(X≥120)≈P((X-130)/√45.5 ≥ (120-130)/√45.5)=P(Z≥-1.482)=Φ(1.482)≈0.9306。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>把每个学生是否通过记为 Xi，Xi~B(1,0.65)。</li><li>总通过人数 X=ΣXi~B(200,0.65)。</li><li>二项分布用正态近似：均值 np，方差 np(1-p)。</li><li>标准化后查标准正态表。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>PDF 最后一行疑似把 0.9306 写成了 0.9036；按前面 z=1.482 和正态表，结果应约为 0.9306。若老师课堂强调某个数，考试按老师口径写；但数学计算是 0.9306。</div>
+  </article>
+
+  <article class="problem" id="L4">
+    <div class="toggle-line"><span class="tag">L4</span><span class="tag warn">高频模板</span><span class="pill">连续型随机变量：密度 + 分布函数</span></div>
+    <div class="q"><div class="q-title">题目</div>设 f(x)=b(2-x), 0≤x≤2；其他为0。求 b、分布函数 F(x)，并计算 P(0.5&lt;X&lt;1.5)。</div>
+    <div class="ans"><b>标准结果：</b>b=1/2。F(x)=0(x&lt;0)；F(x)=x-x²/4(0≤x≤2)；F(x)=1(x&gt;2)。P(0.5&lt;X&lt;1.5)=F(1.5)-F(0.5)=1/2。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>密度函数第一步永远是积分等于1。</li><li>求 F(x) 时必须分段：x&lt;0，0≤x≤2，x&gt;2。</li><li>区间概率用 F(b)-F(a)。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>这是连续型随机变量最标准的大题模板，几乎要背下来。</div>
+  </article>
+
+  <article class="problem" id="L5">
+    <div class="toggle-line"><span class="tag">L5</span><span class="tag warn">常考</span><span class="pill">二维连续型：边缘密度 + 独立性 + 区域积分</span></div>
+    <div class="q"><div class="q-title">题目</div>设联合密度 f(x,y)=1，0&lt;x&lt;1,0&lt;y&lt;1；其他为0。证明 X、Y 独立，并求 P(X&lt;Y)。</div>
+    <div class="ans"><b>标准结果：</b>fX(x)=1(0&lt;x&lt;1)，fY(y)=1(0&lt;y&lt;1)，且 f(x,y)=fX(x)fY(y)，所以独立。P(X&lt;Y)=∫₀¹∫₀ʸ 1 dxdy=1/2。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>先对 y 积分求 fX(x)，对 x 积分求 fY(y)。</li><li>比较 f(x,y) 与 fX(x)fY(y)。</li><li>P(X&lt;Y) 是单位正方形中 y&gt;x 的三角形面积。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>如果密度是均匀的，区域积分常常可以直接看面积。</div>
+  </article>
+
+  <article class="problem" id="L6">
+    <div class="toggle-line"><span class="tag">L6</span><span class="tag warn">高频模板</span><span class="pill">二维离散型：边缘分布 + 期望 + 函数分布</span></div>
+    <div class="q"><div class="q-title">题目</div>给定二维离散分布表，X,Y 取 1,2,3。求 X、Y 的边缘分布；求 E(X)、E(Y)；求 Z=max{X,Y} 的分布。</div>
+    <div class="ans"><b>标准结果：</b>X 的边缘分布：P(1)=1/3，P(2)=1/2，P(3)=1/6。Y 同样。E(X)=E(Y)=11/6。Z 的分布：P(Z=1)=1/12，P(Z=2)=7/12，P(Z=3)=1/3。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>边缘分布：固定 X 的值，把对应列加起来；固定 Y 的值，把对应行加起来。</li><li>期望：E(X)=ΣxP(X=x)。</li><li>Z=max{X,Y}：分别列出最大值等于1、2、3的格子。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>二维离散表不要慌，就是“行列求和”。函数分布靠列格子。</div>
+  </article>
+
+  <article class="problem" id="L7">
+    <div class="toggle-line"><span class="tag">L7</span><span class="tag warn">高频模板</span><span class="pill">极大似然估计</span></div>
+    <div class="q"><div class="q-title">题目</div>设 P(X=0)=θ²，P(X=1)=2θ(1-θ)，P(X=2)=(1-θ)²，0&lt;θ&lt;1。样本为 (0,1,2,1)，求 θ 的极大似然估计。</div>
+    <div class="ans"><b>标准结果：</b>L(θ)=θ²·[2θ(1-θ)]·(1-θ)²·[2θ(1-θ)]=4θ⁴(1-θ)⁴。lnL=ln4+4lnθ+4ln(1-θ)。求导得 4/θ-4/(1-θ)=0，所以 θ̂=1/2。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>把样本每个观测值对应的概率乘起来。</li><li>取对数，把乘法变加法。</li><li>求导=0，解 θ。</li><li>二阶导小于0，说明是最大值。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>极大似然一定要写 L(θ)，然后 lnL、求导、解参数。步骤写全就有分。</div>
+  </article>
+
+  <article class="problem" id="L8">
+    <div class="toggle-line"><span class="tag">L8</span><span class="tag warn">高频模板</span><span class="pill">假设检验：σ²已知，用 U 检验</span></div>
+    <div class="q"><div class="q-title">题目</div>产品指标 X~N(μ,0.1²)。抽取10个样本：9.9,10.1,10.2,9.7,9.9,9.9,10.0,10.5,10.1,10.2。在 α=0.05 下检验是否可认为 μ=10。</div>
+    <div class="ans"><b>标准结果：</b>H0:μ=10，H1:μ≠10。样本均值 x̄=10.05。U=(10.05-10)/(0.1/√10)≈1.581。因为 |U|&lt;1.96，所以不拒绝 H0，可认为均值为10。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>写原假设 H0 和备择假设 H1。</li><li>已知 σ，所以用 U 检验。</li><li>双侧检验 α=0.05，临界值 1.96。</li><li>计算统计量并比较。</li><li>写结论，不能只写“接受”，要结合题目语言。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>考试如果考假设检验，这题模板价值极高。</div>
+  </article>
+
+  <article class="problem" id="L9">
+    <div class="toggle-line"><span class="tag">L9</span><span class="tag warn">高频模板</span><span class="pill">置信区间 + 假设检验：σ²未知，用 t</span></div>
+    <div class="q"><div class="q-title">题目</div>某总体 X~N(μ,σ²)，抽样 n=36，x̄=24.92，s=1.974。①求 μ 的 0.95 置信区间；②在 α=0.05 下检验是否可认为 μ=25。</div>
+    <div class="ans"><b>标准结果：</b>① σ未知，用 t 区间：x̄±t0.025(35)s/√n =24.92±2.0301×1.974/6=(24.2521,25.5879)。② H0:μ=25，H1:μ≠25。t=(24.92-25)/(1.974/6)≈-0.2432，|t|&lt;2.0301，不拒绝 H0，可认为均值为25。</div>
+    <div class="steps-box explain"><b>考试步骤：</b><ol class="steps">
+<li>σ未知，用 t 分布，自由度 n-1=35。</li><li>置信区间和假设检验用的是同一个标准误 s/√n。</li><li>双侧检验看 |t| 是否超过临界值。</li></ol></div>
+    <div class="note"><b>我的提醒：</b>这一题把“区间估计”和“假设检验”合在一起，很像期末大题。</div>
+  </article>
+</section>
+
+<section id="mistakes" class="card">
+  <h2>六、最容易丢分的地方</h2>
+  <div class="grid">
+    <div class="mini"><b>1. 把 P(AB)=0 当成 AB=空集</b><br>概率为0不一定代表事件不可能发生。选择题 C5 就在考这个坑。</div>
+    <div class="mini"><b>2. σ 已知/未知搞错</b><br>σ 已知用 U/z；σ 未知用 t，自由度 n-1。</div>
+    <div class="mini"><b>3. 置信区间临界值用错</b><br>95% 双侧：z0.025=1.96；t 要看自由度。</div>
+    <div class="mini"><b>4. 二维表行列加错</b><br>求 X 边缘就固定 X，把对应所有 Y 加起来；求 Y 反过来。</div>
+    <div class="mini"><b>5. CLT 方差漏开根号</b><br>二项近似正态：均值 np，标准差 √np(1-p)。</div>
+    <div class="mini"><b>6. 假设检验结论太短</b><br>不要只写“接受 H0”。要写“在 α=0.05 下，可认为均值为……”</div>
+  </div>
+</section>
+
+<section class="card checklist">
+  <h2>七、考前自检清单</h2>
+  <p>刷完一遍后，把下面这些都勾上。能勾完，大概率就不会慌。</p>
+  <label><input type="checkbox"> 我能默写全概率公式和贝叶斯公式。</label>
+  <label><input type="checkbox"> 我会用 ∫f(x)dx=1 求密度参数。</label>
+  <label><input type="checkbox"> 我会分段写连续型随机变量的 F(x)。</label>
+  <label><input type="checkbox"> 我会从二维离散表求边缘分布和期望。</label>
+  <label><input type="checkbox"> 我会写极大似然估计的 L(θ)、lnL、求导。</label>
+  <label><input type="checkbox"> 我知道 σ 已知用 U，σ 未知用 t。</label>
+  <label><input type="checkbox"> 我会写假设检验五步法。</label>
+  <div style="margin-top:10px"><button onclick="checkAll('checklist', true)">全勾上</button> <button onclick="checkAll('checklist', false)">清空</button></div>
+  <div class="footer">来源：用户上传的《概率论与数理统计复习题2.pdf》。本 HTML 为学习整理版，重点是期末刷题，不是原 PDF 的逐字排版复刻。</div>
+</section>
+</main>
+</body>
+</html>
