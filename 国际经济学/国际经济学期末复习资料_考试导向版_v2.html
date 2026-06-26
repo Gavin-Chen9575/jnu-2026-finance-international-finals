@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>国际经济学期末复习资料｜考试导向强化版 v2</title>
+<style>
+  :root {
+    --bg:#f6f7fb; --card:#ffffff; --ink:#202431; --muted:#667085; --line:#e6e8ef;
+    --brand:#315efb; --brand2:#5b7cff; --red:#e5484d; --orange:#f59e0b; --green:#12a150; --blue:#2563eb;
+    --purple:#7c3aed; --soft:#eef2ff; --soft2:#fff7ed; --soft3:#ecfdf3;
+  }
+  * {box-sizing:border-box}
+  html {scroll-behavior:smooth}
+  body {margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.72}
+  .top {background:linear-gradient(135deg,#14204c,#315efb 58%,#7aa2ff); color:white; padding:40px 24px 34px}
+  .top .wrap {max-width:1180px; margin:auto}
+  h1 {font-size:32px; line-height:1.25; margin:0 0 12px; letter-spacing:.3px}
+  .subtitle {font-size:16px; opacity:.92; max-width:900px}
+  .meta {display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
+  .pill {display:inline-flex; align-items:center; gap:6px; padding:6px 11px; border-radius:999px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.22); font-size:13px}
+  .layout {max-width:1180px; margin:0 auto; display:grid; grid-template-columns:280px 1fr; gap:22px; padding:24px}
+  .sidebar {position:sticky; top:16px; align-self:start; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 28px rgba(20,32,76,.06); max-height:calc(100vh - 32px); overflow:auto}
+  .search {width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:12px; font-size:14px; outline:none; margin-bottom:12px}
+  .nav-title {font-weight:800; margin:8px 0 8px; color:#111827}
+  .sidebar a {display:block; color:#344054; text-decoration:none; padding:7px 9px; border-radius:10px; font-size:14px}
+  .sidebar a:hover {background:var(--soft); color:var(--brand)}
+  main {min-width:0}
+  section {background:var(--card); border:1px solid var(--line); border-radius:20px; padding:24px; margin-bottom:18px; box-shadow:0 8px 28px rgba(20,32,76,.045)}
+  h2 {font-size:25px; margin:0 0 16px; padding-bottom:10px; border-bottom:1px solid var(--line)}
+  h3 {font-size:20px; margin:24px 0 10px}
+  h4 {font-size:17px; margin:18px 0 8px}
+  p {margin:8px 0}
+  .lead {font-size:16px; color:#344054}
+  .grid {display:grid; gap:14px}
+  .grid-2 {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3 {grid-template-columns:repeat(3,minmax(0,1fr))}
+  .card {background:#fafbff; border:1px solid var(--line); border-radius:16px; padding:16px}
+  .card strong {color:#111827}
+  .warn {background:#fff7ed; border-left:5px solid var(--orange); padding:12px 14px; border-radius:12px; margin:14px 0}
+  .danger {background:#fff1f2; border-left:5px solid var(--red); padding:12px 14px; border-radius:12px; margin:14px 0}
+  .ok {background:#ecfdf3; border-left:5px solid var(--green); padding:12px 14px; border-radius:12px; margin:14px 0}
+  .bluebox {background:#eff6ff; border-left:5px solid var(--blue); padding:12px 14px; border-radius:12px; margin:14px 0}
+  table {width:100%; border-collapse:collapse; margin:12px 0; overflow:hidden; border-radius:12px; font-size:14px}
+  th,td {border:1px solid var(--line); padding:10px 11px; vertical-align:top}
+  th {background:#f2f4f7; text-align:left; color:#111827}
+  tr:nth-child(even) td {background:#fcfcfd}
+  .tag {display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:700; margin:1px 2px; background:#eef2ff; color:#3730a3}
+  .tag.red {background:#ffe4e6; color:#be123c}
+  .tag.orange {background:#ffedd5; color:#c2410c}
+  .tag.green {background:#dcfce7; color:#166534}
+  .tag.gray {background:#f2f4f7; color:#475467}
+  details {border:1px solid var(--line); border-radius:14px; margin:10px 0; background:#fff}
+  details summary {cursor:pointer; padding:13px 15px; font-weight:800; color:#111827}
+  details .inside {padding:0 15px 15px}
+  .formula {font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace; background:#f8fafc; border:1px solid var(--line); padding:10px 12px; border-radius:12px; overflow:auto; margin:10px 0}
+  .diagram {width:100%; height:auto; background:#fbfdff; border:1px solid var(--line); border-radius:14px; margin:10px 0}
+  .axis {stroke:#1f2937; stroke-width:2; fill:#1f2937}
+  .s {stroke:#2563eb; stroke-width:3; fill:none}
+  .d {stroke:#dc2626; stroke-width:3; fill:none}
+  .ic {stroke:#7c3aed; stroke-width:3; fill:none}
+  .price {stroke:#111827; stroke-width:2}
+  .dash {stroke-dasharray:7 7}
+  .guide {stroke:#94a3b8; stroke-width:1.5; stroke-dasharray:4 5}
+  .note {font-size:18px; fill:#475467}
+  .dot {fill:#111827}
+  mark {background:#fff3a3; padding:0 .1em; border-radius:4px}
+  .task {display:flex; gap:9px; align-items:flex-start; padding:7px 0}
+  .task input {margin-top:7px}
+  .print-note {font-size:13px; color:var(--muted)}
+  .chapter-header {display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:8px}
+  .chapter-header h3 {margin:0}
+  .mini {font-size:13px; color:var(--muted)}
+  .kbd {font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f2f4f7; padding:2px 6px; border-radius:6px; border:1px solid var(--line)}
+  .two-col-list {columns:2; column-gap:28px}
+  .two-col-list li {break-inside:avoid}
+  @media (max-width:900px) {.layout{grid-template-columns:1fr; padding:14px} .sidebar{position:relative; top:auto; max-height:none} .grid-2,.grid-3{grid-template-columns:1fr} .two-col-list{columns:1} h1{font-size:27px}}
+  @media print {body{background:white} .top{padding:20px;color:#111;background:white;border-bottom:2px solid #111} .sidebar{display:none} .layout{display:block;padding:0} section{box-shadow:none;border:0;border-radius:0;page-break-inside:avoid} a{color:#111} details{break-inside:avoid} details .inside{display:block}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>国际经济学期末复习资料｜考试导向强化版 v2</h1>
+    <div class="subtitle">以老师期末考点为最高优先级，结合 PPT 与课本扫描版 PDF 的目录/OCR 抽取补漏；目标是先拿下图形题、计算题和高频选择题，再用模板稳定论述题。</div>
+    <div class="meta">
+      <span class="pill">版本：v2 强化版</span>
+      <span class="pill">生成日期：2026-06-26</span>
+      <span class="pill">重点：第3、4、9、10、12、14、16章</span><span class="pill">补充：PDF扫描版OCR抽检</span>
+      <span class="pill">策略：先保大题，再扫选择</span>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <input id="searchBox" class="search" placeholder="搜索：关税 / H-O / 汇率 / 国际收支…" />
+    <div class="nav-title">目录</div>
+    <a href="#exam">一、考试结构与复习战略</a>
+    <a href="#teacher">二、老师口径速记</a>
+    <a href="#priority">三、章节优先级总表</a>
+    <a href="#choice">四、选择题速查</a>
+    <a href="#graphs">五、图形题专项</a>
+    <a href="#calculation">六、计算题专项</a>
+    <a href="#essay">七、论述题模板</a>
+    <a href="#chapters">八、逐章复习资料</a>
+    <a href="#checklist">九、考前清单</a>
+    <a href="#sources">十、资料来源与备注</a>
+  </aside>
+
+  <main id="content">
+    <section id="exam">
+      <h2>一、考试结构与复习战略</h2>
+      <div class="grid grid-2">
+        <div class="card"><strong>选择题：30分</strong><br>30道，每题1分。国际贸易理论、国际贸易政策、国际金融三大部分各约三分之一。选择题覆盖面广，全书章节都可能涉及。</div>
+        <div class="card"><strong>图形题：重点大题</strong><br>不会要求完整画图，主要给图表让你分析。集中在国际贸易理论、贸易政策，尤其是关税、配额、出口补贴、倾销。</div>
+        <div class="card"><strong>计算题：40分</strong><br>2道，每题20分。全书能出计算题的章节不多，以课后习题难度为准。必须熟练掌握套路。</div>
+        <div class="card"><strong>论述题：二选一</strong><br>两道题选一道作答。不要把两题都写，避免时间不够。准备模板化结构即可。</div>
+      </div>
+      <div class="danger"><strong>重大变化：</strong>这次没有简答题。所以不要把时间浪费在“每章背一段定义”上。更应该优先练：图形分析、计算题、选择题概念辨析。</div>
+      <h3>最推荐的复习顺序</h3>
+      <table>
+        <tr><th>顺序</th><th>内容</th><th>原因</th></tr>
+        <tr><td>1</td><td>第9章：关税、配额、出口补贴、倾销</td><td>图形题核心，也可能出福利计算；性价比最高。</td></tr>
+        <tr><td>2</td><td>第3章：绝对优势、比较优势</td><td>适合出计算题和选择题，套路固定。</td></tr>
+        <tr><td>3</td><td>第14章：汇率与标价法</td><td>简单计算高频，容易拿分。</td></tr>
+        <tr><td>4</td><td>第16章：国际收支账户与复式记账</td><td>国际金融部分最容易出计算/判断题。</td></tr>
+        <tr><td>5</td><td>第4章：H-O理论与四大定理</td><td>概念多、选择题高频，也可做论述题素材。</td></tr>
+        <tr><td>6</td><td>第10、12、8章</td><td>图形/论述/政策解释题的次重点。</td></tr>
+        <tr><td>7</td><td>第1、5、6、7、15、17章</td><td>主要用于选择题扫盲，15/17记结论，不推导。</td></tr>
+      </table>
+    </section>
+
+
+    <section id="teacher">
+      <h2>二、老师口径速记</h2>
+      <div class="danger"><strong>考试结构：</strong>选择题30分；图形题；计算题2道共40分；论述题二选一。没有简答题，不要按“每章背定义”的旧方式复习。</div>
+      <div class="grid grid-2">
+        <div class="card"><strong>选择题怎么分：</strong><br>国际贸易理论、国际贸易政策、国际金融三部分各约三分之一。全书章节都可能出现，但第11章、第13章老师明确不讲，最多保留目录级印象。</div>
+        <div class="card"><strong>图形题怎么考：</strong><br>不会要求完整画图，通常给图让你分析。集中在贸易理论和贸易政策；关税、配额、出口补贴、倾销是第一优先级。</div>
+        <div class="card"><strong>计算题怎么练：</strong><br>以课后习题难度为准。重点练比较优势、贸易政策福利、有效保护率、汇率换算、购买力/利率平价、国际收支复式记账。</div>
+        <div class="card"><strong>论述题怎么写：</strong><br>两题选一题。先写概念和理论机制，再写图形/福利/政策含义，最后写局限或现实启示。不要两题都写。</div>
+      </div>
+      <h3>一句话抓重点</h3>
+      <table>
+        <tr><th>板块</th><th>老师强调</th><th>复习动作</th></tr>
+        <tr><td>国际贸易理论</td><td>第2章是工具箱，第3章会计算，第4章全书重点，第5-7章偏选择。</td><td>会判断比较优势；背H-O四定理；区分产业间/产业内贸易。</td></tr>
+        <tr><td>贸易政策</td><td>第8章解释为什么保护，第9章是图形核心，第10章关税同盟图形，第12章要素流动图形。</td><td>把“价格-数量-剩余-净福利”当作统一模板。</td></tr>
+        <tr><td>国际金融</td><td>只学14-17章；14、16章文字+简单计算；15、17章复杂理论只记结论。</td><td>标价法、汇率换算、国际收支账户与复式记账必须会。</td></tr>
+      </table>
+    </section>
+
+
+    <section id="priority">
+      <h2>三、章节优先级总表</h2>
+      <table>
+        <tr><th>章节</th><th>优先级</th><th>可能题型</th><th>考试化复习重点</th></tr>
+        <tr><td>第1章 绪论</td><td><span class="tag gray">低</span></td><td>选择题</td><td>研究对象：稀缺资源世界范围配置、商品和要素跨国流动；国际贸易属微观实物面，国际金融属宏观货币面。</td></tr>
+        <tr><td>第2章 微观基础</td><td><span class="tag orange">基础</span></td><td>图形基础、选择题</td><td>PPF、社会无差异曲线、MRT/机会成本、封闭/开放均衡、消费者剩余和生产者剩余。</td></tr>
+        <tr><td>第3章 古典贸易理论</td><td><span class="tag red">重点</span></td><td>计算题、选择题</td><td>绝对优势看劳动生产率/单位劳动投入；比较优势看机会成本；会判断分工方向和贸易利益。</td></tr>
+        <tr><td>第4章 要素禀赋理论</td><td><span class="tag red">全书重点</span></td><td>选择题、论述题</td><td>要素禀赋、要素密集度、H-O、要素价格均等化、S-S、罗伯津斯基、里昂惕夫之谜、特定要素模型。</td></tr>
+        <tr><td>第5章 重叠需求与产品生命周期</td><td><span class="tag gray">简单</span></td><td>选择题</td><td>林德从需求相似解释制成品贸易；弗农强调创新-成熟-标准化下比较优势转移。</td></tr>
+        <tr><td>第6章 规模经济</td><td><span class="tag orange">中高</span></td><td>选择题、论述素材</td><td>内部/外部、静态/动态规模经济；内部规模经济+产品差异化解释产业内贸易；GL指数了解。</td></tr>
+        <tr><td>第7章 企业异质性与全球价值链</td><td><span class="tag gray">浅</span></td><td>选择题</td><td>Melitz：高生产率企业出口，低生产率企业退出；钻石模型和全球价值链了解。</td></tr>
+        <tr><td>第8章 贸易保护理论</td><td><span class="tag orange">重要</span></td><td>选择题、论述题</td><td>最优关税、幼稚产业判别标准、战略性贸易政策、贸易保护政治经济学。</td></tr>
+        <tr><td>第9章 贸易壁垒与出口促进</td><td><span class="tag red">极重要</span></td><td>图形题、计算题、选择题</td><td>进口关税、进口配额、出口补贴、倾销；会用CS/PS/政府收入/配额租金/净福利分析。</td></tr>
+        <tr><td>第10章 区域经济一体化</td><td><span class="tag orange">重要</span></td><td>图形题、论述题、选择题</td><td>一体化六层级；关税同盟的贸易创造、贸易转移；动态效应和国际卡特尔概念。</td></tr>
+        <tr><td>第11章 发展中国家的贸易政策实践</td><td><span class="tag gray">老师不讲</span></td><td>低概率选择</td><td>不投入大题时间；只知道章节主题即可。</td></tr>
+        <tr><td>第12章 要素国际流动</td><td><span class="tag orange">重要</span></td><td>图形题、选择题</td><td>资本、劳动力流动的原因、收益率/工资趋同、福利分配变化；技术流动略看。</td></tr>
+        <tr><td>第13章 跨国公司与企业国际化</td><td><span class="tag gray">老师不讲</span></td><td>低概率选择</td><td>不投入大题时间；知道垄断、内部化、区位因素即可。</td></tr>
+        <tr><td>第14章 外汇与汇率</td><td><span class="tag red">重点</span></td><td>计算题、选择题</td><td>外汇、汇率、直接/间接/美元标价法、即期/远期、固定/浮动汇率、外汇管制。</td></tr>
+        <tr><td>第15章 汇率决定理论</td><td><span class="tag orange">结论型</span></td><td>选择题、简单计算</td><td>PPP、IRP、货币模型、资产组合模型，掌握方向性结论，不背复杂推导。</td></tr>
+        <tr><td>第16章 国际收支</td><td><span class="tag red">重点</span></td><td>计算题、选择题</td><td>经常账户、资本和金融账户、储备资产；复式记账；自发账户和调整账户。</td></tr>
+        <tr><td>第17章 国际收支调整理论</td><td><span class="tag orange">结论型</span></td><td>选择题、论述素材</td><td>弹性、吸收、乘数、货币分析；只记核心条件和政策含义。</td></tr>
+      </table>
+    </section>
+
+
+
+    <section id="choice">
+      <h2>四、选择题速查</h2>
+      <h3>1. 国际贸易理论：约10分</h3>
+      <table>
+        <tr><th>考点</th><th>最容易考的判断</th><th>易错点</th></tr>
+        <tr><td>国际经济学研究对象</td><td>研究稀缺资源在世界范围内的配置，以及商品、服务、要素在国家间流动。</td><td>国际贸易偏微观实物面；国际金融偏宏观货币面。</td></tr>
+        <tr><td>PPF与机会成本</td><td>PPF斜率绝对值是边际转换率MRT；表示多生产1单位X需放弃多少Y。</td><td>凹向原点通常表示机会成本递增；直线表示机会成本不变。</td></tr>
+        <tr><td>社会无差异曲线</td><td>越远离原点福利越高；开放经济下消费点可高于封闭均衡的无差异曲线。</td><td>生产点不一定等于消费点，这是贸易利益的图形来源。</td></tr>
+        <tr><td>绝对优势</td><td>劳动生产率更高或单位劳动投入更低。</td><td>绝对优势不能解释一国全面落后时仍可贸易。</td></tr>
+        <tr><td>比较优势</td><td>机会成本更低；贸易条件介于两国国内机会成本之间，两国获益。</td><td>不要用绝对产量大小直接判断比较优势。</td></tr>
+        <tr><td>H-O定理</td><td>一国出口密集使用本国丰裕要素的产品，进口密集使用本国稀缺要素的产品。</td><td>要素禀赋是国家概念；要素密集度是产品/产业概念。</td></tr>
+        <tr><td>要素价格均等化</td><td>在严格假设下，自由贸易使各国同质要素价格趋于相等。</td><td>现实中技术、运输成本、壁垒、要素非同质会破坏完全均等。</td></tr>
+        <tr><td>S-S定理</td><td>某商品相对价格上升，会提高该商品密集使用要素的真实报酬，降低另一要素真实报酬。</td><td>它讲收入分配，不是讲产量。</td></tr>
+        <tr><td>罗伯津斯基定理</td><td>商品价格不变时，某要素增加会使密集使用该要素的产品产量增加，另一产品产量减少。</td><td>它讲要素增加对产出结构的影响。</td></tr>
+        <tr><td>里昂惕夫之谜</td><td>美国资本丰富却被发现出口劳动密集型产品，挑战H-O。</td><td>常见解释：人力资本、自然资源、需求偏好、关税结构、要素密集度逆转。</td></tr>
+        <tr><td>特定要素模型</td><td>短期部分要素不能跨行业流动，贸易利益分配更分化。</td><td>长期H-O中要素可跨行业流动；短期模型结论不同。</td></tr>
+        <tr><td>重叠需求</td><td>人均收入越接近，需求结构越相似，制成品贸易越密切。</td><td>这是需求侧理论，不是供给侧要素禀赋理论。</td></tr>
+        <tr><td>规模经济</td><td>内部规模经济来自企业自身扩大；外部规模经济来自行业/地区扩大。</td><td>产业内贸易多由内部规模经济、产品差异化、不完全竞争解释。</td></tr>
+        <tr><td>Melitz模型</td><td>高生产率企业出口，中等生产率服务国内，低生产率退出。</td><td>贸易开放会带来行业内资源重新配置。</td></tr>
+      </table>
+      <h3>2. 国际贸易政策：约10分</h3>
+      <table>
+        <tr><th>考点</th><th>核心结论</th><th>选择题提示</th></tr>
+        <tr><td>最优关税</td><td>大国可能通过关税改善贸易条件；小国不能影响世界价格，最优关税为0。</td><td>“小国最优关税>0”通常错。</td></tr>
+        <tr><td>幼稚产业保护</td><td>保护对象应有潜在比较优势，且保护应暂时、收益应超过成本。</td><td>穆勒标准、巴斯塔布尔标准、肯普标准可作为关键词。</td></tr>
+        <tr><td>战略性贸易政策</td><td>在寡头垄断和规模经济行业，政府可能用补贴/保护帮助本国企业转移外国垄断利润。</td><td>成立条件苛刻，信息不完全和报复会削弱效果。</td></tr>
+        <tr><td>进口关税</td><td>小国关税提高国内价，生产增、消费减、进口减，净福利损失为生产扭曲+消费扭曲。</td><td>大国还要看贸易条件收益。</td></tr>
+        <tr><td>进口配额</td><td>数量限制，国内价升，配额租金归属决定福利结果。</td><td>拍卖配额时接近等额关税；给外国出口商则租金外流。</td></tr>
+        <tr><td>出口补贴</td><td>小国补贴使国内价升，生产增、消费减、出口增，政府支出扩大，本国净福利通常下降。</td><td>大国出口补贴还会恶化贸易条件。</td></tr>
+        <tr><td>商品倾销</td><td>国际市场价格歧视：出口价低于国内价或成本。</td><td>长期倾销条件：不完全竞争、市场分割、需求弹性差异。</td></tr>
+        <tr><td>关税同盟</td><td>贸易创造提高效率；贸易转移可能用高成本成员国产品替代低成本非成员国产品。</td><td>福利取决于创造效应与转移效应大小。</td></tr>
+        <tr><td>国际卡特尔</td><td>跨国生产者通过限产维持垄断高价。</td><td>需求弹性低、替代品少、成员覆盖广时更容易维持。</td></tr>
+        <tr><td>要素流动</td><td>资本从低收益率流向高收益率；劳动力从低工资流向高工资，最终趋同。</td><td>总产出可能增加，但不同群体收入变化不同。</td></tr>
+      </table>
+      <h3>3. 国际金融：约10分</h3>
+      <table>
+        <tr><th>考点</th><th>核心结论</th><th>易错点</th></tr>
+        <tr><td>直接标价法</td><td>一单位外币=若干本币；数值上升表示外币升值、本币贬值。</td><td>中国教材默认多用直接标价法。</td></tr>
+        <tr><td>间接标价法</td><td>一单位本币=若干外币；数值上升表示本币升值。</td><td>判断升贬值时先看基准货币是谁。</td></tr>
+        <tr><td>即期/远期汇率</td><td>直接标价法下远期高于即期为外币升水，低于即期为贴水。</td><td>间接标价法方向相反。</td></tr>
+        <tr><td>固定/浮动汇率</td><td>固定汇率靠官方干预维持；浮动汇率由市场供求决定，可分清洁浮动和管理浮动。</td><td>管理浮动又称肮脏浮动。</td></tr>
+        <tr><td>PPP</td><td>通胀高的国家货币长期倾向贬值。</td><td>绝对PPP基于一价定律；相对PPP看通胀差。</td></tr>
+        <tr><td>IRP</td><td>利差与远期汇率升贴水或预期汇率变化相联系。</td><td>抛补看远期汇率；无抛补看预期即期汇率。</td></tr>
+        <tr><td>国际收支账户</td><td>经常账户、资本和金融账户、储备资产账户。</td><td>会计恒等平衡不等于经济意义上没有失衡。</td></tr>
+        <tr><td>复式记账</td><td>引起外汇收入/资产减少/负债增加通常记贷方；引起外汇支出/资产增加/负债减少通常记借方。</td><td>每笔交易借贷金额相等。</td></tr>
+        <tr><td>马歇尔-勒纳条件</td><td>本币贬值改善贸易收支，需要进出口需求弹性绝对值之和大于1。</td><td>短期可能有J曲线效应。</td></tr>
+        <tr><td>吸收分析法</td><td>B = Y - A；改善国际收支可增加产出或减少国内吸收。</td><td>A是国内吸收，不是进口额。</td></tr>
+      </table>
+    </section>
+
+
+    <section id="graphs">
+      <h2>五、图形题专项</h2>
+      <div class="warn"><strong>老师原话导向：</strong>图形题不会让你完整画图，重点是给图表进行分析。纯文字章节不会出图形题；关税、倾销、出口补贴相关图形是重点。</div>
+      <h3>通用答题模板</h3>
+      <div class="formula">① 先说明横轴/纵轴：通常横轴为数量 Q，纵轴为价格 P。<br>
+② 判断政策前后价格变化：世界价格 Pw、国内价格、含税/补贴后价格。<br>
+③ 分析数量变化：生产量、消费量、进口/出口量。<br>
+④ 分析剩余变化：消费者剩余、生产者剩余、政府收入/支出。<br>
+⑤ 得出总福利：小国通常没有贸易条件改善，所以净福利多为下降。</div>
+
+      <h3>1. 小国进口关税</h3>
+      
+<svg class="diagram" viewBox="0 0 760 360" role="img" aria-label="小国进口关税图形示意">
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z"></path></marker></defs>
+  <line x1="70" y1="310" x2="700" y2="310" marker-end="url(#arr)" class="axis"/>
+  <line x1="70" y1="310" x2="70" y2="35" marker-end="url(#arr)" class="axis"/>
+  <text x="708" y="315">Q</text><text x="50" y="30">P</text>
+  <line x1="110" y1="290" x2="620" y2="70" class="s"/><text x="625" y="72">S</text>
+  <line x1="120" y1="70" x2="630" y2="290" class="d"/><text x="635" y="292">D</text>
+  <line x1="90" y1="205" x2="670" y2="205" class="price"/><text x="675" y="209">Pw</text>
+  <line x1="90" y1="165" x2="670" y2="165" class="price dash"/><text x="675" y="169">Pw+t</text>
+  <line x1="283" y1="310" x2="283" y2="165" class="guide"/><text x="270" y="332">S₂</text>
+  <line x1="198" y1="310" x2="198" y2="205" class="guide"/><text x="186" y="332">S₁</text>
+  <line x1="489" y1="310" x2="489" y2="165" class="guide"/><text x="477" y="332">D₂</text>
+  <line x1="582" y1="310" x2="582" y2="205" class="guide"/><text x="570" y="332">D₁</text>
+  <text x="320" y="147" class="note">关税后国内价↑；生产↑，消费↓，进口↓</text>
+  <text x="320" y="230" class="note">政府收入 = t × 新进口量；净损失=两个扭曲三角形</text>
+</svg>
+      <table>
+        <tr><th>项目</th><th>变化</th><th>考试写法</th></tr>
+        <tr><td>国内价格</td><td>上升</td><td>由世界价格 Pw 上升至 Pw+t。</td></tr>
+        <tr><td>国内生产</td><td>增加</td><td>本国生产者因价格上升扩大供给。</td></tr>
+        <tr><td>国内消费</td><td>减少</td><td>消费者面对更高价格，需求下降。</td></tr>
+        <tr><td>进口量</td><td>减少</td><td>进口量=消费量−生产量，二者变动使进口减少。</td></tr>
+        <tr><td>消费者剩余</td><td>减少</td><td>消费者承受价格上升损失。</td></tr>
+        <tr><td>生产者剩余</td><td>增加</td><td>生产者因价格上升受益。</td></tr>
+        <tr><td>政府收入</td><td>增加</td><td>关税收入 = 单位关税 × 税后进口量。</td></tr>
+        <tr><td>社会福利</td><td>下降</td><td>小国不能影响世界价格，净损失为生产扭曲和消费扭曲。</td></tr>
+      </table>
+
+      <h3>2. 进口配额</h3>
+      
+<svg class="diagram" viewBox="0 0 760 350" role="img" aria-label="进口配额图形示意">
+  <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z"></path></marker></defs>
+  <line x1="70" y1="305" x2="700" y2="305" marker-end="url(#arr2)" class="axis"/>
+  <line x1="70" y1="305" x2="70" y2="35" marker-end="url(#arr2)" class="axis"/>
+  <text x="708" y="310">Q</text><text x="50" y="30">P</text>
+  <line x1="110" y1="285" x2="620" y2="65" class="s"/><text x="625" y="67">S</text>
+  <line x1="120" y1="65" x2="630" y2="285" class="d"/><text x="635" y="287">D</text>
+  <line x1="90" y1="205" x2="670" y2="205" class="price"/><text x="675" y="209">Pw</text>
+  <line x1="90" y1="160" x2="670" y2="160" class="price dash"/><text x="675" y="164">Pq</text>
+  <line x1="278" y1="305" x2="278" y2="160" class="guide"/><line x1="492" y1="305" x2="492" y2="160" class="guide"/>
+  <text x="318" y="146" class="note">配额把进口量卡住 → 国内价格升到 Pq</text>
+  <text x="292" y="226" class="note">配额租金 = (Pq − Pw) × 配额量；归谁取决于分配方式</text>
+</svg>
+      <p>进口配额与等额关税的效果很像：都会提高国内价格、增加国内生产、减少消费和进口。核心区别在于<strong>配额租金归谁</strong>。</p>
+      <table>
+        <tr><th>情形</th><th>配额租金归属</th><th>福利含义</th></tr>
+        <tr><td>政府拍卖配额</td><td>政府</td><td>效果接近等额关税。</td></tr>
+        <tr><td>免费发给本国进口商</td><td>本国进口商</td><td>政府没有收入，但租金留在国内。</td></tr>
+        <tr><td>给外国出口商/自愿出口限制</td><td>外国出口商</td><td>本国福利损失更大。</td></tr>
+      </table>
+
+      <h3>3. 出口补贴</h3>
+      
+<svg class="diagram" viewBox="0 0 760 350" role="img" aria-label="小国出口补贴图形示意">
+  <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z"></path></marker></defs>
+  <line x1="70" y1="305" x2="700" y2="305" marker-end="url(#arr3)" class="axis"/>
+  <line x1="70" y1="305" x2="70" y2="35" marker-end="url(#arr3)" class="axis"/>
+  <text x="708" y="310">Q</text><text x="50" y="30">P</text>
+  <line x1="120" y1="285" x2="625" y2="65" class="s"/><text x="630" y="67">S</text>
+  <line x1="125" y1="65" x2="630" y2="285" class="d"/><text x="635" y="287">D</text>
+  <line x1="90" y1="200" x2="670" y2="200" class="price"/><text x="675" y="204">Pw</text>
+  <line x1="90" y1="155" x2="670" y2="155" class="price dash"/><text x="675" y="159">Pw+s</text>
+  <line x1="286" y1="305" x2="286" y2="155" class="guide"/><text x="273" y="326">D₂</text>
+  <line x1="492" y1="305" x2="492" y2="155" class="guide"/><text x="480" y="326">S₂</text>
+  <text x="285" y="140" class="note">补贴后国内价↑；生产↑，消费↓，出口↑</text>
+  <text x="292" y="225" class="note">政府支出 = s × 出口量；小国净福利通常下降</text>
+</svg>
+      <table>
+        <tr><th>项目</th><th>变化</th><th>解释</th></tr>
+        <tr><td>国内价格</td><td>上升</td><td>企业出口可得补贴，国内市场也要提高价格才能留住供给。</td></tr>
+        <tr><td>国内生产</td><td>增加</td><td>生产者收益增加。</td></tr>
+        <tr><td>国内消费</td><td>减少</td><td>消费者因国内价格上升受损。</td></tr>
+        <tr><td>出口量</td><td>增加</td><td>生产增加、消费减少共同扩大出口。</td></tr>
+        <tr><td>政府支出</td><td>增加</td><td>补贴支出 = 单位补贴 × 出口量。</td></tr>
+        <tr><td>国家福利</td><td>通常下降</td><td>出口企业获益不等于国家获益，消费者损失和财政成本很大。</td></tr>
+      </table>
+
+      <h3>4. 商品倾销</h3>
+      <div class="bluebox"><strong>倾销图和前三个不太一样。</strong>前三个主要用供需图分析政策后的价格、数量、剩余；倾销更强调企业在不同市场实行价格歧视，以及是否低于正常价值、是否造成产业损害。</div>
+      <table>
+        <tr><th>类型</th><th>含义</th><th>考点</th></tr>
+        <tr><td>偶发性倾销</td><td>临时低价处理库存或过剩产品</td><td>不一定长期损害市场结构。</td></tr>
+        <tr><td>掠夺性倾销</td><td>先低价打垮竞争者，再提高价格</td><td>最容易引发反倾销关注。</td></tr>
+        <tr><td>持续性倾销</td><td>长期在国外低价销售，本质是国际价格歧视</td><td>理解价格差异来自市场分割和需求弹性差异。</td></tr>
+      </table>
+
+      <h3>5. PPF与社会无差异曲线</h3>
+      
+<svg class="diagram" viewBox="0 0 760 350" role="img" aria-label="PPF与社会无差异曲线示意">
+  <defs><marker id="arr4" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z"></path></marker></defs>
+  <line x1="75" y1="305" x2="700" y2="305" marker-end="url(#arr4)" class="axis"/>
+  <line x1="75" y1="305" x2="75" y2="35" marker-end="url(#arr4)" class="axis"/>
+  <text x="705" y="310">X商品</text><text x="35" y="35">Y商品</text>
+  <path d="M110,70 C230,120 420,210 645,300" fill="none" class="s"/><text x="625" y="285">PPF</text>
+  <path d="M190,285 C290,230 410,203 550,190" fill="none" class="ic"/><text x="555" y="192">IC₁</text>
+  <path d="M260,250 C380,195 500,165 650,150" fill="none" class="ic dash"/><text x="655" y="152">IC₂</text>
+  <line x1="180" y1="250" x2="600" y2="145" class="price"/><text x="605" y="145">国际价格线</text>
+  <circle cx="310" cy="217" r="5" class="dot"/><text x="318" y="216">生产点</text>
+  <circle cx="520" cy="165" r="5" class="dot"/><text x="528" y="164">贸易后消费点</text>
+  <text x="230" y="330" class="note">消费点到更高无差异曲线 → 获得贸易利益</text>
+</svg>
+      <p>第2章图形题如果考，核心不是复杂推导，而是判断贸易后消费点能否达到更高的社会无差异曲线。</p>
+      <div class="formula">封闭经济：生产点 = 消费点。<br>开放经济：生产点 ≠ 消费点；如果贸易后消费点位于更高的社会无差异曲线上，则存在贸易利益。</div>
+
+      <h3>6. 关税同盟图形分析</h3>
+      <table>
+        <tr><th>效应</th><th>含义</th><th>福利方向</th></tr>
+        <tr><td>贸易创造</td><td>本国高成本生产被成员国低成本进口替代</td><td>提高效率，福利增加。</td></tr>
+        <tr><td>贸易转移</td><td>原从非成员国低成本进口，转向成员国较高成本进口</td><td>扭曲贸易方向，福利可能下降。</td></tr>
+      </table>
+      <div class="formula">结论句：关税同盟是否提高本国福利，取决于贸易创造收益是否大于贸易转移损失。</div>
+
+      <h3>7. 资本与劳动力国际流动图</h3>
+      <p>第12章资本流动和劳动力流动的图形框架高度相似：都由收益率/工资差异引发流动，流动后收益率/工资趋同，世界总产出可能提高，但国内不同群体利益变化不同。</p>
+      <table>
+        <tr><th>要素</th><th>流动方向</th><th>趋同变量</th><th>核心结论</th></tr>
+        <tr><td>资本</td><td>从资本收益率低的国家流向资本收益率高的国家</td><td>资本收益率</td><td>提高世界总产出，改变资本所有者和劳动者收益。</td></tr>
+        <tr><td>劳动力</td><td>从低工资国家流向高工资国家</td><td>工资</td><td>提高世界总产出，但输出国/输入国不同群体利益变化不同。</td></tr>
+      </table>
+
+      <h3>8. 图形题万能评分点</h3>
+      <table>
+        <tr><th>步骤</th><th>写什么</th><th>示范句</th></tr>
+        <tr><td>1 先定市场身份</td><td>小国/大国、进口/出口、政策类型。</td><td>“该图为小国进口关税局部均衡分析，小国不能影响世界价格。”</td></tr>
+        <tr><td>2 写价格变化</td><td>国内价、世界价、补贴/关税后的价差。</td><td>“征税后国内价格由Pw上升至Pw+t。”</td></tr>
+        <tr><td>3 写数量变化</td><td>生产、消费、进口/出口如何变。</td><td>“国内生产增加，国内消费减少，进口量收缩。”</td></tr>
+        <tr><td>4 写剩余变化</td><td>消费者剩余、生产者剩余、政府收入/支出、配额租金。</td><td>“消费者剩余减少，生产者剩余增加，政府获得关税收入。”</td></tr>
+        <tr><td>5 写净福利</td><td>小国通常只剩扭曲损失；大国还要加贸易条件效应。</td><td>“净福利变化为政府收入扣除生产扭曲和消费扭曲后的结果。”</td></tr>
+      </table>
+      <div class="bluebox"><strong>图形题别死背面积字母：</strong>不同教材图中字母可能不同，考试最稳的是把每块面积翻译成“谁得、谁失、是不是社会净损失”。</div>
+
+    </section>
+
+
+    <section id="calculation">
+      <h2>六、计算题专项</h2>
+      <div class="danger"><strong>40分提醒：</strong>两道计算题，每题20分。复习时不要只看懂，要能在纸上独立列式。</div>
+      <h3>1. 比较优势计算</h3>
+      <table>
+        <tr><th>给定数据</th><th>判断方法</th><th>分工结论</th></tr>
+        <tr><td>单位劳动投入 aLX、aLY</td><td>X的机会成本=aLX/aLY；Y的机会成本=aLY/aLX。</td><td>某产品机会成本低的国家生产并出口该产品。</td></tr>
+        <tr><td>劳动生产率 Q/L</td><td>先可判断绝对优势；比较优势仍要换算机会成本。</td><td>不要把“生产率高”直接等同于比较优势。</td></tr>
+        <tr><td>给定交换比例</td><td>看国际交换比例是否介于两国国内机会成本之间。</td><td>介于两者之间，双方均可获益；否则至少一方不愿贸易。</td></tr>
+      </table>
+      <div class="formula">单位劳动投入表：若本国生产1X需2小时、1Y需4小时，则1X机会成本=2/4=0.5Y；1Y机会成本=4/2=2X。</div>
+
+      <h3>2. 关税/配额/出口补贴福利计算</h3>
+      <table>
+        <tr><th>政策</th><th>必须列出的项目</th><th>净福利常见结论</th></tr>
+        <tr><td>小国进口关税</td><td>CS减少、PS增加、政府关税收入、进口量减少。</td><td>净损失=生产扭曲损失+消费扭曲损失。</td></tr>
+        <tr><td>大国进口关税</td><td>上述项目+贸易条件收益。</td><td>贸易条件收益大于扭曲损失时福利可升，否则降。</td></tr>
+        <tr><td>进口配额</td><td>CS减少、PS增加、配额租金、进口量受限。</td><td>租金归政府时类似关税；归外国或寻租耗散时本国福利更低。</td></tr>
+        <tr><td>小国出口补贴</td><td>国内价格上升、PS增加、CS减少、政府补贴支出、出口增加。</td><td>本国净福利通常下降。</td></tr>
+      </table>
+
+      <h3>3. 有效保护率 ERP</h3>
+      <p>课本/PPT把有效保护率定义为贸易壁垒引起的国内制造过程增加值变化率。若最终品名义关税为 t，进口中间投入占最终品价值比重为 a，中间品关税为 ti：</p>
+      <div class="formula">ERP = (t - a × ti) / (1 - a)</div>
+      <p><strong>例：</strong>整机关税10%，零部件关税5%，零部件占成品价值60%：ERP=(0.10-0.60×0.05)/(1-0.60)=17.5%。</p>
+      <div class="warn">若最终品关税高、中间品关税低，ERP通常高于名义保护率；这解释了关税税率升级。</div>
+
+      <h3>4. 产业内贸易指数 GL</h3>
+      <div class="formula">T = 1 - |X - M| / (X + M)</div>
+      <p>T在0到1之间。T=0表示只有出口或只有进口；T=1表示同一产业进口额与出口额相等，产业内贸易程度最高。第6章若出计算，多半是选择/小计算。</p>
+
+      <h3>5. 汇率换算</h3>
+      <table>
+        <tr><th>题型</th><th>做法</th><th>注意</th></tr>
+        <tr><td>直接标价法</td><td>外币金额 × 汇率 = 本币金额。</td><td>汇率上升=外币升值、本币贬值。</td></tr>
+        <tr><td>间接标价法</td><td>本币金额 × 汇率 = 外币金额。</td><td>汇率上升=本币升值、外币贬值。</td></tr>
+        <tr><td>交叉汇率</td><td>统一基准货币后相乘或相除。</td><td>先写成“1单位A=多少B”，避免方向错。</td></tr>
+        <tr><td>远期升贴水</td><td>直接标价法：远期>即期为外币升水；远期<即期为外币贴水。</td><td>间接标价法方向相反。</td></tr>
+      </table>
+
+      <h3>6. 购买力平价与利率平价</h3>
+      <div class="formula">相对PPP近似：汇率变动率 ≈ 本国通胀率 - 外国通胀率（直接标价法）</div>
+      <div class="formula">抛补利率平价近似：远期升贴水率 ≈ 本国利率 - 外国利率（按直接标价法理解）</div>
+      <p>结论记忆：本国通胀更高，本币长期倾向贬值；本国利率更高，通常对应本币远期贴水。</p>
+
+      <h3>7. 国际收支复式记账</h3>
+      <table>
+        <tr><th>交易</th><th>通常记法</th><th>例子</th></tr>
+        <tr><td>出口商品/服务</td><td>经常账户贷方</td><td>获得外汇收入。</td></tr>
+        <tr><td>进口商品/服务</td><td>经常账户借方</td><td>向国外付款。</td></tr>
+        <tr><td>本国对外投资增加</td><td>金融账户借方</td><td>本国资产增加，资金流出。</td></tr>
+        <tr><td>外国对本国投资增加</td><td>金融账户贷方</td><td>本国对外负债增加，资金流入。</td></tr>
+        <tr><td>官方储备增加</td><td>储备资产借方</td><td>央行买入外汇储备。</td></tr>
+        <tr><td>官方储备减少</td><td>储备资产贷方</td><td>央行动用外汇储备。</td></tr>
+      </table>
+      <div class="ok"><strong>做题口诀：</strong>先判断账户，再判断资金方向；贷方=外汇来源，借方=外汇运用。最后检查借贷总额相等。</div>
+    </section>
+
+
+
+    <section id="essay">
+      <h2>七、论述题模板</h2>
+      <div class="bluebox"><strong>论述题二选一：</strong>建议先花1分钟选题，10分钟搭框架，再写。每段开头用关键词，让阅卷人一眼看到你答到点。</div>
+      <h3>模板1：为什么现实中存在贸易保护？</h3>
+      <ol>
+        <li><strong>先承认基准：</strong>自由贸易通常提高世界福利，但利益分配不均，且现实存在市场失灵和政治约束。</li>
+        <li><strong>理论依据：</strong>大国最优关税可改善贸易条件；幼稚产业保护强调潜在比较优势；战略性贸易政策强调不完全竞争下转移垄断利润；政治经济学强调利益集团、就业和选票。</li>
+        <li><strong>限制条件：</strong>小国最优关税为0；幼稚产业保护必须暂时且收益大于成本；战略性政策面临信息不完全和报复风险。</li>
+        <li><strong>结论：</strong>保护政策可能有条件地改善本国利益，但容易造成效率损失和贸易摩擦，应谨慎、临时、透明。</li>
+      </ol>
+
+      <h3>模板2：关税、配额、出口补贴的福利比较</h3>
+      <ol>
+        <li><strong>共同点：</strong>都会扭曲价格，改变生产、消费和贸易量，并造成社会福利再分配。</li>
+        <li><strong>关税：</strong>小国进口关税使国内价上升、生产增、消费减、进口减，政府获得关税收入，净福利为两个扭曲三角形损失。</li>
+        <li><strong>配额：</strong>效果类似关税，但配额租金归属关键；若租金被外国出口商获得或被寻租耗散，本国福利损失更大。</li>
+        <li><strong>出口补贴：</strong>提高国内价，鼓励生产和出口，消费者受损，政府支出增加，本国净福利通常下降，大国还会恶化贸易条件。</li>
+      </ol>
+
+      <h3>模板3：H-O理论及四大定理</h3>
+      <ol>
+        <li><strong>基本逻辑：</strong>国家间要素禀赋差异导致相对成本差异，进而形成贸易模式。</li>
+        <li><strong>H-O定理：</strong>一国出口密集使用本国丰裕要素的产品，进口密集使用稀缺要素的产品。</li>
+        <li><strong>要素价格均等化：</strong>在严格假设下，商品自由贸易会使各国同质要素价格趋同。</li>
+        <li><strong>S-S定理：</strong>商品相对价格变化会改变收入分配，价格上升商品密集使用的要素获益。</li>
+        <li><strong>罗伯津斯基定理：</strong>商品价格不变时，某要素增加会扩张密集使用该要素的部门并压缩另一部门。</li>
+        <li><strong>评价：</strong>里昂惕夫之谜说明现实中还需考虑人力资本、技术、资源、需求偏好和贸易壁垒。</li>
+      </ol>
+
+      <h3>模板4：区域经济一体化与关税同盟</h3>
+      <ol>
+        <li><strong>层级：</strong>优惠贸易安排、自由贸易区、关税同盟、共同市场、经济联盟、完全经济一体化。</li>
+        <li><strong>静态效应：</strong>贸易创造提高资源配置效率；贸易转移可能牺牲从低成本非成员国进口的机会。</li>
+        <li><strong>动态效应：</strong>促进竞争、扩大市场、实现规模经济、扩大投资、推动技术进步。</li>
+        <li><strong>福利判断：</strong>贸易创造越大、贸易转移越小，关税同盟越可能提高成员国福利。</li>
+      </ol>
+
+      <h3>模板5：国际收支失衡及调整</h3>
+      <ol>
+        <li><strong>先定义：</strong>国际收支是一定时期内一国与外国经济交易的系统记录，复式记账使账户形式上平衡。</li>
+        <li><strong>说明失衡：</strong>会计平衡不等于经济均衡，需要区分自发账户和调整账户。</li>
+        <li><strong>调整理论：</strong>弹性分析看马歇尔-勒纳条件；吸收分析看B=Y-A；货币分析把国际收支失衡视为货币供求失衡；政策搭配强调内部均衡和外部均衡兼顾。</li>
+        <li><strong>结论：</strong>不同理论适用条件不同，实际政策需结合汇率制度、资本流动程度和国内宏观目标。</li>
+      </ol>
+    </section>
+
+
+
+    <section id="chapters">
+      <h2>八、逐章复习资料</h2>
+      <details><summary>第1章 绪论：只防选择题</summary><div class="inside">
+        <ul><li>国际经济学研究国际经济关系，核心是稀缺资源在世界范围内配置，以及商品、服务和生产要素的跨国流动。</li><li>按马歇尔传统划分：国际贸易理论偏微观、实物面；国际金融理论偏宏观、货币面。</li><li>理论演变线索：重商主义 → 绝对优势 → 比较优势 → H-O → 新贸易理论 → 新新贸易理论。</li></ul>
+      </div></details>
+
+      <details open><summary>第2章 国际贸易理论的微观基础</summary><div class="inside">
+        <p><strong>定位：</strong>后面所有图形分析和福利分析的工具箱。PDF/OCR显示本章重点包括PPF、社会无差异曲线、封闭/开放均衡、贸易利益衡量与分解。</p>
+        <table><tr><th>工具</th><th>必须掌握</th></tr><tr><td>PPF</td><td>资源与技术既定下两种产品最大产量组合；斜率绝对值是MRT/机会成本。</td></tr><tr><td>机会成本</td><td>多生产一单位某产品必须放弃的另一产品数量；比较优势计算的核心。</td></tr><tr><td>社会无差异曲线</td><td>表示社会福利水平；越远离原点福利越高。</td></tr><tr><td>封闭经济均衡</td><td>生产点=消费点；PPF与社会无差异曲线相切。</td></tr><tr><td>开放经济均衡</td><td>生产点由世界相对价格线与PPF切点决定，消费点沿贸易条件线选择，可达到更高无差异曲线。</td></tr><tr><td>CS/PS</td><td>价格上升时消费者剩余减少、生产者剩余增加；第9章福利图都靠它。</td></tr></table>
+      </div></details>
+
+      <details open><summary>第3章 古典贸易理论</summary><div class="inside">
+        <p><strong>定位：</strong>重点章节，可能出计算题。PPT和PDF均强调古典贸易理论基本观点、李嘉图模型、相互需求和理论评价。</p>
+        <table><tr><th>理论</th><th>代表人物</th><th>判断标准</th><th>缺陷/评价</th></tr><tr><td>重商主义</td><td>早期贸易思想</td><td>追求贸易顺差和货币积累</td><td>把贸易看成零和，忽视贸易互利。</td></tr><tr><td>绝对优势</td><td>亚当·斯密</td><td>劳动生产率更高/单位劳动投入更低</td><td>不能解释一国全面劣势时如何贸易。</td></tr><tr><td>比较优势</td><td>大卫·李嘉图</td><td>机会成本更低</td><td>解释力更强，但假设单一要素、机会成本不变，未解释比较优势来源和收入分配。</td></tr></table>
+        <div class="ok"><strong>计算题套路：</strong>先把所有数据转换成机会成本，再确定分工；最后判断国际交换比例是否介于两国机会成本之间。</div>
+      </div></details>
+
+      <details open><summary>第4章 要素禀赋、特定要素与国际贸易</summary><div class="inside">
+        <p><strong>定位：</strong>老师明确说是全书重点。PPT本章重点：要素禀赋、要素密集度、标准模型假设、H-O、要素价格均等化、经验检验与补充、特定要素。</p>
+        <table><tr><th>概念/定理</th><th>一句话记忆</th><th>常考角度</th></tr><tr><td>要素禀赋</td><td>国家层面：一国拥有生产要素的相对丰裕程度。</td><td>常与要素密集度混淆。</td></tr><tr><td>要素密集度</td><td>产品/产业层面：生产某产品相对多用哪种要素。</td><td>劳动密集/资本密集是产品属性。</td></tr><tr><td>H-O定理</td><td>出口密集使用本国丰裕要素的产品。</td><td>解释比较优势来源。</td></tr><tr><td>要素价格均等化</td><td>贸易使各国同质要素价格趋同。</td><td>前提严格，现实不一定完全成立。</td></tr><tr><td>斯托尔珀-萨缪尔森</td><td>商品相对价格上升，提高其密集使用要素真实报酬。</td><td>收入分配题。</td></tr><tr><td>罗伯津斯基</td><td>某要素增加，密集使用它的产品产量扩大，另一产品产量收缩。</td><td>产出结构题。</td></tr><tr><td>里昂惕夫之谜</td><td>美国资本丰裕却出口劳动密集品。</td><td>解释：人力资本、自然资源、需求偏好、关税、要素密集度逆转。</td></tr><tr><td>特定要素模型</td><td>短期部分要素不能跨行业流动。</td><td>短期贸易利益分配更分化。</td></tr></table>
+      </div></details>
+
+      <details><summary>第5章 重叠需求、技术变化与国际贸易</summary><div class="inside">
+        <ul><li><strong>重叠需求理论：</strong>林德提出，从需求侧解释制成品贸易。人均收入越相似，需求结构越相似，重叠需求越大，贸易越密切。</li><li><strong>产品生命周期理论：</strong>弗农提出，产品经历创新、成熟、标准化阶段，生产和出口优势从创新国逐渐转向低成本国家。</li><li><strong>定位：</strong>老师说简单，文字识记为主。</li></ul>
+      </div></details>
+
+      <details><summary>第6章 规模经济、不完全竞争与国际贸易</summary><div class="inside">
+        <p><strong>定位：</strong>选择题重点，尤其内部规模经济与产业内贸易。PDF/OCR补充：产业内贸易指数GL可作小计算或选择。</p>
+        <table><tr><th>分类</th><th>含义</th><th>贸易含义</th></tr><tr><td>内部规模经济</td><td>企业规模扩大，平均成本下降。</td><td>结合垄断竞争和产品差异化，解释产业内贸易。</td></tr><tr><td>外部规模经济</td><td>行业或地区规模扩大，单个企业成本下降。</td><td>产业集群可形成贸易优势。</td></tr><tr><td>静态规模经济</td><td>当前产量扩大带来成本下降。</td><td>市场规模扩大即获益。</td></tr><tr><td>动态规模经济</td><td>学习效应、经验积累使成本下降。</td><td>先发优势和保护幼稚产业可联系。</td></tr></table>
+        <div class="formula">GL指数：T = 1 - |X-M|/(X+M)。T越接近1，产业内贸易程度越高。</div>
+      </div></details>
+
+      <details><summary>第7章 企业异质性、竞争优势与全球价值链</summary><div class="inside">
+        <ul><li><strong>Melitz异质企业模型：</strong>高生产率企业出口，中等生产率企业只服务国内市场，低生产率企业退出。</li><li><strong>国家竞争优势钻石模型：</strong>生产要素、需求条件、相关支持产业、企业战略结构与竞争。</li><li><strong>全球价值链：</strong>关注全球生产网络、治理模式和经济升级。</li><li><strong>定位：</strong>老师说偏科普，简单了解。</li></ul>
+      </div></details>
+
+      <details open><summary>第8章 贸易保护政策的理论依据</summary><div class="inside">
+        <table><tr><th>理论</th><th>核心结论</th><th>局限</th></tr><tr><td>最优关税理论</td><td>大国通过降低进口需求可压低世界价格，改善贸易条件；小国最优关税为0。</td><td>可能招致报复，世界福利下降。</td></tr><tr><td>幼稚产业保护</td><td>保护有潜在比较优势的新兴产业。</td><td>需满足暂时性、收益大于成本、未来能自立等标准。</td></tr><tr><td>战略性贸易政策</td><td>寡头垄断行业中，政府可帮助本国企业获得战略优势和垄断利润。</td><td>依赖准确信息，易引发外国反制。</td></tr><tr><td>政治经济学</td><td>保护政策常由利益集团、选票、就业和收入分配驱动。</td><td>小集团收益集中，大众成本分散。</td></tr></table>
+      </div></details>
+
+      <details open><summary>第9章 国际贸易壁垒与出口促进</summary><div class="inside">
+        <p><strong>定位：</strong>最重要的图形题章节。PPT本章重点包括：小国/大国进口关税局部均衡、进口配额与等额关税比较、小国/大国出口补贴、商品倾销。</p>
+        <table><tr><th>政策</th><th>价格数量效应</th><th>福利效应</th></tr><tr><td>小国进口关税</td><td>国内价上升，生产增、消费减、进口减。</td><td>CS减，PS增，政府收入增，净损失为生产扭曲+消费扭曲。</td></tr><tr><td>大国进口关税</td><td>可压低世界价格，改善贸易条件。</td><td>净效应=贸易条件收益-扭曲损失。</td></tr><tr><td>进口配额</td><td>直接限制进口数量，国内价上升。</td><td>配额租金归属决定本国福利；更易寻租，扭曲更强。</td></tr><tr><td>出口补贴</td><td>国内价上升，生产增、消费减、出口增。</td><td>政府支出大，本国净福利通常下降；大国还恶化贸易条件。</td></tr><tr><td>商品倾销</td><td>出口价低于国内价或成本，是国际价格歧视。</td><td>反倾销税以倾销幅度为上限，WTO主张轻税原则。</td></tr><tr><td>有效保护率</td><td>看增加值保护，不只看最终品名义关税。</td><td>最终品高关税+中间品低关税会放大有效保护。</td></tr></table>
+      </div></details>
+
+      <details><summary>第10章 区域经济一体化与国际卡特尔</summary><div class="inside">
+        <p><strong>区域经济一体化层级：</strong>优惠贸易安排 → 自由贸易区 → 关税同盟 → 共同市场 → 经济联盟 → 完全经济一体化。</p>
+        <table><tr><th>效应</th><th>含义</th><th>福利判断</th></tr><tr><td>贸易创造</td><td>成员国低成本产品替代本国高成本生产。</td><td>资源配置改善，福利增加。</td></tr><tr><td>贸易转移</td><td>成员国较高成本产品替代非成员国更低成本进口。</td><td>可能降低福利。</td></tr><tr><td>动态效应</td><td>促进竞争、规模经济、投资扩大、技术进步。</td><td>论述题可用作正面评价。</td></tr><tr><td>国际卡特尔</td><td>跨国生产者通过协议限产、分市场、维持垄断价格。</td><td>了解概念即可。</td></tr></table>
+      </div></details>
+
+      <details><summary>第11章 发展中国家的贸易政策实践</summary><div class="inside"><p>老师明确不讲。本章只保留目录级印象：发展中国家的贸易特征、经济发展与对外贸易、发展战略与贸易政策。不要投入大题时间。</p></div></details>
+
+      <details><summary>第12章 要素国际流动</summary><div class="inside">
+        <p><strong>定位：</strong>老师说资本、劳动力流动分析框架和图示高度相似，技术流动略看。</p>
+        <table><tr><th>内容</th><th>流动逻辑</th><th>福利分配</th></tr><tr><td>资本国际流动</td><td>资本从边际收益率低处流向高处，最终收益率趋同。</td><td>世界总产出可能提高；资本所有者、劳动者、东道国和投资国利益变化不同。</td></tr><tr><td>劳动力国际流动</td><td>劳动力从低工资地区流向高工资地区，工资趋同。</td><td>输入国资本/雇主可能受益，本国劳动者可能受压；输出国剩余劳动者工资上升。</td></tr><tr><td>技术国际转移</td><td>通过贸易、FDI、许可、人员流动等扩散。</td><td>了解即可，文字选择题为主。</td></tr></table>
+      </div></details>
+
+      <details><summary>第13章 跨国公司与企业国际化</summary><div class="inside"><p>老师明确不讲。只知道课本主题包括垄断、内部化、区位因素和企业国际化方式选择即可，不作为大题准备。</p></div></details>
+
+      <details open><summary>第14章 外汇与汇率制度</summary><div class="inside">
+        <table><tr><th>概念</th><th>考试记法</th></tr><tr><td>外汇</td><td>动态：货币兑换行为；静态：以外币表示、可用于国际清偿的资产。</td></tr><tr><td>直接标价法</td><td>一单位外币=若干本币；数值上升表示外币升值、本币贬值。</td></tr><tr><td>间接标价法</td><td>一单位本币=若干外币；数值上升表示本币升值。</td></tr><tr><td>美元标价法</td><td>以美元为基准货币报价。</td></tr><tr><td>即期/远期</td><td>即期通常成交后两个营业日内交割；远期约定未来交割。</td></tr><tr><td>固定汇率</td><td>官方维持汇率在某一水平或小幅区间。</td></tr><tr><td>浮动汇率</td><td>市场供求决定；清洁浮动不干预，管理浮动会干预。</td></tr><tr><td>外汇管制</td><td>政府限制或管理外汇收支、兑换、汇率等。</td></tr></table>
+      </div></details>
+
+      <details><summary>第15章 汇率决定理论</summary><div class="inside">
+        <table><tr><th>理论</th><th>只需掌握的结论</th></tr><tr><td>购买力平价PPP</td><td>一价定律基础上，汇率由两国价格水平决定；通胀高国家货币倾向贬值。</td></tr><tr><td>利率平价IRP</td><td>资本流动使利差与远期升贴水或预期汇率变化相联系。</td></tr><tr><td>货币模型</td><td>货币供给增加、本币倾向贬值；实际收入上升、货币需求增加，本币倾向升值。</td></tr><tr><td>资产组合平衡模型</td><td>汇率由本币资产、外币资产和货币的供求及投资组合选择共同决定。</td></tr></table>
+      </div></details>
+
+      <details open><summary>第16章 国际收支</summary><div class="inside">
+        <table><tr><th>考点</th><th>记忆</th></tr><tr><td>国际收支</td><td>一定时期内一国居民与非居民全部经济交易的系统记录。</td></tr><tr><td>经常账户</td><td>货物、服务、初次收入、二次收入。</td></tr><tr><td>资本和金融账户</td><td>资本转移、非生产非金融资产、直接投资、证券投资、其他投资等。</td></tr><tr><td>储备资产</td><td>货币当局持有并可用于国际支付的外汇资产等。</td></tr><tr><td>复式记账</td><td>每笔交易借贷双记，金额相等。</td></tr><tr><td>自发账户</td><td>由市场主体自主交易形成，是判断经济失衡的重点。</td></tr><tr><td>调整账户</td><td>为弥补差额而发生，如官方储备变动。</td></tr></table>
+        <div class="warn">会计上的国际收支表总是平衡，但自发账户可能顺差或逆差，所以经济意义上仍可能失衡。</div>
+      </div></details>
+
+      <details><summary>第17章 国际收支调整理论</summary><div class="inside">
+        <table><tr><th>理论</th><th>核心结论</th><th>关键词</th></tr><tr><td>弹性分析法</td><td>本币贬值改善贸易收支需满足马歇尔-勒纳条件；短期可能有J曲线。</td><td>进出口需求弹性</td></tr><tr><td>吸收分析法</td><td>B=Y-A，国际收支改善来自收入增加或国内吸收减少。</td><td>国民收入、国内吸收</td></tr><tr><td>乘数分析法</td><td>对外贸易通过收入乘数影响国民收入和进口。</td><td>边际进口倾向</td></tr><tr><td>货币分析法</td><td>国际收支失衡本质上与货币供求失衡有关。</td><td>货币供给、货币需求</td></tr></table>
+      </div></details>
+    </section>
+
+
+    <section id="checklist">
+      <h2>九、考前清单</h2>
+      <p class="print-note">下面的勾选状态会保存在本机浏览器里，适合你每天复习时用。</p>
+      <div id="tasks">
+        <label class="task"><input type="checkbox" data-task="t1"> <span>我能不用看书解释：绝对优势、比较优势、机会成本。</span></label>
+        <label class="task"><input type="checkbox" data-task="t2"> <span>我能做两个国家、两种产品的比较优势计算题。</span></label>
+        <label class="task"><input type="checkbox" data-task="t3"> <span>我能解释PPF、社会无差异曲线、封闭/开放经济均衡。</span></label>
+        <label class="task"><input type="checkbox" data-task="t4"> <span>我能背出H-O四大定理，并区分要素禀赋和要素密集度。</span></label>
+        <label class="task"><input type="checkbox" data-task="t5"> <span>我能完整分析小国进口关税图：价格、数量、剩余、福利。</span></label>
+        <label class="task"><input type="checkbox" data-task="t6"> <span>我能比较进口配额和等额关税的区别。</span></label>
+        <label class="task"><input type="checkbox" data-task="t7"> <span>我能解释出口补贴为什么可能让本国总福利下降。</span></label>
+        <label class="task"><input type="checkbox" data-task="t8"> <span>我能说明商品倾销和反倾销税的基本逻辑。</span></label>
+        <label class="task"><input type="checkbox" data-task="t9"> <span>我能解释最优关税、幼稚产业、战略性贸易政策。</span></label>
+        <label class="task"><input type="checkbox" data-task="t10"> <span>我能区分贸易创造和贸易转移。</span></label>
+        <label class="task"><input type="checkbox" data-task="t11"> <span>我能做直接标价法、间接标价法和汇率换算题。</span></label>
+        <label class="task"><input type="checkbox" data-task="t12"> <span>我能判断国际收支交易记入哪个账户、借方还是贷方。</span></label>
+        <label class="task"><input type="checkbox" data-task="t13"> <span>我至少熟悉3个论述题模板。</span></label>
+      </div>
+      <div class="ok"><strong>最后一天策略：</strong>不要再从头看书。优先刷第9章图形、第3章比较优势、第14章汇率、第16章国际收支，再背H-O四定理和论述模板。</div>
+    </section>
+
+
+    <section id="sources">
+      <h2>十、资料来源与备注</h2>
+      <p>本 v2 版本按老师期末考点为最高优先级，结合工作区 PPT、课本扫描版 PDF 目录与重点页 OCR 抽取补充。PDF 为扫描图像版，已安装并试用 RapidOCR ONNX 进行中文 OCR；考虑时间和考试效率，没有逐页全文 OCR，而是优先使用目录、章节重点、PPT 和老师明确范围。</p>
+      <ul>
+        <li>老师期末考点口径：四种题型、无简答题、图形题集中贸易理论/政策、计算题以课后习题难度为准。</li>
+        <li>课本：国际经济学.pdf，扫描版，400页；目录显示第1-17章，与PPT体系一致。</li>
+        <li>PPT：第1、2、3、4、5、6、7、8、9、10、12、14章课件；并结合第15-17章课本目录与课程口径补充。</li>
+        <li>临时OCR文件：国际经济学_pdf重点章节OCR.txt；用于校对第2-6章部分内容和课本目录。</li>
+      </ul>
+      <div class="warn"><strong>复习建议：</strong>不要把本资料当课本替代品从头背。最后优先级是第9章图形和福利、第3章比较优势、第14章汇率、第16章国际收支、第4章四大定理、第10/12章图形逻辑。</div>
+      <p class="mini">建议打印：浏览器打开后按 <span class="kbd">Ctrl</span> + <span class="kbd">P</span>，选择“保存为PDF”或直接打印。</p>
+    </section>
+
+  </main>
+</div>
+<script>
+(function() {
+  const box = document.getElementById('searchBox');
+  const content = document.getElementById('content');
+  const original = new Map();
+  const sections = Array.from(content.querySelectorAll('section'));
+  sections.forEach(s => original.set(s, s.innerHTML));
+  function escapeRegExp(string) { return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  box.addEventListener('input', () => {
+    const q = box.value.trim();
+    sections.forEach(s => s.innerHTML = original.get(s));
+    if (!q) return;
+    const re = new RegExp(escapeRegExp(q), 'gi');
+    sections.forEach(s => {
+      s.innerHTML = s.innerHTML.replace(re, m => `<mark>${m}</mark>`);
+      if (s.textContent.toLowerCase().includes(q.toLowerCase())) {
+        s.style.outline = '2px solid #dbeafe';
+      } else {
+        s.style.outline = 'none';
+      }
+    });
+  });
+  function initTasks() {
+    document.querySelectorAll('input[type="checkbox"][data-task]').forEach(cb => {
+      const key = 'ie-review-' + cb.dataset.task;
+      cb.checked = localStorage.getItem(key) === '1';
+      cb.addEventListener('change', () => localStorage.setItem(key, cb.checked ? '1' : '0'));
+    });
+  }
+  initTasks();
+})();
+</script>
+</body>
+</html>
+
+

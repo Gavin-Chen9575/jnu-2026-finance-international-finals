@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>📖 国际经济学 - Gavin期末复习资料</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f5f7fb;
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #182230;
+      --muted: #667085;
+      --accent: #2563eb;
+      --border: #e4e7ec;
+      --shadow: 0 10px 30px rgba(16, 24, 40, 0.07);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding:
+        max(28px, env(safe-area-inset-top))
+        max(16px, env(safe-area-inset-right))
+        max(36px, env(safe-area-inset-bottom))
+        max(16px, env(safe-area-inset-left));
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #e7efff 0, transparent 38%),
+        var(--background);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(100%, 760px);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 10px 4px 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.75rem, 7vw, 2.5rem);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 12px;
+      list-style: none;
+    }
+
+    li + li {
+      border-top: 1px solid var(--border);
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 56px;
+      padding: 12px 8px;
+      color: var(--text);
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .file::before {
+      content: "📄";
+      flex: 0 0 auto;
+    }
+
+    .home::before {
+      content: "🏠";
+      flex: 0 0 auto;
+    }
+
+    a::after {
+      content: "›";
+      margin-left: auto;
+      color: #98a2b3;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    a:active {
+      color: var(--accent);
+      background: #f0f5ff;
+      border-radius: 10px;
+    }
+
+    footer {
+      padding: 24px 4px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @media (min-width: 700px) {
+      body { padding-top: 48px; }
+
+      a:hover,
+      a:focus-visible {
+        color: var(--accent);
+        background: #f0f5ff;
+        border-radius: 10px;
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>📖 国际经济学</h1>
+      <p class="subtitle">本文件夹下的 HTML 复习资料。</p>
+    </header>
+
+    <section class="card" aria-label="国际经济学资料列表">
+      <ul data-materials data-subject="国际经济学">
+        <li><a class="file" href="国际经济学期末复习资料_考试导向版_v2.html">国际经济学期末复习资料 考试导向版 v2</a></li>
+        <li><a class="file" href="国际经济学期末刷题卷_考试导向版.html">国际经济学期末刷题卷 考试导向版</a></li>
+        <li><a class="home" href="../">返回首页</a></li>
+      </ul>
+    </section>
+
+    <footer>愿复习顺利，考试稳稳拿下 ✨</footer>
+  </main>
+  <script>
+    (() => {
+      const list = document.querySelector("[data-materials]");
+      const subject = list.dataset.subject;
+      const apiUrl = "https://api.github.com/repos/Gavin-Chen9575/jnu-finance-notes/contents/"
+        + encodeURIComponent(subject)
+        + "?ref=main";
+
+      const formatName = (name) => name
+        .replace(/\.html$/i, "")
+        .replace(/_/g, " ")
+        .replace(/\s*\((\d+)\)$/u, " $1");
+
+      const createItem = (text, href, className) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.className = className;
+        a.href = href;
+        a.textContent = text;
+        li.appendChild(a);
+        return li;
+      };
+
+      fetch(apiUrl, { headers: { Accept: "application/vnd.github+json" } })
+        .then((response) => {
+          if (!response.ok) throw new Error("GitHub API unavailable");
+          return response.json();
+        })
+        .then((items) => {
+          const files = items
+            .filter((item) => item.type === "file")
+            .filter((item) => /\.html$/i.test(item.name))
+            .filter((item) => item.name.toLowerCase() !== "index.html")
+            .sort((a, b) => a.name.localeCompare(b.name, "zh-CN"));
+
+          if (!files.length) return;
+
+          list.innerHTML = "";
+          files.forEach((file) => {
+            list.appendChild(createItem(formatName(file.name), encodeURIComponent(file.name), "file"));
+          });
+          list.appendChild(createItem("返回首页", "../", "home"));
+        })
+        .catch(() => {
+          // GitHub API 暂时不可用时，保留页面里预置的静态列表。
+        });
+    })();
+  </script>
+</body>
+</html>
