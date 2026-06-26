@@ -19,11 +19,11 @@
   .subtitle {font-size:16px; opacity:.92; max-width:900px}
   .meta {display:flex; flex-wrap:wrap; gap:10px; margin-top:20px}
   .pill {display:inline-flex; align-items:center; gap:6px; padding:6px 11px; border-radius:999px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.22); font-size:13px}
-  .layout {max-width:1180px; margin:0 auto; display:grid; grid-template-columns:280px 1fr; gap:22px; padding:24px}
-  .sidebar {position:sticky; top:16px; align-self:start; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 28px rgba(20,32,76,.06); max-height:calc(100vh - 32px); overflow:auto}
+  .layout {max-width:1180px; margin:0 auto; padding:24px}
+  .sidebar {position:static; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 8px 28px rgba(20,32,76,.06); max-height:none; overflow:visible; margin-bottom:18px}
   .search {width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:12px; font-size:14px; outline:none; margin-bottom:12px}
   .nav-title {font-weight:800; margin:8px 0 8px; color:#111827}
-  .sidebar a {display:block; color:#344054; text-decoration:none; padding:7px 9px; border-radius:10px; font-size:14px}
+  .sidebar a {display:inline-block; color:#344054; text-decoration:none; padding:7px 10px; border-radius:10px; font-size:14px; background:#fafbff; border:1px solid var(--line); margin:3px}
   .sidebar a:hover {background:var(--soft); color:var(--brand)}
   main {min-width:0}
   section {background:var(--card); border:1px solid var(--line); border-radius:20px; padding:24px; margin-bottom:18px; box-shadow:0 8px 28px rgba(20,32,76,.045)}
@@ -74,7 +74,7 @@
   .kbd {font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f2f4f7; padding:2px 6px; border-radius:6px; border:1px solid var(--line)}
   .two-col-list {columns:2; column-gap:28px}
   .two-col-list li {break-inside:avoid}
-  @media (max-width:900px) {.layout{grid-template-columns:1fr; padding:14px} .sidebar{position:relative; top:auto; max-height:none} .grid-2,.grid-3{grid-template-columns:1fr} .two-col-list{columns:1} h1{font-size:27px}}
+  @media (max-width:900px) {.layout{padding:14px} .grid-2,.grid-3{grid-template-columns:1fr} .two-col-list{columns:1} h1{font-size:27px}}
   @media print {body{background:white} .top{padding:20px;color:#111;background:white;border-bottom:2px solid #111} .sidebar{display:none} .layout{display:block;padding:0} section{box-shadow:none;border:0;border-radius:0;page-break-inside:avoid} a{color:#111} details{break-inside:avoid} details .inside{display:block}}
 </style>
 </head>

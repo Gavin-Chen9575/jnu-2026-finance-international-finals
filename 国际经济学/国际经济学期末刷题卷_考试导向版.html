@@ -19,9 +19,9 @@
   .subtitle { max-width:920px; opacity:.94; font-size:15px; }
   .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
   .pill { display:inline-flex; padding:6px 11px; border-radius:999px; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.22); font-size:13px; }
-  .layout { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:270px 1fr; gap:22px; padding:24px; }
-  .sidebar { position:sticky; top:16px; align-self:start; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 8px 26px rgba(20,32,76,.06); max-height:calc(100vh - 32px); overflow:auto; }
-  .sidebar a { display:block; color:#344054; text-decoration:none; padding:7px 9px; border-radius:10px; font-size:14px; }
+  .layout { max-width:1180px; margin:0 auto; padding:24px; }
+  .sidebar { position:static; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 8px 26px rgba(20,32,76,.06); max-height:none; overflow:visible; margin-bottom:18px; }
+  .sidebar a { display:inline-block; color:#344054; text-decoration:none; padding:7px 10px; border-radius:10px; font-size:14px; background:#fafbff; border:1px solid var(--line); margin:3px; }
   .sidebar a:hover { background:var(--soft); color:var(--brand); }
   .nav-title { font-weight:800; margin:4px 0 8px; }
   .scorebox { border:1px solid var(--line); border-radius:12px; padding:12px; background:#fafbff; margin-bottom:14px; }
@@ -55,7 +55,7 @@
   .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
   .tag { display:inline-block; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#3730a3; font-size:12px; font-weight:800; }
   .mini { color:var(--muted); font-size:13px; }
-  @media (max-width:900px) { .layout{grid-template-columns:1fr; padding:14px;} .sidebar{position:relative; top:auto; max-height:none;} .grid-2{grid-template-columns:1fr;} h1{font-size:25px;} }
+  @media (max-width:900px) { .layout{padding:14px;} .grid-2{grid-template-columns:1fr;} h1{font-size:25px;} }
   @media print { .top{background:#fff;color:#111;border-bottom:2px solid #111;} .sidebar,.actions{display:none;} .layout{display:block;padding:0;} section{box-shadow:none;border:0;border-radius:0;page-break-inside:avoid;} .answer{display:block;} }
 </style>
 </head>
