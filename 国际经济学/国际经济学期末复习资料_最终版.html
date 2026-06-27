@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>国际经济学期末复习资料｜考试导向强化版 v2</title>
+<title>国际经济学期末复习资料｜最终版</title>
 <style>
   :root {
     --bg:#f6f7fb; --card:#ffffff; --ink:#202431; --muted:#667085; --line:#e6e8ef;
@@ -74,6 +74,21 @@
   .kbd {font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:#f2f4f7; padding:2px 6px; border-radius:6px; border:1px solid var(--line)}
   .two-col-list {columns:2; column-gap:28px}
   .two-col-list li {break-inside:avoid}
+  .figure {margin:14px 0 18px; border:1px solid var(--line); border-radius:16px; background:#fff; padding:12px; overflow:auto}
+  .figure svg {display:block; width:100%; height:auto; min-width:680px}
+  .caption {font-size:13px; color:var(--muted); margin-top:8px}
+  .fig-axis {stroke:#344054; stroke-width:2}
+  .fig-s {fill:none; stroke:#12a150; stroke-width:3}
+  .fig-d {fill:none; stroke:#2563eb; stroke-width:3}
+  .fig-price {stroke:#ef4444; stroke-width:2; stroke-dasharray:7 5}
+  .fig-guide {stroke:#94a3b8; stroke-width:1.4; stroke-dasharray:5 5}
+  .fig-label {font-size:14px; fill:#202431; font-weight:700}
+  .fig-small {font-size:12px; fill:#475467}
+  .fig-dot {fill:#111827}
+  .fig-blue {fill:#dbeafe; opacity:.82}
+  .fig-green {fill:#dcfce7; opacity:.82}
+  .fig-red {fill:#fee2e2; opacity:.9}
+  .fig-orange {fill:#ffedd5; opacity:.92}
   @media (max-width:900px) {.layout{padding:14px} .grid-2,.grid-3{grid-template-columns:1fr} .two-col-list{columns:1} h1{font-size:27px}}
   @media print {body{background:white} .top{padding:20px;color:#111;background:white;border-bottom:2px solid #111} .sidebar{display:none} .layout{display:block;padding:0} section{box-shadow:none;border:0;border-radius:0;page-break-inside:avoid} a{color:#111} details{break-inside:avoid} details .inside{display:block}}
 </style>
@@ -81,12 +96,12 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <h1>国际经济学期末复习资料｜考试导向强化版 v2</h1>
-    <div class="subtitle">以老师期末考点为最高优先级，结合 PPT 与课本扫描版 PDF 的目录/OCR 抽取补漏；目标是先拿下图形题、计算题和高频选择题，再用模板稳定论述题。</div>
+    <h1>国际经济学期末复习资料｜最终版</h1>
+    <div class="subtitle">以老师期末录音为最高优先级，PPT为课堂依据，课本扫描版PDF为全书纲要；保留全书1-17章考试导向核对，并加强图形题的图像化讲解。</div>
     <div class="meta">
-      <span class="pill">版本：v2 强化版</span>
-      <span class="pill">生成日期：2026-06-26</span>
-      <span class="pill">重点：第3、4、9、10、12、14、16章</span><span class="pill">补充：PDF扫描版OCR抽检</span>
+      <span class="pill">版本：最终版</span>
+      <span class="pill">整理日期：2026-06-27</span>
+      <span class="pill">重点：第3、4、9、10、12、14、16章</span><span class="pill">补充：课本1-17章纲要OCR核对</span>
       <span class="pill">策略：先保大题，再扫选择</span>
     </div>
   </div>
@@ -97,14 +112,15 @@
     <div class="nav-title">目录</div>
     <a href="#exam">一、考试结构与复习战略</a>
     <a href="#teacher">二、老师口径速记</a>
-    <a href="#priority">三、章节优先级总表</a>
-    <a href="#choice">四、选择题速查</a>
-    <a href="#graphs">五、图形题专项</a>
-    <a href="#calculation">六、计算题专项</a>
-    <a href="#essay">七、论述题模板</a>
-    <a href="#chapters">八、逐章复习资料</a>
-    <a href="#checklist">九、考前清单</a>
-    <a href="#sources">十、资料来源与备注</a>
+    <a href="#book-audit">三、全书纲要核对</a>
+    <a href="#priority">四、章节优先级总表</a>
+    <a href="#choice">五、选择题速查</a>
+    <a href="#graphs">六、图形题专项</a>
+    <a href="#calculation">七、计算题专项</a>
+    <a href="#essay">八、论述题模板</a>
+    <a href="#chapters">九、逐章复习资料</a>
+    <a href="#checklist">十、考前清单</a>
+    <a href="#sources">十一、资料来源与备注</a>
   </aside>
 
   <main id="content">
@@ -150,8 +166,47 @@
     </section>
 
 
+
+    <section id="book-audit">
+      <h2>三、全书纲要核对：老师录音 × PPT × 课本目录</h2>
+      <div class="danger"><strong>核对结论：</strong>本版不是逐字OCR整本书，而是按课本第1-17章逐章过纲要：目录、章首页/本章重点、章末关键词抽检；再用老师录音决定复习深浅，用PPT确认课堂讲过的模型和关键词。</div>
+      <div class="grid grid-3">
+        <div class="card"><strong>最高优先级：老师录音</strong><br>决定题型、重点章、哪些章节不讲、哪些理论只记结论。</div>
+        <div class="card"><strong>第二优先级：PPT</strong><br>确认课堂实际讲授的概念、图形、公式、关键词，尤其第1-10、12、14章。</div>
+        <div class="card"><strong>第三优先级：课本</strong><br>作为全书纲要和章节边界，补足第11、13、15、16、17等PPT不足的目录级结构。</div>
+      </div>
+      <h3>课本1-17章全覆盖核对表</h3>
+      <table>
+        <tr><th>课本章节</th><th>课本纲要/章重点</th><th>老师口径下的处理</th><th>考试复习动作</th></tr>
+        <tr><td>第1章 绪论</td><td>研究对象、国际贸易/金融理论演变、学习方法。</td><td>无大题考点，选择题可能均匀覆盖。</td><td>知道国际贸易是微观实物面，国际金融是宏观货币面。</td></tr>
+        <tr><td>第2章 微观基础</td><td>PPF、社会无差异曲线、封闭/开放均衡、贸易利益衡量、生产者/消费者剩余。</td><td>基础方法章，后续图形题都用它。</td><td>必须会用剩余分析关税、配额、补贴。</td></tr>
+        <tr><td>第3章 古典贸易理论</td><td>重商主义、绝对优势、李嘉图模型、相互需求、理论评价。</td><td>正式进入贸易理论，重点。</td><td>比较优势计算、绝对/比较优势区别、理论缺陷。</td></tr>
+        <tr><td>第4章 要素禀赋、特定要素与国际贸易</td><td>H-O标准模型、要素价格均等化、经验检验、S-S、罗伯津斯基、特定要素。</td><td>全书重点章。</td><td>四大定理、里昂惕夫之谜、短期特定要素与长期H-O对比。</td></tr>
+        <tr><td>第5章 重叠需求、技术变化与国际贸易</td><td>重叠需求理论、产品生命周期理论。</td><td>内容简单，文字识记。</td><td>林德、收入相似、弗农、创新-成熟-标准化。</td></tr>
+        <tr><td>第6章 规模经济、不完全竞争与国际贸易</td><td>内部/外部规模经济、动态规模经济、垄断竞争、产业内贸易。</td><td>选择题重点，内部规模经济更重要。</td><td>区分产业间贸易与产业内贸易；了解GL指数。</td></tr>
+        <tr><td>第7章 企业异质性、竞争优势与全球价值链</td><td>新新贸易理论、国家竞争优势、全球价值链。</td><td>偏科普，简单了解。</td><td>Melitz高生产率企业出口；钻石模型四要素；GVC概念。</td></tr>
+        <tr><td>第8章 贸易保护政策的理论依据</td><td>最优关税、幼稚产业、战略性贸易政策、政治经济学。</td><td>贸易政策板块开端，论述素材。</td><td>记小国最优关税为0；幼稚产业标准；战略政策局限。</td></tr>
+        <tr><td>第9章 国际贸易壁垒与出口促进</td><td>进口关税、进口配额、出口补贴、商品倾销、有效保护率。</td><td>政策核心章，图表最多，极重要。</td><td>所有图形都按价格-数量-剩余-净福利分析。</td></tr>
+        <tr><td>第10章 区域经济一体化与国际卡特尔</td><td>一体化形式、关税同盟、国际卡特尔。</td><td>关税同盟理论重点。</td><td>贸易创造/贸易转移图形和福利判断。</td></tr>
+        <tr><td>第11章 发展中国家的贸易政策实践</td><td>发展中国家的贸易特征、经济发展与对外贸易、贸易政策实践。</td><td>老师明确课程不讲。</td><td>不准备大题，只保留选择题目录级印象。</td></tr>
+        <tr><td>第12章 要素国际流动</td><td>资本国际流动、劳动力国际流动、技术国际转移。</td><td>重点章节，资本/劳动力图形相似。</td><td>收益率/工资趋同、总产出变化、不同群体福利分配。</td></tr>
+        <tr><td>第13章 跨国公司与企业国际化</td><td>垄断、内部化、区位因素、企业国际化方式选择。</td><td>老师明确课程不讲。</td><td>不准备大题，只知道章节主题。</td></tr>
+        <tr><td>第14章 外汇与汇率制度</td><td>外汇、汇率、外汇市场、汇率制度、外汇管制。</td><td>国际金融重点，文字和简单计算。</td><td>直接/间接标价法、汇率换算、固定/浮动汇率。</td></tr>
+        <tr><td>第15章 汇率决定理论</td><td>购买力平价、利率平价、货币模型、资产组合平衡模型。</td><td>复杂理论，不要求推导。</td><td>只记四类模型的方向性结论。</td></tr>
+        <tr><td>第16章 国际收支</td><td>国际收支账户、国际收支内容、国际收支平衡与失衡。</td><td>14、16章是国际金融里最应拿分的部分。</td><td>三大账户、复式记账、自发/调整账户、失衡判定。</td></tr>
+        <tr><td>第17章 国际收支调整</td><td>弹性分析法、吸收分析法、乘数分析法、货币分析法。</td><td>复杂理论，不要求推导，只记结论。</td><td>马歇尔-勒纳条件、B=Y-A、货币供求失衡。</td></tr>
+      </table>
+      <h3>本版补漏原则</h3>
+      <ul>
+        <li><strong>不漏章节：</strong>即使第11、13章老师不讲，也在表中保留课本位置和最低限度认知。</li>
+        <li><strong>不平均用力：</strong>老师明确强调的第3、4、9、10、12、14、16章展开；第15、17章只保留结论；第11、13章不准备大题。</li>
+        <li><strong>不逐字搬书：</strong>考试不要求平均复述课本，本资料用课本作为纲要，用PPT和老师录音决定可考深度。</li>
+      </ul>
+    </section>
+
+
     <section id="priority">
-      <h2>三、章节优先级总表</h2>
+      <h2>四、章节优先级总表</h2>
       <table>
         <tr><th>章节</th><th>优先级</th><th>可能题型</th><th>考试化复习重点</th></tr>
         <tr><td>第1章 绪论</td><td><span class="tag gray">低</span></td><td>选择题</td><td>研究对象：稀缺资源世界范围配置、商品和要素跨国流动；国际贸易属微观实物面，国际金融属宏观货币面。</td></tr>
@@ -177,7 +232,7 @@
 
 
     <section id="choice">
-      <h2>四、选择题速查</h2>
+      <h2>五、选择题速查</h2>
       <h3>1. 国际贸易理论：约10分</h3>
       <table>
         <tr><th>考点</th><th>最容易考的判断</th><th>易错点</th></tr>
@@ -228,8 +283,90 @@
 
 
     <section id="graphs">
-      <h2>五、图形题专项</h2>
+      <h2>六、图形题专项</h2>
       <div class="warn"><strong>老师原话导向：</strong>图形题不会让你完整画图，重点是给图表进行分析。纯文字章节不会出图形题；关税、倾销、出口补贴相关图形是重点。</div>
+      <h3>先用图建立直觉：没基础时按这四张图入门</h3>
+      <div class="bluebox"><strong>看图口诀：</strong>先看价格线移动，再看生产和消费数量，最后把变化翻译成消费者剩余、生产者剩余、政府收入/支出和净福利。</div>
+      <div class="figure">
+        <svg viewBox="0 0 780 430" role="img" aria-label="PPF与社会无差异曲线图">
+          <defs><marker id="final-arrow-a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#344054"/></marker></defs>
+          <line class="fig-axis" x1="72" y1="358" x2="710" y2="358" marker-end="url(#final-arrow-a)"/><line class="fig-axis" x1="72" y1="358" x2="72" y2="48" marker-end="url(#final-arrow-a)"/>
+          <text class="fig-label" x="698" y="386">X商品</text><text class="fig-label" x="28" y="58">Y商品</text>
+          <path class="fig-d" d="M112 80 C205 118 333 209 616 348"/><text class="fig-label" x="605" y="334">PPF</text>
+          <path class="fig-price" d="M108 318 L658 112"/><text class="fig-label" x="604" y="106">世界价格线</text>
+          <path class="fig-s" d="M155 333 C272 252 432 211 642 202"/><text class="fig-label" x="652" y="205">IC0</text>
+          <path class="fig-s" d="M195 292 C344 189 500 145 680 138"/><text class="fig-label" x="690" y="140">IC1</text>
+          <circle class="fig-dot" cx="300" cy="246" r="5"/><text class="fig-label" x="276" y="235">A</text>
+          <circle class="fig-dot" cx="420" cy="202" r="5"/><text class="fig-label" x="405" y="190">P</text>
+          <circle class="fig-dot" cx="560" cy="150" r="5"/><text class="fig-label" x="568" y="142">C</text>
+          <line class="fig-guide" x1="420" y1="202" x2="420" y2="358"/><line class="fig-guide" x1="560" y1="150" x2="560" y2="358"/>
+          <text class="fig-small" x="220" y="382">封闭：生产=消费，福利在IC0</text><text class="fig-small" x="466" y="382">开放：生产P，消费C，福利到IC1</text>
+        </svg>
+        <div class="caption">第2章：开放经济下生产点和消费点可以分离；消费点到更高社会无差异曲线，就是贸易利益。</div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 800 430" role="img" aria-label="小国进口关税福利分解图">
+          <defs><marker id="final-arrow-b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#344054"/></marker></defs>
+          <line class="fig-axis" x1="76" y1="354" x2="720" y2="354" marker-end="url(#final-arrow-b)"/><line class="fig-axis" x1="76" y1="354" x2="76" y2="46" marker-end="url(#final-arrow-b)"/>
+          <text class="fig-label" x="710" y="384">Q</text><text class="fig-label" x="34" y="58">P</text>
+          <path class="fig-s" d="M126 330 L530 92"/><text class="fig-label" x="540" y="90">S</text>
+          <path class="fig-d" d="M150 86 L620 330"/><text class="fig-label" x="630" y="334">D</text>
+          <line class="fig-price" x1="92" y1="248" x2="675" y2="248"/><text class="fig-label" x="97" y="239">Pw</text>
+          <line class="fig-price" x1="92" y1="188" x2="675" y2="188"/><text class="fig-label" x="97" y="178">Pw+t</text>
+          <polygon class="fig-red" points="256,248 302,188 302,248"/><text class="fig-small" x="242" y="274">生产扭曲</text>
+          <rect class="fig-orange" x="302" y="188" width="234" height="60"/><text class="fig-small" x="382" y="222">政府收入</text>
+          <polygon class="fig-red" points="536,188 586,248 536,248"/><text class="fig-small" x="558" y="274">消费扭曲</text>
+          <line class="fig-guide" x1="256" y1="248" x2="256" y2="354"/><line class="fig-guide" x1="302" y1="188" x2="302" y2="354"/><line class="fig-guide" x1="536" y1="188" x2="536" y2="354"/><line class="fig-guide" x1="586" y1="248" x2="586" y2="354"/>
+          <text class="fig-small" x="244" y="376">Qs0</text><text class="fig-small" x="292" y="376">Qs1</text><text class="fig-small" x="524" y="376">Qd1</text><text class="fig-small" x="574" y="376">Qd0</text>
+        </svg>
+        <div class="caption">第9章小国关税：国内价上升，生产增加，消费减少，进口减少；净损失是两个扭曲三角形。</div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 900 470" role="img" aria-label="出口补贴与倾销对比图">
+          <defs><marker id="final-arrow-c" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#344054"/></marker></defs>
+          <text class="fig-label" x="72" y="36">A. 小国出口补贴</text>
+          <line class="fig-axis" x1="76" y1="362" x2="420" y2="362" marker-end="url(#final-arrow-c)"/><line class="fig-axis" x1="76" y1="362" x2="76" y2="70" marker-end="url(#final-arrow-c)"/>
+          <path class="fig-s" d="M116 334 L356 90"/><text class="fig-label" x="364" y="88">S</text>
+          <path class="fig-d" d="M120 94 L372 330"/><text class="fig-label" x="378" y="332">D</text>
+          <line class="fig-price" x1="90" y1="254" x2="390" y2="254"/><text class="fig-small" x="96" y="246">Pw</text>
+          <line class="fig-price" x1="90" y1="194" x2="390" y2="194"/><text class="fig-small" x="96" y="185">Pw+s</text>
+          <rect class="fig-orange" x="186" y="194" width="154" height="60"/><text class="fig-small" x="210" y="227">政府补贴支出</text>
+          <line class="fig-guide" x1="186" y1="194" x2="186" y2="362"/><line class="fig-guide" x1="250" y1="254" x2="250" y2="362"/><line class="fig-guide" x1="286" y1="194" x2="286" y2="362"/><line class="fig-guide" x1="340" y1="254" x2="340" y2="362"/>
+          <text class="fig-small" x="174" y="384">Qd1</text><text class="fig-small" x="240" y="384">Qd0</text><text class="fig-small" x="276" y="384">Qs0</text><text class="fig-small" x="330" y="384">Qs1</text>
+          <text class="fig-label" x="510" y="36">B. 倾销：跨市场价格歧视</text>
+          <line class="fig-axis" x1="505" y1="362" x2="840" y2="362" marker-end="url(#final-arrow-c)"/><line class="fig-axis" x1="505" y1="362" x2="505" y2="70" marker-end="url(#final-arrow-c)"/>
+          <rect class="fig-blue" x="545" y="108" width="105" height="214" rx="8"/><rect class="fig-green" x="685" y="178" width="105" height="144" rx="8"/>
+          <line class="fig-price" x1="540" y1="128" x2="660" y2="128"/><line class="fig-price" x1="680" y1="198" x2="800" y2="198"/>
+          <text class="fig-label" x="560" y="100">国内市场</text><text class="fig-label" x="704" y="170">国外市场</text>
+          <text class="fig-small" x="558" y="150">国内价较高</text><text class="fig-small" x="699" y="220">出口价较低</text>
+          <path d="M650 226 C676 210 674 210 690 210" fill="none" stroke="#202431" stroke-width="2" marker-end="url(#final-arrow-c)"/>
+          <text class="fig-small" x="585" y="342">倾销重点：低于正常价值/成本、市场分割、产业损害、反倾销税。</text>
+        </svg>
+        <div class="caption">出口补贴按剩余分析；倾销不是普通低价，而是不同市场不同价格，图形逻辑和关税/配额不一样。</div>
+      </div>
+      <div class="figure">
+        <svg viewBox="0 0 900 470" role="img" aria-label="关税同盟与要素流动图">
+          <defs><marker id="final-arrow-d" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#344054"/></marker></defs>
+          <text class="fig-label" x="70" y="38">A. 关税同盟：看三个成本/价格</text>
+          <line class="fig-axis" x1="92" y1="352" x2="405" y2="352"/><line class="fig-axis" x1="92" y1="352" x2="92" y2="74" marker-end="url(#final-arrow-d)"/>
+          <text class="fig-small" x="54" y="84">价格/成本</text>
+          <rect class="fig-red" x="132" y="118" width="58" height="234"/><rect class="fig-green" x="226" y="202" width="58" height="150"/><rect class="fig-blue" x="320" y="166" width="58" height="186"/>
+          <text class="fig-small" x="124" y="378">本国</text><text class="fig-small" x="214" y="378">成员国</text><text class="fig-small" x="298" y="378">非成员国+关税</text>
+          <text class="fig-small" x="116" y="108">高成本</text><text class="fig-small" x="210" y="194">低成本</text><text class="fig-small" x="306" y="158">中间</text>
+          <path d="M162 112 C178 76 232 74 254 190" fill="none" stroke="#12a150" stroke-width="3" marker-end="url(#final-arrow-d)"/>
+          <text class="fig-small" x="180" y="72">贸易创造：本国高成本生产被成员国低成本进口替代</text>
+          <text class="fig-label" x="510" y="38">B. 要素流动：回报趋同</text>
+          <line class="fig-axis" x1="500" y1="352" x2="840" y2="352" marker-end="url(#final-arrow-d)"/><line class="fig-axis" x1="500" y1="352" x2="500" y2="74" marker-end="url(#final-arrow-d)"/>
+          <text class="fig-small" x="474" y="86">收益率/工资</text><text class="fig-small" x="824" y="378">要素量</text>
+          <path class="fig-d" d="M528 118 C610 170 690 246 806 326"/><text class="fig-label" x="770" y="318">MPK/MPL</text>
+          <circle class="fig-dot" cx="566" cy="148" r="5"/><text class="fig-small" x="536" y="138">高回报地区</text>
+          <circle class="fig-dot" cx="748" cy="286" r="5"/><text class="fig-small" x="724" y="306">低回报地区</text>
+          <path d="M748 286 C710 235 640 180 566 148" fill="none" stroke="#ef4444" stroke-width="3" marker-end="url(#final-arrow-d)"/>
+          <text class="fig-small" x="590" y="224">资本/劳动力向高回报流动</text>
+          <line class="fig-guide" x1="515" y1="220" x2="820" y2="220"/><text class="fig-small" x="822" y="224">流动后趋同</text>
+        </svg>
+        <div class="caption">第10章写贸易创造与贸易转移；第12章写流向、回报趋同、世界总产出和不同群体分配变化。</div>
+      </div>
       <h3>通用答题模板</h3>
       <div class="formula">① 先说明横轴/纵轴：通常横轴为数量 Q，纵轴为价格 P。<br>
 ② 判断政策前后价格变化：世界价格 Pw、国内价格、含税/补贴后价格。<br>
@@ -374,7 +511,7 @@
 
 
     <section id="calculation">
-      <h2>六、计算题专项</h2>
+      <h2>七、计算题专项</h2>
       <div class="danger"><strong>40分提醒：</strong>两道计算题，每题20分。复习时不要只看懂，要能在纸上独立列式。</div>
       <h3>1. 比较优势计算</h3>
       <table>
@@ -434,7 +571,7 @@
 
 
     <section id="essay">
-      <h2>七、论述题模板</h2>
+      <h2>八、论述题模板</h2>
       <div class="bluebox"><strong>论述题二选一：</strong>建议先花1分钟选题，10分钟搭框架，再写。每段开头用关键词，让阅卷人一眼看到你答到点。</div>
       <h3>模板1：为什么现实中存在贸易保护？</h3>
       <ol>
@@ -482,7 +619,7 @@
 
 
     <section id="chapters">
-      <h2>八、逐章复习资料</h2>
+      <h2>九、逐章复习资料</h2>
       <details><summary>第1章 绪论：只防选择题</summary><div class="inside">
         <ul><li>国际经济学研究国际经济关系，核心是稀缺资源在世界范围内配置，以及商品、服务和生产要素的跨国流动。</li><li>按马歇尔传统划分：国际贸易理论偏微观、实物面；国际金融理论偏宏观、货币面。</li><li>理论演变线索：重商主义 → 绝对优势 → 比较优势 → H-O → 新贸易理论 → 新新贸易理论。</li></ul>
       </div></details>
@@ -560,7 +697,7 @@
 
 
     <section id="checklist">
-      <h2>九、考前清单</h2>
+      <h2>十、考前清单</h2>
       <p class="print-note">下面的勾选状态会保存在本机浏览器里，适合你每天复习时用。</p>
       <div id="tasks">
         <label class="task"><input type="checkbox" data-task="t1"> <span>我能不用看书解释：绝对优势、比较优势、机会成本。</span></label>
@@ -582,13 +719,13 @@
 
 
     <section id="sources">
-      <h2>十、资料来源与备注</h2>
-      <p>本 v2 版本按老师期末考点为最高优先级，结合工作区 PPT、课本扫描版 PDF 目录与重点页 OCR 抽取补充。PDF 为扫描图像版，已安装并试用 RapidOCR ONNX 进行中文 OCR；考虑时间和考试效率，没有逐页全文 OCR，而是优先使用目录、章节重点、PPT 和老师明确范围。</p>
+      <h2>十一、资料来源与备注</h2>
+      <p>本 v3 版本按老师期末录音为最高优先级，PPT为课堂讲授依据，课本扫描版PDF为全书纲要。已对课本1-17章做目录、章首页/本章重点、章末关键词附近OCR抽检，并生成《课本1-17章纲要OCR_稳定汇总.txt》用于核对；本资料仍以通过考试为目标，不逐字重写课本。</p>
       <ul>
         <li>老师期末考点口径：四种题型、无简答题、图形题集中贸易理论/政策、计算题以课后习题难度为准。</li>
         <li>课本：国际经济学.pdf，扫描版，400页；目录显示第1-17章，与PPT体系一致。</li>
         <li>PPT：第1、2、3、4、5、6、7、8、9、10、12、14章课件；并结合第15-17章课本目录与课程口径补充。</li>
-        <li>临时OCR文件：国际经济学_pdf重点章节OCR.txt；用于校对第2-6章部分内容和课本目录。</li>
+        <li>OCR文件：国际经济学_pdf重点章节OCR.txt；用于校对第2-6章部分正文。</li><li>OCR文件：课本1-17章纲要OCR_稳定汇总.txt；用于全书章节纲要核对。</li><li>PPT汇总：PPT章节重点与关键词_汇总.txt；用于核对课堂讲授重点。</li>
       </ul>
       <div class="warn"><strong>复习建议：</strong>不要把本资料当课本替代品从头背。最后优先级是第9章图形和福利、第3章比较优势、第14章汇率、第16章国际收支、第4章四大定理、第10/12章图形逻辑。</div>
       <p class="mini">建议打印：浏览器打开后按 <span class="kbd">Ctrl</span> + <span class="kbd">P</span>，选择“保存为PDF”或直接打印。</p>
