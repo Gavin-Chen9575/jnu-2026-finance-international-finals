@@ -30,7 +30,7 @@
   </div>
 </header>
 <nav><div class="wrap">
-  <a href="#exam">考试信息</a><a href="#pitfalls">必看纠错</a><a href="#basic">基础语法</a><a href="#control">控制结构</a><a href="#string">字符串</a><a href="#algorithm">算法</a><a href="#function">函数</a><a href="#sequence">列表与元组</a><a href="#mapping">字典与集合</a><a href="#file">文件与异常</a><a href="#quick">考前速记</a>
+  <a href="#exam">考试信息</a><a href="#pastpaper">历届卷校准</a><a href="#pitfalls">必看纠错</a><a href="#basic">基础语法</a><a href="#control">控制结构</a><a href="#string">字符串</a><a href="#algorithm">算法</a><a href="#function">函数</a><a href="#sequence">列表与元组</a><a href="#mapping">字典与集合</a><a href="#file">文件与异常</a><a href="#quick">考前速记</a>
 </div></nav>
 <main class="wrap">
   <section id="exam" class="section">
@@ -53,8 +53,28 @@
     </div>
   </section>
 
+  <section id="pastpaper" class="section">
+    <div class="kicker">02 · PAST PAPER CHECK</div><h2>这份 21-22 历届卷怎么用</h2>
+    <div class="callout ok"><strong>结论：有用，但不要当押题卷。</strong>它的题型结构、考点密度和现在的复习提纲高度一致，适合用来校准选择题与判断题的出题口味；但 PDF 里有扫描识别错误和手写批注，答案要以 Python 标准语义重新核对。</div>
+    <div class="grid">
+      <div class="card accent"><h3>最值得参考的信号</h3><ul class="check"><li>客观题非常重视“代码运行结果”：循环输出、嵌套循环、切片、格式化输出、列表引用。</li><li>基础概念反复出现：可变/不可变、字典键、元组单元素、函数返回、异常类型、文件读写模式。</li><li>题干常考边界：<code>random.random()</code> 的上界不含 1、<code>read(n)</code> 的含义、二分查找要求有序。</li></ul></div>
+      <div class="card"><h3>不要直接照背的部分</h3><ul class="check"><li>扫描文字有错字，例如 <code>expect</code> 应为 <code>except</code>，个别变量名和引号缺失。</li><li>手写批注不等于标准答案，遇到“√/×”和正文冲突时，以教材和 Python 运行结果为准。</li><li>几年前的卷子只能说明命题偏好稳定，不能保证今年完全同题或同顺序。</li></ul></div>
+      <div class="card"><h3>用它提分的刷法</h3><ol><li>先做 40 道选择，卡 30 分钟，遇到代码题必须手算执行过程。</li><li>把错题按“类型/切片/函数/文件异常/循环输出”归类，不要只记选项字母。</li><li>最后背判断和填空里的标准表述，尤其是动态类型、序列类型、映射类型、递归两要素、CSV 定义。</li></ol></div>
+    </div>
+    <h3>旧卷额外暴露的高频点</h3>
+    <table><tr><th>高频点</th><th>你要记住的标准结论</th></tr>
+      <tr><td><code>round(random.random(), 2)</code></td><td><code>random.random()</code> 取值为 <code>[0.0, 1.0)</code>，所以四舍五入到两位后可能显示 <code>1.0</code>，但原始随机数不会等于 <code>1.0</code>。</td></tr>
+      <tr><td>字符串比较</td><td>按 Unicode 编码从左到右逐字符比较，不是按“数字大小”或“长度优先”。</td></tr>
+      <tr><td><code>unexpected indent</code></td><td>通常是缩进不匹配；缺少冒号更常见的是 <code>SyntaxError</code>。</td></tr>
+      <tr><td>文件模式 <code>a</code></td><td>追加模式会在文件不存在时创建文件；不会清空原内容。</td></tr>
+      <tr><td><code>read(n)</code></td><td>文本模式读 n 个字符，二进制模式读 n 个字节；不是读 n 行。</td></tr>
+      <tr><td>二分查找</td><td>前提是数据已有序，否则不能保证正确。</td></tr>
+      <tr><td><code>str.format()</code> 位置编号</td><td><code>{0}</code>、<code>{1}</code> 按实参位置取值，可重复引用同一个实参。</td></tr>
+    </table>
+  </section>
+
   <section id="pitfalls" class="section">
-    <div class="kicker">02 · ERROR ALERT</div><h2>提纲中必须纠正的 3 个点</h2>
+    <div class="kicker">03 · ERROR ALERT</div><h2>提纲中必须纠正的 3 个点</h2>
     <div class="callout danger"><strong>这些不是小细节。</strong>以下按 Python 标准语义整理；原提纲扫描页中的相关说法疑似笔误或概念混用。</div>
     <div class="grid">
       <div class="card"><h3>① open 默认是 <code>"r"</code></h3><p><code>open("a.txt")</code> 等价于只读文本模式 <code>open("a.txt","r")</code>，不是 <code>"r+"</code>。文件不存在会报错。</p></div>
@@ -64,7 +84,7 @@
   </section>
 
   <section id="basic" class="section">
-    <div class="kicker">03 · BASICS</div><h2>基础语法、类型与运算</h2>
+    <div class="kicker">04 · BASICS</div><h2>基础语法、类型与运算</h2>
     <div class="two">
       <div>
         <h3>运行与导入</h3>
@@ -96,7 +116,7 @@ print(math.sqrt(16), randint(1, 6))</code></pre>
   </section>
 
   <section id="control" class="section">
-    <div class="kicker">04 · FLOW CONTROL</div><h2>顺序、选择、循环</h2>
+    <div class="kicker">05 · FLOW CONTROL</div><h2>顺序、选择、循环</h2>
     <div class="grid"><div class="card"><h3>三种基本结构</h3><p>顺序结构、选择结构、循环结构。Python 没有 <code>do...while</code>；可用 <code>while True</code> 配合 <code>break</code> 模拟“至少执行一次”。</p></div><div class="card"><h3>分支</h3><p>单分支 <code>if</code>、双分支 <code>if...else</code>、多分支 <code>if...elif...else</code>。条件表达式：<code>x if condition else y</code>。</p></div><div class="card"><h3>循环</h3><p><code>for</code> 适合遍历或次数已知；<code>while</code> 由条件控制。<code>break</code> 结束循环，<code>continue</code> 跳过本次。</p></div></div>
     <pre><code><span class="cm"># 多分支</span>
 score = int(input())
@@ -115,7 +135,7 @@ print(<span class="st">"偶数"</span> <span class="kw">if</span> n % 2 == 0 <sp
   </section>
 
   <section id="string" class="section">
-    <div class="kicker">05 · STRING</div><h2>字符串、索引与切片</h2>
+    <div class="kicker">06 · STRING</div><h2>字符串、索引与切片</h2>
     <div class="formula">s[m:n:d]：从 m 开始，到 n 之前结束，步长为 d</div>
     <p>字符串是不可变对象。任何“修改”字符串的方法都返回新字符串，原字符串不变。</p>
     <table><tr><th>操作/方法</th><th>作用</th><th>示例结果</th></tr>
@@ -135,7 +155,7 @@ print(s[::-1])      <span class="cm"># 逆序</span></code></pre>
   </section>
 
   <section id="algorithm" class="section">
-    <div class="kicker">06 · ALGORITHM</div><h2>迭代、枚举、递归与 random</h2>
+    <div class="kicker">07 · ALGORITHM</div><h2>迭代、枚举、递归与 random</h2>
     <div class="grid">
       <div class="card"><h3>迭代三要素</h3><ol><li>迭代初值</li><li>迭代关系式</li><li>迭代终止条件</li></ol><p>例：阶乘中初值 <code>fac=1</code>，关系式 <code>fac*=i</code>，终止由 <code>range(1,n+1)</code> 控制。</p></div>
       <div class="card"><h3>枚举法</h3><p>把可能情况逐一测试，筛选满足条件的结果。应用题常见：百钱买百鸡、数字组合、整除问题。</p></div>
@@ -150,7 +170,7 @@ print(s[::-1])      <span class="cm"># 逆序</span></code></pre>
   </section>
 
   <section id="function" class="section">
-    <div class="kicker">07 · FUNCTIONS</div><h2>函数、参数、作用域与 lambda</h2>
+    <div class="kicker">08 · FUNCTIONS</div><h2>函数、参数、作用域与 lambda</h2>
     <table><tr><th>概念</th><th>规则</th></tr>
       <tr><td>位置参数</td><td>按顺序对应；调用时通常放在关键字参数之前</td></tr>
       <tr><td>关键字参数</td><td>按形参名传递，如 <code>f(3, c=8)</code>；同一参数不能重复赋值</td></tr>
@@ -171,7 +191,7 @@ print(f(8, 3))</code></pre>
   </section>
 
   <section id="sequence" class="section">
-    <div class="kicker">08 · SEQUENCES</div><h2>列表、元组、生成式与复制</h2>
+    <div class="kicker">09 · SEQUENCES</div><h2>列表、元组、生成式与复制</h2>
     <table><tr><th>操作</th><th>是否修改原列表</th><th>说明</th></tr>
       <tr><td><code>append(x)</code></td><td>是</td><td>把 x 作为一个元素追加</td></tr><tr><td><code>extend(iterable)</code></td><td>是</td><td>逐个追加可迭代对象中的元素</td></tr><tr><td><code>insert(i,x)</code></td><td>是</td><td>在位置 i 插入</td></tr><tr><td><code>remove(x)</code></td><td>是</td><td>删除第一个值为 x 的元素，找不到报错</td></tr><tr><td><code>pop([i])</code></td><td>是</td><td>删除并返回元素，默认最后一个</td></tr><tr><td><code>sort()</code></td><td>是</td><td>原地排序，返回 <code>None</code></td></tr><tr><td><code>sorted(x)</code></td><td>否</td><td>返回新列表</td></tr><tr><td><code>+、*</code></td><td>否</td><td>产生新列表</td></tr>
     </table>
@@ -187,7 +207,7 @@ squares = [i*i <span class="kw">for</span> i <span class="kw">in</span> range(1,
   </section>
 
   <section id="mapping" class="section">
-    <div class="kicker">09 · DICT & SET</div><h2>字典与集合</h2>
+    <div class="kicker">10 · DICT & SET</div><h2>字典与集合</h2>
     <div class="two"><div>
       <h3>字典</h3><ul class="check"><li>键唯一且必须可哈希（通常用数值、字符串、元组），值可为任意类型。</li><li><code>d[key]</code> 找不到会报错；<code>d.get(key,default)</code> 返回默认值。</li><li><code>key in d</code> 判断的是键。</li><li><code>keys()</code>、<code>values()</code>、<code>items()</code> 分别遍历键、值、键值对。</li><li><code>update()</code> 合并字典，同名键被新值覆盖。</li></ul>
       <pre><code>counts = {}
@@ -203,7 +223,7 @@ squares = [i*i <span class="kw">for</span> i <span class="kw">in</span> range(1,
   </section>
 
   <section id="file" class="section">
-    <div class="kicker">10 · FILES</div><h2>文件、CSV 与异常</h2>
+    <div class="kicker">11 · FILES</div><h2>文件、CSV 与异常</h2>
     <table><tr><th>模式</th><th>可读</th><th>可写</th><th>不存在</th><th>原内容</th></tr>
       <tr><td><code>r</code></td><td>✓</td><td>×</td><td>报错</td><td>保留</td></tr><tr><td><code>r+</code></td><td>✓</td><td>✓</td><td>报错</td><td>保留，指针起始在开头</td></tr><tr><td><code>w</code></td><td>×</td><td>✓</td><td>新建</td><td>清空</td></tr><tr><td><code>w+</code></td><td>✓</td><td>✓</td><td>新建</td><td>清空</td></tr><tr><td><code>a</code></td><td>×</td><td>✓</td><td>新建</td><td>保留，写入追加到末尾</td></tr><tr><td><code>a+</code></td><td>✓</td><td>✓</td><td>新建</td><td>保留，写入追加到末尾</td></tr>
     </table>
@@ -223,7 +243,7 @@ squares = [i*i <span class="kw">for</span> i <span class="kw">in</span> range(1,
   </section>
 
   <section id="quick" class="section">
-    <div class="kicker">11 · FINAL CHECK</div><h2>考前 15 分钟速记</h2>
+    <div class="kicker">12 · FINAL CHECK</div><h2>考前 15 分钟速记</h2>
     <div class="grid">
       <div class="card accent"><h3>边界</h3><ul><li>切片和 <code>range</code> 都是“左含右不含”</li><li><code>randint(a,b)</code> 两端都含</li><li>索引越界报错，切片越界通常不报错</li></ul></div>
       <div class="card accent"><h3>返回值</h3><ul><li><code>list.sort()</code> 返回 <code>None</code></li><li><code>sorted()</code> 返回新列表</li><li>无 <code>return</code> 的函数返回 <code>None</code></li></ul></div>
