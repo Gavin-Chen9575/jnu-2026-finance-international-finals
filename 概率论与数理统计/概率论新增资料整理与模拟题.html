@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概率论新增资料整理与标准模拟卷 A-D</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<style>
+:root{
+  --bg:#f6f7fb;--paper:#fff;--ink:#172033;--muted:#5d687a;--line:#e3e7ef;
+  --brand:#244f49;--brand2:#eaf5f1;--blue:#334fc6;--blue2:#eef2ff;
+  --warn:#8a5a00;--warn2:#fff7e8;--good:#0f7045;--good2:#ecf8f1;
+  --bad:#9c3030;--bad2:#fff0f0;--shadow:0 10px 24px rgba(23,32,51,.06);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.72}
+.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+header{background:#183834;color:#fff;padding:30px 0 24px;border-bottom:6px solid #d7e7df}
+h1{margin:0;font-size:32px;line-height:1.18}
+.sub{max-width:930px;color:#dcece8;margin:10px 0 0;font-size:16px}
+.nav{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:5}
+.nav .wrap{display:flex;gap:8px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.nav a,.btn{border:1px solid var(--line);background:#fff;color:#273047;text-decoration:none;border-radius:999px;padding:7px 12px;font-size:14px;cursor:pointer}
+.nav a:hover,.btn:hover{background:var(--blue2)}
+main{padding:22px 0 58px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px;margin:16px 0;box-shadow:var(--shadow)}
+h2{margin:0 0 14px;font-size:24px;border-bottom:1px solid var(--line);padding-bottom:8px}
+h3{margin:18px 0 8px;font-size:19px}
+h4{margin:16px 0 8px;font-size:17px}
+p{margin:8px 0}.muted{color:var(--muted)}strong{font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.card{border:1px solid var(--line);background:#fbfcff;border-radius:12px;padding:14px}
+.good{background:var(--good2);border-color:#bee6cc}.warn{background:var(--warn2);border-color:#efd397}.bad{background:var(--bad2);border-color:#f3c2c2}.blue{background:var(--blue2);border-color:#cdd7ff}
+.tag{display:inline-block;border-radius:999px;background:var(--brand2);color:var(--brand);font-weight:800;font-size:12px;padding:3px 8px;margin:0 6px 6px 0}
+.tag.red{background:var(--bad2);color:var(--bad)}.tag.warn{background:var(--warn2);color:var(--warn)}.tag.blue{background:var(--blue2);color:var(--blue)}
+table{width:100%;border-collapse:collapse;margin:12px 0;background:#fff;border-radius:12px;overflow:hidden}
+th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
+th{background:#f1f4f8}
+details{border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#fff;overflow:hidden}
+summary{cursor:pointer;font-weight:800;background:#f7f9fc;padding:12px 14px}
+details>div{padding:0 14px 14px}
+.paper-meta{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.meta{border:1px solid var(--line);border-radius:999px;padding:4px 10px;background:#fff;font-size:13px;color:#3d4656}
+.question-block{border-top:1px dashed var(--line);padding-top:10px;margin-top:14px}
+.options{columns:2;column-gap:26px;margin-top:4px}.options div{break-inside:avoid}
+.answer{background:var(--good2);border:1px solid #c7ead3;border-radius:10px;padding:10px;margin:10px 0}
+.note{background:#fffdf2;border:1px solid #efe3a7;border-radius:10px;padding:10px;margin:10px 0}
+.small{font-size:14px;color:var(--muted)}
+ol,ul{padding-left:1.25em}li{margin:7px 0}
+code{background:#eef1f6;border-radius:6px;padding:1px 5px}
+@media(max-width:760px){h1{font-size:26px}.wrap{padding:0 12px}section{padding:16px}.options{columns:1}.nav .wrap{overflow-x:auto;flex-wrap:nowrap}.nav a,.btn{white-space:nowrap}}
+@media print{.nav,.btn{display:none}body{background:#fff}section{box-shadow:none;break-inside:avoid}details{break-inside:avoid}details:not([open])>div{display:block}}
+</style>
+<script>
+function openAll(){document.querySelectorAll('details').forEach(d=>d.open=true)}
+function closeAll(){document.querySelectorAll('details').forEach(d=>d.open=false)}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>概率论新增资料整理与标准模拟卷 A-D</h1>
+    <p class="sub">这份是给你刷完老师练习题之后用的。基准仍然是复习课 HTML 和老师发的复习题；这里把近年外招卷的题型结构补进来，做成四套可计时、可批改、可复盘的模拟卷。</p>
+  </div>
+</header>
+<nav class="nav">
+  <div class="wrap">
+    <a href="#sources">资料筛选</a>
+    <a href="#pattern">命题规律</a>
+    <a href="#paper-a">A卷</a>
+    <a href="#paper-b">B卷</a>
+    <a href="#paper-c">C卷</a>
+    <a href="#paper-d">D卷</a>
+    <a href="#plan">刷题顺序</a>
+    <button class="btn" onclick="openAll()">展开答案</button>
+    <button class="btn" onclick="closeAll()">收起答案</button>
+    <button class="btn" onclick="window.print()">打印</button>
+  </div>
+</nav>
+<main class="wrap">
+
+<section id="sources">
+  <h2>一、资料筛选</h2>
+  <div class="grid">
+    <div class="card good"><span class="tag">最高优先</span><strong>原复习课 HTML + 原刷题 HTML</strong><br>老师复习课决定主线；老师发的复习题决定保底模板。新增卷子只为补题感，不抢主线。</div>
+    <div class="card good"><span class="tag">重点参考</span><strong>2024-外招.pdf + 答案</strong><br>结构最清楚：单选 20 分、填空 20 分、计算 33 分、综合 27 分。下面四套卷按这个比例设计。</div>
+    <div class="card warn"><span class="tag warn">辅助参考</span><strong>20-21 / 21-22 外招卷</strong><br>用于抽高频小题：二项/泊松/正态、切比雪夫、相关系数、二维分布、矩估计、假设检验。</div>
+    <div class="card blue"><span class="tag blue">权重参考</span><strong>历年考题知识点总结</strong><br>它说明大题多年稳定落在：二维分布、参数估计、全概率贝叶斯、置信区间/假设检验。</div>
+  </div>
+  <div class="note"><strong>使用原则：</strong>这四套卷里有近年真题风格的改编题，也有按老师复习课模板自拟的题。你刷的时候不要背题，要背“题型触发条件”。</div>
+</section>
+
+<section id="pattern">
+  <h2>二、命题规律和复习权重</h2>
+  <table>
+    <tr><th>题型</th><th>常见考点</th><th>你要练到什么程度</th></tr>
+    <tr><td>单选题 10 题</td><td>概念判断、常见分布、切比雪夫、相关系数、抽样分布、两类错误</td><td>30 秒内选出，并能说一句理由。</td></tr>
+    <tr><td>填空题 10 空</td><td>概率计算、密度归一化、分布函数、正态线性组合、区间估计长度</td><td>不用长推导，但要算准。</td></tr>
+    <tr><td>计算题 4 题</td><td>连续密度/分布函数、二维离散/连续、矩估计/MLE、置信区间</td><td>过程完整，每题开头第一行会写。</td></tr>
+    <tr><td>综合题 3 题</td><td>全概率贝叶斯、CLT、假设检验</td><td>必须写设事件、统计量、拒绝域和题目化结论。</td></tr>
+  </table>
+</section>
+
+<section id="paper-a">
+  <h2>三、模拟卷 A：基础保底卷</h2>
+  <div class="paper-meta"><span class="meta">建议用时：90 分钟</span><span class="meta">总分：100 分</span><span class="meta">定位：刷完老师练习题后第一套</span></div>
+  <details open>
+    <summary>试题</summary>
+    <div>
+      <div class="question-block">
+        <h3>一、单选题（共 10 小题，每小题 2 分，共 20 分）</h3>
+        <ol>
+          <li>设 \(X\sim B(100,0.8)\)，则 \(D(X)=\)（ ）
+            <div class="options"><div>A. 80</div><div>B. 16</div><div>C. 8</div><div>D. 0.16</div></div>
+          </li>
+          <li>在假设检验中，显著性水平 \(\alpha\) 控制的是（ ）
+            <div class="options"><div>A. 第一类错误概率</div><div>B. 第二类错误概率</div><div>C. 两类错误概率之和</div><div>D. 样本容量</div></div>
+          </li>
+          <li>若 \(A,B\) 相互独立，\(P(A)=0.7,P(B)=0.4\)，则 \(P(A|B)=\)（ ）
+            <div class="options"><div>A. 0.28</div><div>B. 0.3</div><div>C. 0.7</div><div>D. 1</div></div>
+          </li>
+          <li>“\(A,B,C\) 至少一个发生”可表示为（ ）
+            <div class="options"><div>A. \(ABC\)</div><div>B. \(A\cup B\cup C\)</div><div>C. \(\bar A\bar B\bar C\)</div><div>D. \(AB\bar C\)</div></div>
+          </li>
+          <li>若随机变量 \(X\) 的分布律为 \(P(X=1)=0.1,P(X=2)=0.4,P(X=3)=0.1,P(X=4)=0.4\)，则 \(P(X\le2)=\)（ ）
+            <div class="options"><div>A. 0.1</div><div>B. 0.4</div><div>C. 0.5</div><div>D. 0.6</div></div>
+          </li>
+          <li>若 \(X,Y\) 独立，且 \(EX=2,EY=3\)，则 \(E(X-Y+XY)=\)（ ）
+            <div class="options"><div>A. 3</div><div>B. 4</div><div>C. 5</div><div>D. 6</div></div>
+          </li>
+          <li>切比雪夫不等式正确的是（ ）
+            <div class="options"><div>A. \(P(|X-EX|\ge\varepsilon)\le D(X)/\varepsilon^2\)</div><div>B. \(P(|X-EX|\ge\varepsilon)\ge D(X)/\varepsilon^2\)</div><div>C. \(P(|X-EX|&lt;\varepsilon)\le D(X)/\varepsilon^2\)</div><div>D. \(P(|X-EX|\ge\varepsilon)=D(X)/\varepsilon^2\)</div></div>
+          </li>
+          <li>若 \(\rho(X,Y)=0.9\)，则 \(\rho(X+2,Y-3)=\)（ ）
+            <div class="options"><div>A. 0.9</div><div>B. 0.6</div><div>C. -0.9</div><div>D. 不能确定</div></div>
+          </li>
+          <li>若 \(T\sim t(n)\)，则 \(T^2\) 服从（ ）
+            <div class="options"><div>A. \(\chi^2(n)\)</div><div>B. \(F(1,n)\)</div><div>C. \(F(n,1)\)</div><div>D. \(t(n^2)\)</div></div>
+          </li>
+          <li>连续型随机变量 \(X\) 的分布函数为 \(F(x)\)，则 \(P(1&lt;X\le3)=\)（ ）
+            <div class="options"><div>A. \(F(3)-F(1)\)</div><div>B. \(f(3)-f(1)\)</div><div>C. \(\int_1^3F(x)dx\)</div><div>D. \(\int_1^3xf(x)dx\)</div></div>
+          </li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>二、填空题（共 10 空，每空 2 分，共 20 分）</h3>
+        <ol>
+          <li>已知 \(P(A)=0.8,P(B)=0.4,P(A\cap B)=0.3\)，则 \(P(A\cup B)=\) ____。</li>
+          <li>若 \(A,B\) 独立，\(P(A)=0.8,P(B)=0.4\)，则 \(P(A\cap\bar B)=\) ____。</li>
+          <li>设 \(X\sim N(-2,4),Y\sim N(1,6)\) 且独立，则 \(2X-3Y\sim\) ____。</li>
+          <li>若 \(D(X)=16\)，则由切比雪夫不等式 \(P(|X-EX|\ge8)\le\) ____。</li>
+          <li>若 \(X\sim E(3)\)，则 \(E(X)=\) ____，\(D(X)=\) ____。</li>
+          <li>若 \(X\sim N(0,1)\)，则 \(\Phi(0)=\) ____，\(\Phi(x)+\Phi(-x)=\) ____。</li>
+          <li>设 \(X\) 的分布律为 \(P(X=0)=\theta,P(X=1)=1-\theta\)，则由矩估计得 \(\hat\theta=\) ____。</li>
+          <li>总体 \(N(\mu,\sigma^2)\)，\(\sigma=2.1,n=16,\bar x=12\)，95% 置信区间的误差项为 ____。取 \(z_{0.025}=1.96\)。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>三、计算题（共 4 题，共 33 分）</h3>
+        <ol>
+          <li>（8 分）设 \(f(x)=b(2-x),0\le x\le2\)，其他为 0。求 \(b\)、分布函数 \(F(x)\)，并计算 \(P(0.5&lt;X&lt;1.5)\)。</li>
+          <li>（8 分）设 \(X,Y\) 的联合分布表如下。求 \(X,Y\) 的边缘分布、\(E(X),E(Y)\)，并判断 \(X,Y\) 是否独立。<br>
+            <table><tr><th>\(X\backslash Y\)</th><th>0</th><th>1</th></tr><tr><td>0</td><td>0.2</td><td>0.3</td></tr><tr><td>1</td><td>0.1</td><td>0.4</td></tr></table>
+          </li>
+          <li>（8 分）设总体服从两点分布 \(P(X=1)=p,P(X=0)=1-p\)。样本中共有 \(n\) 个观测，其中有 \(m\) 个 1。求 \(p\) 的矩估计和极大似然估计。</li>
+          <li>（9 分）总体 \(X\sim N(\mu,\sigma^2)\)，\(n=36,\bar x=24.92,s=1.974\)。求 \(\mu\) 的 95% 置信区间；并在 \(\alpha=0.05\) 下检验 \(H_0:\mu=25\) 对 \(H_1:\mu\ne25\)。取 \(t_{0.025}(35)=2.0301\)。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>四、综合应用题（共 3 题，每题 9 分，共 27 分）</h3>
+        <ol>
+          <li>某产品来自 I、II、III 三类设备，比例分别为 30%、40%、30%；次品率分别为 1%、0.5%、2%。随机抽取一件，求次品概率；若已知为次品，求其来自 II 类设备的概率。</li>
+          <li>某考试通过率为 0.65，有 200 名学生参加。写出独立同分布中心极限定理，并用它近似计算至少 120 人通过的概率。</li>
+          <li>产品指标 \(X\sim N(\mu,0.1^2)\)。抽取 10 个样本，样本均值为 \(\bar x=10.06\)。在 \(\alpha=0.05\) 下检验是否可认为 \(\mu=10\)。取 \(z_{0.025}=1.96\)。</li>
+        </ol>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>答案与解析</summary>
+    <div>
+      <div class="answer">单选：1 B，2 A，3 C，4 B，5 C，6 C，7 A，8 A，9 B，10 A。</div>
+      <div class="answer">填空：1. 0.9；2. 0.48；3. \(N(-7,70)\)；4. \(1/4\)；5. \(1/3,1/9\)；6. \(1/2,1\)；7. \(1-\bar X\)；8. \(1.029\)。</div>
+      <ol>
+        <li>计算 1：\(\int_0^2b(2-x)dx=2b=1\)，\(b=1/2\)。\(F(x)=0(x&lt;0)\)，\(F(x)=x-x^2/4(0\le x\le2)\)，\(F(x)=1(x\ge2)\)。概率 \(F(1.5)-F(0.5)=0.5\)。</li>
+        <li>计算 2：\(P_X(0)=0.5,P_X(1)=0.5\)；\(P_Y(0)=0.3,P_Y(1)=0.7\)。\(E(X)=0.5,E(Y)=0.7\)。因 \(P(0,0)=0.2\ne0.5\times0.3\)，不独立。</li>
+        <li>计算 3：矩估计 \(\hat p=\bar X=m/n\)。似然 \(L(p)=p^m(1-p)^{n-m}\)，求导得极大似然估计 \(\hat p=m/n\)。</li>
+        <li>计算 4：标准误 \(s/\sqrt n=1.974/6=0.329\)。区间 \(24.92\pm2.0301\times0.329=[24.252,25.588]\)。\(t=(24.92-25)/0.329=-0.243\)，未落入拒绝域，不能拒绝 \(H_0\)。</li>
+        <li>综合 1：\(P(A)=0.3(0.01)+0.4(0.005)+0.3(0.02)=0.011\)。\(P(B_2|A)=0.4(0.005)/0.011=2/11\)。</li>
+        <li>综合 2：\(X\sim B(200,0.65)\approx N(130,45.5)\)。\(P(X\ge120)\approx P(Z\ge(120-130)/\sqrt{45.5})\approx P(Z\ge-1.48)\approx0.93\)。</li>
+        <li>综合 3：\(U=(10.06-10)/(0.1/\sqrt{10})\approx1.897&lt;1.96\)，不拒绝 \(H_0\)，可认为均值为 10。</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<section id="paper-b">
+  <h2>四、模拟卷 B：2024 风格卷</h2>
+  <div class="paper-meta"><span class="meta">建议用时：100 分钟</span><span class="meta">总分：100 分</span><span class="meta">定位：补近年新题感</span></div>
+  <details>
+    <summary>试题</summary>
+    <div>
+      <div class="question-block">
+        <h3>一、单选题（共 10 小题，每小题 2 分，共 20 分）</h3>
+        <ol>
+          <li>袋中有 3 个白球和 2 个黑球，不放回连续抽两次，则第二次抽到白球的概率为（ ）
+            <div class="options"><div>A. \(3/5\)</div><div>B. \(3/10\)</div><div>C. \(9/25\)</div><div>D. \(6/25\)</div></div>
+          </li>
+          <li>以下关于无偏估计的说法正确的是（ ）
+            <div class="options"><div>A. 样本标准差一定是总体标准差的无偏估计</div><div>B. 极大似然估计一定无偏</div><div>C. 无偏估计一定优于有偏估计</div><div>D. 一个参数可以有多个无偏估计</div></div>
+          </li>
+          <li>若 \(X\sim\pi(3)\)，则 \(E(X)\) 与 \(D(X)\) 分别为（ ）
+            <div class="options"><div>A. 3,3</div><div>B. 3,9</div><div>C. 9,3</div><div>D. 1/3,1/9</div></div>
+          </li>
+          <li>当 \(X\) 服从以下哪个分布时，数学期望与方差不相等？（ ）
+            <div class="options"><div>A. 泊松分布 \(\pi(3)\)</div><div>B. 均匀分布 \(U(0,6)\)</div><div>C. 二项分布 \(B(4,0.5)\)</div><div>D. 正态分布 \(N(4,4)\)</div></div>
+          </li>
+          <li>若 \(T\sim t(n)\)，则 \(1/T^2\) 服从（ ）
+            <div class="options"><div>A. \(F(1,n)\)</div><div>B. \(F(n,1)\)</div><div>C. \(\chi^2(n)\)</div><div>D. \(t(n^2)\)</div></div>
+          </li>
+          <li>若 \(\rho(X,Y)=0.9\)，则 \(\rho(X+0.2,Y-0.3)=\)（ ）
+            <div class="options"><div>A. 0.8</div><div>B. 0.84</div><div>C. 0.9</div><div>D. 0.96</div></div>
+          </li>
+          <li>若二维随机向量 \((X,Y)\) 的联合分布函数为 \(F(x,y)\)，且 \(X\ge0\)，则 \(F(-1,0)=\)（ ）
+            <div class="options"><div>A. 0</div><div>B. \(F_X(-1)\)</div><div>C. \(F_Y(0)\)</div><div>D. 1</div></div>
+          </li>
+          <li>“大量测量值的平均值具有稳定性”对应的定理是（ ）
+            <div class="options"><div>A. 全概率公式</div><div>B. 大数定律</div><div>C. 贝叶斯公式</div><div>D. 小概率原理</div></div>
+          </li>
+          <li>第二类错误指的是（ ）
+            <div class="options"><div>A. \(H_0\) 真而拒绝 \(H_0\)</div><div>B. \(H_0\) 真而不拒绝 \(H_0\)</div><div>C. \(H_0\) 假而拒绝 \(H_0\)</div><div>D. \(H_0\) 假而不拒绝 \(H_0\)</div></div>
+          </li>
+          <li>若 \(F(x)\) 是连续型随机变量的分布函数，则 \(P(1&lt;X\le3)=\)（ ）
+            <div class="options"><div>A. \(F(3)-F(1)\)</div><div>B. \(F(1)-F(3)\)</div><div>C. \(f(3)-f(1)\)</div><div>D. \(E(X)\)</div></div>
+          </li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>二、填空题（共 10 空，每空 2 分，共 20 分）</h3>
+        <ol>
+          <li>若 \(X\sim \pi(\lambda)\)，且由切比雪夫不等式得到 \(P(|X-1|\ge\varepsilon)\le1/9\)，则 \(\lambda=\) ____，\(\varepsilon=\) ____。</li>
+          <li>总体 \(X\sim N(\mu,9)\)，\(n=36\)，则 \(\mu\) 的 95% 置信区间长度为 ____。取 \(z_{0.025}=1.96\)。</li>
+          <li>若 \(X\sim N(3,1),Y\sim N(2,1)\) 且独立，则 \(X-2Y\sim\) ____。</li>
+          <li>若 \(X\sim E(1)\)，则 \(f(x)=\) ____。</li>
+          <li>若 \(P(A)=0.7,P(A\cap\bar B)=0.3\)，则 \(P(AB)=\) ____。</li>
+          <li>分布律 \(X=1,2,3,4,5\)，概率为 \(2c,0.1,0.3,c,0.3\)，则 \(c=\) ____，\(F(3.5)=\) ____。</li>
+          <li>联合密度 \(f(x,y)=cxy,0&lt;x&lt;1,0&lt;y&lt;1\)，则 \(c=\) ____，\(X,Y\) ____（填“独立”或“不独立”）。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>三、计算题（共 4 题，共 33 分）</h3>
+        <ol>
+          <li>（8 分）设 \(F_X(x)=0(x\le0),x^2(0&lt;x&lt;1),1(x\ge1)\)。求 \(f(x)\)、\(E(X)\)、\(D(X)\)，并求 \(Y=X+1\) 的分布函数。</li>
+          <li>（8 分）总体服从两点分布 \(B(1,p)\)。独立重复 2024 次，其中 1012 次结果为 1。求 \(p\) 的矩估计和极大似然估计。</li>
+          <li>（8 分）\(X,Y\) 相互独立，边缘分布为 \(P(X=-1)=1/3,P(X=1)=2/3\)，\(P(Y=-1)=1/2,P(Y=0)=1/3,P(Y=1)=1/6\)。写出联合分布表，求 \(P(X=Y)\)，并求 \(Z=XY\) 的分布。</li>
+          <li>（9 分）设二维随机向量在区域 \(0&lt;y&lt;x^2&lt;1\) 上均匀分布。求联合密度、\(X\) 的边缘密度、以及 \(X=1/\sqrt3\) 时 \(Y\) 的条件密度。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>四、综合应用题（共 3 题，每题 9 分，共 27 分）</h3>
+        <ol>
+          <li>10 粒骰子中，6 粒正常 \(P(6)=1/6\)，3 粒不均匀 \(P(6)=1/5\)，1 粒必出 6。随机选一粒掷一次，求出 6 的概率；若已出 6，求骰子正常的概率。</li>
+          <li>某药有效概率实际为 90%，抽 100 人，至少 96 人疗效显著就引进。写出 CLT，并近似求引进概率。取 \(\Phi(2)=0.9772\)。</li>
+          <li>学生成绩服从正态分布。规定试卷平均分应为 60，现 \(n=36,\bar x=54.5,s=15\)。在 \(\alpha=0.05\) 下检验试卷难度是否正常。取 \(t_{0.025}(35)=2.0301\)。</li>
+        </ol>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>答案与解析</summary>
+    <div>
+      <div class="answer">单选：1 A，2 D，3 A，4 C，5 B，6 C，7 A，8 B，9 D，10 A。</div>
+      <div class="answer">填空：1. \(1,3\)；2. \(1.96\)；3. \(N(-1,5)\)；4. \(e^{-x},x&gt;0\)，否则 0；5. 0.4；6. \(0.1,0.6\)；7. \(4\)，独立。</div>
+      <ol>
+        <li>计算 1：\(f(x)=2x,0&lt;x&lt;1\)。\(E(X)=2/3,E(X^2)=1/2,D(X)=1/18\)。\(F_Y(y)=F_X(y-1)\)。</li>
+        <li>计算 2：样本均值 \(=1012/2024=0.5\)，矩估计 \(\hat p=0.5\)。\(L(p)=p^{1012}(1-p)^{1012}\)，MLE 为 0.5。</li>
+        <li>计算 3：联合表为边缘概率相乘。\(P(X=Y)=P(-1,-1)+P(1,1)=1/6+1/9=5/18\)。\(P(Z=0)=1/3\)，\(P(Z=1)=5/18\)，\(P(Z=-1)=7/18\)。</li>
+        <li>计算 4：面积 \(\int_0^1x^2dx=1/3\)，联合密度为 3。\(f_X(x)=3x^2,0&lt;x&lt;1\)。条件密度 \(f_{Y|X}(y|1/\sqrt3)=3,0&lt;y&lt;1/3\)。</li>
+        <li>综合 1：\(P(B)=0.6(1/6)+0.3(1/5)+0.1=0.26\)。\(P(\text{正常}|B)=0.6(1/6)/0.26=5/13\)。</li>
+        <li>综合 2：\(X\sim B(100,0.9)\approx N(90,9)\)。\(P(X\ge96)\approx P(Z\ge2)=1-\Phi(2)=0.0228\)。</li>
+        <li>综合 3：\(H_0:\mu=60,H_1:\mu\ne60\)。\(t=(54.5-60)/(15/6)=-2.2\)，\(|t|&gt;2.0301\)，拒绝 \(H_0\)，认为难度不正常。</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<section id="paper-c">
+  <h2>五、模拟卷 C：历年高频综合卷</h2>
+  <div class="paper-meta"><span class="meta">建议用时：100 分钟</span><span class="meta">总分：100 分</span><span class="meta">定位：查漏补缺</span></div>
+  <details>
+    <summary>试题</summary>
+    <div>
+      <div class="question-block">
+        <h3>一、单选题（共 10 小题，每小题 2 分，共 20 分）</h3>
+        <ol>
+          <li>若事件 \(A,B\) 不相容，则一定有（ ）
+            <div class="options"><div>A. \(P(AB)=0\)</div><div>B. \(A,B\) 独立</div><div>C. \(P(A)+P(B)=1\)</div><div>D. \(P(A|B)=P(A)\)</div></div>
+          </li>
+          <li>设 \(X\sim U(0,1)\)，则密度函数属于（ ）
+            <div class="options"><div>A. 连续型密度</div><div>B. 离散函数</div><div>C. 分布律</div><div>D. 统计量</div></div>
+          </li>
+          <li>矩估计相比极大似然估计的特点是（ ）
+            <div class="options"><div>A. 一定更精确</div><div>B. 通常不需要完整写出似然函数</div><div>C. 一定无偏</div><div>D. 一定需要查表</div></div>
+          </li>
+          <li>若 \(X,Y\) 独立，\(D(X)=1,D(Y)=4\)，则 \(D(2X-Y)=\)（ ）
+            <div class="options"><div>A. 0</div><div>B. 5</div><div>C. 8</div><div>D. 12</div></div>
+          </li>
+          <li>若 \(X\sim N(0,1)\)，则 \(X^2\sim\)（ ）
+            <div class="options"><div>A. \(t(1)\)</div><div>B. \(\chi^2(1)\)</div><div>C. \(F(1,1)\)</div><div>D. \(N(0,1)\)</div></div>
+          </li>
+          <li>若 \(X,Y\) 独立标准正态，则 \(X^2+Y^2\sim\)（ ）
+            <div class="options"><div>A. \(\chi^2(1)\)</div><div>B. \(\chi^2(2)\)</div><div>C. \(t(2)\)</div><div>D. \(F(1,2)\)</div></div>
+          </li>
+          <li>若 \(X\) 与 \(Y\) 完全负线性相关，则相关系数为（ ）
+            <div class="options"><div>A. 1</div><div>B. 0</div><div>C. -1</div><div>D. 不能确定</div></div>
+          </li>
+          <li>设 \(X_1,\ldots,X_n\) 来自 \(N(\mu,\sigma^2)\)，\(\sigma^2\) 未知，则检验均值通常用（ ）
+            <div class="options"><div>A. U 检验</div><div>B. t 检验</div><div>C. \(\chi^2\) 检验</div><div>D. F 检验</div></div>
+          </li>
+          <li>若 \(P(A|B)=0.8,P(B)=0.6\)，则 \(P(AB)=\)（ ）
+            <div class="options"><div>A. 0.48</div><div>B. 0.8</div><div>C. 0.6</div><div>D. 0.2</div></div>
+          </li>
+          <li>若 \(X\sim B(n,p)\)，则 \(E(X)=\)（ ）
+            <div class="options"><div>A. \(p\)</div><div>B. \(np\)</div><div>C. \(np(1-p)\)</div><div>D. \(n(1-p)\)</div></div>
+          </li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>二、填空题（共 10 空，每空 2 分，共 20 分）</h3>
+        <ol>
+          <li>设 \(A,B,C\) 为三个事件，“恰有两个发生”可表示为 ____。</li>
+          <li>袋中 2 红 3 黑，一次取两只，恰好两只黑球的概率为 ____。</li>
+          <li>若 \(X\sim B(200,0.6)\)，则 \(E(X)=\) ____，\(D(X)=\) ____。</li>
+          <li>若 \(f(x)=kx,0&lt;x&lt;2\)，其他为 0，则 \(k=\) ____。</li>
+          <li>若 \(X\sim\pi(5)\)，则 \(D(2X+1)=\) ____。</li>
+          <li>设 \(X_1,\ldots,X_n\) 来自泊松分布 \(P(\lambda)\)，则 \(\lambda\) 的 MLE 为 ____。</li>
+          <li>若 \(X\sim N(0,1),Y\sim N(0,1)\) 独立，则 \((X+Y)^2/2\sim\) ____。</li>
+          <li>若 \(\bar X\) 是样本均值，且总体方差为 \(\sigma^2\)，则 \(D(\bar X)=\) ____。</li>
+          <li>若 \(P(A)=0.5,P(B)=0.6,P(A\cup B)=0.8\)，则 \(P(A\cap B)=\) ____。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>三、计算题（共 4 题，共 33 分）</h3>
+        <ol>
+          <li>（8 分）设 \(f(x)=kx,0&lt;x&lt;2\)，其他为 0。求 \(k\)、\(F(x)\)、\(E(X)\)。</li>
+          <li>（8 分）设二维连续型随机向量的联合密度为 \(f(x,y)=3x,0&lt;y&lt;x&lt;1\)，其他为 0。求 \(X\) 的边缘密度、\(Y\) 的边缘密度，并判断 \(X,Y\) 是否独立。</li>
+          <li>（8 分）设 \(X\) 服从指数分布 \(f(x;\lambda)=\lambda e^{-\lambda x},x&gt;0\)。求 \(\lambda\) 的矩估计和极大似然估计。</li>
+          <li>（9 分）设 \(X\sim N(\mu,4)\)，\(n=16,\bar x=12\)。求 \(\mu\) 的 95% 置信区间。取 \(z_{0.025}=1.96\)。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>四、综合应用题（共 3 题，每题 9 分，共 27 分）</h3>
+        <ol>
+          <li>甲、乙、丙三厂供货比例分别为 50%、30%、20%，次品率分别为 2%、4%、5%。随机抽一件，求次品概率；若为次品，求来自乙厂的概率。</li>
+          <li>某厂灯管寿命服从正态分布，过去平均寿命为 1000 小时。采用新工艺后抽取 \(n=25\) 只，\(\bar x=1040,s=80\)。在 \(\alpha=0.05\) 下检验寿命是否显著提高。取 \(t_{0.05}(24)=1.711\)。</li>
+          <li>某射手命中率为 0.7，独立射击 100 次。用 CLT 近似计算命中次数不少于 65 次的概率。取 \(\Phi(1.09)=0.8621\)。</li>
+        </ol>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>答案与解析</summary>
+    <div>
+      <div class="answer">单选：1 A，2 A，3 B，4 C，5 B，6 B，7 C，8 B，9 A，10 B。</div>
+      <div class="answer">填空：1. \(AB\bar C\cup A\bar BC\cup\bar ABC\)；2. \(C_3^2/C_5^2=3/10\)；3. \(120,48\)；4. \(1/2\)；5. 20；6. \(\bar X\)；7. \(\chi^2(1)\)；8. \(\sigma^2/n\)；9. 0.3。</div>
+      <ol>
+        <li>计算 1：\(k=1/2\)，\(F(x)=0(x\le0),x^2/4(0&lt;x&lt;2),1(x\ge2)\)，\(E(X)=4/3\)。</li>
+        <li>计算 2：\(f_X(x)=\int_0^x3xdy=3x^2,0&lt;x&lt;1\)。\(f_Y(y)=\int_y^13xdx=\frac32(1-y^2),0&lt;y&lt;1\)。不独立。</li>
+        <li>计算 3：矩估计 \(\hat\lambda=1/\bar X\)。MLE：\(\ln L=n\ln\lambda-\lambda\sum x_i\)，得 \(\hat\lambda=n/\sum x_i=1/\bar X\)。</li>
+        <li>计算 4：\(\sigma=2\)，误差 \(1.96\times2/4=0.98\)，区间 \([11.02,12.98]\)。</li>
+        <li>综合 1：\(P(D)=0.5(0.02)+0.3(0.04)+0.2(0.05)=0.032\)。\(P(\text{乙}|D)=0.3(0.04)/0.032=0.375\)。</li>
+        <li>综合 2：\(H_0:\mu\le1000,H_1:\mu&gt;1000\)。\(t=(1040-1000)/(80/5)=2.5&gt;1.711\)，拒绝 \(H_0\)，认为寿命显著提高。</li>
+        <li>综合 3：\(X\sim B(100,0.7)\approx N(70,21)\)。\(z=(65-70)/\sqrt{21}\approx-1.09\)，所求概率约 \(\Phi(1.09)=0.8621\)。</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<section id="paper-d">
+  <h2>六、模拟卷 D：考前冲刺卷</h2>
+  <div class="paper-meta"><span class="meta">建议用时：100 分钟</span><span class="meta">总分：100 分</span><span class="meta">定位：最后一套，检验模板熟练度</span></div>
+  <details>
+    <summary>试题</summary>
+    <div>
+      <div class="question-block">
+        <h3>一、单选题（共 10 小题，每小题 2 分，共 20 分）</h3>
+        <ol>
+          <li>设 \(P(A)=0.6,P(B)=0.5,P(A\cap B)=0.2\)，则 \(P(\bar A\cap B)=\)（ ）
+            <div class="options"><div>A. 0.2</div><div>B. 0.3</div><div>C. 0.4</div><div>D. 0.5</div></div>
+          </li>
+          <li>下列哪一个函数不能作为分布函数？（ ）
+            <div class="options"><div>A. 单调不减且右连续</div><div>B. 极限从 0 到 1</div><div>C. 可以有跳跃</div><div>D. 单调递减</div></div>
+          </li>
+          <li>若 \(X\sim E(\lambda)\)，则 \(D(X)=\)（ ）
+            <div class="options"><div>A. \(1/\lambda\)</div><div>B. \(\lambda\)</div><div>C. \(1/\lambda^2\)</div><div>D. \(\lambda^2\)</div></div>
+          </li>
+          <li>若 \(X,Y\) 独立，\(X\sim N(1,4),Y\sim N(2,9)\)，则 \(X+Y\sim\)（ ）
+            <div class="options"><div>A. \(N(3,13)\)</div><div>B. \(N(3,5)\)</div><div>C. \(N(1,13)\)</div><div>D. \(N(2,13)\)</div></div>
+          </li>
+          <li>若 \(Cov(X,Y)=0\)，则必有（ ）
+            <div class="options"><div>A. \(X,Y\) 独立</div><div>B. \(X,Y\) 不相关</div><div>C. \(X,Y\) 对立</div><div>D. \(X=Y\)</div></div>
+          </li>
+          <li>设 \(X_1,\ldots,X_n\) 为样本，则以下一定是统计量的是（ ）
+            <div class="options"><div>A. \(\bar X\)</div><div>B. \(\mu\)</div><div>C. \(\sigma^2\)</div><div>D. \(\lambda\)</div></div>
+          </li>
+          <li>参数估计中，区间估计相比点估计的特点是（ ）
+            <div class="options"><div>A. 一定更简单</div><div>B. 给出精度范围和置信度</div><div>C. 不需要样本</div><div>D. 一定不用总体分布</div></div>
+          </li>
+          <li>若 \(X\sim\chi^2(n)\)，则 \(E(X)=\)（ ）
+            <div class="options"><div>A. 0</div><div>B. 1</div><div>C. \(n\)</div><div>D. \(2n\)</div></div>
+          </li>
+          <li>若 \(X_1,\ldots,X_n\) 独立同分布且期望方差存在，则 \(\sum X_i\) 近似正态的依据是（ ）
+            <div class="options"><div>A. 全概率公式</div><div>B. 贝叶斯公式</div><div>C. 中心极限定理</div><div>D. 切比雪夫不等式</div></div>
+          </li>
+          <li>双侧检验 \(H_0:\mu=\mu_0,H_1:\mu\ne\mu_0\) 的拒绝域通常形如（ ）
+            <div class="options"><div>A. \(T&gt;c\)</div><div>B. \(T&lt;c\)</div><div>C. \(|T|&gt;c\)</div><div>D. \(T=0\)</div></div>
+          </li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>二、填空题（共 10 空，每空 2 分，共 20 分）</h3>
+        <ol>
+          <li>若 \(P(A|B)=0.8,P(A)=0.5,P(B)=0.6\)，则 \(P(B|A)=\) ____。</li>
+          <li>若 \(X\sim B(4,0.5)\)，则 \(P(X=1)=\) ____。</li>
+          <li>若 \(X\sim U(0,6)\)，则 \(E(X)=\) ____，\(D(X)=\) ____。</li>
+          <li>若 \(X\sim N(0,1)\)，则 \(P(X&gt;1)=\) ____。取 \(\Phi(1)=0.8413\)。</li>
+          <li>若 \(f(x)=c(2-x),0&lt;x&lt;2\)，则 \(c=\) ____。</li>
+          <li>若 \(Y=a-bX,b&gt;0\)，则 \(\rho(X,Y)=\) ____。</li>
+          <li>若样本容量 \(n=36\)，样本标准差 \(s=12\)，则 \(s/\sqrt n=\) ____。</li>
+          <li>若 \(X\sim\chi^2(35)\)，则 \(D(X)=\) ____。</li>
+          <li>若 \(X,Y\) 独立，\(EX=1,EY=2\)，则 \(E(3X+2Y)=\) ____。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>三、计算题（共 4 题，共 33 分）</h3>
+        <ol>
+          <li>（8 分）设 \(X\) 的密度 \(f(x)=3x^2,0&lt;x&lt;1\)，其他为 0。求 \(F(x)\)、\(E(X)\)、\(P(1/2&lt;X&lt;1)\)。</li>
+          <li>（8 分）二维离散随机变量 \(X,Y\) 的联合分布如下。求边缘分布，并求 \(Z=\max(X,Y)\) 的分布。<br>
+            <table><tr><th>\(X\backslash Y\)</th><th>1</th><th>2</th><th>3</th></tr><tr><td>1</td><td>0.1</td><td>0.1</td><td>0.1</td></tr><tr><td>2</td><td>0.1</td><td>0.2</td><td>0.1</td></tr><tr><td>3</td><td>0.1</td><td>0.1</td><td>0.1</td></tr></table>
+          </li>
+          <li>（8 分）设总体分布为 \(P(X=0)=\theta^2,P(X=1)=2\theta(1-\theta),P(X=2)=(1-\theta)^2\)，样本为 \((0,1,2,1)\)。求 \(\theta\) 的极大似然估计。</li>
+          <li>（9 分）某总体服从正态分布，抽样 \(n=25,\bar x=54,s=30\)。求总体均值 \(\mu\) 的 95% 置信区间。取 \(t_{0.025}(24)=2.064\)。</li>
+        </ol>
+      </div>
+      <div class="question-block">
+        <h3>四、综合应用题（共 3 题，每题 9 分，共 27 分）</h3>
+        <ol>
+          <li>某批零件来自三台机器 \(B_1,B_2,B_3\)，比例为 30%、45%、25%，次品率为 2%、3%、2%。随机抽一件，求次品概率；若已知为次品，求来自 \(B_2\) 的概率。</li>
+          <li>一批产品合格率为 0.9，随机抽取 400 件。用 CLT 近似计算合格件数在 350 到 370 之间的概率。取 \(\Phi(1.67)=0.9525\)。</li>
+          <li>总体 \(X\sim N(\mu,0.1^2)\)，样本均值 \(\bar x=9.94,n=10\)。在 \(\alpha=0.05\) 下检验 \(H_0:\mu=10\) 对 \(H_1:\mu\ne10\)。取 \(z_{0.025}=1.96\)。</li>
+        </ol>
+      </div>
+    </div>
+  </details>
+  <details>
+    <summary>答案与解析</summary>
+    <div>
+      <div class="answer">单选：1 B，2 D，3 C，4 A，5 B，6 A，7 B，8 C，9 C，10 C。</div>
+      <div class="answer">填空：1. 0.96；2. 0.25；3. \(3,3\)；4. 0.1587；5. \(1/2\)；6. -1；7. 2；8. 70；9. 7。</div>
+      <ol>
+        <li>计算 1：\(F(x)=0(x\le0),x^3(0&lt;x&lt;1),1(x\ge1)\)。\(E(X)=\int_0^1 3x^3dx=3/4\)。概率 \(1-(1/2)^3=7/8\)。</li>
+        <li>计算 2：\(P_X=(0.3,0.4,0.3)\)，\(P_Y=(0.3,0.4,0.3)\)。\(P(Z=1)=0.1\)，\(P(Z=2)=0.1+0.1+0.2=0.4\)，\(P(Z=3)=0.5\)。</li>
+        <li>计算 3：\(L(\theta)=\theta^2[2\theta(1-\theta)]^2(1-\theta)^2=4\theta^4(1-\theta)^4\)，对数求导得 \(\hat\theta=1/2\)。</li>
+        <li>计算 4：误差 \(2.064\times30/5=12.384\)，区间 \([41.616,66.384]\)。</li>
+        <li>综合 1：\(P(A)=0.3(0.02)+0.45(0.03)+0.25(0.02)=0.0245\)。\(P(B_2|A)=0.45(0.03)/0.0245=27/49\)。</li>
+        <li>综合 2：\(X\sim B(400,0.9)\approx N(360,36)\)。\(P(350\le X\le370)\approx P(-1.67\le Z\le1.67)=2\Phi(1.67)-1=0.905\)。</li>
+        <li>综合 3：\(U=(9.94-10)/(0.1/\sqrt{10})\approx-1.897\)，\(|U|&lt;1.96\)，不拒绝 \(H_0\)，可认为均值为 10。</li>
+      </ol>
+    </div>
+  </details>
+</section>
+
+<section id="plan">
+  <h2>七、刷题顺序</h2>
+  <div class="grid">
+    <div class="card good"><span class="tag">第 1 步</span><strong>先刷老师复习题 HTML</strong><br>尤其 L4/L7/L8/L9，再刷 L1/L2/L6。这里是最贴老师的材料。</div>
+    <div class="card blue"><span class="tag blue">第 2 步</span><strong>刷 A 卷和 B 卷</strong><br>A 卷保底，B 卷补 2024 风格。每套做完必须对答案改错。</div>
+    <div class="card warn"><span class="tag warn">第 3 步</span><strong>刷 C 卷和 D 卷</strong><br>只在前两套过关后做。重点不是难度，而是把模板写稳定。</div>
+  </div>
+  <div class="note"><strong>合格标准：</strong>选择填空错题能说出对应公式；大题每题至少能写出第一行。比如“设 \(A\)=次品，\(B_i\)=来自第 i 类设备”“由 \(\int f(x)dx=1\)”“检验统计量为……”。</div>
+</section>
+
+</main>
+</body>
+</html>
