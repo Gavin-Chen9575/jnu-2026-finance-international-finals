@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>国际经济学考前加练题_含解析</title>
+  <style>
+    :root{
+      --ink:#172033;
+      --muted:#687086;
+      --line:#d9deea;
+      --paper:#fffdf8;
+      --soft:#f4f7fb;
+      --blue:#2563eb;
+      --green:#0f766e;
+      --red:#b91c1c;
+      --amber:#b45309;
+      --violet:#6d28d9;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:#eef2f7;
+      color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",Arial,sans-serif;
+      line-height:1.72;
+    }
+    main{
+      max-width:1080px;
+      margin:0 auto;
+      padding:26px 18px 64px;
+    }
+    header{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:24px 26px;
+      box-shadow:0 8px 28px rgba(30,41,59,.08);
+    }
+    h1{margin:0 0 8px;font-size:30px;line-height:1.25}
+    h2{margin:34px 0 14px;font-size:23px;border-left:5px solid var(--blue);padding-left:12px}
+    h3{margin:26px 0 10px;font-size:18px}
+    p{margin:8px 0}
+    a{color:var(--blue);text-decoration:none}
+    .note{
+      background:#fff7ed;
+      border:1px solid #fed7aa;
+      border-radius:8px;
+      padding:12px 14px;
+      color:#7c2d12;
+    }
+    .toc{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:10px;
+      margin-top:16px;
+    }
+    .toc a{
+      display:block;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:10px 12px;
+      color:#1f2937;
+    }
+    section{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:8px;
+      margin-top:18px;
+      padding:18px 22px;
+      box-shadow:0 6px 18px rgba(15,23,42,.05);
+    }
+    .q{
+      padding:14px 0;
+      border-top:1px dashed var(--line);
+    }
+    .q:first-child{border-top:0}
+    .stem{font-weight:650}
+    ol.options{margin:8px 0 0 22px;padding:0}
+    ol.options li{padding:2px 0}
+    details{
+      margin-top:9px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:8px 11px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      color:var(--green);
+    }
+    .answer{margin-top:8px}
+    .tag{
+      display:inline-block;
+      font-size:12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:1px 8px;
+      color:#475569;
+      background:#f8fafc;
+      margin-left:6px;
+      font-weight:500;
+    }
+    .formula{
+      background:#f7fee7;
+      border:1px solid #d9f99d;
+      color:#365314;
+      border-radius:8px;
+      padding:8px 10px;
+      margin:8px 0;
+      font-family:Consolas,"Courier New",monospace;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:16px;
+      align-items:start;
+    }
+    svg{
+      width:100%;
+      height:auto;
+      max-width:520px;
+      display:block;
+      margin:8px auto;
+      background:#fff;
+      border:1px solid #dbe3ef;
+      border-radius:8px;
+    }
+    .axis{stroke:#243042;stroke-width:2}
+    .curve{fill:none;stroke:#1d4ed8;stroke-width:3}
+    .supply{fill:none;stroke:#0f766e;stroke-width:3}
+    .demand{fill:none;stroke:#b91c1c;stroke-width:3}
+    .dash{stroke:#64748b;stroke-width:1.6;stroke-dasharray:5 5}
+    .thin{stroke:#475569;stroke-width:1.4}
+    .area-a{fill:#bfdbfe;opacity:.78}
+    .area-b{fill:#fecaca;opacity:.82}
+    .area-c{fill:#fde68a;opacity:.82}
+    .area-d{fill:#bbf7d0;opacity:.82}
+    .label{font-size:13px;fill:#172033;font-family:"Microsoft YaHei",Arial,sans-serif}
+    .small{font-size:12px;fill:#475569}
+    .warn{color:var(--red);font-weight:700}
+    .ok{color:var(--green);font-weight:700}
+    table{width:100%;border-collapse:collapse;margin:10px 0}
+    th,td{border:1px solid var(--line);padding:7px 9px;text-align:left}
+    th{background:#f1f5f9}
+    @media (max-width:820px){
+      h1{font-size:24px}
+      section{padding:15px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>国际经济学考前加练题：含答案与解析</h1>
+    <p>定位：不再让你翻课后题和单独图形题。这份按老师录音和同学提醒加权，重点压在第8章最优关税、第9章进出口政策图形、第14-16章简单计算。</p>
+    <p class="note">建议用法：先做题，不会就猜；每题做完立刻点开解析。图形题不用背图形长相，重点背“价格、产量、消费、贸易量、剩余、福利”的分析顺序。</p>
+    <nav class="toc">
+      <a href="#choice">一、选择题 45题</a>
+      <a href="#graph">二、图形分析题 8题</a>
+      <a href="#calc">三、计算题 12题</a>
+      <a href="#essay">四、论述题 6题</a>
+      <a href="#last">最后背诵清单</a>
+    </nav>
+  </header>
+
+  <section id="choice">
+    <h2>一、选择题 45题</h2>
+
+    <div class="q">
+      <p class="stem">1. 判断一国是否具有比较优势，关键看什么？<span class="tag">第3章</span></p>
+      <ol class="options" type="A"><li>绝对劳动投入多少</li><li>机会成本高低</li><li>工资水平高低</li><li>出口数量多少</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：B。</b>比较优势看机会成本，不是看绝对生产效率。即使一国两种产品都更有效率，也仍可能在机会成本较低的产品上有比较优势。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">2. 亚当·斯密的绝对优势理论认为，国际分工基础是？<span class="tag">第3章</span></p>
+      <ol class="options" type="A"><li>各国劳动生产率的绝对差异</li><li>各国需求偏好的相似性</li><li>各国货币供给差异</li><li>各国产品生命周期差异</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>斯密强调绝对优势，李嘉图推进到比较优势。考试常考二者区别。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">3. 封闭经济一般均衡中，生产点和消费点的关系通常是？<span class="tag">第2章</span></p>
+      <ol class="options" type="A"><li>可以不同</li><li>必须相同</li><li>消费点一定在生产可能性曲线外</li><li>生产点一定由世界价格决定</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：B。</b>封闭经济不能通过贸易交换，消费只能来自本国生产，所以生产点等于消费点。开放经济中两者可以分离。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">4. 用社会无差异曲线衡量贸易利益时，曲线越高表示？<span class="tag">第2章</span></p>
+      <ol class="options" type="A"><li>社会福利越高</li><li>进口越少</li><li>出口越少</li><li>生产成本越高</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>开放贸易后如果消费点移到更高的社会无差异曲线，说明社会福利提高。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">5. 要素禀赋是指？<span class="tag">第4章</span></p>
+      <ol class="options" type="A"><li>一个产品使用某种要素的比例</li><li>一个国家拥有各种生产要素的相对丰裕程度</li><li>企业内部规模经济</li><li>消费者偏好结构</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：B。</b>要素禀赋是国家层面的概念；要素密集度是产品或产业层面的概念。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">6. 赫克歇尔-俄林定理的基本结论是？<span class="tag">第4章</span></p>
+      <ol class="options" type="A"><li>各国出口密集使用其丰裕要素的产品</li><li>各国出口国内需求较大的产品</li><li>贸易必然使所有要素收入上升</li><li>贸易只由规模经济决定</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>资本丰裕国出口资本密集型产品，劳动丰裕国出口劳动密集型产品。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">7. 斯托尔珀-萨缪尔森定理主要说明贸易会影响什么？<span class="tag">第4章</span></p>
+      <ol class="options" type="A"><li>要素收入分配</li><li>只影响总产量，不影响收入分配</li><li>只影响汇率</li><li>只影响外汇储备</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>商品相对价格变动会提高密集使用于该商品的要素真实报酬，降低另一要素真实报酬。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">8. 罗伯津斯基定理讨论的是？<span class="tag">第4章</span></p>
+      <ol class="options" type="A"><li>某种要素增加对产出结构的影响</li><li>关税对消费者剩余的影响</li><li>汇率对国际收支的影响</li><li>倾销的法律判定</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>在商品价格不变时，某要素增加会使密集使用该要素的产品产量扩大，另一产品产量收缩。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">9. 里昂惕夫之谜挑战的是哪一理论的经验预测？<span class="tag">第4章</span></p>
+      <ol class="options" type="A"><li>绝对优势理论</li><li>H-O理论</li><li>购买力平价理论</li><li>关税同盟理论</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：B。</b>按H-O，美国资本丰裕应出口资本密集品，但实证结果一度显示美国出口品劳动密集度更高，因此形成谜题。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">10. 特定要素模型与长期H-O模型的关键区别是？<span class="tag">第4章</span></p>
+      <ol class="options" type="A"><li>短期有些要素不能跨部门流动</li><li>短期不存在劳动</li><li>长期不存在资本</li><li>短期没有商品价格</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>老师强调短期核心原因就是要素无法自由跨行业流动，因此收入分配结论和长期不同。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">11. 重叠需求理论更适合解释哪类贸易？<span class="tag">第5章</span></p>
+      <ol class="options" type="A"><li>收入水平相近国家之间的制成品贸易</li><li>完全由气候差异决定的农产品贸易</li><li>黄金本位制度</li><li>国际收支复式记账</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>林德的重叠需求理论强调需求结构相似，常用于解释收入水平相近国家之间的产业内贸易。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">12. 内部规模经济是指？<span class="tag">第6章</span></p>
+      <ol class="options" type="A"><li>单个企业产量扩大导致平均成本下降</li><li>整个行业扩大导致所有企业成本下降</li><li>政府征税导致财政收入增加</li><li>汇率升值导致进口便宜</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>内部规模经济发生在企业内部；外部规模经济发生在行业或区域层面。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">13. 规模经济和产品差异化更容易解释？<span class="tag">第6章</span></p>
+      <ol class="options" type="A"><li>产业内贸易</li><li>完全没有贸易</li><li>国际收支恒等式</li><li>固定汇率制度</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>同类产品之间相互进出口，如汽车换汽车，通常用规模经济、不完全竞争和产品差异化解释。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">14. 小国最优关税为零，原因是？<span class="tag">第8章</span></p>
+      <ol class="options" type="A"><li>小国不能影响世界价格，征税只有扭曲损失</li><li>小国没有消费者</li><li>小国出口一定为零</li><li>小国政府不能取得收入</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>这是同学也提醒过的高频点。大国关税可能改善贸易条件，小国没有这个收益，所以最优关税为0。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">15. 大国征收进口关税可能提高本国福利，是因为它可能？<span class="tag">第8章</span></p>
+      <ol class="options" type="A"><li>降低进口品世界价格，改善贸易条件</li><li>消除所有无谓损失</li><li>让消费者剩余上升</li><li>使全球福利提高</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>大国关税的收益来自贸易条件改善，但仍有生产和消费扭曲。最优关税是本国净福利最大，不代表全球有效率。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">16. 幼稚产业保护理论主张保护的是？<span class="tag">第8章</span></p>
+      <ol class="options" type="A"><li>未来可能具有竞争力、但当前尚未成熟的产业</li><li>所有亏损产业</li><li>所有进口替代产业</li><li>已经永久失去竞争力的产业</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>幼稚产业不是“弱就保护”，要看未来能否成长、保护收益能否超过成本，以及政策是否能退出。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">17. 战略性贸易政策通常建立在哪种市场结构上？<span class="tag">第8章</span></p>
+      <ol class="options" type="A"><li>完全竞争且无规模经济</li><li>不完全竞争和规模经济</li><li>没有政府行为</li><li>物物交换经济</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：B。</b>政府通过补贴等手段帮助本国企业争夺超额利润，前提往往是不完全竞争、寡头市场和规模经济。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">18. 小国进口关税的直接影响不包括？<span class="tag">第9章</span></p>
+      <ol class="options" type="A"><li>国内价格上升</li><li>国内生产增加</li><li>国内消费增加</li><li>进口数量减少</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：C。</b>关税提高进口品国内价格，消费者减少消费，生产者扩大生产，进口减少。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">19. 小国进口关税下，本国净福利变化通常是？<span class="tag">第9章</span></p>
+      <ol class="options" type="A"><li>增加</li><li>不变</li><li>减少，产生生产扭曲和消费扭曲</li><li>必然大幅增加</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：C。</b>小国无贸易条件收益，政府收入和生产者剩余增加不足以弥补消费者剩余损失，净损失为两个三角形。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">20. 进口配额区别于关税的关键是？<span class="tag">第9章</span></p>
+      <ol class="options" type="A"><li>配额直接限制数量，配额租金归属不确定</li><li>配额不会提高国内价格</li><li>配额一定增加消费者剩余</li><li>配额没有任何福利损失</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>如果政府拍卖许可证，租金像关税收入；如果被进口商拿走或寻租浪费，结果就不同。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">21. 出口补贴对小国的本国福利影响通常是？<span class="tag">第9章</span></p>
+      <ol class="options" type="A"><li>净福利下降</li><li>消费者剩余上升</li><li>政府收入增加</li><li>国内价格下降</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>出口补贴使国内价格上升，消费者受损，政府还要支出补贴，生产者受益但不足以覆盖损失。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">22. 倾销通常是指？<span class="tag">第9章</span></p>
+      <ol class="options" type="A"><li>以低于国内价格或低于正常价值的价格出口</li><li>进口数量完全自由</li><li>国内价格高于出口价格就一定合法</li><li>政府补贴进口消费者</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>反倾销一般需要证明存在倾销、造成损害、倾销与损害之间有因果关系。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">23. 反倾销税的额度通常不应超过？<span class="tag">第9章</span></p>
+      <ol class="options" type="A"><li>倾销幅度</li><li>企业利润总额</li><li>消费者收入</li><li>外汇储备总额</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>这是很适合选择题的细节：反倾销税不是随便征，通常不能超过倾销幅度。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">24. 自由贸易区与关税同盟的主要区别是？<span class="tag">第10章</span></p>
+      <ol class="options" type="A"><li>关税同盟对外实行共同关税，自由贸易区不一定</li><li>自由贸易区一定有共同货币</li><li>关税同盟没有内部自由贸易</li><li>二者完全相同</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>层级从低到高常考：优惠贸易安排、自由贸易区、关税同盟、共同市场、经济联盟、完全经济一体化。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">25. 贸易创造效应是指？<span class="tag">第10章</span></p>
+      <ol class="options" type="A"><li>高成本国内生产被成员国低成本进口替代</li><li>低成本非成员国进口被高成本成员国进口替代</li><li>所有贸易都消失</li><li>出口补贴增加</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>贸易创造通常提高福利；贸易转移可能降低福利，因为来源从更低成本的非成员国转向较高成本成员国。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">26. 资本国际流动后，资本从资本丰裕国流向资本稀缺国的直接原因通常是？<span class="tag">第12章</span></p>
+      <ol class="options" type="A"><li>资本边际收益率差异</li><li>所有国家工资相同</li><li>资本不能移动</li><li>贸易壁垒消失</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>资本会从收益率较低处流向收益率较高处，直到收益率趋于均等。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">27. 劳动力国际流动一般会使劳动力流入国工资如何变化？<span class="tag">第12章</span></p>
+      <ol class="options" type="A"><li>下降或受到下行压力</li><li>必然上升</li><li>不可能变化</li><li>变成零</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>劳动力供给增加，工资通常下降；流出国劳动力减少，工资通常上升。注意总福利和不同群体收益不同。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">28. 直接标价法下，汇率上升通常表示？<span class="tag">第14章</span></p>
+      <ol class="options" type="A"><li>外币升值、本币贬值</li><li>本币升值、外币贬值</li><li>两种货币都升值</li><li>与币值无关</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>直接标价法是“1单位外币=多少本币”。数字变大，说明买1单位外币要更多本币，本币贬值。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">29. 间接标价法下，汇率上升通常表示？<span class="tag">第14章</span></p>
+      <ol class="options" type="A"><li>本币升值</li><li>本币贬值</li><li>外币升值</li><li>进口必然为零</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>间接标价法是“1单位本币=多少外币”。数字变大，说明本币能换更多外币，本币升值。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">30. 固定汇率制度下，维持汇率稳定通常需要中央银行？<span class="tag">第14章</span></p>
+      <ol class="options" type="A"><li>干预外汇市场</li><li>完全不持有外汇储备</li><li>取消国际收支账户</li><li>禁止所有商品交易</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>固定汇率不是汇率永远自然不动，而是官方通过买卖外汇等手段维持。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">31. 购买力平价理论的基础是一价定律，其核心思想是？<span class="tag">第15章</span></p>
+      <ol class="options" type="A"><li>同一种商品用同一货币表示的价格应趋于一致</li><li>利率永远为零</li><li>汇率只由政府规定</li><li>国际收支永远顺差</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>绝对购买力平价与价格水平有关，相对购买力平价与通货膨胀率差异有关。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">32. 抛补利率平价强调投资者通过远期外汇市场规避什么风险？<span class="tag">第15章</span></p>
+      <ol class="options" type="A"><li>汇率风险</li><li>生产风险</li><li>关税风险</li><li>自然资源风险</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>抛补就是用远期合约锁定未来汇率；无抛补则暴露于预期汇率变化。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">33. 货币模型中，一国货币供给相对增加，在其他条件不变时通常会导致本币？<span class="tag">第15章</span></p>
+      <ol class="options" type="A"><li>贬值</li><li>升值</li><li>价值不变</li><li>自动变成黄金</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>货币供给增加会提高价格水平或降低货币价值，通常对应本币贬值。第15章记结论即可。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">34. 国际收支平衡表采用的记账方法是？<span class="tag">第16章</span></p>
+      <ol class="options" type="A"><li>复式记账</li><li>单式记账</li><li>随机记账</li><li>只记出口不记进口</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>每笔国际经济交易都有借贷两方，所以表面上总是平衡，但可以存在经济意义上的失衡。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">35. 国际收支三大账户通常包括经常账户、资本和金融账户以及？<span class="tag">第16章</span></p>
+      <ol class="options" type="A"><li>错误与遗漏账户</li><li>生产可能性账户</li><li>消费者剩余账户</li><li>关税同盟账户</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>教材口径可能有细分，但经常账户、资本和金融账户、错误与遗漏是常见框架。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">36. 商品出口收入应记入国际收支的哪一类？<span class="tag">第16章</span></p>
+      <ol class="options" type="A"><li>经常账户贷方</li><li>经常账户借方</li><li>错误与遗漏借方</li><li>官方储备借方</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>出口带来外汇收入，记贷方；进口支付外汇，记借方。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">37. 自发账户与调整账户的区分主要用于判断？<span class="tag">第16章</span></p>
+      <ol class="options" type="A"><li>国际收支是否存在经济意义上的失衡</li><li>生产者剩余大小</li><li>比较优势方向</li><li>关税税率高低</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>国际收支表会计上平衡，但自发交易出现差额时，需要由调整性交易弥补，这就是失衡判断的逻辑。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">38. 弹性分析法讨论国际收支调整时，重点关注？<span class="tag">第17章</span></p>
+      <ol class="options" type="A"><li>汇率变动对进出口数量和贸易收支的影响</li><li>生产可能性曲线形状</li><li>幼稚产业筛选标准</li><li>配额租金归属</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>第17章不用推导，记各理论关注点和结论。弹性法常和马歇尔-勒纳条件联系。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">39. 马歇尔-勒纳条件大意是，本币贬值改善贸易收支需要？<span class="tag">第17章</span></p>
+      <ol class="options" type="A"><li>进出口需求弹性之和足够大</li><li>关税为零</li><li>所有商品价格不变</li><li>资本完全不能流动</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>记结论即可：贬值不一定马上改善贸易收支，要看进出口需求弹性。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">40. J曲线效应指的是？<span class="tag">第17章</span></p>
+      <ol class="options" type="A"><li>货币贬值后贸易收支可能先恶化后改善</li><li>关税税率永远呈J形</li><li>生产可能性曲线向内移动</li><li>要素价格完全不变</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>短期数量反应慢，价格效应先出现，所以可能先恶化；长期数量调整后改善。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">41. 吸收分析法认为改善国际收支，需要？<span class="tag">第17章</span></p>
+      <ol class="options" type="A"><li>使国内产出相对国内吸收增加</li><li>只画供求图</li><li>只提高配额</li><li>取消所有金融账户</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>基本关系可记为：贸易差额约等于国民收入减国内吸收，即 B = Y - A。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">42. 货币分析法强调国际收支失衡本质上是什么失衡？<span class="tag">第17章</span></p>
+      <ol class="options" type="A"><li>货币供求失衡</li><li>生产者剩余失衡</li><li>要素密集度失衡</li><li>关税同盟失衡</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>第17章理论很多，但考试要求通常是记核心结论，不要求推导。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">43. 资产组合平衡模型相比简单货币模型，更强调？<span class="tag">第15章</span></p>
+      <ol class="options" type="A"><li>本外币资产不是完全替代，资产供求影响汇率</li><li>只有商品价格影响汇率</li><li>所有资产收益率永远相同</li><li>国际贸易不存在</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>老师说不掌握复杂推导，记简化结论：资产组合、风险偏好和资产供求会影响汇率。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">44. 下列哪项最适合作为图形题重点？<span class="tag">综合</span></p>
+      <ol class="options" type="A"><li>关税、倾销、出口补贴</li><li>第11章全部内容</li><li>纯文字章节所有定义</li><li>国际金融复杂模型推导</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>这直接对应老师录音：图形题集中在贸易理论和贸易政策，关税、倾销、出口补贴尤其重要。</p></details>
+    </div>
+
+    <div class="q">
+      <p class="stem">45. 这门课本次考试最不应该投入大量时间的是？<span class="tag">策略题</span></p>
+      <ol class="options" type="A"><li>第11章、第13章未讲授内容</li><li>第9章政策图形</li><li>第14章汇率换算</li><li>第16章国际收支记账</li></ol>
+      <details><summary>答案与解析</summary><p class="answer"><b>答案：A。</b>老师明确说第11章、第13章不讲解。考前时间紧，要把时间给老师点名的题型。</p></details>
+    </div>
+  </section>
+
+  <section id="graph">
+    <h2>二、图形分析题 8题</h2>
+
+    <div class="q">
+      <h3>图形题1：小国进口关税</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="小国进口关税图">
+            <line x1="70" y1="306" x2="500" y2="306" class="axis"/><line x1="70" y1="306" x2="70" y2="42" class="axis"/>
+            <path d="M105 276 L455 74" class="supply"/><path d="M105 74 L455 276" class="demand"/>
+            <line x1="70" y1="230" x2="500" y2="230" class="thin"/><line x1="70" y1="170" x2="500" y2="170" class="thin"/>
+            <line x1="183" y1="306" x2="183" y2="230" class="dash"/><line x1="287" y1="306" x2="287" y2="170" class="dash"/><line x1="392" y1="306" x2="392" y2="170" class="dash"/><line x1="496" y1="306" x2="496" y2="230" class="dash"/>
+            <polygon points="183,230 287,170 287,230" class="area-b"/><rect x="287" y="170" width="105" height="60" class="area-c"/><polygon points="392,170 496,230 392,230" class="area-b"/>
+            <text x="505" y="234" class="label">Pw</text><text x="505" y="174" class="label">Pw+t</text>
+            <text x="174" y="326" class="label">Q1</text><text x="279" y="326" class="label">Q2</text><text x="384" y="326" class="label">Q3</text><text x="488" y="326" class="label">Q4</text>
+            <text x="432" y="84" class="label">D</text><text x="437" y="277" class="label">S</text>
+            <text x="318" y="205" class="label">政府收入</text><text x="221" y="206" class="label">b</text><text x="438" y="206" class="label">d</text>
+            <text x="480" y="326" class="label">Q</text><text x="35" y="52" class="label">P</text>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：根据图形分析小国征收进口关税后的价格、生产、消费、进口量和福利变化。</p>
+          <details open><summary>答案与解析</summary>
+            <p class="answer">关税使国内价格由 <b>Pw</b> 上升到 <b>Pw+t</b>。国内生产从 Q1 增加到 Q2，国内消费从 Q4 减少到 Q3，进口量从 Q1Q4 减少到 Q2Q3。</p>
+            <p>福利：消费者剩余下降；生产者剩余上升；政府获得关税收入；本国净福利损失为两个三角形 <b>b+d</b>。小国不能影响世界价格，所以没有贸易条件收益。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <h3>图形题2：大国进口关税与最优关税</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="最优关税曲线">
+            <line x1="72" y1="304" x2="498" y2="304" class="axis"/><line x1="72" y1="304" x2="72" y2="46" class="axis"/>
+            <path d="M78 292 C155 186,235 112,318 128 C394 144,448 214,486 292" fill="none" stroke="#2563eb" stroke-width="3"/>
+            <line x1="312" y1="304" x2="312" y2="128" class="dash"/>
+            <line x1="72" y1="128" x2="312" y2="128" class="dash"/>
+            <text x="300" y="325" class="label">t*</text><text x="54" y="132" class="label">Wmax</text>
+            <text x="408" y="86" class="label">本国福利</text><text x="455" y="326" class="label">关税率</text>
+            <text x="136" y="230" class="small">贸易条件收益大于扭曲损失</text>
+            <text x="334" y="220" class="small">扭曲损失逐渐超过收益</text>
+            <circle cx="312" cy="128" r="5" fill="#b91c1c"/>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：为什么大国可能存在最优关税，而小国最优关税为0？</p>
+          <details open><summary>答案与解析</summary>
+            <p class="answer">大国进口量足以影响世界价格。征收关税后，外国出口价格可能下降，本国获得<b>贸易条件改善收益</b>；但关税也会造成生产扭曲和消费扭曲。</p>
+            <p>当边际收益等于边际损失时，本国福利最大，对应最优关税 <b>t*</b>。小国不能影响世界价格，没有贸易条件收益，所以征税只有扭曲损失，最优关税为 <b>0</b>。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <h3>图形题3：进口配额</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="进口配额图">
+            <line x1="70" y1="306" x2="500" y2="306" class="axis"/><line x1="70" y1="306" x2="70" y2="42" class="axis"/>
+            <path d="M105 276 L455 74" class="supply"/><path d="M105 74 L455 276" class="demand"/>
+            <line x1="70" y1="230" x2="500" y2="230" class="thin"/><line x1="70" y1="170" x2="500" y2="170" class="thin"/>
+            <line x1="287" y1="306" x2="287" y2="170" class="dash"/><line x1="392" y1="306" x2="392" y2="170" class="dash"/>
+            <rect x="287" y="170" width="105" height="60" class="area-c"/><polygon points="183,230 287,170 287,230" class="area-b"/><polygon points="392,170 496,230 392,230" class="area-b"/>
+            <text x="505" y="234" class="label">Pw</text><text x="505" y="174" class="label">Pq</text>
+            <text x="305" y="205" class="label">配额租金</text><text x="300" y="326" class="label">进口配额量</text>
+            <text x="432" y="84" class="label">D</text><text x="437" y="277" class="label">S</text>
+            <text x="480" y="326" class="label">Q</text><text x="35" y="52" class="label">P</text>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：进口配额和进口关税的图形为什么相似？关键差异在哪里？</p>
+          <details><summary>答案与解析</summary>
+            <p class="answer">相似点：二者都会使国内价格上升、国内生产增加、国内消费减少、进口减少，都有生产扭曲和消费扭曲。</p>
+            <p>关键差异：关税收入归政府；配额下中间矩形是<b>配额租金</b>，可能归政府、进口商、外国出口商，也可能在寻租中浪费。因此配额福利结果比关税更不确定。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <h3>图形题4：出口补贴</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="出口补贴图">
+            <line x1="70" y1="306" x2="500" y2="306" class="axis"/><line x1="70" y1="306" x2="70" y2="42" class="axis"/>
+            <path d="M105 276 L455 74" class="supply"/><path d="M105 74 L455 276" class="demand"/>
+            <line x1="70" y1="230" x2="500" y2="230" class="thin"/><line x1="70" y1="170" x2="500" y2="170" class="thin"/>
+            <line x1="183" y1="306" x2="183" y2="170" class="dash"/><line x1="287" y1="306" x2="287" y2="230" class="dash"/><line x1="392" y1="306" x2="392" y2="230" class="dash"/><line x1="496" y1="306" x2="496" y2="170" class="dash"/>
+            <rect x="183" y="170" width="313" height="60" class="area-c"/>
+            <polygon points="183,170 287,230 183,230" class="area-b"/><polygon points="392,230 496,170 496,230" class="area-b"/>
+            <text x="505" y="234" class="label">Pw</text><text x="505" y="174" class="label">Pw+s</text>
+            <text x="280" y="205" class="label">政府补贴支出</text>
+            <text x="170" y="326" class="label">Qd2</text><text x="275" y="326" class="label">Qd1</text><text x="380" y="326" class="label">Qs1</text><text x="484" y="326" class="label">Qs2</text>
+            <text x="432" y="84" class="label">D</text><text x="437" y="277" class="label">S</text>
+            <text x="480" y="326" class="label">Q</text><text x="35" y="52" class="label">P</text>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：小国实行出口补贴后，国内价格、生产、消费、出口和福利如何变化？</p>
+          <details><summary>答案与解析</summary>
+            <p class="answer">出口补贴使国内价格从 Pw 上升到 Pw+s。生产增加，消费减少，出口量扩大。</p>
+            <p>生产者剩余增加，消费者剩余减少，政府发生补贴支出。本国净福利下降，损失来自过度生产和过度消费减少带来的扭曲，再加上政府补贴成本。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <h3>图形题5：倾销与价格歧视</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="倾销图">
+            <line x1="65" y1="300" x2="245" y2="300" class="axis"/><line x1="65" y1="300" x2="65" y2="65" class="axis"/>
+            <line x1="310" y1="300" x2="490" y2="300" class="axis"/><line x1="310" y1="300" x2="310" y2="65" class="axis"/>
+            <path d="M92 86 C126 112,174 190,224 282" class="demand"/><path d="M337 96 C375 138,424 218,472 284" class="demand"/>
+            <line x1="65" y1="145" x2="230" y2="145" class="thin"/><line x1="310" y1="210" x2="475" y2="210" class="thin"/>
+            <text x="138" y="135" class="label">国内价格高</text><text x="372" y="200" class="label">国外价格低</text>
+            <text x="104" y="330" class="label">国内市场</text><text x="348" y="330" class="label">国外市场</text>
+            <text x="36" y="72" class="label">P</text><text x="282" y="72" class="label">P</text>
+            <text x="220" y="322" class="label">Q</text><text x="465" y="322" class="label">Q</text>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：结合图形说明持续性倾销为什么可能发生，反倾销成立通常要满足什么条件？</p>
+          <details><summary>答案与解析</summary>
+            <p class="answer">持续性倾销常见解释是价格歧视：企业在国内市场定较高价格，在国外市场定较低价格。条件通常包括企业具有市场力量、国内外市场可分割、不同市场需求弹性不同。</p>
+            <p>反倾销通常要证明三点：存在倾销、国内产业受到实质损害、倾销与损害之间存在因果关系。反倾销税一般不超过倾销幅度。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <h3>图形题6：开放经济中的贸易利益</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="PPF和无差异曲线">
+            <line x1="70" y1="306" x2="500" y2="306" class="axis"/><line x1="70" y1="306" x2="70" y2="42" class="axis"/>
+            <path d="M88 82 C155 216,284 292,470 304" fill="none" stroke="#0f766e" stroke-width="3"/>
+            <path d="M150 276 C230 208,312 172,425 158" fill="none" stroke="#b91c1c" stroke-width="2.4"/>
+            <path d="M205 250 C300 178,385 132,490 116" fill="none" stroke="#b91c1c" stroke-width="2.4"/>
+            <line x1="115" y1="270" x2="468" y2="94" stroke="#2563eb" stroke-width="2.5"/>
+            <circle cx="250" cy="203" r="5" fill="#0f766e"/><circle cx="398" cy="129" r="5" fill="#b91c1c"/>
+            <text x="236" y="195" class="label">P</text><text x="410" y="126" class="label">C</text>
+            <text x="472" y="104" class="label">世界价格线</text><text x="442" y="308" class="label">PPF</text>
+            <text x="426" y="155" class="label">U1</text><text x="491" y="113" class="label">U2</text>
+            <text x="480" y="326" class="label">X</text><text x="35" y="52" class="label">Y</text>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：为什么开放经济中生产点P和消费点C可以不同？如何从图上判断贸易利益？</p>
+          <details><summary>答案与解析</summary>
+            <p class="answer">开放经济下，一国可以按比较优势进行生产，再通过国际贸易交换，所以生产点和消费点可以分离。</p>
+            <p>如果贸易后的消费点 C 位于比封闭经济更高的社会无差异曲线 U2 上，说明社会福利提高，这就是贸易利益。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <h3>图形题7：关税同盟的贸易创造与贸易转移</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="关税同盟贸易创造贸易转移">
+            <line x1="80" y1="296" x2="486" y2="296" class="axis"/><line x1="80" y1="296" x2="80" y2="54" class="axis"/>
+            <rect x="125" y="118" width="70" height="178" fill="#fecaca"/><rect x="235" y="176" width="70" height="120" fill="#bfdbfe"/><rect x="345" y="146" width="70" height="150" fill="#fde68a"/>
+            <text x="118" y="318" class="label">本国</text><text x="226" y="318" class="label">非成员国</text><text x="342" y="318" class="label">成员国</text>
+            <text x="139" y="108" class="label">高成本</text><text x="244" y="166" class="label">低成本</text><text x="352" y="136" class="label">中成本</text>
+            <path d="M160 108 C190 82,260 80,292 158" fill="none" stroke="#0f766e" stroke-width="2.5" marker-end="url(#arr1)"/>
+            <path d="M268 166 C300 112,356 104,380 137" fill="none" stroke="#b91c1c" stroke-width="2.5" marker-end="url(#arr2)"/>
+            <defs>
+              <marker id="arr1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0f766e"/></marker>
+              <marker id="arr2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#b91c1c"/></marker>
+            </defs>
+            <text x="165" y="74" class="label">贸易创造</text><text x="308" y="92" class="label">贸易转移</text>
+            <text x="38" y="64" class="label">成本</text>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：建立关税同盟后，贸易创造和贸易转移分别如何影响福利？</p>
+          <details><summary>答案与解析</summary>
+            <p class="answer">贸易创造：成员国低成本进口替代本国高成本生产，通常提高福利。</p>
+            <p>贸易转移：原本从非成员国低成本进口，转为从成员国较高成本进口，可能降低福利。关税同盟总福利取决于贸易创造收益和贸易转移损失谁更大。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <h3>图形题8：资本国际流动</h3>
+      <div class="grid">
+        <div>
+          <svg viewBox="0 0 540 360" role="img" aria-label="资本国际流动收益率趋同">
+            <line x1="70" y1="300" x2="245" y2="300" class="axis"/><line x1="70" y1="300" x2="70" y2="62" class="axis"/>
+            <line x1="310" y1="300" x2="485" y2="300" class="axis"/><line x1="310" y1="300" x2="310" y2="62" class="axis"/>
+            <path d="M90 95 C132 142,178 212,226 286" class="curve"/><path d="M330 65 C375 128,424 210,468 286" class="curve"/>
+            <line x1="70" y1="180" x2="485" y2="180" class="dash"/>
+            <path d="M248 178 C270 150,290 150,312 178" fill="none" stroke="#0f766e" stroke-width="3" marker-end="url(#arr3)"/>
+            <defs><marker id="arr3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#0f766e"/></marker></defs>
+            <text x="100" y="326" class="label">资本丰裕国</text><text x="343" y="326" class="label">资本稀缺国</text>
+            <text x="197" y="154" class="label">资本流出</text><text x="338" y="173" class="label">收益率趋同</text>
+            <text x="32" y="74" class="label">r</text><text x="276" y="74" class="label">r</text>
+          </svg>
+        </div>
+        <div>
+          <p class="stem">问题：资本为什么会从资本丰裕国流向资本稀缺国？流动后收益率和福利如何变化？</p>
+          <details><summary>答案与解析</summary>
+            <p class="answer">资本丰裕国资本边际收益率较低，资本稀缺国资本边际收益率较高，所以资本从低收益率地区流向高收益率地区。</p>
+            <p>流动后两国资本收益率趋于均等，世界总产出提高。但国内不同群体收益不同：资本流出国资本所有者可能受益，使用资本的生产者可能受损；流入国相反。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calc">
+    <h2>三、计算题 12题</h2>
+
+    <div class="q">
+      <p class="stem">计算题1：比较优势。A国生产1单位小麦需2小时、1单位布需4小时；B国生产1单位小麦需6小时、1单位布需6小时。判断绝对优势和比较优势。</p>
+      <details><summary>答案与解析</summary>
+        <p class="answer"><b>绝对优势：</b>A国生产小麦2小时&lt;6小时，生产布4小时&lt;6小时，所以A国两种产品都有绝对优势。</p>
+        <p><b>比较优势：</b>A国1小麦机会成本=2/4=0.5布；B国1小麦机会成本=6/6=1布。A国小麦机会成本低，有小麦比较优势。A国1布机会成本=4/2=2小麦；B国1布机会成本=6/6=1小麦。B国布机会成本低，有布比较优势。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题2：贸易范围。A国1小麦机会成本为0.5布，B国1小麦机会成本为1布。若两国进行贸易，1小麦交换多少布时双方都可能获益？</p>
+      <details><summary>答案与解析</summary>
+        <p class="answer">国际交换比率应位于两国机会成本之间：</p>
+        <p class="formula">0.5布 &lt; 1小麦的国际价格 &lt; 1布</p>
+        <p>例如1小麦换0.8布，A国出口小麦比国内换0.5布更划算，B国进口小麦比国内用1布成本更低，双方都获益。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题3：有效保护率。某产品自由贸易价格为100元，投入品成本为60元。征收关税后，最终产品价格提高到120元，投入品因关税成本提高到66元。求有效保护率。</p>
+      <details><summary>答案与解析</summary>
+        <p class="formula">有效保护率 = (保护后增加值 - 自由贸易增加值) / 自由贸易增加值</p>
+        <p>自由贸易增加值 = 100 - 60 = 40。保护后增加值 = 120 - 66 = 54。</p>
+        <p class="answer">有效保护率 = (54 - 40) / 40 = 35%。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题4：产业内贸易指数。某国汽车出口额为80亿美元，进口额为120亿美元。求该产业的格鲁贝尔-劳埃德指数。</p>
+      <details><summary>答案与解析</summary>
+        <p class="formula">GL = 1 - |X-M| / (X+M)</p>
+        <p>GL = 1 - |80-120| / (80+120) = 1 - 40/200 = 0.8。</p>
+        <p class="answer">该产业产业内贸易程度较高，指数为0.8。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题5：小国关税福利。进口品需求曲线下，关税使生产扭曲损失为6，消费扭曲损失为9，政府关税收入为30。问本国净福利变化是多少？</p>
+      <details><summary>答案与解析</summary>
+        <p class="answer">小国关税的净福利变化只看无谓损失，因为政府收入只是国内转移，消费者损失中有一部分转给政府和生产者。</p>
+        <p class="formula">净福利变化 = -(生产扭曲损失 + 消费扭曲损失) = -(6+9) = -15</p>
+        <p>本国净福利减少15。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题6：大国关税福利。某大国征收进口关税后，贸易条件收益为40，生产扭曲损失为12，消费扭曲损失为18。问本国净福利变化。</p>
+      <details><summary>答案与解析</summary>
+        <p class="formula">大国关税净福利 = 贸易条件收益 - 生产扭曲损失 - 消费扭曲损失</p>
+        <p class="answer">净福利 = 40 - 12 - 18 = 10。本国福利增加10。</p>
+        <p>但这不代表全球福利增加，因为外国利益受损，且存在扭曲损失。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题7：出口补贴。某小国出口补贴使生产者剩余增加50，消费者剩余减少20，政府补贴支出45。求本国净福利变化。</p>
+      <details><summary>答案与解析</summary>
+        <p class="formula">净福利变化 = 生产者剩余增加 - 消费者剩余减少 - 政府补贴支出</p>
+        <p class="answer">净福利 = 50 - 20 - 45 = -15。本国福利减少15。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题8：直接标价法换算。人民币对美元汇率为 USD 1 = CNY 7.20。一件美国商品价格为50美元，折合人民币多少？若人民币升值到 USD 1 = CNY 7.00，人民币价格如何变化？</p>
+      <details><summary>答案与解析</summary>
+        <p>原价格：50 × 7.20 = 360元。</p>
+        <p>升值后：50 × 7.00 = 350元。</p>
+        <p class="answer">人民币升值后，进口美元商品折合人民币价格下降10元。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题9：间接标价法。若 GBP 1 = USD 1.25，一件英国商品价格为80英镑，折合美元多少？</p>
+      <details><summary>答案与解析</summary>
+        <p class="answer">80 × 1.25 = 100美元。</p>
+        <p>这里虽然给的是英镑对美元，但本质仍是单位换算：商品英镑价格乘以每英镑美元数。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题10：远期升贴水。即期汇率 USD 1 = CNY 7.20，三个月远期汇率 USD 1 = CNY 7.28。美元相对人民币是升水还是贴水？三个月升贴水率约为多少？</p>
+      <details><summary>答案与解析</summary>
+        <p>远期美元价格更高，说明美元远期升水。</p>
+        <p class="formula">三个月升水率 = (7.28 - 7.20) / 7.20 = 1.11%</p>
+        <p class="answer">美元三个月远期升水约1.11%。如果折成年率，约为1.11% × 4 = 4.44%。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题11：购买力平价。某商品在中国价格为70元，在美国价格为10美元。按绝对购买力平价，人民币对美元汇率应是多少？</p>
+      <details><summary>答案与解析</summary>
+        <p class="formula">汇率 = 本国价格 / 外国价格</p>
+        <p class="answer">70 / 10 = 7。因此购买力平价汇率为 USD 1 = CNY 7。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">计算题12：国际收支记账。中国企业出口商品取得100万美元，货款存入海外银行账户。请说明国际收支中如何记账。</p>
+      <details><summary>答案与解析</summary>
+        <p class="answer">商品出口属于经常账户贷方，记 +100万美元。货款存入海外银行账户，表示本国对外资产增加，记金融账户借方 -100万美元。</p>
+        <p>复式记账下，两边金额相等、方向相反，会计上平衡。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="essay">
+    <h2>四、论述题 6题</h2>
+
+    <div class="q">
+      <p class="stem">论述题1：试述最优关税理论，并评价其政策含义。</p>
+      <details><summary>参考答案框架</summary>
+        <p class="answer">先定义：最优关税是使一国福利最大化的关税水平。大国征收进口关税可能压低世界价格，从而改善贸易条件，获得收益；但关税同时造成生产扭曲和消费扭曲。当边际贸易条件收益等于边际扭曲损失时，达到最优关税。</p>
+        <p>评价：该理论只适用于能影响世界价格的大国，小国最优关税为0。从本国看可能获利，但从全球看会降低资源配置效率，并可能引发贸易报复和贸易战，因此现实政策应谨慎使用。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">论述题2：比较进口关税与进口配额的经济效应。</p>
+      <details><summary>参考答案框架</summary>
+        <p class="answer">共同点：二者都会提高国内价格，使国内生产增加、消费减少、进口减少；消费者剩余下降，生产者剩余上升，并产生生产扭曲和消费扭曲。</p>
+        <p>区别：关税通过价格机制限制进口，政府获得关税收入；配额直接限制进口数量，配额租金归属不确定。若政府拍卖许可证，效果接近关税；若租金被进口商或外国出口商获得，或发生寻租浪费，配额对本国福利更不利。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">论述题3：分析出口补贴的经济效应。</p>
+      <details><summary>参考答案框架</summary>
+        <p class="answer">出口补贴使出口商品国内价格上升，刺激国内生产，抑制国内消费，扩大出口。生产者剩余增加，消费者剩余减少，政府承担补贴支出。</p>
+        <p>对小国而言，出口补贴通常导致本国净福利下降，因为生产者收益不足以弥补消费者损失和政府支出。从全球看，出口补贴扭曲资源配置，也容易引发贸易摩擦。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">论述题4：说明H-O理论及其四个相关定理。</p>
+      <details><summary>参考答案框架</summary>
+        <p class="answer">H-O定理：一国出口密集使用其丰裕要素的产品，进口密集使用其稀缺要素的产品。要先区分要素禀赋是国家层面，要素密集度是产品层面。</p>
+        <p>要素价格均等化定理：在一定条件下，自由贸易会使各国同质要素价格趋于均等。斯托尔珀-萨缪尔森定理：商品价格上升会提高该商品密集使用要素的真实报酬，降低另一要素真实报酬。罗伯津斯基定理：商品价格不变时，某要素增加会使密集使用该要素的产品产量增加，另一产品产量减少。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">论述题5：试述关税同盟的静态福利效应。</p>
+      <details><summary>参考答案框架</summary>
+        <p class="answer">关税同盟是成员国之间取消贸易壁垒，并对非成员国实行共同对外关税。其静态福利效应主要包括贸易创造和贸易转移。</p>
+        <p>贸易创造是成员国低成本产品替代本国高成本生产，提高资源配置效率，通常增加福利。贸易转移是原本从低成本非成员国进口，转向从较高成本成员国进口，可能降低福利。关税同盟最终是否有利，取决于贸易创造收益是否大于贸易转移损失。</p>
+      </details>
+    </div>
+
+    <div class="q">
+      <p class="stem">论述题6：概述国际收支调整理论的主要观点。</p>
+      <details><summary>参考答案框架</summary>
+        <p class="answer">弹性分析法强调汇率变化通过进出口需求弹性影响贸易收支，常用马歇尔-勒纳条件说明贬值能否改善贸易收支，并存在J曲线效应。</p>
+        <p>吸收分析法从国民收入和国内吸收角度分析，认为改善国际收支要使产出相对吸收增加。货币分析法认为国际收支失衡本质上是货币供求失衡。考试一般记核心结论，不要求复杂推导。</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="last">
+    <h2>最后背诵清单</h2>
+    <table>
+      <tr><th>题型</th><th>最后必须会说的话</th></tr>
+      <tr><td>选择题</td><td>比较优势看机会成本；要素禀赋是国家，密集度是产品；小国最优关税为0；直接标价法上升表示本币贬值。</td></tr>
+      <tr><td>图形题</td><td>先说价格，再说生产/消费/进口或出口，再说CS/PS/政府，再说净福利。</td></tr>
+      <tr><td>计算题</td><td>比较优势、有效保护率、GL指数、汇率换算、远期升贴水、PPP、国际收支复式记账。</td></tr>
+      <tr><td>论述题</td><td>最优关税、进口关税与配额、出口补贴、H-O四定理、关税同盟、国际收支调整理论。</td></tr>
+    </table>
+    <p class="note">考前如果只剩一小时：刷图形题1-5、计算题1-4和8-12、论述题1-3。它们最贴近老师和同学共同提醒的方向。</p>
+  </section>
+</main>
+</body>
+</html>
