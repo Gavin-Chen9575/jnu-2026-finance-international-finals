@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>国际金融0基础入门导学：看v4前先建立框架</title>
+  <style>
+    :root{
+      --ink:#202124;
+      --muted:#626a73;
+      --line:#d9dee5;
+      --bg:#f7f8fa;
+      --paper:#ffffff;
+      --green:#21705c;
+      --red:#b0443e;
+      --blue:#2f6fa3;
+      --gold:#a36a12;
+      --violet:#6d5aa8;
+      --soft-green:#eaf5f0;
+      --soft-red:#faeeee;
+      --soft-blue:#edf5fb;
+      --soft-gold:#fff4dc;
+      --soft-violet:#f1eff9;
+      --shadow:0 16px 42px rgba(32,33,36,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--bg);
+      font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;
+      line-height:1.72;
+      letter-spacing:0;
+    }
+    a{color:var(--blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 22px 72px}
+    header{
+      background:var(--paper);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      padding:34px;
+      border-radius:8px;
+    }
+    .kicker{font-size:14px;color:var(--green);font-weight:700;margin:0 0 8px}
+    h1{
+      margin:0;
+      font-size:36px;
+      line-height:1.2;
+      font-weight:850;
+    }
+    .lead{max-width:850px;color:#3f464d;font-size:18px;margin:16px 0 0}
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+      color:#3f464d;
+      font-size:14px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:#fbfcfd;
+      border-radius:999px;
+      padding:5px 11px;
+      white-space:nowrap;
+    }
+    nav.toc{
+      margin-top:18px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:20px;
+    }
+    nav.toc h2{font-size:20px;margin:0 0 12px}
+    .toc-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+    }
+    .toc-grid a{
+      display:block;
+      min-height:44px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:#fbfcfd;
+      padding:10px 12px;
+      color:#26323a;
+      font-weight:700;
+      line-height:1.35;
+    }
+    main{margin-top:20px}
+    section{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:28px;
+      margin:18px 0;
+    }
+    h2{font-size:28px;line-height:1.25;margin:0 0 16px}
+    h3{font-size:20px;margin:24px 0 10px}
+    p{margin:10px 0}
+    ul,ol{padding-left:23px}
+    li{margin:6px 0}
+    .note{
+      border-left:5px solid var(--green);
+      background:var(--soft-green);
+      padding:14px 16px;
+      border-radius:0 8px 8px 0;
+      margin:16px 0;
+    }
+    .warn{
+      border-left:5px solid var(--red);
+      background:var(--soft-red);
+      padding:14px 16px;
+      border-radius:0 8px 8px 0;
+      margin:16px 0;
+    }
+    .formula{
+      font-family:Consolas,"Courier New",monospace;
+      background:#f1f3f5;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:12px 14px;
+      overflow:auto;
+      margin:12px 0;
+      line-height:1.55;
+    }
+    .band{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin:14px 0;
+    }
+    .mini{
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:14px;
+      background:#fbfcfd;
+    }
+    .mini strong{display:block;font-size:16px;margin-bottom:4px}
+    .mini.green{background:var(--soft-green);border-color:#bdd9ce}
+    .mini.blue{background:var(--soft-blue);border-color:#c3d9ea}
+    .mini.gold{background:var(--soft-gold);border-color:#ecd39b}
+    .mini.red{background:var(--soft-red);border-color:#e4c0bd}
+    .mini.violet{background:var(--soft-violet);border-color:#d4cceb}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:14px 0;
+      font-size:15px;
+    }
+    th,td{
+      border:1px solid var(--line);
+      padding:10px 11px;
+      vertical-align:top;
+    }
+    th{background:#eef1f4;text-align:left}
+    .tag{
+      display:inline-block;
+      border-radius:999px;
+      padding:2px 8px;
+      font-size:12px;
+      font-weight:800;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+    .tag.high{background:var(--soft-red);color:#8f2c27;border-color:#e1b8b5}
+    .tag.mid{background:var(--soft-gold);color:#714707;border-color:#e4c987}
+    .tag.base{background:var(--soft-blue);color:#23557d;border-color:#bed7e8}
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:8px;
+      align-items:stretch;
+      margin:14px 0;
+    }
+    .step{
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:#fbfcfd;
+      padding:12px;
+      min-height:102px;
+    }
+    .step b{display:block;color:var(--blue);margin-bottom:4px}
+    details{
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:12px 14px;
+      margin:10px 0;
+      background:#fbfcfd;
+    }
+    summary{font-weight:800;cursor:pointer}
+    .toplink{text-align:right;font-size:14px;margin-top:16px}
+    footer{
+      color:var(--muted);
+      font-size:14px;
+      padding:12px 2px 0;
+    }
+    @media(max-width:900px){
+      .toc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .band{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr}
+      h1{font-size:30px}
+      section,header{padding:22px}
+    }
+    @media(max-width:560px){
+      .wrap{padding:18px 14px 50px}
+      .toc-grid{grid-template-columns:1fr}
+      h1{font-size:26px}
+      h2{font-size:24px}
+      table{font-size:14px}
+      th,td{padding:8px}
+    }
+    @media print{
+      body{background:#fff}
+      .wrap{max-width:none;padding:0}
+      header,nav.toc,section{box-shadow:none;border-color:#bbb;break-inside:avoid}
+      a{color:#000;text-decoration:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="top">
+    <header>
+      <p class="kicker">看 v4 之前先建立课程地图</p>
+      <h1>国际金融 0 基础入门导学</h1>
+      <p class="lead">这份资料不是背诵包，而是“预热课”。目标是让你先知道国际金融在研究什么、每章之间怎么连起来、老师为什么反复强调那些坑点。看完以后再打开 v4，你会更容易理解公式、名词解释和简答模板。</p>
+      <div class="meta">
+        <span class="pill">资料来源：老师录音 / 课堂 PPT / 教材 PDF / v4 复习包 / 刷题包</span>
+        <span class="pill">定位：0 基础到熟悉课程框架</span>
+        <span class="pill">建议用时：60-90 分钟</span>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="目录">
+      <h2>目录</h2>
+      <div class="toc-grid">
+        <a href="#why">1. 这门课到底学什么</a>
+        <a href="#exam-map">2. 老师划出的考试地图</a>
+        <a href="#big-picture">3. 一张图理解全课</a>
+        <a href="#language">4. 先学会这套语言</a>
+        <a href="#exchange-rate">5. 汇率与外汇市场</a>
+        <a href="#parity">6. 平价条件和远期汇率</a>
+        <a href="#bop">7. 国际收支</a>
+        <a href="#open-macro">8. 开放经济政策</a>
+        <a href="#systems">9. 汇率制度与货币体系</a>
+        <a href="#crisis">10. 金融危机</a>
+        <a href="#bridge">11. 怎么接上 v4</a>
+        <a href="#selfcheck">12. 入门自测</a>
+      </div>
+    </nav>
+
+    <main>
+      <section id="why">
+        <h2>1. 这门课到底学什么</h2>
+        <p>国际金融研究的是：一个国家打开国门以后，货币、汇率、资本流动、国际收支和宏观政策之间会怎样互相影响。</p>
+        <p>如果只用一句话概括：<strong>国际金融就是在开放经济条件下，研究“钱怎样跨国流动、汇率怎样形成、国家怎样在稳定汇率和保持政策自主之间做选择”。</strong></p>
+        <div class="band">
+          <div class="mini green">
+            <strong>微观层面</strong>
+            外汇市场里，银行、企业、投资者如何买卖货币，如何用远期汇率避险或套利。
+          </div>
+          <div class="mini blue">
+            <strong>宏观层面</strong>
+            一国出口、进口、资本流入流出如何体现在国际收支表里。
+          </div>
+          <div class="mini gold">
+            <strong>制度层面</strong>
+            国家选择固定汇率还是浮动汇率，为什么不可能同时拥有所有好处。
+          </div>
+        </div>
+        <p>你看 v4 时会遇到很多名词：CIP、PPP、RER、BoP、BP 曲线、蒙代尔-弗莱明、不可能三角、布雷顿森林体系、金融危机模型。它们不是零散知识点，而是在回答同一个问题：<strong>跨国资金和商品交易会怎样改变汇率、国际收支和政策效果。</strong></p>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="exam-map">
+        <h2>2. 老师划出的考试地图</h2>
+        <p>老师录音里最有价值的信息是范围、题型和高危易错点。你现在先不用背细节，只要知道哪些内容是主线。</p>
+        <table>
+          <thead>
+            <tr><th>板块</th><th>状态</th><th>你先要形成的认识</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>第一篇第1-2章</td><td><span class="tag high">重要</span></td><td>外汇、汇率、标价法、外汇市场、人民币汇率制度，是全课的入口。</td></tr>
+            <tr><td>第3章</td><td><span class="tag high">只抓远期</span></td><td>外汇衍生品不全面展开，重点是远期汇率如何服务利率平价和避险。</td></tr>
+            <tr><td>第4章</td><td><span class="tag high">高危</span></td><td>离岸金融市场、欧洲货币市场、欧洲债券市场。最大坑：不是“欧洲的市场”。</td></tr>
+            <tr><td>第10章</td><td><span class="tag high">全章</span></td><td>国际收支表、账户、借贷方向、国际收支失衡理论，是核心章。</td></tr>
+            <tr><td>第11章</td><td><span class="tag high">重点</span></td><td>IS-LM-BP 和蒙代尔-弗莱明模型，用来分析开放经济中的政策效果。</td></tr>
+            <tr><td>第12章</td><td><span class="tag mid">制度主线</span></td><td>汇率制度选择、不可能三角、国际货币体系演变。</td></tr>
+            <tr><td>第14章</td><td><span class="tag mid">认知型</span></td><td>金融危机的定义、表现、历史案例和几代危机模型。</td></tr>
+          </tbody>
+        </table>
+        <div class="warn">
+          <strong>老师反复提醒的坑：</strong>欧洲货币市场和欧洲债券市场是离岸市场，不是地理意义上位于欧洲的市场。这个点适合出判断题、名词解释和简答题。
+        </div>
+        <p>题型上，录音和 v4 都指向：单选、判断、名词解释、计算题、简答题。对 0 基础同学来说，学习顺序应当是先懂框架，再背名词，再练公式，最后刷题。</p>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="big-picture">
+        <h2>3. 一张图理解全课</h2>
+        <p>把这门课想成五层楼，从最底层的“货币兑换”一路走到最高层的“国际金融危机”。</p>
+        <div class="flow">
+          <div class="step"><b>1 外汇</b>两国货币怎么换，汇率怎么报价。</div>
+          <div class="step"><b>2 平价</b>汇率、利率、物价之间应当有什么关系。</div>
+          <div class="step"><b>3 国际收支</b>跨国交易如何记账，顺差逆差从哪里来。</div>
+          <div class="step"><b>4 宏观政策</b>财政、货币政策在开放经济中为什么效果变了。</div>
+          <div class="step"><b>5 制度与危机</b>固定还是浮动，资本是否开放，危机会怎样爆发。</div>
+        </div>
+        <p>你之后看到任何概念，都可以问它属于哪一层：</p>
+        <ul>
+          <li>远期汇率、买入价、卖出价：属于外汇市场。</li>
+          <li>CIP、UIP、PPP、实际汇率：属于平价条件。</li>
+          <li>经常账户、金融账户、借方贷方：属于国际收支。</li>
+          <li>IS-LM-BP、蒙代尔-弗莱明：属于开放经济宏观政策。</li>
+          <li>不可能三角、金本位、布雷顿森林、牙买加体系、金融危机模型：属于制度与危机。</li>
+        </ul>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="language">
+        <h2>4. 先学会这套语言</h2>
+        <p>国际金融最容易让 0 基础同学卡住的地方，不是难，而是它有自己的表达方式。先把下面几个词变成熟人。</p>
+        <table>
+          <thead>
+            <tr><th>词</th><th>入门解释</th><th>考试写法方向</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>外汇</td><td>不是“外国现金”这么窄，而是以外币表示、可用于国际支付的资产。</td><td>外币现金、存款、票据、有价证券都可纳入广义外汇。</td></tr>
+            <tr><td>汇率</td><td>一种货币用另一种货币表示的价格。</td><td>先判断直接标价法还是间接标价法，再判断升贬值。</td></tr>
+            <tr><td>资本流动</td><td>钱跨国投资、借贷、买债券股票、设厂。</td><td>流入流出会影响汇率、利率和金融账户。</td></tr>
+            <tr><td>居民/非居民</td><td>国际收支里看经济利益中心，不简单看国籍。</td><td>本国居民和非居民之间的交易才进入国际收支。</td></tr>
+            <tr><td>开放经济</td><td>国家不只和自己交易，还和世界发生贸易和资本往来。</td><td>开放后，财政货币政策效果会受汇率和资本流动影响。</td></tr>
+          </tbody>
+        </table>
+        <div class="note">
+          <strong>学习诀窍：</strong>遇到一个概念，先问三个问题：它管的是商品交易、金融交易还是政策选择？它影响的是汇率、国际收支还是利率？它适合出名词解释、计算题还是简答题？
+        </div>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="exchange-rate">
+        <h2>5. 汇率与外汇市场</h2>
+        <p>汇率是本课程的入口。外汇市场里交易的是不同货币，汇率就是交易价格。</p>
+        <h3>5.1 直接标价法是第一道门</h3>
+        <p>中国常见的 USD/CNY=7.20，意思是 1 美元等于 7.20 元人民币。这是直接标价法：用本币表示外币价格。</p>
+        <div class="formula">直接标价法：S 上升 = 外币更贵 = 本币贬值<br>直接标价法：S 下降 = 外币更便宜 = 本币升值</div>
+        <p>这件事一定要熟，因为 PPP、RER、远期升贴水、人民币高估低估，都会回到这个判断。</p>
+        <h3>5.2 外汇市场不是菜市场式固定摊位</h3>
+        <p>PPT 和录音都强调现代外汇市场很多交易是场外市场 OTC，由银行、金融机构、企业、央行等主体参与。报价也有买入价、卖出价、中间价。</p>
+        <table>
+          <thead><tr><th>价格</th><th>含义</th><th>别混</th></tr></thead>
+          <tbody>
+            <tr><td>买入价</td><td>银行买入外汇的价格。</td><td>站在银行角度，不是站在客户角度。</td></tr>
+            <tr><td>卖出价</td><td>银行卖出外汇的价格。</td><td>通常卖出价高于买入价。</td></tr>
+            <tr><td>即期汇率</td><td>成交后短期交割使用的汇率。</td><td>不是所有汇率都是即期汇率。</td></tr>
+            <tr><td>远期汇率</td><td>现在约定、未来交割时使用的汇率。</td><td>不是对未来即期汇率的保证。</td></tr>
+          </tbody>
+        </table>
+        <h3>5.3 人民币汇率制度是一道开放题素材</h3>
+        <p>老师特别提到人民币汇率。你不用一开始背完整时间线，但要知道主线：人民币汇率制度改革总体方向是市场化、弹性化、有管理浮动，且和中国在“不可能三角”中的取舍有关。</p>
+        <p>一句能套很多题的话：<strong>中国作为大型经济体重视货币政策自主性，因此人民币汇率制度不是完全固定，也不是完全自由浮动，而是在市场供求基础上实行有管理浮动，并配合渐进式资本项目开放。</strong></p>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="parity">
+        <h2>6. 平价条件和远期汇率</h2>
+        <p>平价条件就是“如果市场没有白捡的钱，汇率、利率、物价之间应该大致满足什么关系”。课堂 PPT 第2章讲 CIP、UIP、市场效率，第4章讲 PPP 和实际汇率。</p>
+        <h3>6.1 CIP：远期汇率和利率的关系</h3>
+        <p>抛补利率平价 CIP 是无套利条件。意思是：你把钱存在本国，或者换成外币去外国投资并用远期合约锁定未来换回来的汇率，两个收益应该一样。否则就有人套利，直到差异消失。</p>
+        <div class="formula">F = S x (1 + i_d) / (1 + i_f)<br>默认 S 为直接标价法：本币/外币<br>i_d = 本国利率，i_f = 外国利率</div>
+        <p>直觉：本国利率更高时，为了让本币投资和外币投资收益相等，外币远期通常会升水；反过来，本国利率更低时，外币远期通常贴水。</p>
+        <h3>6.2 PPP：汇率和物价的关系</h3>
+        <p>购买力平价 PPP 的直觉是：同一篮子商品在两国用同一种货币表示后，价格不该长期差太多。</p>
+        <div class="formula">绝对 PPP：S = P / P*<br>相对 PPP：汇率变动率 ≈ 本国通胀率 - 外国通胀率</div>
+        <p>如果本国通胀长期高于外国，本国货币的购买力下降，本币长期倾向贬值。直接标价法下，这通常表现为 S 上升。</p>
+        <h3>6.3 实际汇率 RER：看竞争力</h3>
+        <div class="formula">Q = S x P* / P</div>
+        <p>在直接标价法下，Q 上升通常可理解为本国商品相对便宜，本国实际贬值，国际竞争力增强；Q 下降则相反。</p>
+        <div class="note">
+          <strong>先别怕公式：</strong>CIP 管“利率差怎样变成远期升贴水”；PPP 管“物价差怎样影响长期汇率”；RER 管“名义汇率扣除物价后，竞争力有没有变”。
+        </div>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="bop">
+        <h2>7. 国际收支</h2>
+        <p>国际收支 BoP 是第10章的核心。它记录一国居民与非居民在一定时期内发生的全部经济交易。</p>
+        <h3>7.1 三大账户</h3>
+        <table>
+          <thead><tr><th>账户</th><th>记录什么</th><th>直觉</th></tr></thead>
+          <tbody>
+            <tr><td>经常账户</td><td>货物、服务、初次收入、二次收入。</td><td>真实商品服务和收入转移。</td></tr>
+            <tr><td>资本账户</td><td>资本转移、非生产非金融资产交易。</td><td>考试里一般不是最核心。</td></tr>
+            <tr><td>金融账户</td><td>直接投资、证券投资、其他投资、储备资产等。</td><td>钱怎样跨国买资产、投资、借贷。</td></tr>
+          </tbody>
+        </table>
+        <h3>7.2 借贷方向用“外汇流入流出”先判断</h3>
+        <table>
+          <thead><tr><th>交易</th><th>账户</th><th>方向</th><th>原因</th></tr></thead>
+          <tbody>
+            <tr><td>本国出口商品收到美元</td><td>经常账户-货物</td><td>贷方 +</td><td>外汇流入。</td></tr>
+            <tr><td>本国进口机器支付美元</td><td>经常账户-货物</td><td>借方 -</td><td>外汇流出。</td></tr>
+            <tr><td>外国游客来本国消费</td><td>经常账户-服务</td><td>贷方 +</td><td>服务出口，收到外汇。</td></tr>
+            <tr><td>本国学生去美国留学付学费</td><td>经常账户-服务</td><td>借方 -</td><td>服务进口，支付外汇。</td></tr>
+            <tr><td>外国企业来本国投资建厂</td><td>金融账户-直接投资</td><td>贷方 +</td><td>资本流入，本国对外负债增加。</td></tr>
+            <tr><td>本国居民购买美国股票</td><td>金融账户-证券投资</td><td>借方 -</td><td>资本流出，本国对外资产增加。</td></tr>
+          </tbody>
+        </table>
+        <h3>7.3 国际收支失衡理论是在解释“为什么不平衡”</h3>
+        <ul>
+          <li><strong>弹性论：</strong>本币贬值能否改善贸易收支，要看进出口需求价格弹性。</li>
+          <li><strong>马歇尔-勒纳条件：</strong>出口需求弹性和进口需求弹性之和大于 1，本币贬值长期才有助于改善贸易收支。</li>
+          <li><strong>J 曲线：</strong>贬值后贸易收支可能短期先恶化，长期再改善。</li>
+          <li><strong>吸收论：</strong>B = Y - A，改善国际收支不能只看汇率，还要看收入和国内总支出。</li>
+          <li><strong>货币论：</strong>国际收支失衡本质上与货币供求失衡有关。</li>
+        </ul>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="open-macro">
+        <h2>8. 开放经济政策</h2>
+        <p>第11章的 IS-LM-BP 和蒙代尔-弗莱明模型，解决的是一个核心问题：<strong>开放经济中，财政政策和货币政策为什么会因为汇率制度和资本流动程度不同而效果不同。</strong></p>
+        <div class="band">
+          <div class="mini blue">
+            <strong>IS 曲线</strong>
+            商品市场均衡。收入、利率和总需求之间的关系。
+          </div>
+          <div class="mini green">
+            <strong>LM 曲线</strong>
+            货币市场均衡。货币供给、货币需求、收入和利率之间的关系。
+          </div>
+          <div class="mini gold">
+            <strong>BP 曲线</strong>
+            国际收支均衡。经常账户和资本流动共同决定外部平衡。
+          </div>
+        </div>
+        <h3>8.1 浮动汇率下</h3>
+        <p>浮动汇率下，央行不承诺维持某个固定汇率，汇率会帮助经济调整。</p>
+        <ul>
+          <li><strong>货币扩张：</strong>利率下降，资本流出，本币贬值，出口竞争力增强，收入上升。通常比较有效。</li>
+          <li><strong>财政扩张：</strong>收入和利率上升，资本流入，本币升值，净出口下降，财政刺激被部分抵消。</li>
+        </ul>
+        <h3>8.2 固定汇率下</h3>
+        <p>固定汇率下，央行要维护汇率，所以货币供给常常被外汇市场干预反向改变。</p>
+        <ul>
+          <li><strong>货币扩张：</strong>利率下降，资本流出，本币贬值压力出现。央行为维持汇率卖外汇、买本币，货币扩张被抵消。通常效果受限。</li>
+          <li><strong>财政扩张：</strong>收入和利率上升，资本流入，本币升值压力出现。央行为维持汇率买外汇、投放本币，财政扩张被进一步放大。通常较有效。</li>
+        </ul>
+        <div class="note">
+          <strong>模型不用一开始画得很熟。</strong>先记政策传导链：政策改变收入和利率，利率引起资本流动，资本流动影响汇率，汇率再影响净出口和央行干预。
+        </div>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="systems">
+        <h2>9. 汇率制度与国际货币体系</h2>
+        <p>第12章把视角从“一个市场”拉到“一个国家怎样选择制度”。核心是：固定汇率、资本自由流动、货币政策独立，这三个目标不能同时完全实现。</p>
+        <h3>9.1 不可能三角</h3>
+        <table>
+          <thead><tr><th>目标</th><th>含义</th><th>代价</th></tr></thead>
+          <tbody>
+            <tr><td>固定汇率</td><td>汇率保持稳定，降低贸易和投资不确定性。</td><td>央行要用储备和货币政策维护汇率。</td></tr>
+            <tr><td>资本自由流动</td><td>资金可以自由跨国流入流出。</td><td>外部利率和市场情绪会影响本国金融环境。</td></tr>
+            <tr><td>货币政策独立</td><td>央行能按本国经济状况加息、降息、调节流动性。</td><td>如果还要固定汇率和资本自由流动，独立性会被削弱。</td></tr>
+          </tbody>
+        </table>
+        <p>香港联系汇率制度可理解为更重视汇率稳定和资本自由流动，因此货币政策自主性较弱。中国更重视货币政策自主性，所以采取有管理浮动和渐进资本开放。</p>
+        <h3>9.2 三大国际货币体系</h3>
+        <table>
+          <thead><tr><th>体系</th><th>核心锚</th><th>特点</th><th>主要问题</th></tr></thead>
+          <tbody>
+            <tr><td>金本位</td><td>黄金</td><td>各国货币与黄金挂钩，汇率相对固定。</td><td>货币供给受黄金约束，国内政策空间小。</td></tr>
+            <tr><td>布雷顿森林体系</td><td>美元-黄金</td><td>美元与黄金挂钩，其他货币与美元挂钩。</td><td>美元作为储备货币和黄金兑换承诺之间存在矛盾。</td></tr>
+            <tr><td>牙买加体系</td><td>多元储备资产</td><td>承认浮动汇率合法化，黄金非货币化。</td><td>汇率波动更大，国际协调更难。</td></tr>
+          </tbody>
+        </table>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="crisis">
+        <h2>10. 金融危机</h2>
+        <p>第14章在老师录音里属于考试范围，但更偏“认知性”和“介绍性”。先把定义、表现和模型关键词抓住。</p>
+        <h3>10.1 金融危机是什么</h3>
+        <p>金融危机通常指金融体系中全部或大部分金融指标出现急剧、短暂、超周期恶化，并导致金融功能受损的状态。它不只是股市大跌，也包括货币危机、银行危机、债务危机、资本突然停止等。</p>
+        <h3>10.2 四代危机模型先记关键词</h3>
+        <table>
+          <thead><tr><th>模型</th><th>核心解释</th><th>关键词</th></tr></thead>
+          <tbody>
+            <tr><td>第一代</td><td>基本面不可持续导致固定汇率崩溃。</td><td>财政赤字、货币扩张、储备耗尽。</td></tr>
+            <tr><td>第二代</td><td>市场预期可能自我实现，政府在维持汇率和国内目标之间权衡。</td><td>自我实现、多重均衡、政策权衡。</td></tr>
+            <tr><td>第三代</td><td>金融部门脆弱、资产负债表错配、短期外债放大危机。</td><td>银行、货币错配、资本逆转。</td></tr>
+            <tr><td>第四代</td><td>全球金融网络、流动性和系统性风险导致危机传染。</td><td>金融传染、全球周期、系统性风险。</td></tr>
+          </tbody>
+        </table>
+        <p>亚洲金融危机常和固定汇率、资本流动、短期外债、金融部门脆弱联系起来；2008 年全球金融危机常和杠杆、金融创新、资产价格泡沫、系统性风险联系起来。</p>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="bridge">
+        <h2>11. 怎么接上 v4</h2>
+        <p>看完这份入门导学后，再看 v4 时不要从头硬背。按下面顺序走，会更顺。</p>
+        <table>
+          <thead><tr><th>你现在的理解</th><th>去 v4 看哪里</th><th>目标</th></tr></thead>
+          <tbody>
+            <tr><td>知道课程主线和范围</td><td>v4 第1章</td><td>确认考试地图和题型。</td></tr>
+            <tr><td>懂汇率、标价法、外汇市场</td><td>v4 第2-3章</td><td>把人民币汇率制度和开放题素材补上。</td></tr>
+            <tr><td>懂远期汇率、CIP、PPP、RER各管什么</td><td>v4 第4、6、15章</td><td>练公式和计算题步骤。</td></tr>
+            <tr><td>懂国际收支表的账户和方向</td><td>v4 第7-8章</td><td>背账户结构、借贷记账、M-L 条件、J 曲线。</td></tr>
+            <tr><td>懂开放经济政策效果的传导链</td><td>v4 第9-10章</td><td>背固定/浮动汇率下财政货币政策效果。</td></tr>
+            <tr><td>懂制度选择和金融危机大框架</td><td>v4 第11-12、14章</td><td>准备简答题和综合题。</td></tr>
+            <tr><td>准备上考场</td><td>v4 第13、15、16、17章 + 刷题包</td><td>背名词、练计算、刷易错判断。</td></tr>
+          </tbody>
+        </table>
+        <div class="warn">
+          <strong>别把 v4 当小说读。</strong>v4 是复习资料，最值钱的是名词解释、简答模板、计算题、判断题易错句。你已经有了框架后，就应该带着题型去看。
+        </div>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+
+      <section id="selfcheck">
+        <h2>12. 入门自测</h2>
+        <p>下面这些题不用写得很漂亮，只要能用自己的话说出来，就可以进入 v4。</p>
+        <details>
+          <summary>1. 国际金融这门课研究什么？</summary>
+          <p>研究开放经济下外汇、汇率、国际收支、资本流动、宏观政策、汇率制度和金融危机之间的关系。</p>
+        </details>
+        <details>
+          <summary>2. 直接标价法下，USD/CNY 从 7.10 到 7.30，人民币怎么了？</summary>
+          <p>人民币贬值。因为直接标价法下，汇率上升表示外币更贵、本币更便宜。</p>
+        </details>
+        <details>
+          <summary>3. 欧洲货币市场为什么不是欧洲的货币市场？</summary>
+          <p>因为“欧洲”是历史名称，本质是货币发行国境外经营该货币存贷款业务的离岸市场。例如美国境外的美元存贷款市场。</p>
+        </details>
+        <details>
+          <summary>4. CIP、PPP、RER分别管什么？</summary>
+          <p>CIP 管利率差和远期汇率；PPP 管物价差和长期汇率；RER 管名义汇率扣除物价后的国际竞争力。</p>
+        </details>
+        <details>
+          <summary>5. 国际收支中，出口和进口通常记在哪边？</summary>
+          <p>出口带来外汇流入，通常记贷方；进口需要对外支付，通常记借方。</p>
+        </details>
+        <details>
+          <summary>6. 不可能三角是哪三个目标？</summary>
+          <p>固定汇率、资本自由流动、货币政策独立性。三者不能同时完全实现。</p>
+        </details>
+        <details>
+          <summary>7. 固定汇率下为什么货币政策受限？</summary>
+          <p>货币扩张会带来利率下降、资本流出和本币贬值压力。央行为维持固定汇率需要卖外汇、买本币，回收货币供给，从而抵消最初的货币扩张。</p>
+        </details>
+        <details>
+          <summary>8. 金融危机不只是股市危机，还可能表现为什么？</summary>
+          <p>货币危机、银行危机、债务危机、资产市场危机、资本突然停止等。</p>
+        </details>
+        <div class="note">
+          <strong>进入 v4 的标准：</strong>你不需要全部背下来，但要能说清楚“这门课的主线是汇率-国际收支-政策-制度-危机”，并能解释老师反复强调的离岸金融市场坑点。
+        </div>
+        <div class="toplink"><a href="#top">回到目录</a></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>整理依据：国际金融录音逐字稿、Chapter 2-8 课堂 PPT、国际金融教材 PDF、国际金融期末复习救命包 v4、国际金融期末刷题包 v1。教材 PDF 为扫描/图片型资料，正文抽取有限，因此本导学以可检索的录音、PPT 和 HTML 复习资料为主要结构依据。</p>
+    </footer>
+  </div>
+</body>
+</html>
