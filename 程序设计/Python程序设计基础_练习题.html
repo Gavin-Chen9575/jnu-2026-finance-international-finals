@@ -13,9 +13,9 @@
 </head>
 <body>
 <header class="hero"><div class="wrap"><div>2026 SPRING · MOCK TEST</div><h1>程序设计基础练习题</h1><p>题型按老师提纲编排。选择题和判断题可自动评分；主观题答案集中放在文末，建议先独立完成。</p><div class="meta"><span>建议用时 110 分钟</span><span>选择 40 题</span><span>填空 10 题</span><span>判断 10 题</span><span>简答 5 题</span><span>应用 2 题</span></div></div></header>
-<nav><div class="wrap"><a href="#choice">选择题</a><a href="#fill">填空题</a><a href="#judge">判断题</a><a href="#short">简答题</a><a href="#apply">应用题</a><a href="#pastpaper-drill">历届卷加练</a><a href="#answers">答案解析</a></div></nav>
+<nav><div class="wrap"><a href="#choice">选择题</a><a href="#fill">填空题</a><a href="#judge">判断题</a><a href="#short">简答题</a><a href="#apply">应用题</a><a href="#pastpaper-drill">历届卷加练</a><a href="#new-paper-drill">新卷提炼</a><a href="#answers">答案解析</a></div></nav>
 <main class="wrap">
-<div class="rubric"><strong>答题说明：</strong>选择题每题只有一个正确答案。页面自动评分只统计选择题和判断题，共 50 分；填空及主观题请对照答案自评。</div>
+<div class="rubric"><strong>答题说明：</strong>选择题每题只有一个正确答案。页面自动评分只统计选择题和判断题，共 50 分；填空及主观题请对照答案自评。做完本页后，可继续刷 <a href="Python程序设计基础_考前模拟卷合集.html">考前模拟卷合集</a>。</div>
 <section id="choice" class="section"><h2>一、选择题（40 × 1 分）</h2>
   <div class="q" data-answer="B"><p>1. 下列合法的 Python 标识符是（ ）。</p><div class="opts"><label><input type="radio" name="q1" value="A"> A. 2name</label><label><input type="radio" name="q1" value="B"> B. student_name</label><label><input type="radio" name="q1" value="C"> C. class</label><label><input type="radio" name="q1" value="D"> D. first-name</label></div></div>
   <div class="q" data-answer="C"><p>2. <code>type(3.0)</code> 的结果是（ ）。</p><div class="opts"><label><input type="radio" name="q2" value="A"> A. int</label><label><input type="radio" name="q2" value="B"> B. complex</label><label><input type="radio" name="q2" value="C"> C. float</label><label><input type="radio" name="q2" value="D"> D. bool</label></div></div>
@@ -127,11 +127,53 @@ print("x={1},y={0},z={0}".format(x, y, z))</code></pre><div class="opts"><label>
   <div class="q"><p>12. 填空：CSV 文件是一种用英文 <span class="blank"></span> 分隔的纯文本文件。</p></div>
 </section>
 
-<section id="answers" class="section pagebreak"><h2>七、答案与评分参考</h2>
+<section id="new-paper-drill" class="section"><h2>七、新买真题提炼加练（按老师提纲筛选）</h2>
+  <div class="rubric"><strong>说明：</strong>这些题来自新买 A/B 卷和题目汇编的高频模式，但已筛掉大部分明显扩展库大题。重点练基础边界、代码输出、文件、函数和序列。</div>
+  <div class="q"><p>1. 判断：表达式 <code>(i**2 for i in range(10))</code> 的结果是一个元组。（ ）</p><div class="opts"><label>A. 正确</label><label>B. 错误</label></div></div>
+  <div class="q"><p>2. 判断：<code>x = zip("ABC", "1234")</code> 后连续两次执行 <code>list(x)</code>，两次结果相同。（ ）</p><div class="opts"><label>A. 正确</label><label>B. 错误</label></div></div>
+  <div class="q"><p>3. 填空：<code>print("{0:.3f}".format(1/7))</code> 的输出结果是 <span class="blank"></span>。</p></div>
+  <div class="q"><p>4. 填空：若 <code>g = lambda x, y=2, z=4: x+y+z</code>，则 <code>g(3)</code> 的值是 <span class="blank"></span>。</p></div>
+  <div class="q"><p>5. 填空：<code>{1:"22", 2:"24", 3:"26"}.get(4, "28")</code> 的值是 <span class="blank"></span>。</p></div>
+  <div class="q"><p>6. 填空：已知 <code>x=[1,2,5,7]</code>，执行 <code>x[3:]=[4]</code> 后，<code>x</code> 为 <span class="blank"></span>。</p></div>
+  <div class="q"><p>7. 选择：下列不能比较大小的表达式是（ ）。</p><div class="opts"><label>A. <code>3 &lt; 5 &gt; 2</code></label><label>B. <code>"Hello" &gt; "world"</code></label><label>C. <code>"Hello" &gt; 3</code></label><label>D. <code>1 &lt; 3 &lt; 5</code></label></div></div>
+  <div class="q"><p>8. 选择：在 <code>try...except</code> 结构中，<code>except</code> 子句会在什么情况下执行？（ ）</p><div class="opts"><label>A. <code>try</code> 中发生并被它捕获的异常</label><label>B. <code>try</code> 中没有异常</label><label>C. 程序正常结束后总会执行</label><label>D. 只有 <code>finally</code> 不存在时才执行</label></div></div>
+  <div class="q"><p>9. 选择：使用 <code>with open(filename, mode, encoding) as f:</code> 的主要好处是（ ）。</p><div class="opts"><label>A. 保证文件能被正确打开</label><label>B. 自动把文本转换为列表</label><label>C. 保证文件使用后被正确关闭</label><label>D. 自动捕获所有异常</label></div></div>
+  <div class="q"><p>10. 选择：下面代码的输出是（ ）。</p><pre><code>n = 5
+while n > 0:
+    n = n - 1
+    if n < 3:
+        continue
+    print(n)
+else:
+    print("end")</code></pre><div class="opts"><label>A. <code>4 3</code></label><label>B. <code>4 3 end</code></label><label>C. <code>5 4 3 end</code></label><label>D. <code>4 3 2 1 0 end</code></label></div></div>
+  <div class="q"><p>11. 选择：下面代码的输出是（ ）。</p><pre><code>n = 5
+while n > 0:
+    n = n - 1
+    if n < 3:
+        break
+    print(n)
+else:
+    print("end")</code></pre><div class="opts"><label>A. <code>4 3</code></label><label>B. <code>4 3 end</code></label><label>C. <code>5 4 3</code></label><label>D. <code>end</code></label></div></div>
+  <div class="q"><p>12. 程序填空：函数 <code>lastAppear(s)</code> 返回每个字符最后一次出现的顺序。补全 ①、②。</p><pre><code>def lastAppear(s):
+    result = []
+    for ch in s:
+        if ch in result:
+            ①
+        ②
+    return result
+
+print(lastAppear("abcdabe"))</code></pre></div>
+  <div class="q"><p>13. 写出第 12 题中 <code>print(lastAppear("abcdabe"))</code> 的输出结果：<span class="blank"></span>。</p></div>
+  <div class="q"><p>14. 判断：没有赋值给变量时，三引号字符串常被当作多行注释使用，但它本质上仍是字符串字面量。（ ）</p><div class="opts"><label>A. 正确</label><label>B. 错误</label></div></div>
+  <div class="q"><p>15. 防冷门识别：若只考基础识别，<code>pandas</code> 中常用来表示二维表格数据的类是（ ）。</p><div class="opts"><label>A. <code>Series</code></label><label>B. <code>DataFrame</code></label><label>C. <code>set</code></label><label>D. <code>figure</code></label></div></div>
+</section>
+
+<section id="answers" class="section pagebreak"><h2>八、答案与评分参考</h2>
   <details><summary>选择题答案</summary><p class="answer">1-10：B C C B C A D B C A<br>11-20：D C B A C D B A C D<br>21-30：B A C D A B C D A C<br>31-40：B D C A B D C A B D</p></details>
   <details><summary>填空题答案</summary><ol><li>选择（或分支）</li><li><code>'A'</code></li><li><code>a.sort()</code></li><li><code>continue</code></li><li><code>**kwargs</code></li><li><code>[1,4,9]</code></li><li><code>get</code></li><li><code>&</code></li><li><code>seek</code></li><li><code>ValueError</code></li></ol></details>
   <details><summary>判断题答案与提示</summary><p class="answer">1-10：错、对、错、对、错、对、错、错、对、对</p><p>3：<code>break</code> 结束整个当前循环，<code>continue</code> 才是跳过当次。5：<code>sort()</code> 原地排序并返回 <code>None</code>。7：<code>{}</code> 是空字典。8：<code>copy()</code> 是浅拷贝。</p></details>
   <details><summary>历届卷风格加练答案</summary><ol><li>D。<code>round(random.random(), 2)</code> 的数值可能变成 <code>1.0</code>，但 <code>print</code> 浮点数不会补齐显示为 <code>1.00</code>。</li><li>B。</li><li>A。</li><li>B，列表不可哈希，不能作为字典键。</li><li>B。</li><li>C。</li><li>C。</li><li>C，<code>{1}</code> 取第二个实参 <code>y</code>，<code>{0}</code> 取第一个实参 <code>x</code>。</li><li>B，<code>(6)</code> 是整数，单元素元组要写 <code>(6,)</code>。</li><li>A。</li><li>元组。</li><li>逗号。</li></ol></details>
+  <details><summary>新买真题提炼加练答案</summary><ol><li>B。圆括号里是生成器表达式，不是元组。</li><li>B。<code>zip</code> 是迭代器，第一次转列表后会被消耗。</li><li><code>0.143</code></li><li><code>9</code></li><li><code>"28"</code></li><li><code>[1, 2, 5, 4]</code></li><li>C，字符串和整数不能比较大小。</li><li>A。</li><li>C。</li><li>B。<code>continue</code> 不影响循环正常结束，所以执行 <code>else</code>。</li><li>A。遇到 <code>break</code> 后循环 <code>else</code> 不执行。</li><li>① <code>result.remove(ch)</code>；② <code>result.append(ch)</code>。</li><li><code>['c', 'd', 'a', 'b', 'e']</code></li><li>A。</li><li>B。若老师未提扩展库，只需知道到这个程度即可。</li></ol></details>
   <details><summary>简答题参考要点</summary><ol><li><code>for</code> 用于遍历可迭代对象或次数较明确的循环；<code>while</code> 由条件控制。<code>break</code> 立即结束循环，<code>continue</code> 跳过本次剩余语句。</li><li>递归出口和递归步骤。出口负责终止；递归步骤必须让问题规模缩小并逐渐接近出口，否则会无限递归并触发错误。</li><li>相同：都是序列，支持索引、切片、遍历，可存放不同类型对象。不同：列表可变、有增删改方法，用方括号；元组不可变，通常用圆括号，单元素需逗号。</li><li>位置参数按顺序对应；关键字参数按名称对应；默认值参数可在调用时省略；<code>*args</code> 收集额外位置参数为元组；<code>**kwargs</code> 收集额外关键字参数为字典。</li><li><code>r</code> 只读，文件不存在报错；<code>w</code> 只写，不存在则创建，存在则清空；<code>a</code> 追加写，不存在则创建，原内容保留且写入位于末尾。</li></ol></details>
   <details><summary>应用题 1 参考程序</summary><pre><code>scores = list(map(int, input().split()))
 levels = {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0}
