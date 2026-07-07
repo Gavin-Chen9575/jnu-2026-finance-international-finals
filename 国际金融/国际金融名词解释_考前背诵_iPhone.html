@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>国际金融名词解释考前背诵</title>
+  <style>
+    :root{
+      --ink:#202124;
+      --muted:#626a73;
+      --bg:#f5f6f8;
+      --paper:#fff;
+      --line:#d9dee5;
+      --red:#b13f3a;
+      --blue:#2e6f9f;
+      --green:#1f715d;
+      --gold:#9b6411;
+      --purple:#6657a5;
+      --soft-red:#faeeee;
+      --soft-blue:#edf5fb;
+      --soft-green:#eaf5f0;
+      --soft-gold:#fff4dc;
+      --soft-purple:#f1eff9;
+      --shadow:0 10px 24px rgba(32,33,36,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
+      font-size:17px;
+      line-height:1.68;
+      letter-spacing:0;
+    }
+    .wrap{
+      width:min(760px,100%);
+      margin:0 auto;
+      padding:18px 14px calc(56px + env(safe-area-inset-bottom));
+    }
+    header,.panel,.card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:10px;
+      box-shadow:var(--shadow);
+    }
+    header{padding:22px 18px;margin-bottom:12px}
+    .kicker{margin:0 0 6px;color:var(--green);font-weight:800;font-size:14px}
+    h1{font-size:28px;line-height:1.18;margin:0}
+    .lead{margin:12px 0 0;color:#40474f;font-size:16px}
+    .panel{padding:14px;margin:12px 0}
+    .search{
+      width:100%;
+      min-height:46px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:10px 12px;
+      font-size:17px;
+      background:#fbfcfd;
+      color:var(--ink);
+    }
+    .btns,.chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    button,.chip{
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fbfcfd;
+      color:#26323a;
+      font-size:14px;
+      padding:8px 11px;
+      min-height:38px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .meter{
+      margin-top:11px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    h2{
+      font-size:21px;
+      margin:22px 2px 10px;
+      line-height:1.25;
+    }
+    .hint{
+      margin:8px 0 0;
+      border-left:5px solid var(--green);
+      background:var(--soft-green);
+      padding:10px 12px;
+      border-radius:0 8px 8px 0;
+      font-size:15px;
+    }
+    .card{
+      padding:14px;
+      margin:10px 0;
+    }
+    .card-top{
+      display:grid;
+      grid-template-columns:42px 1fr auto;
+      gap:10px;
+      align-items:start;
+    }
+    .rank{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:#eef1f4;
+      font-weight:900;
+      color:#26323a;
+      font-size:15px;
+    }
+    .title{font-size:20px;font-weight:900;line-height:1.25;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+    .tag{
+      border-radius:999px;
+      padding:2px 7px;
+      font-size:12px;
+      font-weight:800;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+    .must{background:var(--soft-red);color:#8f2e29;border-color:#e4b8b5}
+    .high{background:var(--soft-gold);color:#704504;border-color:#e7c983}
+    .mid{background:var(--soft-blue);color:#23557c;border-color:#bdd7ea}
+    .scan{background:var(--soft-purple);color:#4d4280;border-color:#d3cdec}
+    .check{
+      display:flex;
+      align-items:center;
+      gap:4px;
+      color:var(--muted);
+      font-size:12px;
+      user-select:none;
+    }
+    .check input{width:20px;height:20px}
+    .first{
+      margin:12px 0 8px;
+      padding:10px 12px;
+      border-radius:8px;
+      background:#f7f9fb;
+      border:1px solid var(--line);
+      font-weight:700;
+    }
+    details{
+      border-top:1px solid var(--line);
+      margin-top:10px;
+      padding-top:9px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:850;
+      color:var(--blue);
+      min-height:34px;
+    }
+    .answer{margin:7px 0 0}
+    .trap{
+      color:#5d4630;
+      background:var(--soft-gold);
+      border-radius:8px;
+      padding:8px 10px;
+      margin-top:8px;
+      font-size:15px;
+    }
+    .source{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:7px;
+    }
+    .hidden{display:none}
+    footer{color:var(--muted);font-size:13px;padding:16px 4px}
+    @media (max-width:390px){
+      body{font-size:16px}
+      h1{font-size:25px}
+      .title{font-size:19px}
+      .card-top{grid-template-columns:38px 1fr auto;gap:8px}
+      .rank{width:35px;height:35px}
+    }
+    @media print{
+      body{background:#fff}
+      .wrap{width:100%;padding:0}
+      header,.panel,.card{box-shadow:none;border-color:#aaa}
+      button,.search{display:none}
+      details{break-inside:avoid}
+      details:not([open]) .answer{display:block}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <header>
+    <p class="kicker">明天考前背诵版</p>
+    <h1>国际金融名词解释</h1>
+    <p class="lead">按考试可能性排序。先背前 12 个，时间够背到前 25 个，最后扫一眼后面的保底扩展。每个名词按 5 分题写法整理：定义 + 特征 + 例子/意义。</p>
+  </header>
+
+  <section class="panel">
+    <input id="search" class="search" placeholder="搜索：欧洲货币、J曲线、PPP、金融危机...">
+    <div class="btns">
+      <button id="openAll" type="button">展开全部</button>
+      <button id="closeAll" type="button">收起全部</button>
+      <button id="onlyTodo" type="button">只看未背</button>
+      <button id="showAll" type="button">显示全部</button>
+    </div>
+    <div class="chips">
+      <a class="chip" href="#must">A+ 必背</a>
+      <a class="chip" href="#high">A 高概率</a>
+      <a class="chip" href="#mid">B 中概率</a>
+      <a class="chip" href="#scan">C 扫一眼</a>
+    </div>
+    <div class="meter" id="meter">已背 0 / 40</div>
+    <div class="hint">背法：先遮住答案，只看名词自己说 3 句。说不出来就点开，背“考场第一句”和关键词。</div>
+  </section>
+
+  <main id="cards">
+    <h2 id="must">A+ 必背：最可能拿来出名词解释或简答开头</h2>
+
+    <article class="card" data-tier="must" data-keywords="欧洲货币市场 离岸 欧洲美元">
+      <div class="card-top"><div class="rank">1</div><div><p class="title">欧洲货币市场</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag must">老师反复点名</span></div></div><label class="check"><input type="checkbox" data-id="t1">已背</label></div>
+      <div class="first">考场第一句：欧洲货币市场是在货币发行国境外经营该种货币存贷款业务的离岸货币市场。</div>
+      <details open><summary>5 分答案</summary><p class="answer">欧洲货币市场是指在货币发行国境外经营该种货币存贷款业务的离岸金融市场。“欧洲”只是历史名称，不表示市场必须位于欧洲。比如美国境外经营美元存贷款业务形成的欧洲美元市场，就属于欧洲货币市场。其特点是交易货币为境外货币、交易主体多为非居民、监管相对宽松。</p><div class="trap">别踩坑：千万不要写成“位于欧洲的货币市场”。</div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="欧洲债券市场 离岸 欧洲美元债券 外国债券">
+      <div class="card-top"><div class="rank">2</div><div><p class="title">欧洲债券市场</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag must">最高危易错</span></div></div><label class="check"><input type="checkbox" data-id="t2">已背</label></div>
+      <div class="first">考场第一句：欧洲债券市场是在债券面值货币发行国以外发行和流通国际债券的市场。</div>
+      <details open><summary>5 分答案</summary><p class="answer">欧洲债券市场属于离岸金融市场，是指在债券面值货币发行国以外发行和流通国际债券的市场。“欧洲”是历史名称，不是地理概念。判断欧洲债券的关键是发行地点是否在债券计价货币发行国之外。例如在美国以外发行的美元债券，可以称为欧洲美元债券。</p><div class="trap">关键词：计价货币发行国以外。不是“欧洲发行的债券”。</div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="离岸金融市场 欧洲货币 欧洲债券 非居民">
+      <div class="card-top"><div class="rank">3</div><div><p class="title">离岸金融市场</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">第4章核心</span></div></div><label class="check"><input type="checkbox" data-id="t3">已背</label></div>
+      <div class="first">考场第一句：离岸金融市场是货币发行国境外、以境外货币为对象进行资金融通的国际金融市场。</div>
+      <details><summary>5 分答案</summary><p class="answer">离岸金融市场是指非居民之间以境外货币为交易对象，在货币发行国境外进行存款、贷款、债券发行等资金融通活动的国际金融市场。它通常受货币发行国管制较少，监管相对宽松，但并非完全无监管。欧洲货币市场和欧洲债券市场都是典型离岸金融市场。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="国际收支 bop 居民 非居民 流量">
+      <div class="card-top"><div class="rank">4</div><div><p class="title">国际收支</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag must">第10章全章</span></div></div><label class="check"><input type="checkbox" data-id="t4">已背</label></div>
+      <div class="first">考场第一句：国际收支是一国居民与非居民在一定时期内发生的全部经济交易。</div>
+      <details><summary>5 分答案</summary><p class="answer">国际收支是指一国居民与非居民在一定时期内发生的全部经济交易。它是流量概念，不是某一时点的存量概念；强调居民与非居民之间的交易，而不是单纯看国籍。国际收支状况反映一国对外经济往来，并会影响汇率、储备资产和宏观政策。</p><div class="trap">别踩坑：不是“本国公民和外国公民”的交易，关键是居民和非居民。</div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="国际收支平衡表 bop 复式记账 经常账户 金融账户">
+      <div class="card-top"><div class="rank">5</div><div><p class="title">国际收支平衡表</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">可名词可简答</span></div></div><label class="check"><input type="checkbox" data-id="t5">已背</label></div>
+      <div class="first">考场第一句：国际收支平衡表是系统记录居民与非居民一定时期内全部经济交易的统计报表。</div>
+      <details><summary>5 分答案</summary><p class="answer">国际收支平衡表是系统记录一国居民与非居民在一定时期内全部经济交易的统计报表。它主要包括经常账户、资本账户、金融账户、储备资产和净误差与遗漏。国际收支平衡表采用复式记账原则，每笔交易通常同时记入借方和贷方，因此从会计意义上总是平衡的。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="经常账户 current account 货物 服务 收入 转移">
+      <div class="card-top"><div class="rank">6</div><div><p class="title">经常账户</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">记账题核心</span></div></div><label class="check"><input type="checkbox" data-id="t6">已背</label></div>
+      <div class="first">考场第一句：经常账户记录货物、服务、初次收入和二次收入等真实资源交易和收入转移。</div>
+      <details><summary>5 分答案</summary><p class="answer">经常账户是国际收支平衡表的重要账户，记录一国居民与非居民之间的货物贸易、服务贸易、初次收入和二次收入。货物和服务反映进出口，初次收入包括工资、利息、股息等生产要素收入，二次收入包括侨汇、援助、捐赠等无偿转移。经常账户余额常用于衡量一国对外收支状况。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="远期汇率 远期 外汇 衍生品">
+      <div class="card-top"><div class="rank">7</div><div><p class="title">远期汇率</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">第3章只考它</span></div></div><label class="check"><input type="checkbox" data-id="t7">已背</label></div>
+      <div class="first">考场第一句：远期汇率是外汇买卖双方当前约定、未来某一日期交割外汇时使用的汇率。</div>
+      <details><summary>5 分答案</summary><p class="answer">远期汇率是指外汇买卖双方在当前签订远期合约，约定在未来某一日期交割外汇时使用的汇率。它不是未来一定会出现的即期汇率，而是现在锁定的未来交割价格。远期汇率可用于规避汇率风险，也与两国利率差异和抛补利率平价密切相关。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="抛补利率平价 covered interest parity CIP 利率平价">
+      <div class="card-top"><div class="rank">8</div><div><p class="title">抛补利率平价 CIP</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">公式计算</span></div></div><label class="check"><input type="checkbox" data-id="t8">已背</label></div>
+      <div class="first">考场第一句：抛补利率平价是在无套利条件下，本外币投资经远期套保后的收益应相等。</div>
+      <details><summary>5 分答案</summary><p class="answer">抛补利率平价是即期汇率、远期汇率和两国利率之间的无套利关系。其含义是，把资金留在本国投资，和换成外币投资后再用远期合约锁定未来汇率，两种策略的收益应相等。若 S 为直接标价法，本币/外币，公式为 F = S x (1+i_d)/(1+i_f)。偏离该关系会引发抛补套利。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="马歇尔 勒纳 条件 ML 弹性论 贬值">
+      <div class="card-top"><div class="rank">9</div><div><p class="title">马歇尔-勒纳条件</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">第10章理论</span></div></div><label class="check"><input type="checkbox" data-id="t9">已背</label></div>
+      <div class="first">考场第一句：马歇尔-勒纳条件说明本币贬值长期改善贸易收支需要进出口需求弹性之和大于 1。</div>
+      <details><summary>5 分答案</summary><p class="answer">马歇尔-勒纳条件是弹性论中的重要条件，指出在供给弹性充分大等条件下，只有当出口需求价格弹性和进口需求价格弹性绝对值之和大于 1 时，本币贬值才会在长期改善贸易收支。若弹性不足，贬值不一定改善贸易收支，甚至可能使贸易收支恶化。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="J曲线 J 曲线 本币贬值 贸易收支">
+      <div class="card-top"><div class="rank">10</div><div><p class="title">J 曲线效应</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">B卷名词</span></div></div><label class="check"><input type="checkbox" data-id="t10">已背</label></div>
+      <div class="first">考场第一句：J 曲线效应指本币贬值后贸易收支短期可能先恶化，长期才逐步改善。</div>
+      <details><summary>5 分答案</summary><p class="answer">J 曲线效应描述本币贬值对贸易收支的动态影响。贬值初期，由于合同已经签订、价格粘性和进出口数量调整滞后，进口支出可能先上升，贸易收支短期恶化。经过一段时间后，出口数量增加、进口数量减少，贸易收支才逐渐改善，其路径像字母 J。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="不可能三角 三元悖论 固定汇率 资本自由流动 货币政策独立">
+      <div class="card-top"><div class="rank">11</div><div><p class="title">不可能三角</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">老师长讲</span></div></div><label class="check"><input type="checkbox" data-id="t11">已背</label></div>
+      <div class="first">考场第一句：不可能三角指固定汇率、资本自由流动和货币政策独立性三者不能同时完全实现。</div>
+      <details><summary>5 分答案</summary><p class="answer">不可能三角又称三元悖论，是开放经济中的政策选择理论，指出一国不能同时完全实现固定汇率、资本自由流动和货币政策独立性，最多只能同时选择其中两个。香港联系汇率制度更重视汇率稳定和资本自由流动，因此货币政策自主性较弱；中国重视货币政策自主性，因此采取有管理浮动和渐进资本项目开放。</p></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="金融危机 货币危机 银行危机 债务危机">
+      <div class="card-top"><div class="rank">12</div><div><p class="title">金融危机</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">第14章开头</span></div></div><label class="check"><input type="checkbox" data-id="t12">已背</label></div>
+      <div class="first">考场第一句：金融危机是金融体系中大量金融指标急剧、短暂、超周期恶化并损害金融功能的状态。</div>
+      <details><summary>5 分答案</summary><p class="answer">金融危机通常是指金融体系中全部或大部分金融指标出现急剧、短暂、超周期恶化，并导致金融体系功能受损的状态。它可表现为货币危机、银行危机、债务危机、股市债市危机、资本突然停止等。金融危机常与资产价格泡沫、货币错配、外债过高、资本流动逆转和市场信心崩溃有关。</p></details>
+    </article>
+
+    <h2 id="high">A 高概率：背完 A+ 后继续背</h2>
+
+    <article class="card" data-tier="high" data-keywords="购买力平价 PPP 一价定律">
+      <div class="card-top"><div class="rank">13</div><div><p class="title">购买力平价 PPP</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag high">PPT高频</span></div></div><label class="check"><input type="checkbox" data-id="t13">已背</label></div>
+      <div class="first">考场第一句：购买力平价认为汇率由两国价格水平决定，同一篮子商品用同一货币表示的价格应趋于一致。</div>
+      <details><summary>5 分答案</summary><p class="answer">购买力平价是关于名义汇率与两国价格水平关系的理论，基础是一价定律。它认为同一篮子商品在不同国家用同一货币表示的价格应相等，因此汇率长期由两国价格水平决定。购买力平价分为绝对购买力平价和相对购买力平价，主要适合解释长期汇率趋势。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="绝对购买力平价 PPP S=P/P">
+      <div class="card-top"><div class="rank">14</div><div><p class="title">绝对购买力平价</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag high">计算常用</span></div></div><label class="check"><input type="checkbox" data-id="t14">已背</label></div>
+      <div class="first">考场第一句：绝对购买力平价认为名义汇率等于两国价格水平之比。</div>
+      <details><summary>5 分答案</summary><p class="answer">绝对购买力平价认为，在没有运输成本、贸易壁垒且商品同质的条件下，同一篮子商品在两国用同一货币表示的价格应相等。若 S 为直接标价法，公式为 S = P/P*，即本国价格水平除以外国价格水平。它用于估计均衡汇率，但现实中会受非贸易品、税收、运输成本和价格粘性影响。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="相对购买力平价 通胀 汇率变动">
+      <div class="card-top"><div class="rank">15</div><div><p class="title">相对购买力平价</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">判断题常考</span></div></div><label class="check"><input type="checkbox" data-id="t15">已背</label></div>
+      <div class="first">考场第一句：相对购买力平价认为汇率变动率约等于两国通货膨胀率之差。</div>
+      <details><summary>5 分答案</summary><p class="answer">相对购买力平价讨论汇率变动与两国通货膨胀率差异之间的关系。若本国通胀率高于外国，本币购买力下降，本币长期倾向贬值；在直接标价法下，汇率通常倾向上升。相对购买力平价比绝对购买力平价更常用于分析长期汇率变化方向。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="实际汇率 RER Q=S P*/P 竞争力">
+      <div class="card-top"><div class="rank">16</div><div><p class="title">实际汇率</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag high">PPT高频</span></div></div><label class="check"><input type="checkbox" data-id="t16">已背</label></div>
+      <div class="first">考场第一句：实际汇率是名义汇率经过两国价格水平调整后的相对价格，反映国际竞争力。</div>
+      <details><summary>5 分答案</summary><p class="answer">实际汇率是名义汇率剔除两国价格水平影响后的相对价格，常写为 Q = S x P*/P。它衡量外国商品相对于本国商品的价格，也可反映本国产品的国际竞争力。在直接标价法下，Q 上升通常表示本国实际贬值、本国产品相对便宜、竞争力增强；Q 下降则表示实际升值、竞争力下降。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="BP曲线 国际收支均衡 IS-LM-BP">
+      <div class="card-top"><div class="rank">17</div><div><p class="title">BP 曲线</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">模型核心</span></div></div><label class="check"><input type="checkbox" data-id="t17">已背</label></div>
+      <div class="first">考场第一句：BP 曲线表示开放经济中实现国际收支均衡的收入和利率组合。</div>
+      <details><summary>5 分答案</summary><p class="answer">BP 曲线是 IS-LM-BP 模型中的国际收支均衡曲线，表示在不同国民收入和利率水平下，经常账户与资本账户共同达到国际收支平衡的组合。收入上升会增加进口、恶化经常账户，需要更高利率吸引资本流入来维持平衡，因此资本不完全流动时 BP 曲线通常向右上方倾斜；资本完全流动时，小国 BP 曲线近似水平。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="蒙代尔 弗莱明 Mundell Fleming 开放经济 政策效果">
+      <div class="card-top"><div class="rank">18</div><div><p class="title">蒙代尔-弗莱明模型</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">第11章</span></div></div><label class="check"><input type="checkbox" data-id="t18">已背</label></div>
+      <div class="first">考场第一句：蒙代尔-弗莱明模型是在开放经济下分析财政政策、货币政策和汇率制度关系的模型。</div>
+      <details><summary>5 分答案</summary><p class="answer">蒙代尔-弗莱明模型是在 IS-LM 框架基础上加入国际收支均衡 BP 曲线，用来分析开放经济中财政政策和货币政策效果的模型。它强调政策效果取决于汇率制度和资本流动程度。一般而言，浮动汇率下货币政策较有效，固定汇率下财政政策较有效。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="固定汇率制度 peg fixed exchange rate">
+      <div class="card-top"><div class="rank">19</div><div><p class="title">固定汇率制度</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">制度选择</span></div></div><label class="check"><input type="checkbox" data-id="t19">已背</label></div>
+      <div class="first">考场第一句：固定汇率制度是货币当局将本币汇率维持在某一固定水平或窄幅区间内的制度。</div>
+      <details><summary>5 分答案</summary><p class="answer">固定汇率制度是指一国货币当局通过外汇市场干预、货币政策配合等方式，将本币对某种货币或一篮子货币的汇率维持在固定水平或较窄波动区间内。它有利于降低汇率风险和稳定预期，但会削弱货币政策独立性，并要求央行持有足够外汇储备。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="浮动汇率制度 floating exchange rate">
+      <div class="card-top"><div class="rank">20</div><div><p class="title">浮动汇率制度</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">制度选择</span></div></div><label class="check"><input type="checkbox" data-id="t20">已背</label></div>
+      <div class="first">考场第一句：浮动汇率制度是汇率主要由外汇市场供求决定并随市场变化波动的制度。</div>
+      <details><summary>5 分答案</summary><p class="answer">浮动汇率制度是指一国货币汇率主要由外汇市场供求决定，货币当局不承诺维持某一固定汇率水平。浮动汇率可以通过汇率变化自动调节国际收支，并增强货币政策独立性，但也可能带来汇率波动风险和投机冲击。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="有管理浮动汇率制度 人民币 2005 汇改">
+      <div class="card-top"><div class="rank">21</div><div><p class="title">有管理浮动汇率制度</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag high">人民币素材</span></div></div><label class="check"><input type="checkbox" data-id="t21">已背</label></div>
+      <div class="first">考场第一句：有管理浮动汇率制度是在市场供求基础上，货币当局进行必要调节和管理的浮动汇率制度。</div>
+      <details><summary>5 分答案</summary><p class="answer">有管理浮动汇率制度是介于固定汇率和完全自由浮动之间的汇率安排，汇率以市场供求为基础形成，但货币当局可根据宏观经济、国际收支和金融稳定需要进行调节。人民币 2005 年汇改后，不再单一盯住美元，而是参考一篮子货币进行调节，实行有管理浮动汇率制度。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="布雷顿森林体系 美元 黄金 IMF 世界银行">
+      <div class="card-top"><div class="rank">22</div><div><p class="title">布雷顿森林体系</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag high">第12章体系</span></div></div><label class="check"><input type="checkbox" data-id="t22">已背</label></div>
+      <div class="first">考场第一句：布雷顿森林体系是二战后建立的以美元为中心的固定汇率体系。</div>
+      <details><summary>5 分答案</summary><p class="answer">布雷顿森林体系是二战后建立的国际货币体系，其核心是美元与黄金按固定比价挂钩，其他国家货币与美元保持固定汇率，因此形成以美元为中心的固定汇率制度。该体系有利于战后国际贸易和金融秩序恢复，但由于美国国际收支逆差、美元发行过多和黄金储备不足，最终在 20 世纪 70 年代瓦解。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="金本位 黄金 固定汇率">
+      <div class="card-top"><div class="rank">23</div><div><p class="title">金本位制度</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">B卷相关</span></div></div><label class="check"><input type="checkbox" data-id="t23">已背</label></div>
+      <div class="first">考场第一句：金本位制度是以黄金作为货币基础，各国货币与黄金按固定比价兑换的国际货币制度。</div>
+      <details><summary>5 分答案</summary><p class="answer">金本位制度下，各国货币与黄金按固定价格自由兑换，货币发行受到黄金储备约束。由于各国货币都与黄金挂钩，各国货币之间形成相对固定汇率。它有利于维持汇率稳定和国际支付秩序，但也限制货币政策自主性，并可能受到黄金供给变化的冲击。</p></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="牙买加体系 浮动汇率 黄金非货币化 SDR">
+      <div class="card-top"><div class="rank">24</div><div><p class="title">牙买加体系</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">第12章体系</span></div></div><label class="check"><input type="checkbox" data-id="t24">已背</label></div>
+      <div class="first">考场第一句：牙买加体系是布雷顿森林体系瓦解后形成的承认浮动汇率合法化的国际货币体系。</div>
+      <details><summary>5 分答案</summary><p class="answer">牙买加体系是在布雷顿森林体系瓦解后形成的国际货币安排，其主要内容包括承认浮动汇率制度合法化、推动黄金非货币化、国际储备资产多元化等。它扩大了各国汇率制度选择空间，但也带来汇率波动加大和国际政策协调难度上升的问题。</p></details>
+    </article>
+
+    <h2 id="mid">B 中概率：选择判断常见，名词解释也能救场</h2>
+
+    <article class="card" data-tier="mid" data-keywords="外汇 foreign exchange">
+      <div class="card-top"><div class="rank">25</div><div><p class="title">外汇</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">基础名词</span></div></div><label class="check"><input type="checkbox" data-id="t25">已背</label></div>
+      <div class="first">考场第一句：外汇是以外币表示、可用于国际结算的支付手段和金融资产。</div>
+      <details><summary>5 分答案</summary><p class="answer">外汇是以外币表示的、可用于国际结算的支付手段和金融资产。广义外汇不仅包括外国纸币和硬币，还包括外币存款、外币票据、外币有价证券等。外汇是国际贸易、国际投资和跨境支付的重要工具。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="汇率 exchange rate">
+      <div class="card-top"><div class="rank">26</div><div><p class="title">汇率</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">基础名词</span></div></div><label class="check"><input type="checkbox" data-id="t26">已背</label></div>
+      <div class="first">考场第一句：汇率是两种货币之间的兑换比率，也是一种货币用另一种货币表示的价格。</div>
+      <details><summary>5 分答案</summary><p class="answer">汇率是两种货币之间的兑换比率，是一种货币用另一种货币表示的价格。按照标价方法可分为直接标价法和间接标价法，按照交割时间可分为即期汇率和远期汇率。汇率变化会影响进出口、资本流动、国际收支和宏观政策。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="直接标价法 本币 外币 USD CNY">
+      <div class="card-top"><div class="rank">27</div><div><p class="title">直接标价法</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">方向判断</span></div></div><label class="check"><input type="checkbox" data-id="t27">已背</label></div>
+      <div class="first">考场第一句：直接标价法是用本国货币表示一定单位外国货币价格的标价方法。</div>
+      <details><summary>5 分答案</summary><p class="answer">直接标价法是以一定单位外国货币为标准，折算为若干单位本国货币的标价方法，如 USD/CNY=7.20 表示 1 美元等于 7.20 元人民币。在直接标价法下，汇率数值上升表示外币升值、本币贬值；汇率数值下降表示外币贬值、本币升值。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="间接标价法 外币 本币">
+      <div class="card-top"><div class="rank">28</div><div><p class="title">间接标价法</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">方向判断</span></div></div><label class="check"><input type="checkbox" data-id="t28">已背</label></div>
+      <div class="first">考场第一句：间接标价法是用外国货币表示一定单位本国货币价格的标价方法。</div>
+      <details><summary>5 分答案</summary><p class="answer">间接标价法是以一定单位本国货币为标准，折算为若干单位外国货币的标价方法。与直接标价法相反，在间接标价法下，汇率数值上升表示本币升值、外币贬值；汇率数值下降表示本币贬值、外币升值。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="即期汇率 spot exchange rate">
+      <div class="card-top"><div class="rank">29</div><div><p class="title">即期汇率</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">与远期对比</span></div></div><label class="check"><input type="checkbox" data-id="t29">已背</label></div>
+      <div class="first">考场第一句：即期汇率是外汇买卖成交后在短期内交割所使用的汇率。</div>
+      <details><summary>5 分答案</summary><p class="answer">即期汇率是指外汇买卖双方成交后，在通常较短时间内进行交割时使用的汇率。它反映外汇市场当前的货币价格，与远期汇率相对应。即期汇率变化会直接影响外汇交易、国际结算和资本流动。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="远期升水 远期贴水 forward premium discount">
+      <div class="card-top"><div class="rank">30</div><div><p class="title">远期升水与远期贴水</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag high">计算题相关</span></div></div><label class="check"><input type="checkbox" data-id="t30">已背</label></div>
+      <div class="first">考场第一句：远期升水指远期汇率高于即期汇率，远期贴水指远期汇率低于即期汇率。</div>
+      <details><summary>5 分答案</summary><p class="answer">远期升水和远期贴水描述远期汇率相对于即期汇率的高低关系。在直接标价法下，若远期汇率高于即期汇率，表示外币远期升水、本币远期贴水；若远期汇率低于即期汇率，表示外币远期贴水、本币远期升水。远期升贴水常与两国利率差异有关。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="金融账户 financial account 投资 资产 负债">
+      <div class="card-top"><div class="rank">31</div><div><p class="title">金融账户</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">记账题</span></div></div><label class="check"><input type="checkbox" data-id="t31">已背</label></div>
+      <div class="first">考场第一句：金融账户记录居民与非居民之间金融资产和负债变化的跨境交易。</div>
+      <details><summary>5 分答案</summary><p class="answer">金融账户是国际收支平衡表中记录金融资产和负债变动的账户，主要包括直接投资、证券投资、金融衍生品、其他投资和储备资产等。本国居民购买外国资产通常记借方，表示对外资产增加；外国居民购买本国资产通常记贷方，表示本国对外负债增加。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="资本账户 capital account 资本转移 非生产非金融资产">
+      <div class="card-top"><div class="rank">32</div><div><p class="title">资本账户</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag scan">容易和金融账户混</span></div></div><label class="check"><input type="checkbox" data-id="t32">已背</label></div>
+      <div class="first">考场第一句：资本账户记录资本转移和非生产非金融资产交易。</div>
+      <details><summary>5 分答案</summary><p class="answer">资本账户是国际收支平衡表中的账户之一，主要记录资本转移以及非生产、非金融资产的取得和处置。它与金融账户不同，金融账户记录金融资产和负债变化。考试中资本账户金额通常不如经常账户和金融账户重要，但要避免把资本账户和金融账户混为一谈。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="储备资产 官方储备 外汇储备">
+      <div class="card-top"><div class="rank">33</div><div><p class="title">储备资产</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">B卷涉及</span></div></div><label class="check"><input type="checkbox" data-id="t33">已背</label></div>
+      <div class="first">考场第一句：储备资产是货币当局持有的、可用于国际支付和干预外汇市场的对外资产。</div>
+      <details><summary>5 分答案</summary><p class="answer">储备资产是由中央银行等货币当局持有并可随时用于国际支付、维持汇率稳定和应对国际收支需要的对外资产，主要包括外汇储备、黄金储备、特别提款权和在 IMF 的储备头寸等。储备资产变化反映央行干预外汇市场和国际收支调节情况。</p></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="吸收论 B=Y-A 国际收支失衡">
+      <div class="card-top"><div class="rank">34</div><div><p class="title">吸收论</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag high">老师提到</span></div></div><label class="check"><input type="checkbox" data-id="t34">已背</label></div>
+      <div class="first">考场第一句：吸收论认为贸易收支取决于国民收入与国内吸收之间的关系。</div>
+      <details><summary>5 分答案</summary><p class="answer">吸收论是分析国际收支失衡的传统理论之一，核心公式可写为 B = Y - A，其中 B 表示贸易收支或国际收支差额，Y 表示国民收入，A 表示国内吸收，即消费、投资和政府支出之和。该理论认为改善国际收支不能只看汇率，还要提高产出或减少国内吸收。</p></details>
+    </article>
+
+    <h2 id="scan">C 扫一眼：B卷出现或可作扩展，不要压过前面</h2>
+
+    <article class="card" data-tier="scan" data-keywords="名义有效汇率 有效汇率 NEER">
+      <div class="card-top"><div class="rank">35</div><div><p class="title">名义有效汇率</p><div class="meta"><span class="tag scan">C 扫一眼</span><span class="tag mid">B卷名词</span></div></div><label class="check"><input type="checkbox" data-id="t35">已背</label></div>
+      <div class="first">考场第一句：名义有效汇率是一国货币对一篮子贸易伙伴货币汇率的加权平均。</div>
+      <details><summary>5 分答案</summary><p class="answer">名义有效汇率是指一国货币对多个主要贸易伙伴货币的名义汇率按照贸易权重计算得到的加权平均汇率。它比双边汇率更能反映一国货币对外价值的总体变化。若进一步剔除各国价格水平变化，则得到实际有效汇率。</p></details>
+    </article>
+
+    <article class="card" data-tier="scan" data-keywords="货币局 currency board 固定汇率 香港">
+      <div class="card-top"><div class="rank">36</div><div><p class="title">货币局制度</p><div class="meta"><span class="tag scan">C 扫一眼</span><span class="tag mid">B卷名词</span></div></div><label class="check"><input type="checkbox" data-id="t36">已背</label></div>
+      <div class="first">考场第一句：货币局制度是一种严格固定汇率安排，本币发行通常以外汇储备为基础。</div>
+      <details><summary>5 分答案</summary><p class="answer">货币局制度是固定汇率制度的一种严格形式，货币当局承诺本币按固定汇率与某种锚货币兑换，并通常要求本币发行有相应外汇储备支持。它有助于增强汇率可信度和稳定预期，但货币政策自主性很弱，国内利率和货币供给容易受锚货币国家影响。</p></details>
+    </article>
+
+    <article class="card" data-tier="scan" data-keywords="外国债券 欧洲债券 扬基债券">
+      <div class="card-top"><div class="rank">37</div><div><p class="title">外国债券</p><div class="meta"><span class="tag scan">C 扫一眼</span><span class="tag mid">和欧洲债券对比</span></div></div><label class="check"><input type="checkbox" data-id="t37">已背</label></div>
+      <div class="first">考场第一句：外国债券是外国借款人在某国债券市场发行、以该国货币计价的债券。</div>
+      <details><summary>5 分答案</summary><p class="answer">外国债券是指外国借款人在一国国内债券市场发行的、以该国货币计价的债券。例如外国机构在美国市场发行美元债券，通常称为扬基债券。外国债券与欧洲债券的区别在于，外国债券是在计价货币发行国市场发行，而欧洲债券是在计价货币发行国以外发行。</p></details>
+    </article>
+
+    <article class="card" data-tier="scan" data-keywords="货币危机 currency crisis 投机攻击 固定汇率">
+      <div class="card-top"><div class="rank">38</div><div><p class="title">货币危机</p><div class="meta"><span class="tag scan">C 扫一眼</span><span class="tag mid">金融危机类型</span></div></div><label class="check"><input type="checkbox" data-id="t38">已背</label></div>
+      <div class="first">考场第一句：货币危机是本币遭遇投机攻击、汇率大幅贬值或固定汇率难以维持的危机。</div>
+      <details><summary>5 分答案</summary><p class="answer">货币危机是金融危机的一种表现形式，通常表现为本币遭遇投机攻击、大幅贬值、外汇储备快速下降，固定汇率制度被迫放弃或大幅调整。货币危机常与宏观基本面恶化、资本流动逆转、市场预期变化和外债压力有关。</p></details>
+    </article>
+
+    <article class="card" data-tier="scan" data-keywords="银行危机 bank crisis 挤兑 不良资产">
+      <div class="card-top"><div class="rank">39</div><div><p class="title">银行危机</p><div class="meta"><span class="tag scan">C 扫一眼</span><span class="tag mid">金融危机类型</span></div></div><label class="check"><input type="checkbox" data-id="t39">已背</label></div>
+      <div class="first">考场第一句：银行危机是银行体系因挤兑、坏账或流动性枯竭而功能受损的危机。</div>
+      <details><summary>5 分答案</summary><p class="answer">银行危机是金融危机的一种形式，通常表现为银行挤兑、不良资产集中暴露、流动性短缺、金融机构破产或需要政府救助。银行危机会削弱信用创造和支付中介功能，进而影响实体经济和金融稳定。</p></details>
+    </article>
+
+    <article class="card" data-tier="scan" data-keywords="第一代 第二代 第三代 货币危机模型 金融危机模型">
+      <div class="card-top"><div class="rank">40</div><div><p class="title">货币危机模型</p><div class="meta"><span class="tag scan">C 扫一眼</span><span class="tag high">简答可用</span></div></div><label class="check"><input type="checkbox" data-id="t40">已背</label></div>
+      <div class="first">考场第一句：货币危机模型是解释货币危机发生原因的理论框架，包括基本面、预期和金融脆弱性等角度。</div>
+      <details><summary>5 分答案</summary><p class="answer">货币危机模型用于解释固定汇率崩溃和货币危机的发生机制。第一代模型强调财政赤字、货币扩张和外汇储备耗尽等基本面不可持续；第二代模型强调政府政策权衡和市场预期的自我实现；第三代模型强调金融部门脆弱、资产负债表错配、短期外债和资本流动逆转。亚洲金融危机常用第三代模型解释。</p></details>
+    </article>
+  </main>
+
+  <footer>
+    <p>排序依据：老师录音强调程度、考试题型价值、课堂 PPT 覆盖密度、B 卷出现情况和 v4 复习资料。教材 PDF 为扫描型，主要作为章节背景，不作为可检索文本来源。</p>
+  </footer>
+</div>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-id]'));
+  const meter = document.getElementById('meter');
+  const search = document.getElementById('search');
+  let todoMode = false;
+
+  function updateMeter(){
+    const done = checks.filter(c => c.checked).length;
+    meter.textContent = `已背 ${done} / ${checks.length}`;
+  }
+
+  checks.forEach(c => {
+    const saved = localStorage.getItem('if-term-' + c.dataset.id);
+    c.checked = saved === '1';
+    c.addEventListener('change', () => {
+      localStorage.setItem('if-term-' + c.dataset.id, c.checked ? '1' : '0');
+      updateMeter();
+      applyFilter();
+    });
+  });
+
+  function applyFilter(){
+    const q = search.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const text = (card.innerText + ' ' + (card.dataset.keywords || '')).toLowerCase();
+      const checked = card.querySelector('input[type="checkbox"]').checked;
+      const matchSearch = !q || text.includes(q);
+      const matchTodo = !todoMode || !checked;
+      card.classList.toggle('hidden', !(matchSearch && matchTodo));
+    });
+  }
+
+  search.addEventListener('input', applyFilter);
+  document.getElementById('openAll').addEventListener('click', () => {
+    document.querySelectorAll('details').forEach(d => d.open = true);
+  });
+  document.getElementById('closeAll').addEventListener('click', () => {
+    document.querySelectorAll('details').forEach(d => d.open = false);
+  });
+  document.getElementById('onlyTodo').addEventListener('click', () => {
+    todoMode = true;
+    applyFilter();
+  });
+  document.getElementById('showAll').addEventListener('click', () => {
+    todoMode = false;
+    search.value = '';
+    applyFilter();
+  });
+
+  updateMeter();
+  applyFilter();
+</script>
+</body>
+</html>
