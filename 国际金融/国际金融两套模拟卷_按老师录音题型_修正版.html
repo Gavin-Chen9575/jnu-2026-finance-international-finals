@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>国际金融两套模拟卷：按老师录音题型修正版</title>
+  <style>
+    :root{
+      --ink:#202124;
+      --muted:#626a73;
+      --bg:#f6f7f9;
+      --paper:#fff;
+      --line:#d9dee5;
+      --blue:#2f6fa3;
+      --green:#22705d;
+      --red:#ad3f39;
+      --gold:#9a6617;
+      --soft-blue:#edf5fb;
+      --soft-green:#eaf5f0;
+      --soft-red:#faeeee;
+      --soft-gold:#fff4dc;
+      --shadow:0 14px 34px rgba(32,33,36,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--bg);font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;line-height:1.72}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 72px}
+    header,section{background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
+    header{padding:30px 32px}
+    .kicker{margin:0 0 8px;color:var(--green);font-weight:800}
+    h1{font-size:34px;line-height:1.2;margin:0}
+    .lead{font-size:17px;color:#3f464d;max-width:900px;margin:14px 0 0}
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .pill{border:1px solid var(--line);border-radius:999px;padding:5px 11px;background:#fbfcfd;font-size:14px}
+    nav{margin-top:18px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:18px}
+    nav h2{font-size:20px;margin:0 0 10px}
+    .toc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+    .toc a{display:block;border:1px solid var(--line);background:#fbfcfd;border-radius:8px;padding:10px 12px;color:#26323a;text-decoration:none;font-weight:800}
+    main{margin-top:20px}
+    section{padding:28px 30px;margin:18px 0}
+    h2{font-size:28px;line-height:1.25;margin:0 0 16px}
+    h3{font-size:21px;margin:24px 0 10px}
+    h4{font-size:18px;margin:18px 0 8px}
+    p{margin:9px 0}
+    ol,ul{padding-left:24px}
+    li{margin:8px 0}
+    table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+    th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top}
+    th{background:#eef1f4;text-align:left}
+    .note{border-left:5px solid var(--green);background:var(--soft-green);padding:13px 15px;border-radius:0 8px 8px 0;margin:14px 0}
+    .warn{border-left:5px solid var(--red);background:var(--soft-red);padding:13px 15px;border-radius:0 8px 8px 0;margin:14px 0}
+    .score{color:var(--gold);font-weight:800}
+    .small{color:var(--muted);font-size:14px}
+    .answerline{min-height:68px;border:1px dashed #aeb7c2;background:#fbfcfd;border-radius:8px;margin:8px 0 16px;padding:10px;color:#8a929c}
+    .midline{min-height:130px}
+    .longline{min-height:220px}
+    .formula{font-family:Consolas,"Courier New",monospace;background:#f1f3f5;border:1px solid var(--line);border-radius:8px;padding:11px 13px;margin:10px 0;overflow:auto}
+    .toplink{text-align:right;font-size:14px;margin-top:16px}
+    .toplink a{color:var(--blue);text-decoration:none}
+    .ans h3{border-top:1px solid var(--line);padding-top:18px}
+    @media(max-width:860px){
+      .toc{grid-template-columns:repeat(2,minmax(0,1fr))}
+      h1{font-size:29px}
+      section,header{padding:22px}
+    }
+    @media(max-width:560px){
+      .wrap{padding:18px 13px 50px}
+      .toc{grid-template-columns:1fr}
+      h1{font-size:25px}
+      h2{font-size:23px}
+      table{font-size:14px}
+    }
+    @media print{
+      body{background:#fff}
+      .wrap{max-width:none;padding:0}
+      header,section,nav{box-shadow:none;border-color:#aaa}
+      nav{break-after:page}
+      .answerline{border-color:#999}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <header>
+    <p class="kicker">按老师录音题型重做</p>
+    <h1>国际金融两套模拟卷：修正版</h1>
+    <p class="lead">这版严格按录音里的题型结构来：单选 10 分、判断 15 分、名词解释 25 分、计算题 12 分、简答题 38 分。没有论述题。答案统一放在最后。</p>
+    <div class="pillrow">
+      <span class="pill">单选 10 道 x 1 分</span>
+      <span class="pill">判断 15 道 x 1 分</span>
+      <span class="pill">名词解释 5 道 x 5 分</span>
+      <span class="pill">计算 2 道共 12 分</span>
+      <span class="pill">简答 2 道 15 分 + 1 道 8 分</span>
+    </div>
+  </header>
+
+  <nav aria-label="目录">
+    <h2>目录</h2>
+    <div class="toc">
+      <a href="#guide">题型核对</a>
+      <a href="#paper-a">模拟卷 A</a>
+      <a href="#paper-b">模拟卷 B</a>
+      <a href="#answers">答案与得分点</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="guide">
+      <h2>题型核对</h2>
+      <p>老师录音里明确说：单选题 10 道、每题 1 分；今年有判断题；名词解释 5 个、每个 5 分；计算题 2 个、共 12 分；简答题 3 道，暂定 2 道 15 分和 1 道 8 分。</p>
+      <table>
+        <thead><tr><th>题型</th><th>数量与分值</th><th>本卷安排</th></tr></thead>
+        <tbody>
+          <tr><td>单选题</td><td>10 道 x 1 分 = 10 分</td><td>放基础概念、方向判断和高频坑。</td></tr>
+          <tr><td>判断题</td><td>15 道 x 1 分 = 15 分</td><td>按总分和 v4 题型表处理为 15 道。</td></tr>
+          <tr><td>名词解释</td><td>5 道 x 5 分 = 25 分</td><td>每题按“定义 + 特征 + 例子/意义”写。</td></tr>
+          <tr><td>计算题</td><td>2 道，共 12 分</td><td>每题 6 分，重点练远期汇率/PPP/国际收支。</td></tr>
+          <tr><td>简答题</td><td>3 道，共 38 分</td><td>第 1、2 题各 15 分，第 3 题 8 分。</td></tr>
+        </tbody>
+      </table>
+      <div class="warn"><strong>做题提醒：</strong>这版不再设置论述题。人民币汇率制度、不可能三角、金融危机这些开放性内容会放进 15 分简答题里练。</div>
+      <div class="toplink"><a href="#top">回到目录</a></div>
+    </section>
+
+    <section id="paper-a">
+      <h2>模拟卷 A</h2>
+      <p class="score">满分 100 分。建议限时 90 分钟。</p>
+
+      <h3>一、单项选择题 <span class="score">10 分</span></h3>
+      <ol>
+        <li>在直接标价法下，USD/CNY 从 7.10 上升到 7.30，表示（ ）。<br>A. 人民币升值，美元贬值　B. 人民币贬值，美元升值　C. 两种货币都升值　D. 无法判断</li>
+        <li>外汇的广义含义最接近（ ）。<br>A. 外国纸币和硬币　B. 以外币表示、可用于国际结算的支付手段和金融资产　C. 一国黄金储备　D. 境外房地产</li>
+        <li>远期汇率是指（ ）。<br>A. 未来一定出现的即期汇率　B. 当前约定、未来交割时使用的汇率　C. 中央银行公布的唯一汇率　D. 购买力平价汇率</li>
+        <li>抛补利率平价的核心性质是（ ）。<br>A. 无套利条件　B. 财政政策规则　C. 贸易乘数条件　D. 国际收支恒等式</li>
+        <li>欧洲货币市场的正确理解是（ ）。<br>A. 位于欧洲的货币市场　B. 欧元交易市场　C. 货币发行国境外经营该种货币存贷款业务的离岸市场　D. 欧洲中央银行市场</li>
+        <li>本国企业出口商品并收到外汇，通常记入（ ）。<br>A. 经常账户贷方　B. 经常账户借方　C. 金融账户借方　D. 资本账户借方</li>
+        <li>根据绝对 PPP，若中国一篮子商品价格为 720 元，美国同一篮子商品价格为 100 美元，则 PPP 汇率是（ ）。<br>A. 0.139 元/美元　B. 7.20 元/美元　C. 72 元/美元　D. 100 元/美元</li>
+        <li>资本完全流动的小国开放经济中，BP 曲线通常近似为（ ）。<br>A. 水平线　B. 垂直线　C. U 形曲线　D. 向右下方倾斜</li>
+        <li>浮动汇率下，货币扩张通常会导致（ ）。<br>A. 利率下降、资本流出、本币贬值、净出口增加　B. 利率上升、本币升值　C. 央行被迫卖出外汇回收本币　D. 汇率完全不变</li>
+        <li>布雷顿森林体系的核心安排是（ ）。<br>A. 所有货币自由浮动　B. 美元与黄金挂钩，其他货币与美元挂钩　C. 欧元成为唯一储备货币　D. 恢复完全金本位</li>
+      </ol>
+      <div class="answerline">单选题答案：</div>
+
+      <h3>二、判断题 <span class="score">15 分</span></h3>
+      <ol>
+        <li>直接标价法下，汇率上升表示本币贬值。 （ ）</li>
+        <li>买入价和卖出价是站在客户角度定义的。 （ ）</li>
+        <li>远期汇率不是未来即期汇率的保证，而是当前约定的未来交割汇率。 （ ）</li>
+        <li>本国利率高于外国利率时，在直接标价法下，外币远期通常升水。 （ ）</li>
+        <li>欧洲债券市场是指地理位置在欧洲的债券市场。 （ ）</li>
+        <li>离岸金融市场通常监管相对宽松，但不是完全无监管。 （ ）</li>
+        <li>国际收支记录的是居民与非居民之间一定时期内的经济交易。 （ ）</li>
+        <li>国际收支是一个存量概念。 （ ）</li>
+        <li>经常账户不仅包括货物贸易，也包括服务、收入和经常转移。 （ ）</li>
+        <li>本国居民购买外国股票，通常表示本国对外资产增加，记金融账户借方。 （ ）</li>
+        <li>马歇尔-勒纳条件是本币贬值改善贸易收支的长期条件。 （ ）</li>
+        <li>本币贬值后，贸易收支可能短期先恶化、长期再改善。 （ ）</li>
+        <li>资本完全流动时，小国 BP 曲线通常近似水平。 （ ）</li>
+        <li>固定汇率下，货币政策效果通常比浮动汇率下更强。 （ ）</li>
+        <li>不可能三角不是说三个目标都不能实现，而是不能同时完全实现。 （ ）</li>
+      </ol>
+      <div class="answerline">判断题答案：</div>
+
+      <h3>三、名词解释 <span class="score">25 分</span></h3>
+      <ol>
+        <li>汇率</li>
+        <li>远期汇率</li>
+        <li>欧洲债券市场</li>
+        <li>国际收支平衡表</li>
+        <li>马歇尔-勒纳条件</li>
+      </ol>
+      <div class="answerline midline">名词解释作答区：</div>
+
+      <h3>四、计算题 <span class="score">12 分</span></h3>
+      <ol>
+        <li>USD/CNY 即期汇率 S=7.20，中国一年期利率 2%，美国一年期利率 5%。以人民币为本币、美元为外币，求一年期理论远期汇率，并判断美元远期升贴水。 <span class="score">6 分</span></li>
+        <li>某国货物出口 500、进口 420；服务出口 100、服务进口 160；收到海外投资收益 40、支付外国投资者收益 70；收到侨汇 30、对外援助 10。求经常账户余额，并判断顺差或逆差。 <span class="score">6 分</span></li>
+      </ol>
+      <div class="answerline midline">计算题作答区：</div>
+
+      <h3>五、简答题 <span class="score">38 分</span></h3>
+      <ol>
+        <li>为什么欧洲货币市场和欧洲债券市场不是“欧洲的市场”？ <span class="score">15 分</span></li>
+        <li>简述国际收支平衡表的主要账户，并说明常见交易的借贷方向判断。 <span class="score">15 分</span></li>
+        <li>简述购买力平价与实际汇率的区别。 <span class="score">8 分</span></li>
+      </ol>
+      <div class="answerline longline">简答题作答区：</div>
+      <div class="toplink"><a href="#top">回到目录</a></div>
+    </section>
+
+    <section id="paper-b">
+      <h2>模拟卷 B</h2>
+      <p class="score">满分 100 分。建议限时 90 分钟。</p>
+
+      <h3>一、单项选择题 <span class="score">10 分</span></h3>
+      <ol>
+        <li>人民币 2005 年汇改后的关键词更接近（ ）。<br>A. 单一盯住美元　B. 参考一篮子货币、有管理浮动　C. 恢复金本位　D. 完全自由浮动且无管理</li>
+        <li>根据相对 PPP，本国通胀率高于外国通胀率时，本币长期倾向于（ ）。<br>A. 升值　B. 贬值　C. 不变　D. 与通胀无关</li>
+        <li>实际汇率 Q=S x P*/P 上升，通常表示（ ）。<br>A. 本国实际升值，竞争力下降　B. 本国实际贬值，竞争力增强　C. 名义汇率必然下降　D. 物价没有变化</li>
+        <li>下列交易通常记入经常账户贷方的是（ ）。<br>A. 本国进口汽车并付款　B. 本国学生赴美留学支付学费　C. 外国游客来本国旅游消费　D. 本国居民购买美国国债</li>
+        <li>资本不完全流动时，BP 曲线通常（ ）。<br>A. 水平　B. 垂直　C. 向右上方倾斜　D. 向右下方倾斜</li>
+        <li>固定汇率下财政扩张通常较有效，是因为（ ）。<br>A. 本币升值压力下央行买入外汇、投放本币　B. 本币贬值压力下央行卖出外汇　C. 汇率自由浮动抵消财政扩张　D. 资本完全不能流动</li>
+        <li>香港联系汇率制度更接近选择了（ ）。<br>A. 汇率稳定 + 资本自由流动，货币政策自主性受限　B. 完全独立货币政策 + 固定汇率 + 资本自由流动　C. 完全浮动汇率　D. 完全资本管制</li>
+        <li>牙买加体系的重要特点是（ ）。<br>A. 恢复国际金本位　B. 承认浮动汇率合法化、黄金非货币化、储备资产多元化　C. 所有货币盯住美元　D. 禁止资本流动</li>
+        <li>第三代金融危机模型更强调（ ）。<br>A. 财政赤字和储备耗尽　B. 自我实现预期　C. 金融部门脆弱、货币错配、短期外债和资本逆转　D. 黄金输入点</li>
+        <li>IS-LM-BP 模型中，BP 曲线表示（ ）。<br>A. 商品市场均衡　B. 货币市场均衡　C. 国际收支均衡　D. 劳动力市场均衡</li>
+      </ol>
+      <div class="answerline">单选题答案：</div>
+
+      <h3>二、判断题 <span class="score">15 分</span></h3>
+      <ol>
+        <li>有管理浮动汇率制度既不是严格固定汇率，也不是完全自由浮动。 （ ）</li>
+        <li>欧洲美元市场是欧洲国家发行美元的市场。 （ ）</li>
+        <li>相对购买力平价讨论的是汇率变动率与两国通货膨胀率差异之间的关系。 （ ）</li>
+        <li>居民与非居民的判断主要看国籍，而不是经济利益中心。 （ ）</li>
+        <li>出口商品收到外汇通常记贷方，进口商品支付外汇通常记借方。 （ ）</li>
+        <li>储备资产属于金融账户相关项目。 （ ）</li>
+        <li>J 曲线效应说明本币贬值后贸易收支一定马上改善。 （ ）</li>
+        <li>吸收论强调贸易收支与国民收入和国内吸收之间的关系。 （ ）</li>
+        <li>浮动汇率下，货币政策通常较有效。 （ ）</li>
+        <li>固定汇率下，财政扩张通常可能因央行维持汇率而被放大。 （ ）</li>
+        <li>布雷顿森林体系本质上是以美元为中心的固定汇率体系。 （ ）</li>
+        <li>牙买加体系承认浮动汇率制度合法化。 （ ）</li>
+        <li>金融危机只能表现为货币危机，不能表现为银行危机或债务危机。 （ ）</li>
+        <li>第一代危机模型强调基本面不可持续和外汇储备耗尽。 （ ）</li>
+        <li>第三代危机模型常用来解释金融部门脆弱、短期外债和资本流动逆转。 （ ）</li>
+      </ol>
+      <div class="answerline">判断题答案：</div>
+
+      <h3>三、名词解释 <span class="score">25 分</span></h3>
+      <ol>
+        <li>离岸金融市场</li>
+        <li>抛补利率平价</li>
+        <li>实际汇率</li>
+        <li>经常账户</li>
+        <li>金融危机</li>
+      </ol>
+      <div class="answerline midline">名词解释作答区：</div>
+
+      <h3>四、计算题 <span class="score">12 分</span></h3>
+      <ol>
+        <li>同一篮子商品在中国价格为 700 元，在美国价格为 100 美元。求绝对 PPP 汇率；若市场汇率为 USD/CNY=7.30，判断人民币相对 PPP 是高估还是低估。 <span class="score">6 分</span></li>
+        <li>某国出口需求价格弹性为 0.6，进口需求价格弹性为 0.7。本币贬值在长期是否有助于改善贸易收支？说明理由，并指出短期可能出现什么效应。 <span class="score">6 分</span></li>
+      </ol>
+      <div class="answerline midline">计算题作答区：</div>
+
+      <h3>五、简答题 <span class="score">38 分</span></h3>
+      <ol>
+        <li>结合中国或香港例子，简述开放经济“不可能三角”的含义及政策取舍。 <span class="score">15 分</span></li>
+        <li>比较固定汇率和浮动汇率下，货币政策与财政政策效果的差异。 <span class="score">15 分</span></li>
+        <li>简述金本位、布雷顿森林体系和牙买加体系的主要区别。 <span class="score">8 分</span></li>
+      </ol>
+      <div class="answerline longline">简答题作答区：</div>
+      <div class="toplink"><a href="#top">回到目录</a></div>
+    </section>
+
+    <section id="answers" class="ans">
+      <h2>答案与得分点</h2>
+      <div class="warn"><strong>做完再看。</strong>名词解释和简答题不是逐字背答案，考试时围绕关键词展开即可。</div>
+
+      <h3>模拟卷 A 答案</h3>
+      <h4>一、单项选择题</h4>
+      <p>1. B　2. B　3. B　4. A　5. C　6. A　7. B　8. A　9. A　10. B</p>
+
+      <h4>二、判断题</h4>
+      <p>1. 对　2. 错　3. 对　4. 对　5. 错　6. 对　7. 对　8. 错　9. 对　10. 对　11. 对　12. 对　13. 对　14. 错　15. 对</p>
+
+      <h4>三、名词解释得分点</h4>
+      <ol>
+        <li><strong>汇率：</strong>两种货币之间的兑换比率，是一种货币用另一种货币表示的价格。按标价方法可分为直接标价法和间接标价法，汇率变动会影响贸易、资本流动和国际收支。</li>
+        <li><strong>远期汇率：</strong>外汇买卖双方在当前约定、未来某一日期交割外汇时使用的汇率。它可用于锁定汇率风险，并与两国利率差异和利率平价有关。</li>
+        <li><strong>欧洲债券市场：</strong>在债券面值货币发行国以外发行和流通国际债券的市场。“欧洲”是历史名称，不表示市场必须在欧洲。判断关键是发行地与计价货币发行国不同。</li>
+        <li><strong>国际收支平衡表：</strong>系统记录一国居民与非居民在一定时期内全部经济交易的统计报表。主要包括经常账户、资本账户、金融账户、储备资产和净误差与遗漏，采用复式记账。</li>
+        <li><strong>马歇尔-勒纳条件：</strong>本币贬值改善贸易收支的长期条件，即出口需求价格弹性和进口需求价格弹性绝对值之和大于 1。若不满足，贬值不一定改善贸易收支。</li>
+      </ol>
+
+      <h4>四、计算题</h4>
+      <ol>
+        <li>F = 7.20 x 1.02 / 1.05 = 6.994。F &lt; S，美元远期贴水，人民币远期升水。</li>
+        <li>货物余额 = 500 - 420 = 80；服务余额 = 100 - 160 = -60；收入余额 = 40 - 70 = -30；经常转移 = 30 - 10 = 20。经常账户余额 = 80 - 60 - 30 + 20 = 10，顺差 10。</li>
+      </ol>
+
+      <h4>五、简答题得分点</h4>
+      <ol>
+        <li><strong>欧洲货币/欧洲债券：</strong>二者属于离岸金融市场；“欧洲”不是地理概念，而是历史名称；欧洲货币市场是在货币发行国境外经营该货币存贷款业务的市场，如美国境外的美元存贷款市场；欧洲债券市场是在债券面值货币发行国以外发行和流通债券的市场；考试必须写“离岸”和“发行国境外/计价货币发行国以外”，不能写成位于欧洲的市场。</li>
+        <li><strong>国际收支表：</strong>国际收支平衡表记录居民与非居民在一定时期内的全部经济交易；经常账户包括货物、服务、初次收入和二次收入；资本账户包括资本转移和非生产非金融资产交易；金融账户包括直接投资、证券投资、其他投资、储备资产等；贷方通常表示外汇流入、收入增加、负债增加或资产减少；借方通常表示外汇流出、支出增加、资产增加或负债减少；出口记贷方，进口记借方，外国来华投资记金融账户贷方，本国购买外国资产记金融账户借方。</li>
+        <li><strong>PPP 与实际汇率：</strong>购买力平价是关于名义汇率和两国价格水平关系的理论，绝对 PPP 为 S=P/P*，相对 PPP 讨论汇率变动和通胀差；实际汇率是名义汇率经两国价格水平调整后的相对价格，常写作 Q=S x P*/P；PPP 解释长期汇率，实际汇率更常用于衡量国际竞争力。</li>
+      </ol>
+
+      <h3>模拟卷 B 答案</h3>
+      <h4>一、单项选择题</h4>
+      <p>1. B　2. B　3. B　4. C　5. C　6. A　7. A　8. B　9. C　10. C</p>
+
+      <h4>二、判断题</h4>
+      <p>1. 对　2. 错　3. 对　4. 错　5. 对　6. 对　7. 错　8. 对　9. 对　10. 对　11. 对　12. 对　13. 错　14. 对　15. 对</p>
+
+      <h4>三、名词解释得分点</h4>
+      <ol>
+        <li><strong>离岸金融市场：</strong>非居民之间以境外货币为交易对象，在货币发行国境外进行资金融通的国际金融市场。其监管通常相对宽松，但不是完全无监管。</li>
+        <li><strong>抛补利率平价：</strong>在无套利条件下，本币投资收益应等于换成外币投资并通过远期合约锁定汇率后的收益。公式为 F = S x (1+i_d)/(1+i_f)。</li>
+        <li><strong>实际汇率：</strong>名义汇率经过两国价格水平调整后的相对价格，常写为 Q = S x P*/P。它反映一国商品的国际竞争力，Q 上升通常表示本国实际贬值、竞争力增强。</li>
+        <li><strong>经常账户：</strong>国际收支平衡表中记录货物、服务、初次收入和二次收入的账户，反映真实资源交易和收入转移状况。</li>
+        <li><strong>金融危机：</strong>金融体系中全部或大部分金融指标出现急剧、短暂、超周期恶化，并导致金融功能受损的状态。可表现为货币危机、银行危机、债务危机、资产市场危机等。</li>
+      </ol>
+
+      <h4>四、计算题</h4>
+      <ol>
+        <li>绝对 PPP 汇率 S = P/P* = 700/100 = 7.00 元/美元。市场汇率 7.30 高于 PPP 汇率，在直接标价法下美元相对更贵，人民币相对 PPP 低估。</li>
+        <li>弹性和 = 0.6 + 0.7 = 1.3 &gt; 1，满足马歇尔-勒纳条件。因此本币贬值长期有助于改善贸易收支；但短期可能因合同固定、数量调整滞后等出现 J 曲线效应，即先恶化后改善。</li>
+      </ol>
+
+      <h4>五、简答题得分点</h4>
+      <ol>
+        <li><strong>不可能三角：</strong>固定汇率、资本自由流动、货币政策独立性不能同时完全实现；香港联系汇率制度选择汇率稳定和资本自由流动，因此货币政策自主性较弱，利率受美元体系影响；中国作为大型经济体重视货币政策自主性，因此采取有管理浮动汇率和渐进资本项目开放；结论是一国制度选择要在稳定汇率、开放资本和政策自主之间权衡。</li>
+        <li><strong>政策效果比较：</strong>浮动汇率下，货币扩张使利率下降、资本流出、本币贬值、净出口增加，货币政策较有效；浮动汇率下财政扩张使利率上升、资本流入、本币升值、净出口下降，财政效果被部分抵消；固定汇率下货币扩张引发贬值压力，央行卖外汇买本币，货币扩张被抵消，货币政策受限；固定汇率下财政扩张引发升值压力，央行买外汇投放本币，财政政策效果被放大。</li>
+        <li><strong>三大体系：</strong>金本位以黄金为锚，各国货币与黄金挂钩，汇率相对固定但货币政策受黄金约束；布雷顿森林体系以美元-黄金为核心，美元与黄金挂钩、其他货币与美元挂钩，本质是固定汇率体系；牙买加体系承认浮动汇率合法化，黄金非货币化，储备资产多元化，灵活性提高但汇率波动和国际协调问题加大。</li>
+      </ol>
+      <div class="toplink"><a href="#top">回到目录</a></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
