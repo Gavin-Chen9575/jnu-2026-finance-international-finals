@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>国际金融简答题考前背诵</title>
+  <style>
+    :root{
+      --ink:#202124;
+      --muted:#626a73;
+      --bg:#f5f6f8;
+      --paper:#fff;
+      --line:#d9dee5;
+      --red:#b13f3a;
+      --blue:#2e6f9f;
+      --green:#1f715d;
+      --gold:#9b6411;
+      --purple:#6657a5;
+      --soft-red:#faeeee;
+      --soft-blue:#edf5fb;
+      --soft-green:#eaf5f0;
+      --soft-gold:#fff4dc;
+      --soft-purple:#f1eff9;
+      --shadow:0 10px 24px rgba(32,33,36,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--bg);
+      font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif;
+      font-size:17px;
+      line-height:1.68;
+    }
+    .wrap{width:min(780px,100%);margin:0 auto;padding:18px 14px calc(56px + env(safe-area-inset-bottom))}
+    header,.panel,.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+    header{padding:22px 18px;margin-bottom:12px}
+    .kicker{margin:0 0 6px;color:var(--green);font-weight:800;font-size:14px}
+    h1{font-size:28px;line-height:1.18;margin:0}
+    .lead{margin:12px 0 0;color:#40474f;font-size:16px}
+    .panel{padding:14px;margin:12px 0}
+    .search{width:100%;min-height:46px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:17px;background:#fbfcfd;color:var(--ink)}
+    .btns,.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    button,.chip{border:1px solid var(--line);border-radius:999px;background:#fbfcfd;color:#26323a;font-size:14px;padding:8px 11px;min-height:38px;text-decoration:none;font-weight:700}
+    .meter{margin-top:11px;color:var(--muted);font-size:14px}
+    .hint{margin:8px 0 0;border-left:5px solid var(--green);background:var(--soft-green);padding:10px 12px;border-radius:0 8px 8px 0;font-size:15px}
+    h2{font-size:21px;margin:22px 2px 10px;line-height:1.25}
+    .card{padding:14px;margin:10px 0}
+    .card-top{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:start}
+    .rank{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:#eef1f4;font-weight:900;color:#26323a;font-size:15px}
+    .title{font-size:20px;font-weight:900;line-height:1.25;margin:0}
+    .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+    .tag{border-radius:999px;padding:2px 7px;font-size:12px;font-weight:800;border:1px solid transparent;white-space:nowrap}
+    .must{background:var(--soft-red);color:#8f2e29;border-color:#e4b8b5}
+    .high{background:var(--soft-gold);color:#704504;border-color:#e7c983}
+    .mid{background:var(--soft-blue);color:#23557c;border-color:#bdd7ea}
+    .scan{background:var(--soft-purple);color:#4d4280;border-color:#d3cdec}
+    .check{display:flex;align-items:center;gap:4px;color:var(--muted);font-size:12px;user-select:none}
+    .check input{width:20px;height:20px}
+    .skeleton{margin:12px 0 8px;padding:10px 12px;border-radius:8px;background:#f7f9fb;border:1px solid var(--line)}
+    .skeleton b{color:var(--green)}
+    details{border-top:1px solid var(--line);margin-top:10px;padding-top:9px}
+    summary{cursor:pointer;font-weight:850;color:var(--blue);min-height:34px}
+    .answer{margin:7px 0 0}
+    .answer ol{padding-left:22px;margin:7px 0}
+    .answer li{margin:5px 0}
+    .trap{color:#5d4630;background:var(--soft-gold);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:15px}
+    .hidden{display:none}
+    footer{color:var(--muted);font-size:13px;padding:16px 4px}
+    @media(max-width:390px){
+      body{font-size:16px}
+      h1{font-size:25px}
+      .title{font-size:19px}
+      .card-top{grid-template-columns:38px 1fr auto;gap:8px}
+      .rank{width:35px;height:35px}
+    }
+    @media print{
+      body{background:#fff}
+      .wrap{width:100%;padding:0}
+      header,.panel,.card{box-shadow:none;border-color:#aaa}
+      button,.search{display:none}
+    }
+  </style>
+</head>
+<body>
+<div class="wrap" id="top">
+  <header>
+    <p class="kicker">简答题 38 分专用</p>
+    <h1>国际金融简答题考前背诵</h1>
+    <p class="lead">按考试可能性排序。先背前 10 题，时间够背到 16 题。每题先背“骨架”，考场上再扩成 8 分或 15 分答案。</p>
+  </header>
+
+  <section class="panel">
+    <input id="search" class="search" placeholder="搜索：不可能三角、国际收支、固定汇率、金融危机...">
+    <div class="btns">
+      <button id="openAll" type="button">展开全部</button>
+      <button id="closeAll" type="button">收起全部</button>
+      <button id="onlyTodo" type="button">只看未背</button>
+      <button id="showAll" type="button">显示全部</button>
+    </div>
+    <div class="chips">
+      <a class="chip" href="#must">A+ 必背</a>
+      <a class="chip" href="#high">A 高概率</a>
+      <a class="chip" href="#mid">B 中概率</a>
+      <a class="chip" href="#method">答题套路</a>
+    </div>
+    <div class="meter" id="meter">已背 0 / 20</div>
+    <div class="hint">不想背概念就背骨架：先说定义，再说机制，最后举例或评价。15 分题尽量写 4 段，8 分题写 2 段也能拿分。</div>
+  </section>
+
+  <main id="cards">
+    <h2 id="method">0. 简答题万能写法</h2>
+    <article class="card" data-tier="must" data-keywords="万能 模板 简答 答题">
+      <div class="card-top"><div class="rank">0</div><div><p class="title">不会写时的保命结构</p><div class="meta"><span class="tag must">先背这个</span></div></div><label class="check"><input type="checkbox" data-id="s0">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>定义一句 + 机制两三句 + 例子一句 + 总结一句。</div>
+      <details open><summary>展开模板</summary><div class="answer"><ol><li>第一段：先解释题目中的核心概念。</li><li>第二段：写运行机制，比如汇率、利率、资本流动、国际收支怎样互相影响。</li><li>第三段：写例子，比如中国、香港、亚洲金融危机、布雷顿森林体系。</li><li>最后一句：回到题目，写政策含义或评价。</li></ol></div><div class="trap">主观题不要空。老师录音说“能答就答，能多答就多答”，但别跑题。</div></details>
+    </article>
+
+    <h2 id="must">A+ 必背：最可能出 15 分或 8 分</h2>
+
+    <article class="card" data-tier="must" data-keywords="欧洲货币 欧洲债券 离岸金融市场 不是欧洲">
+      <div class="card-top"><div class="rank">1</div><div><p class="title">为什么欧洲货币市场和欧洲债券市场不是“欧洲的市场”？</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag must">老师反复提醒</span></div></div><label class="check"><input type="checkbox" data-id="s1">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>离岸市场 - 欧洲是历史名称 - 判断标准 - 举例 - 易错提醒。</div>
+      <details open><summary>15 分答案</summary><div class="answer"><ol><li>欧洲货币市场和欧洲债券市场都属于离岸金融市场，“欧洲”不是地理概念，而是历史形成的名称。</li><li>欧洲货币市场指在货币发行国境外经营该种货币存贷款业务的市场。例如美国境外的美元存贷款市场就是欧洲美元市场。</li><li>欧洲债券市场指在债券面值货币发行国以外发行和流通国际债券的市场。判断关键是发行地是否在计价货币发行国之外。</li><li>例如中国企业在伦敦发行美元债券，可以称为欧洲美元债券，但关键不是伦敦在欧洲，而是美元债券在美国境外发行。</li><li>所以考试不能写成“位于欧洲的市场”，应突出“离岸”和“货币/债券计价货币发行国境外”。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="国际收支 平衡表 经常账户 金融账户 借贷">
+      <div class="card-top"><div class="rank">2</div><div><p class="title">简述国际收支平衡表的主要内容和借贷方向</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag must">第10章全章</span></div></div><label class="check"><input type="checkbox" data-id="s2">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>定义 - 经常/资本/金融账户 - 复式记账 - 贷方/借方 - 例子。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>国际收支平衡表是系统记录一国居民与非居民在一定时期内全部经济交易的统计报表。</li><li>它主要包括经常账户、资本账户、金融账户、储备资产和净误差与遗漏。</li><li>经常账户记录货物、服务、初次收入和二次收入；资本账户记录资本转移和非生产非金融资产交易；金融账户记录直接投资、证券投资、其他投资和储备资产等金融资产负债变化。</li><li>国际收支平衡表采用复式记账，每笔交易通常同时记入借方和贷方。</li><li>贷方通常表示外汇流入、收入增加、对外负债增加或对外资产减少；借方通常表示外汇流出、支出增加、对外资产增加或对外负债减少。</li><li>例如出口商品收到外汇记经常账户贷方，进口商品支付外汇记经常账户借方；外国来本国投资通常记金融账户贷方，本国购买外国资产通常记金融账户借方。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="马歇尔 勒纳 J曲线 本币贬值 贸易收支">
+      <div class="card-top"><div class="rank">3</div><div><p class="title">简述马歇尔-勒纳条件与 J 曲线效应</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">计算和简答都可考</span></div></div><label class="check"><input type="checkbox" data-id="s3">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>M-L 是长期条件 - 弹性和大于 1 - J 曲线是短期到长期路径 - 先恶化后改善。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>马歇尔-勒纳条件说明本币贬值改善贸易收支的长期条件。</li><li>只有当出口需求价格弹性和进口需求价格弹性绝对值之和大于 1 时，本币贬值才会使出口收入增加、进口支出相对减少，从而长期改善贸易收支。</li><li>如果弹性不足，本币贬值不一定改善贸易收支，甚至可能恶化。</li><li>J 曲线效应说明贬值后的动态调整过程。短期内，由于合同已经签订、价格粘性和进出口数量调整滞后，贸易收支可能先恶化。</li><li>随着时间推移，出口数量增加、进口数量减少，贸易收支才逐渐改善，变化路径类似字母 J。</li><li>因此，M-L 条件强调长期能否改善，J 曲线强调短期到长期的调整路径。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="不可能三角 固定汇率 资本自由流动 货币政策独立 香港 中国">
+      <div class="card-top"><div class="rank">4</div><div><p class="title">结合中国或香港说明不可能三角</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag must">老师长讲</span></div></div><label class="check"><input type="checkbox" data-id="s4">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>三目标 - 不能同时完全实现 - 香港例子 - 中国例子 - 政策取舍。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>不可能三角指固定汇率、资本自由流动和货币政策独立性三者不能同时完全实现，一国最多只能同时选择其中两个。</li><li>固定汇率要求央行维持汇率稳定，资本自由流动意味着资金可自由跨境流入流出，货币政策独立性则要求央行能根据本国经济状况自主加息、降息或调节货币供给。</li><li>香港实行联系汇率制度，并保持较高资本自由流动，因此货币政策自主性较弱，利率很大程度受美元利率和资金流动影响。</li><li>中国作为大型经济体重视货币政策自主性，因此人民币汇率实行有管理浮动，资本项目开放也采取渐进方式。</li><li>这说明开放经济没有完美制度，国家必须在汇率稳定、资本开放和政策自主之间进行权衡。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="固定汇率 浮动汇率 货币政策 财政政策 蒙代尔 弗莱明">
+      <div class="card-top"><div class="rank">5</div><div><p class="title">比较固定汇率和浮动汇率下财政、货币政策效果</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">第11章核心</span></div></div><label class="check"><input type="checkbox" data-id="s5">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>浮动货币强、财政被挤出；固定货币弱、财政强。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>在开放经济中，财政政策和货币政策效果取决于汇率制度和资本流动程度。</li><li>浮动汇率下，货币扩张使利率下降，资本流出，本币贬值，净出口增加，从而推动收入上升，因此货币政策通常较有效。</li><li>浮动汇率下，财政扩张使收入和利率上升，资本流入，本币升值，净出口下降，财政刺激被部分抵消，因此财政政策效果可能减弱。</li><li>固定汇率下，货币扩张使利率下降并导致资本流出，本币产生贬值压力。央行为维持固定汇率需卖出外汇、买入本币，货币供给被回收，因此货币政策效果受限。</li><li>固定汇率下，财政扩张使收入和利率上升，资本流入，本币产生升值压力。央行为维持固定汇率买入外汇、投放本币，货币供给扩张进一步刺激需求，因此财政政策通常较有效。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="人民币汇率制度 改革 有管理浮动 2005 一篮子货币">
+      <div class="card-top"><div class="rank">6</div><div><p class="title">简述人民币汇率制度改革的方向</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">开放题素材</span></div></div><label class="check"><input type="checkbox" data-id="s6">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>市场化 - 弹性化 - 有管理浮动 - 2005 汇改 - 不可能三角。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>人民币汇率制度改革的总体方向是市场化、弹性化和有管理浮动。</li><li>1994 年汇改实现官方汇率和外汇调剂市场汇率并轨，是人民币汇率市场化改革的重要起点。</li><li>2005 年汇改后，人民币不再单一盯住美元，而是以市场供求为基础、参考一篮子货币进行调节，实行有管理的浮动汇率制度。</li><li>改革提高了人民币汇率弹性，使汇率更能反映国内外经济基本面和国际货币变化，有助于调节进出口和国际收支。</li><li>人民币汇率制度也体现了不可能三角下的政策取舍。中国重视货币政策自主性，因此汇率弹性和资本项目开放采取渐进安排。</li><li>总体看，人民币汇率改革是在市场化、稳定性和政策自主性之间进行平衡。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="金融危机 定义 表现 四代模型 货币危机 银行危机">
+      <div class="card-top"><div class="rank">7</div><div><p class="title">简述金融危机的表现及几代危机模型</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">第14章</span></div></div><label class="check"><input type="checkbox" data-id="s7">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>定义 - 表现类型 - 第一代基本面 - 第二代预期 - 第三代金融脆弱 - 第四代传染。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>金融危机通常指金融体系中大量金融指标出现急剧、短暂、超周期恶化，并导致金融功能受损的状态。</li><li>它可以表现为货币危机、银行危机、债务危机、资产市场危机和资本突然停止等。</li><li>第一代危机模型强调宏观基本面不可持续，如财政赤字货币化、外汇储备持续下降，使固定汇率最终无法维持。</li><li>第二代模型强调政府在维持汇率和国内经济目标之间的政策权衡，以及市场预期可能自我实现。</li><li>第三代模型强调金融部门脆弱、资产负债表错配、短期外债和资本流动逆转，常用于解释亚洲金融危机。</li><li>第四代模型强调全球金融网络、流动性冲击、资产价格和金融传染，常可用于理解 2008 年全球金融危机。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="must" data-keywords="PPP 购买力平价 实际汇率 RER 绝对 相对">
+      <div class="card-top"><div class="rank">8</div><div><p class="title">简述 PPP 与实际汇率的区别</p><div class="meta"><span class="tag must">A+ 必背</span><span class="tag high">PPT高频</span></div></div><label class="check"><input type="checkbox" data-id="s8">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>PPP 是理论关系；RER 是相对价格/竞争力；绝对、相对 PPP；Q 上升竞争力增强。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>购买力平价是关于名义汇率与两国价格水平关系的理论。绝对 PPP 认为 S=P/P*，相对 PPP 认为汇率变动率约等于两国通胀率之差。</li><li>实际汇率是名义汇率经过两国价格水平调整后的相对价格，常写为 Q=S x P*/P，用来衡量本国产品的国际竞争力。</li><li>PPP 更强调长期均衡汇率和价格水平关系，实际汇率更强调本国商品相对于外国商品的价格竞争力。</li><li>在直接标价法下，Q 上升通常表示本国实际贬值，本国产品相对便宜，国际竞争力增强。</li></ol></div></details>
+    </article>
+
+    <h2 id="high">A 高概率：背到这里比较稳</h2>
+
+    <article class="card" data-tier="high" data-keywords="国际收支失衡 原因 经济周期 结构 资本流动">
+      <div class="card-top"><div class="rank">9</div><div><p class="title">简述国际收支失衡的原因</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag high">第10章</span></div></div><label class="check"><input type="checkbox" data-id="s9">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>周期 - 结构 - 收入 - 汇率价格 - 资本流动 - 政策。</div>
+      <details><summary>8 或 15 分答案</summary><div class="answer"><ol><li>国际收支失衡是指一国对外收支出现持续顺差或逆差，其原因包括经济周期、经济结构、收入变化、价格和汇率因素、资本流动和政策因素。</li><li>经济繁荣会提高进口需求，可能导致经常账户恶化；经济衰退则可能减少进口。</li><li>产业结构和竞争力会影响出口能力，若出口产品竞争力不足，容易出现贸易逆差。</li><li>本币升值会削弱出口竞争力，本币贬值可能改善贸易收支，但效果取决于弹性条件和时间滞后。</li><li>国际利差、风险预期和金融市场变化会引发资本流入或流出，影响金融账户和汇率。</li><li>因此，调节国际收支需要综合运用汇率政策、财政货币政策和结构调整。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="金本位 布雷顿森林 牙买加体系 国际货币体系">
+      <div class="card-top"><div class="rank">10</div><div><p class="title">比较金本位、布雷顿森林体系和牙买加体系</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag high">第12章</span></div></div><label class="check"><input type="checkbox" data-id="s10">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>金本位锚黄金；布雷顿森林锚美元-黄金；牙买加承认浮动汇率。</div>
+      <details><summary>8 或 15 分答案</summary><div class="answer"><ol><li>金本位制度以黄金为基础，各国货币与黄金按固定比价兑换，因此各国货币之间形成相对固定汇率。其优点是汇率稳定，缺点是货币政策受黄金储备约束。</li><li>布雷顿森林体系是二战后建立的以美元为中心的固定汇率体系，美元与黄金挂钩，其他货币与美元挂钩。它促进战后国际贸易恢复，但存在美元国际储备需求和黄金兑换承诺之间的矛盾。</li><li>牙买加体系是在布雷顿森林体系瓦解后形成的国际货币安排，承认浮动汇率合法化，推动黄金非货币化和储备资产多元化。</li><li>三者区别在于货币锚、汇率制度和政策自主性不同：金本位锚黄金，布雷顿森林锚美元-黄金，牙买加体系更灵活但汇率波动更大。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="布雷顿森林体系 瓦解 特里芬 美元黄金">
+      <div class="card-top"><div class="rank">11</div><div><p class="title">简述布雷顿森林体系及其瓦解原因</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">体系题</span></div></div><label class="check"><input type="checkbox" data-id="s11">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>美元-黄金 - 其他货币盯美元 - 战后稳定 - 美国逆差 - 黄金不足 - 信心崩溃。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>布雷顿森林体系是二战后建立的国际货币体系，核心是美元与黄金按固定比价挂钩，其他国家货币与美元保持固定汇率。</li><li>该体系有利于恢复战后国际贸易和金融秩序，并确立了 IMF、世界银行等国际机构的作用。</li><li>但该体系存在内在矛盾：世界经济发展需要美元作为国际储备资产，而美元大量输出又会削弱美元与黄金兑换承诺的可信度。</li><li>随着美国国际收支逆差扩大、对外美元负债增加和黄金储备不足，市场对美元信心下降。</li><li>1971 年美国停止美元兑换黄金，体系核心基础被破坏，随后主要国家转向浮动汇率，布雷顿森林体系最终瓦解。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="浮动汇率 货币扩张 财政扩张">
+      <div class="card-top"><div class="rank">12</div><div><p class="title">简述浮动汇率下货币扩张和财政扩张的效果</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">第11章拆分题</span></div></div><label class="check"><input type="checkbox" data-id="s12">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>货币扩张：利率降-资本流出-贬值-出口增；财政扩张：利率升-资本流入-升值-净出口降。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>浮动汇率下，货币扩张使货币供给增加，利率下降，资本流出，本币贬值。</li><li>本币贬值使出口竞争力增强、进口相对变贵，净出口增加，从而进一步推动收入上升，因此货币政策通常较有效。</li><li>财政扩张使总需求增加，收入和利率上升，资本流入，本币升值。</li><li>本币升值削弱出口竞争力，使净出口下降，从而部分抵消财政扩张效果，因此浮动汇率下财政政策效果可能被削弱。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="固定汇率 货币扩张 财政扩张 外汇储备">
+      <div class="card-top"><div class="rank">13</div><div><p class="title">简述固定汇率下货币扩张和财政扩张的效果</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">第11章拆分题</span></div></div><label class="check"><input type="checkbox" data-id="s13">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>货币扩张被央行干预抵消；财政扩张被央行投放本币放大。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>固定汇率下，货币扩张会使利率下降，资本流出，本币产生贬值压力。</li><li>央行为维持固定汇率，需要卖出外汇、买入本币，导致外汇储备减少和本币供给收缩，最初的货币扩张被抵消，因此货币政策效果受限。</li><li>财政扩张会提高收入和利率，吸引资本流入，本币产生升值压力。</li><li>央行为维持固定汇率，需要买入外汇、投放本币，货币供给增加，从而进一步刺激总需求，因此固定汇率下财政政策通常较有效。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="BP曲线 国际收支均衡 资本流动">
+      <div class="card-top"><div class="rank">14</div><div><p class="title">简述 BP 曲线的含义及形状</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">模型基础</span></div></div><label class="check"><input type="checkbox" data-id="s14">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>国际收支均衡 - 收入影响进口 - 利率影响资本流动 - 不完全流动右上 - 完全流动水平。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>BP 曲线表示开放经济中实现国际收支均衡的收入和利率组合。</li><li>收入上升会增加进口，使经常账户恶化；利率上升会吸引资本流入，使金融账户改善。</li><li>因此在资本不完全流动时，收入越高，往往需要更高利率吸引资本流入来维持国际收支均衡，BP 曲线通常向右上方倾斜。</li><li>当资本完全流动时，小国利率受世界利率约束，BP 曲线通常近似为水平线。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="人民币汇率 短期波动 长期走势 因素">
+      <div class="card-top"><div class="rank">15</div><div><p class="title">简述影响汇率短期波动和长期走势的因素</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">B卷论述改简答</span></div></div><label class="check"><input type="checkbox" data-id="s15">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>短期看利差、资本流动、预期和政策；长期看通胀、生产率、国际收支和制度。</div>
+      <details><summary>15 分答案</summary><div class="answer"><ol><li>汇率短期波动主要受利差、资本流动、市场预期、央行干预、国际金融市场情绪和美元走势等因素影响。</li><li>例如外国加息可能吸引资本流向外国，造成本币贬值压力；市场预期变化也可能引发短期资本流入或流出。</li><li>汇率长期走势主要受两国通胀差异、劳动生产率、经济增长、贸易竞争力、国际收支状况和汇率制度安排影响。</li><li>根据相对购买力平价，本国通胀长期高于外国，本币有贬值压力；若本国生产率和出口竞争力提升，则可能支持本币长期走强。</li><li>人民币汇率改革体现了市场化和有管理浮动方向，既让汇率反映市场供求，也通过必要管理防止短期过度波动。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="high" data-keywords="亚洲金融危机 不可能三角 第三代模型">
+      <div class="card-top"><div class="rank">16</div><div><p class="title">为什么亚洲金融危机可以用不可能三角解释？</p><div class="meta"><span class="tag high">A 高概率</span><span class="tag mid">综合题素材</span></div></div><label class="check"><input type="checkbox" data-id="s16">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>固定汇率倾向 - 资本开放 - 国内政策压力 - 投机攻击 - 储备不足。</div>
+      <details><summary>8 或 15 分答案</summary><div class="answer"><ol><li>亚洲金融危机中，一些经济体试图维持相对固定汇率，同时资本流动较自由，但国内金融体系和政策自主性又面临压力。</li><li>在资本自由流动下，一旦市场预期逆转，资本会大规模流出，本币产生贬值压力。</li><li>为维持固定汇率，央行需要动用外汇储备买入本币。若储备不足或市场信心崩溃，固定汇率就难以维持。</li><li>这体现了固定汇率、资本自由流动和货币政策独立性之间的冲突。</li><li>同时，第三代危机模型还强调金融部门脆弱、短期外债和货币错配会放大危机。</li></ol></div></details>
+    </article>
+
+    <h2 id="mid">B 中概率：有时间再扫</h2>
+
+    <article class="card" data-tier="mid" data-keywords="外汇市场 汇率 标价法 价格种类">
+      <div class="card-top"><div class="rank">17</div><div><p class="title">简述汇率的标价方法和常见价格种类</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">第一章基础</span></div></div><label class="check"><input type="checkbox" data-id="s17">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>汇率定义 - 直接标价 - 间接标价 - 买入/卖出 - 即期/远期。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>汇率是两种货币之间的兑换比率，是一种货币用另一种货币表示的价格。</li><li>直接标价法是用本国货币表示一定单位外国货币价格，数值上升表示本币贬值。</li><li>间接标价法是用外国货币表示一定单位本国货币价格，数值上升表示本币升值。</li><li>从银行报价看，有买入价、卖出价和中间价；从交割时间看，有即期汇率和远期汇率。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="CIP UIP 利率平价 抛补 无抛补">
+      <div class="card-top"><div class="rank">18</div><div><p class="title">比较抛补利率平价和无抛补利率平价</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag mid">PPT第2章</span></div></div><label class="check"><input type="checkbox" data-id="s18">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>CIP 用远期锁汇、无套利；UIP 不锁汇、看预期、有风险。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>抛补利率平价 CIP 是无套利条件，比较本币投资和换成外币投资后用远期合约锁定汇率的收益。它涉及即期汇率、远期汇率和两国利率。</li><li>在直接标价法下，CIP 可写为 F = S x (1+i_d)/(1+i_f)。</li><li>无抛补利率平价 UIP 不使用远期合约锁定汇率，而是用预期未来即期汇率比较本外币投资预期收益。</li><li>CIP 更强调无风险套利，UIP 更强调预期和风险，因此现实中 UIP 更容易因风险溢价和预期误差而偏离。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="货币局 固定汇率 香港">
+      <div class="card-top"><div class="rank">19</div><div><p class="title">简述货币局制度的特点</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag scan">B卷名词</span></div></div><label class="check"><input type="checkbox" data-id="s19">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>严格固定汇率 - 外汇储备支持 - 可信度强 - 政策自主性弱。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>货币局制度是固定汇率制度的一种严格形式，货币当局承诺本币按固定汇率与某种锚货币兑换。</li><li>本币发行通常需要以相应外汇储备为基础，因此汇率承诺可信度较强。</li><li>它有助于稳定汇率和市场预期，但货币政策自主性很弱，本国利率和货币供给容易受锚货币国家影响。</li><li>香港联系汇率制度常被用来说明固定汇率、资本自由流动和货币政策独立性之间的取舍。</li></ol></div></details>
+    </article>
+
+    <article class="card" data-tier="mid" data-keywords="名义有效汇率 实际有效汇率 竞争力">
+      <div class="card-top"><div class="rank">20</div><div><p class="title">简述名义有效汇率和实际有效汇率</p><div class="meta"><span class="tag mid">B 中概率</span><span class="tag scan">B卷名词</span></div></div><label class="check"><input type="checkbox" data-id="s20">已背</label></div>
+      <div class="skeleton"><b>骨架：</b>NEER 是一篮子货币加权；REER 再扣价格；看总体对外价值和竞争力。</div>
+      <details><summary>8 分答案</summary><div class="answer"><ol><li>名义有效汇率是一国货币对多个主要贸易伙伴货币的名义汇率按贸易权重计算得到的加权平均。</li><li>它比单一双边汇率更能反映一国货币对外价值的总体变化。</li><li>实际有效汇率是在名义有效汇率基础上进一步剔除本国与贸易伙伴价格水平变化影响后的指标。</li><li>实际有效汇率更能反映一国产品的国际竞争力。实际有效汇率升值通常意味着本国产品相对变贵，竞争力下降。</li></ol></div></details>
+    </article>
+  </main>
+
+  <footer>
+    <p>排序依据：老师录音、PPT 高频主题、B 卷题型提示、v4 复习资料。建议先背 A+，再做题检验，不要从头硬背。</p>
+  </footer>
+</div>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const checks = Array.from(document.querySelectorAll('input[type="checkbox"][data-id]'));
+  const meter = document.getElementById('meter');
+  const search = document.getElementById('search');
+  let todoMode = false;
+
+  function updateMeter(){
+    const done = checks.filter(c => c.checked).length;
+    meter.textContent = `已背 ${done} / ${checks.length}`;
+  }
+
+  checks.forEach(c => {
+    const saved = localStorage.getItem('if-short-' + c.dataset.id);
+    c.checked = saved === '1';
+    c.addEventListener('change', () => {
+      localStorage.setItem('if-short-' + c.dataset.id, c.checked ? '1' : '0');
+      updateMeter();
+      applyFilter();
+    });
+  });
+
+  function applyFilter(){
+    const q = search.value.trim().toLowerCase();
+    cards.forEach(card => {
+      const text = (card.innerText + ' ' + (card.dataset.keywords || '')).toLowerCase();
+      const checked = card.querySelector('input[type="checkbox"]').checked;
+      const matchSearch = !q || text.includes(q);
+      const matchTodo = !todoMode || !checked;
+      card.classList.toggle('hidden', !(matchSearch && matchTodo));
+    });
+  }
+
+  search.addEventListener('input', applyFilter);
+  document.getElementById('openAll').addEventListener('click', () => {
+    document.querySelectorAll('details').forEach(d => d.open = true);
+  });
+  document.getElementById('closeAll').addEventListener('click', () => {
+    document.querySelectorAll('details').forEach(d => d.open = false);
+  });
+  document.getElementById('onlyTodo').addEventListener('click', () => {
+    todoMode = true;
+    applyFilter();
+  });
+  document.getElementById('showAll').addEventListener('click', () => {
+    todoMode = false;
+    search.value = '';
+    applyFilter();
+  });
+  updateMeter();
+  applyFilter();
+</script>
+</body>
+</html>
