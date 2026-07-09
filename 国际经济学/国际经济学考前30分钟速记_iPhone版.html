@@ -161,6 +161,57 @@
     .shade-amber{fill:#fde68a;opacity:.85}
     .svg-label{font-size:13px;fill:#172033;font-weight:700;font-family:"Microsoft YaHei",Arial,sans-serif}
     .svg-small{font-size:12px;fill:#475467;font-family:"Microsoft YaHei",Arial,sans-serif}
+    .exam-card{
+      border:1px solid #c7d2fe;
+      background:#f8faff;
+      border-radius:8px;
+      padding:12px;
+      margin:10px 0;
+    }
+    .exam-title{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom:8px;
+      font-weight:850;
+    }
+    .result-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:9px;
+      margin:10px 0;
+    }
+    .result-card{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:8px;
+      padding:10px 11px;
+    }
+    .result-card .big{
+      display:block;
+      font-size:1.18rem;
+      font-weight:900;
+      color:#101828;
+      margin-top:2px;
+    }
+    .step-title{
+      display:inline-block;
+      font-weight:900;
+      color:#111827;
+      background:#eef2ff;
+      border-radius:999px;
+      padding:2px 9px;
+      margin:12px 0 5px;
+      font-size:.86rem;
+    }
+    .compare{
+      border-left:4px solid var(--blue);
+      background:#eff6ff;
+      padding:9px 10px;
+      border-radius:8px;
+      margin:10px 0;
+    }
     .bottom-nav{
       position:fixed;
       left:0;
@@ -176,7 +227,7 @@
       max-width:820px;
       margin:0 auto;
       display:grid;
-      grid-template-columns:repeat(5,1fr);
+      grid-template-columns:repeat(6,1fr);
       gap:6px;
     }
     .bottom-nav a{
@@ -187,7 +238,7 @@
       border:1px solid var(--line);
       border-radius:8px;
       padding:7px 4px;
-      font-size:.78rem;
+      font-size:.74rem;
       font-weight:800;
       line-height:1.2;
     }
@@ -198,6 +249,7 @@
       section{padding:20px 22px}
       .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
       .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .result-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
     }
     @media print{
       body{background:#fff;padding-bottom:0}
@@ -229,8 +281,8 @@
     <section id="use">
       <h2>0. 先按时间读</h2>
       <div class="grid two">
-        <div class="item"><strong>只剩10分钟</strong>直接看“论述”和“最后一分钟”。先背贸易保护、H-O、第9章政策比较。</div>
-        <div class="item"><strong>还有30分钟</strong>必背句子 5分钟，易错点 5分钟，图形/公式 8分钟，论述 12分钟。</div>
+        <div class="item"><strong>只剩10分钟</strong>直接看“汽车题”“论述”和“最后一分钟”。先背贸易保护、H-O、第9章政策比较。</div>
+        <div class="item"><strong>还有30分钟</strong>必背句子 5分钟，易错点 5分钟，图形/公式 8分钟，汽车题 5分钟，论述 7分钟。</div>
       </div>
       <p class="mini">考试结构：选择题30分；图形题偏贸易理论和贸易政策；计算题2道共40分，课后题难度；论述题2选1。</p>
       <div class="warn"><strong>别被目录骗走时间：</strong>第11、13章老师不讲，不投入大题时间；第15、17章只记核心结论，不做复杂推导。大题优先第4、8、9、10、12、14、16、17章。</div>
@@ -353,8 +405,138 @@
       </div>
     </section>
 
+    <section id="car">
+      <h2>6. 新增重点题：汽车进口小国</h2>
+      <div class="exam-card">
+        <div class="exam-title">
+          <span>考试题面</span>
+          <span class="tag red">非常重要</span>
+        </div>
+        <p>设中国是汽车进口的小国，对汽车的需求和供给分别为：</p>
+        <div class="formula">需求：D = 2000 - 0.02P<br>供给：S = 1200 + 0.02P<br>世界价格：Pw = 10000美元/辆</div>
+        <p>请用数字和图形说明：</p>
+        <ol>
+          <li>自由贸易下，中国汽车的产量及进口或出口量是多少？</li>
+          <li>若每辆征收5000美元进口税，国内产量、贸易量、消费者和厂商福利如何变化？</li>
+          <li>若设置200辆绝对进口配额，国内价格、贸易量和福利如何变化？</li>
+          <li>若需求变为D'=2200-0.02P，比较5000美元关税和200辆配额下的价格、进口量和福利变化。</li>
+        </ol>
+      </div>
+
+      <div class="svgbox">
+        <svg viewBox="0 0 760 430" role="img" aria-label="汽车小国关税与配额图形">
+          <text class="svg-label" x="42" y="30">A. 原需求：关税和200辆配额结果相同</text>
+          <line class="axis" x1="54" y1="342" x2="350" y2="342"></line>
+          <line class="axis" x1="54" y1="342" x2="54" y2="64"></line>
+          <path class="supply" d="M70 330 L320 100"></path>
+          <path class="demand" d="M112 86 L338 316"></path>
+          <line class="price" x1="58" y1="260" x2="342" y2="260"></line>
+          <line class="price" x1="58" y1="202" x2="342" y2="202"></line>
+          <line class="guide" x1="151" y1="260" x2="151" y2="342"></line>
+          <line class="guide" x1="184" y1="202" x2="184" y2="342"></line>
+          <line class="guide" x1="246" y1="202" x2="246" y2="342"></line>
+          <line class="guide" x1="281" y1="260" x2="281" y2="342"></line>
+          <text class="svg-small" x="63" y="254">10000</text>
+          <text class="svg-small" x="63" y="196">15000</text>
+          <text class="svg-small" x="139" y="364">1400</text>
+          <text class="svg-small" x="172" y="364">1500</text>
+          <text class="svg-small" x="235" y="364">1700</text>
+          <text class="svg-small" x="270" y="364">1800</text>
+          <text class="svg-small" x="185" y="185">税后/配额进口=200</text>
+          <text class="svg-small" x="197" y="276">自由贸易进口=400</text>
+          <text class="svg-label" x="322" y="105">S</text>
+          <text class="svg-label" x="339" y="318">D</text>
+
+          <text class="svg-label" x="400" y="30">B. 需求增加：关税和配额分开走</text>
+          <line class="axis" x1="412" y1="342" x2="714" y2="342"></line>
+          <line class="axis" x1="412" y1="342" x2="412" y2="64"></line>
+          <path class="supply" d="M428 330 L678 100"></path>
+          <path class="demand" d="M492 80 L706 316"></path>
+          <line class="price" x1="416" y1="260" x2="706" y2="260"></line>
+          <line class="price" x1="416" y1="202" x2="706" y2="202"></line>
+          <line class="price" x1="416" y1="144" x2="706" y2="144"></line>
+          <line class="guide" x1="510" y1="260" x2="510" y2="342"></line>
+          <line class="guide" x1="542" y1="202" x2="542" y2="342"></line>
+          <line class="guide" x1="575" y1="144" x2="575" y2="342"></line>
+          <line class="guide" x1="642" y1="202" x2="642" y2="342"></line>
+          <line class="guide" x1="608" y1="144" x2="608" y2="342"></line>
+          <line class="guide" x1="675" y1="260" x2="675" y2="342"></line>
+          <text class="svg-small" x="421" y="254">10000</text>
+          <text class="svg-small" x="421" y="196">15000</text>
+          <text class="svg-small" x="421" y="138">20000</text>
+          <text class="svg-small" x="498" y="364">1400</text>
+          <text class="svg-small" x="531" y="364">1500</text>
+          <text class="svg-small" x="564" y="364">1600</text>
+          <text class="svg-small" x="597" y="364">1800</text>
+          <text class="svg-small" x="631" y="364">1900</text>
+          <text class="svg-small" x="664" y="364">2000</text>
+          <text class="svg-small" x="548" y="187">关税：P=15000，进口400</text>
+          <text class="svg-small" x="546" y="128">配额：P=20000，进口200</text>
+          <text class="svg-label" x="680" y="105">S</text>
+          <text class="svg-label" x="706" y="318">D'</text>
+        </svg>
+      </div>
+
+      <h3>标准答案与解析</h3>
+      <span class="step-title">（1）自由贸易</span>
+      <div class="result-grid three">
+        <div class="result-card">国内价格<span class="big">10000美元</span></div>
+        <div class="result-card">国内需求<span class="big">1800辆</span></div>
+        <div class="result-card">国内供给/产量<span class="big">1400辆</span></div>
+      </div>
+      <p>自由贸易下，国内价格等于世界价格。中国的需求大于供给，所以中国是汽车进口国。</p>
+      <div class="formula">进口量 = 需求 - 供给 = 1800 - 1400 = 400辆</div>
+
+      <span class="step-title">（2）每辆5000美元进口关税</span>
+      <p>中国是小国，不能影响世界价格，所以征税后国内价格直接变为：</p>
+      <div class="formula">国内价格 = 10000 + 5000 = 15000美元</div>
+      <div class="result-grid three">
+        <div class="result-card">税后需求<span class="big">1700辆</span></div>
+        <div class="result-card">税后产量<span class="big">1500辆</span></div>
+        <div class="result-card">税后进口<span class="big">200辆</span></div>
+      </div>
+      <div class="result-grid three">
+        <div class="result-card">消费者剩余<span class="big">减少875万美元</span></div>
+        <div class="result-card">生产者剩余<span class="big">增加725万美元</span></div>
+        <div class="result-card">政府收入<span class="big">增加100万美元</span></div>
+      </div>
+      <p>本国净福利减少50万美元，来自生产扭曲和消费扭曲两个三角形。</p>
+
+      <span class="step-title">（3）200辆绝对进口配额</span>
+      <p>配额把进口量固定为200辆，因此要让“需求 - 供给 = 200”。</p>
+      <div class="formula">D - S = 800 - 0.04P = 200<br>所以 P = 15000美元</div>
+      <div class="result-grid three">
+        <div class="result-card">配额下价格<span class="big">15000美元</span></div>
+        <div class="result-card">国内产量<span class="big">1500辆</span></div>
+        <div class="result-card">进口量<span class="big">200辆</span></div>
+      </div>
+      <p>在原需求下，200辆配额刚好等同于5000美元关税造成的进口量，所以价格、产量、消费量相同。</p>
+      <div class="compare"><strong>福利关键：</strong>消费者剩余同样减少875万美元，生产者剩余同样增加725万美元。配额租金为100万美元；如果配额许可证由本国政府拍卖或本国进口商获得，本国净福利减少50万美元；如果租金被外国出口商拿走或被寻租耗散，本国损失更大。</div>
+
+      <span class="step-title">（4）需求增加后：D'=2200-0.02P</span>
+      <p>先看新的自由贸易基准：价格仍为10000美元，需求为2000辆，供给为1400辆，进口为600辆。</p>
+      <div class="result-grid three">
+        <div class="result-card"><strong>5000美元关税</strong><br>价格仍是<span class="big">15000美元</span>进口变为<span class="big">400辆</span></div>
+        <div class="result-card"><strong>200辆配额</strong><br>价格上升为<span class="big">20000美元</span>进口仍是<span class="big">200辆</span></div>
+        <div class="result-card"><strong>核心结论</strong><br>关税固定价差，配额固定数量。需求增加时，配额更容易把价格推高。</div>
+      </div>
+      <div class="result-grid three">
+        <div class="result-card">关税下消费者剩余<span class="big">减少975万美元</span></div>
+        <div class="result-card">关税下生产者剩余<span class="big">增加725万美元</span></div>
+        <div class="result-card">关税下政府收入<span class="big">增加200万美元</span></div>
+      </div>
+      <p>关税下，本国净福利仍减少50万美元。因为税额不变，生产扭曲和消费扭曲的三角形大小仍各为25万美元。</p>
+      <div class="result-grid three">
+        <div class="result-card">配额下消费者剩余<span class="big">减少1900万美元</span></div>
+        <div class="result-card">配额下生产者剩余<span class="big">增加1500万美元</span></div>
+        <div class="result-card">配额租金<span class="big">200万美元</span></div>
+      </div>
+      <p>若配额租金留在国内，配额下本国净福利减少200万美元；若租金外流或寻租耗散，本国损失会更大。</p>
+      <div class="danger"><strong>考试最后一句：</strong>当需求增加时，关税允许进口量增加，所以国内价格不变；配额限制进口量不变，所以国内价格上升、消费者损失扩大。这正是关税和配额的重要区别。</div>
+    </section>
+
     <section id="essay">
-      <h2>6. 论述题：最像会出的题</h2>
+      <h2>7. 论述题：最像会出的题</h2>
       <div class="danger"><strong>选择顺序：</strong>贸易保护 > H-O四定理 > 第9章政策比较 > 关税同盟 > 国际收支调整。汇率理论作为备选。</div>
 
       <details open>
@@ -437,7 +619,7 @@
     </section>
 
     <section id="last">
-      <h2>7. 最后一分钟</h2>
+      <h2>8. 最后一分钟</h2>
       <div class="ok">
         <p><strong>论述题开头：</strong>该问题可以从概念、作用机制、福利影响和政策评价四个方面分析。</p>
         <p><strong>政策题中间：</strong>消费者剩余、生产者剩余、政府收入或支出、社会净福利。</p>
@@ -455,6 +637,7 @@
       <a href="#easy">易错</a>
       <a href="#graph">图形</a>
       <a href="#formula">公式</a>
+      <a href="#car">汽车</a>
       <a href="#essay">论述</a>
     </div>
   </nav>
