@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python 期末零基础前置</title>
+  <style>
+    :root{--ink:#172033;--muted:#5f6b7a;--paper:#f5f7fb;--card:#fff;--blue:#2563eb;--blue2:#123b8c;--cyan:#0e8f91;--amber:#c56a05;--red:#be3b4b;--green:#14804a;--line:#dfe5ee;--code:#111827}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.78}
+    a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.page{max-width:1120px;margin:auto;padding:28px 22px 80px}
+    .hero{background:linear-gradient(135deg,#0e2c68,#2563eb 58%,#0e8f91);color:#fff;border-radius:24px;padding:36px;box-shadow:0 18px 45px #1d4ed833}.hero h1{font-size:clamp(30px,5vw,50px);line-height:1.18;margin:4px 0 12px}.hero p{max-width:900px;margin:7px 0}.eyebrow{letter-spacing:.15em;font-size:13px;font-weight:800;opacity:.85}.meta,.toplinks,.toolbar{display:flex;gap:10px;flex-wrap:wrap}.meta{margin-top:20px}.pill{padding:5px 11px;border-radius:999px;background:#ffffff20;border:1px solid #ffffff38;font-size:14px}.toplinks{margin-top:18px}.toplinks a,.btn{border:0;border-radius:10px;background:#fff;color:var(--blue2);padding:9px 14px;font:inherit;font-weight:750;cursor:pointer}.btn.blue{background:var(--blue);color:#fff}.btn.soft{background:#eaf1ff;color:var(--blue2)}
+    .toc{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}.toc h2{margin:0 0 12px}.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}.toc a{display:block;padding:10px 12px;border-radius:10px;background:#f0f5ff;font-weight:700}
+    .section{margin:28px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:27px;box-shadow:0 6px 18px #1720330a}.section h2{font-size:28px;line-height:1.3;margin:0 0 18px;border-bottom:3px solid #dbe7ff;padding-bottom:10px}.section h3{margin-top:27px;color:var(--blue2)}.section h4{margin-bottom:5px}.lead{font-size:18px}.muted{color:var(--muted)}.back{float:right;font-size:13px;font-weight:650}
+    .grid2,.grid3{display:grid;gap:16px}.grid2{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}.grid3{grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}.card{border:1px solid var(--line);border-radius:14px;padding:17px;background:#fbfcff}.card h3,.card h4{margin-top:0}
+    .callout{border-left:5px solid var(--blue);padding:14px 16px;background:#eff5ff;border-radius:10px;margin:16px 0}.callout.good{border-color:var(--green);background:#eefbf4}.callout.warn{border-color:var(--amber);background:#fff8e8}.callout.danger{border-color:var(--red);background:#fff1f2}.callout.big{font-size:18px}
+    .tag{display:inline-block;font-size:12px;font-weight:800;border-radius:7px;padding:2px 7px;margin-right:6px;background:#dbeafe;color:#1746a2}.tag.must{background:#fee2e2;color:#9f1239}.tag.try{background:#dcfce7;color:#166534}
+    code{font-family:Consolas,"Cascadia Code",monospace;background:#edf1f7;border-radius:5px;padding:.08em .35em;color:#0f3e9e}pre{background:var(--code);color:#eaf2ff;padding:17px 19px;border-radius:12px;overflow:auto;line-height:1.55;margin:10px 0}pre code{background:none;color:inherit;padding:0}.comment{color:#93c5fd}.out{color:#86efac}.mark{color:#fbbf24}
+    table{width:100%;border-collapse:collapse;margin:13px 0;font-size:15px}th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top}th{background:#edf3ff;text-align:left}.trace th:first-child,.trace td:first-child{text-align:center;width:70px}
+    details.answer{border:1px solid #cfe0ff;border-radius:12px;padding:10px 14px;margin:11px 0;background:#f7faff}details.answer summary{cursor:pointer;font-weight:800;color:var(--blue2)}.q{border-left:4px solid #cbd5e1;padding:4px 0 4px 14px;margin:18px 0}.q strong{color:var(--blue2)}
+    .checklist{list-style:none;padding-left:0}.checklist li{margin:8px 0;padding-left:29px;position:relative}.checklist li:before{content:"□";position:absolute;left:2px;color:var(--blue);font-size:19px;font-weight:900}.flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0}.step{padding:10px 14px;border-radius:12px;background:#edf3ff;border:1px solid #cbdafa;font-weight:800}.arrow{color:var(--blue);font-size:23px;font-weight:900}.kbd{font-family:Consolas,monospace;border:1px solid #bfc8d7;border-bottom-width:3px;background:#fff;border-radius:5px;padding:1px 5px}
+    .footer{text-align:center;color:var(--muted);font-size:14px;margin-top:34px}.toolbar{margin:16px 0}.mini{font-size:14px}
+    @media(max-width:650px){.page{padding:14px 12px 55px}.hero{padding:24px 20px;border-radius:18px}.section{padding:19px 16px}.section h2{font-size:24px}.grid2,.grid3,.card{min-width:0}table{display:block;max-width:100%;overflow-x:auto}pre{max-width:100%}}
+    @media print{body{background:#fff;font-size:10.5pt}.page{max-width:none;padding:0}.hero{box-shadow:none;border-radius:0;background:#e8efff!important;color:#111;padding:18px}.pill{border-color:#777}.toplinks,.toolbar,.back{display:none!important}.toc,.section{box-shadow:none;break-inside:auto}.section{border-radius:0;margin:14px 0;padding:15px}.card,pre,table,details{break-inside:avoid}a{color:inherit;text-decoration:none}pre{white-space:pre-wrap}}
+  </style>
+</head>
+<body id="top">
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">第 0 份资料 · 没听过课也能开始</div>
+    <h1>Python 期末零基础前置</h1>
+    <p class="lead">这不是完整教材，而是正式复习资料的“翻译器”。默认你不知道变量、缩进、循环和函数，从<strong>代码怎么看</strong>开始，只讲本次第 1—7 章考试必须具备的底层知识。</p>
+    <div class="meta">
+      <span class="pill">建议首遍：90—120 分钟</span>
+      <span class="pill">每段都有最小例子</span>
+      <span class="pill">答案默认折叠</span>
+      <span class="pill">电脑端阅读优先</span>
+    </div>
+    <div class="toplinks">
+      <a href="Python期末复习资料.html">学完后进入正式复习资料</a>
+      <a href="Python期末练习题.html">打开练习题</a>
+      <button class="btn" onclick="window.print()">打印 / 存为 PDF</button>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="目录">
+    <h2>目录（严格按顺序看）</h2>
+    <div class="toc-grid">
+      <a href="#how">0. 怎么使用这份前置</a>
+      <a href="#read">1. 程序和代码怎么读</a>
+      <a href="#basic">2. 变量、类型、输入输出</a>
+      <a href="#operator">3. 运算符与表达式</a>
+      <a href="#string">4. 字符串与切片</a>
+      <a href="#if">5. if 分支</a>
+      <a href="#loop">6. for / while 循环</a>
+      <a href="#function">7. 函数</a>
+      <a href="#container">8. 列表、元组、字典、集合</a>
+      <a href="#file">9. 文件与异常</a>
+      <a href="#trace">10. 程序阅读四步法</a>
+      <a href="#errors">11. 零基础常见报错</a>
+      <a href="#quiz">12. 入门自测</a>
+      <a href="#bridge">13. 如何接上正式复习资料</a>
+      <a href="#glossary">附录：符号与术语速查</a>
+    </div>
+  </nav>
+
+  <section class="section" id="how">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>0. 怎么使用这份前置</h2>
+    <div class="callout good big"><strong>目标不是“全都背会”。</strong>你的目标是：看到一小段代码时，知道它在保存什么、判断什么、重复什么、最后输出什么。</div>
+    <div class="flow">
+      <span class="step">先看解释</span><span class="arrow">→</span>
+      <span class="step">手算例子</span><span class="arrow">→</span>
+      <span class="step">展开答案</span><span class="arrow">→</span>
+      <span class="step">继续下一节</span>
+    </div>
+    <div class="grid3">
+      <div class="card"><h3>第一遍</h3><p>按目录顺序看，不抄长笔记。每个代码块先看第一行，再逐行往下。</p></div>
+      <div class="card"><h3>第二遍</h3><p>只复看带 <span class="tag must">必须懂</span> 的内容，并完成第 12 节自测。</p></div>
+      <div class="card"><h3>通过标准</h3><p>自测至少答对 12/15，就转入正式复习资料；不用追求满分。</p></div>
+    </div>
+    <div class="callout warn"><strong>不要这样学：</strong>不要一开始死背所有方法，不要对着几十行程序发呆，不要把“看懂答案”误当成“自己会算”。必须用笔追踪变量。</div>
+  </section>
+
+  <section class="section" id="read">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>1. 程序和代码怎么读</h2>
+    <p><span class="tag must">必须懂</span>程序就是一组按规则写好的指令。正常情况下，Python 从<strong>上到下</strong>执行；碰到分支会选择路线，碰到循环会重复，碰到函数调用会进入函数。</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>最小程序</h3>
+        <pre><code>name = "小王"
+score = 82
+print(name, score)</code></pre>
+        <p>第 1 行保存名字，第 2 行保存成绩，第 3 行把两者输出。</p>
+        <pre><code><span class="out">小王 82</span></code></pre>
+      </div>
+      <div class="card">
+        <h3>四类最常见语句</h3>
+        <ul>
+          <li><strong>赋值：</strong><code>x = 3</code>，把 3 保存到名字 x 中。</li>
+          <li><strong>输入输出：</strong><code>input()</code> 接收输入，<code>print()</code> 输出。</li>
+          <li><strong>控制：</strong><code>if</code> 决定做不做，<code>for/while</code> 决定重复几次。</li>
+          <li><strong>函数：</strong><code>def</code> 把一段功能打包并起名字。</li>
+        </ul>
+      </div>
+    </div>
+    <h3>缩进不是美观问题，而是语法</h3>
+    <pre><code>age = 20
+if age &gt;= 18:
+    print("成年人")     <span class="comment"># 前面四个空格：属于 if</span>
+print("程序结束")       <span class="comment"># 没有缩进：不属于 if</span></code></pre>
+    <p>冒号 <code>:</code> 后面通常会出现缩进块。考试里最常见的是 4 个空格；同一层必须对齐。</p>
+    <details class="answer"><summary>小检查：如果 age 改成 16，会输出什么？</summary><p>只输出 <code>程序结束</code>。因为条件 <code>16 &gt;= 18</code> 为假，缩进的那一行不执行。</p></details>
+    <div class="callout"><strong>注释：</strong><code>#</code> 后的内容是给人看的说明，Python 不执行。例如 <code>x = 3  # 保存数字3</code>。</div>
+  </section>
+
+  <section class="section" id="basic">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>2. 变量、类型、输入输出</h2>
+    <h3>2.1 变量：贴在数据上的名字</h3>
+    <pre><code>x = 10
+x = x + 3
+print(x)   <span class="comment"># 13</span></code></pre>
+    <p><code>=</code> 不是数学中的“永远相等”，而是<strong>把右边算出的结果交给左边</strong>。第二行先取出旧的 x=10，加 3，再把 13 存回 x。</p>
+    <div class="callout danger"><strong>最常见混淆：</strong><code>=</code> 是赋值；<code>==</code> 才是“是否相等”的比较。</div>
+
+    <h3>2.2 四种必须认识的类型</h3>
+    <table>
+      <thead><tr><th>类型</th><th>含义</th><th>例子</th><th>转换函数</th></tr></thead>
+      <tbody>
+        <tr><td><code>int</code></td><td>整数</td><td><code>3</code>、<code>-10</code></td><td><code>int("12")</code> → 12</td></tr>
+        <tr><td><code>float</code></td><td>小数</td><td><code>3.14</code>、<code>-0.5</code></td><td><code>float("3.5")</code> → 3.5</td></tr>
+        <tr><td><code>str</code></td><td>字符串/文本</td><td><code>"hello"</code>、<code>"12"</code></td><td><code>str(12)</code> → "12"</td></tr>
+        <tr><td><code>bool</code></td><td>真假值</td><td><code>True</code>、<code>False</code></td><td><code>bool(x)</code></td></tr>
+      </tbody>
+    </table>
+    <p><code>"12"</code> 和 <code>12</code> 不一样：前者是两个字符组成的文本，后者是可以参与数值计算的整数。</p>
+
+    <h3>2.3 输入永远先得到字符串</h3>
+    <pre><code>age = input("请输入年龄：")
+print(type(age))              <span class="comment"># &lt;class 'str'&gt;</span>
+
+age = int(input("请输入年龄："))
+print(age + 1)</code></pre>
+    <p>如果用户输入 20，最后输出 21。要计算，就先用 <code>int()</code> 或 <code>float()</code> 转换。</p>
+    <div class="grid2">
+      <div class="card"><h4>多个值输出</h4><pre><code>name = "小李"
+score = 90
+print(name, score)</code></pre><p>默认用空格分隔，输出 <code>小李 90</code>。</p></div>
+      <div class="card"><h4>保留两位小数</h4><pre><code>x = 3.14159
+print("{:.2f}".format(x))</code></pre><p>输出 <code>3.14</code>。</p></div>
+    </div>
+    <details class="answer"><summary>小检查：为什么 "10" + "2" 得到 "102"？</summary><p>两个操作数都是字符串，<code>+</code> 表示拼接。若要得到 12，应写 <code>int("10") + int("2")</code>。</p></details>
+  </section>
+
+  <section class="section" id="operator">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>3. 运算符与表达式</h2>
+    <p>表达式就是“能算出一个结果的写法”。先算括号，再按运算优先级计算。</p>
+    <table>
+      <thead><tr><th>符号</th><th>作用</th><th>例子与结果</th></tr></thead>
+      <tbody>
+        <tr><td><code>+ - * /</code></td><td>加减乘除</td><td><code>7 / 2</code> → <code>3.5</code></td></tr>
+        <tr><td><code>//</code></td><td>整除</td><td><code>7 // 2</code> → <code>3</code></td></tr>
+        <tr><td><code>%</code></td><td>余数</td><td><code>7 % 2</code> → <code>1</code></td></tr>
+        <tr><td><code>**</code></td><td>乘方</td><td><code>2 ** 3</code> → <code>8</code></td></tr>
+        <tr><td><code>== != &gt; &lt; &gt;= &lt;=</code></td><td>比较</td><td><code>5 &gt;= 3</code> → <code>True</code></td></tr>
+        <tr><td><code>and</code></td><td>两个条件都真才真</td><td><code>age&gt;=18 and age&lt;=60</code></td></tr>
+        <tr><td><code>or</code></td><td>至少一个条件为真</td><td><code>x==0 or x==1</code></td></tr>
+        <tr><td><code>not</code></td><td>真假取反</td><td><code>not True</code> → <code>False</code></td></tr>
+        <tr><td><code>in</code></td><td>是否属于</td><td><code>"a" in "cat"</code> → <code>True</code></td></tr>
+      </tbody>
+    </table>
+    <div class="grid2">
+      <div class="card"><h3>判断奇偶</h3><pre><code>n = 13
+print(n % 2 == 0)</code></pre><p>13 除以 2 余 1，所以输出 <code>False</code>。偶数条件是 <code>n % 2 == 0</code>。</p></div>
+      <div class="card"><h3>拆数字</h3><pre><code>n = 347
+ge = n % 10
+shi = n // 10 % 10
+bai = n // 100</code></pre><p>个位 7、十位 4、百位 3。</p></div>
+    </div>
+    <p>常用优先级：<strong>括号 → 乘方 → 乘除/整除/余数 → 加减 → 比较 → not → and → or</strong>。拿不准就加括号。</p>
+    <details class="answer"><summary>小检查：8 + 2 * 3 和 (8 + 2) * 3 分别是多少？</summary><p>前者先乘法，得到 14；后者先括号，得到 30。</p></details>
+  </section>
+
+  <section class="section" id="string">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>4. 字符串与切片</h2>
+    <p><span class="tag must">必须懂</span>字符串就是一串字符。字符位置从 0 开始编号，负数从右向左编号。</p>
+    <pre><code>s = "PYTHON"
+<span class="comment">#     012345</span>
+
+print(s[0])      <span class="comment"># P</span>
+print(s[-1])     <span class="comment"># N</span>
+print(s[1:4])    <span class="comment"># YTH</span>
+print(s[::-1])   <span class="comment"># NOHTYP</span></code></pre>
+    <div class="callout good"><strong>切片口诀：</strong><code>s[开始:结束:步长]</code>，包含开始、不包含结束，即“左闭右开”。省略步长时默认是 1。</div>
+    <table>
+      <thead><tr><th>写法</th><th>作用</th><th>注意</th></tr></thead>
+      <tbody>
+        <tr><td><code>len(s)</code></td><td>长度</td><td>返回整数</td></tr>
+        <tr><td><code>s.lower()</code> / <code>s.upper()</code></td><td>转小写/大写</td><td>返回新字符串</td></tr>
+        <tr><td><code>s.find(x)</code></td><td>查找位置</td><td>找不到返回 -1</td></tr>
+        <tr><td><code>s.count(x)</code></td><td>统计次数</td><td>返回整数</td></tr>
+        <tr><td><code>s.split(",")</code></td><td>按逗号拆分</td><td>返回列表</td></tr>
+        <tr><td><code>"-".join(items)</code></td><td>用 - 连接字符串元素</td><td>元素必须都是字符串</td></tr>
+        <tr><td><code>s.replace("a","A")</code></td><td>替换</td><td>返回新字符串</td></tr>
+        <tr><td><code>s.strip()</code></td><td>去两端空白</td><td>不去中间空白</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn">字符串不可修改：<code>s[0] = "A"</code> 会报错。<code>s.upper()</code> 也不会改变原来的 s，除非写成 <code>s = s.upper()</code>。</div>
+    <details class="answer"><summary>小检查：s="abcdef"，s[1:5:2] 是什么？</summary><p>从下标 1 开始，到 5 之前结束，每次走 2 步：取下标 1、3，结果是 <code>"bd"</code>。</p></details>
+  </section>
+
+  <section class="section" id="if">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>5. if 分支：让程序作选择</h2>
+    <p><code>if</code> 后的条件只能得到真或假。真就执行对应缩进块，假就跳过。</p>
+    <pre><code>score = 82
+
+if score &gt;= 90:
+    level = "A"
+elif score &gt;= 80:
+    level = "B"
+elif score &gt;= 60:
+    level = "C"
+else:
+    level = "D"
+
+print(level)     <span class="comment"># B</span></code></pre>
+    <p>多分支从上到下判断，遇到第一个为真的分支后，后面不再判断。因此区间题通常从高到低写。</p>
+    <div class="grid2">
+      <div class="card"><h3>判断正负</h3><pre><code>if x &gt; 0:
+    print("正数")
+elif x == 0:
+    print("零")
+else:
+    print("负数")</code></pre></div>
+      <div class="card"><h3>判断闰年</h3><pre><code>if year % 400 == 0 or (
+    year % 4 == 0 and year % 100 != 0
+):
+    print("闰年")
+else:
+    print("平年")</code></pre></div>
+    </div>
+    <details class="answer"><summary>小检查：上面的成绩程序中 score=95 会输出什么？score=59 呢？</summary><p>95 输出 A；59 前三个条件都为假，进入 <code>else</code>，输出 D。</p></details>
+  </section>
+
+  <section class="section" id="loop">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>6. for / while 循环：重复执行</h2>
+    <h3>6.1 for：重复次数或范围较明确</h3>
+    <pre><code>for i in range(1, 5):
+    print(i)</code></pre>
+    <p><code>range(1, 5)</code> 产生 1、2、3、4，不包含 5。循环每次把一个数交给 i。</p>
+    <table>
+      <thead><tr><th>写法</th><th>产生的整数</th></tr></thead>
+      <tbody>
+        <tr><td><code>range(5)</code></td><td>0, 1, 2, 3, 4</td></tr>
+        <tr><td><code>range(2, 6)</code></td><td>2, 3, 4, 5</td></tr>
+        <tr><td><code>range(1, 8, 2)</code></td><td>1, 3, 5, 7</td></tr>
+      </tbody>
+    </table>
+    <h4>累加模板</h4>
+    <pre><code>total = 0
+for i in range(1, 6):
+    total = total + i
+print(total)       <span class="comment"># 1+2+3+4+5 = 15</span></code></pre>
+
+    <h3>6.2 while：只要条件为真就继续</h3>
+    <pre><code>n = 3
+while n &gt; 0:
+    print(n)
+    n = n - 1
+print("结束")</code></pre>
+    <pre><code><span class="out">3
+2
+1
+结束</span></code></pre>
+    <div class="callout danger"><strong>while 防死循环：</strong>循环体里必须有机会让条件变成假。上例的 <code>n = n - 1</code> 不能漏。</div>
+
+    <h3>6.3 break 与 continue</h3>
+    <table>
+      <thead><tr><th>语句</th><th>效果</th><th>记忆</th></tr></thead>
+      <tbody>
+        <tr><td><code>break</code></td><td>立刻结束整个循环</td><td>“循环到此为止”</td></tr>
+        <tr><td><code>continue</code></td><td>跳过本轮剩余语句，进入下一轮</td><td>“这一次不做，后面继续”</td></tr>
+      </tbody>
+    </table>
+    <pre><code>for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)</code></pre>
+    <p>输出 1、2、4、5，只有 i=3 的这一轮被跳过。</p>
+    <details class="answer"><summary>小检查：把 continue 换成 break，会输出什么？</summary><p>输出 1、2。i 等于 3 时直接结束整个循环，4 和 5 不再出现。</p></details>
+  </section>
+
+  <section class="section" id="function">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>7. 函数：把功能打包</h2>
+    <p><span class="tag must">应用题核心</span>函数像一台小机器：给它输入（参数），它进行处理，再用 <code>return</code> 交回结果。</p>
+    <pre><code>def add(a, b):       <span class="comment"># 定义函数；a、b 是参数</span>
+    result = a + b
+    return result    <span class="comment"># 把结果交回调用处</span>
+
+x = add(3, 5)        <span class="comment"># 调用函数；3、5 是实参</span>
+print(x)             <span class="comment"># 8</span></code></pre>
+    <div class="flow">
+      <span class="step">调用 add(3,5)</span><span class="arrow">→</span>
+      <span class="step">a=3, b=5</span><span class="arrow">→</span>
+      <span class="step">计算 8</span><span class="arrow">→</span>
+      <span class="step">return 8</span>
+    </div>
+    <div class="grid2">
+      <div class="card"><h3>只打印</h3><pre><code>def show_sum(a, b):
+    print(a + b)</code></pre><p>只是把结果显示出来，没有主动交回结果。</p></div>
+      <div class="card"><h3>返回结果</h3><pre><code>def get_sum(a, b):
+    return a + b</code></pre><p>可写 <code>x = get_sum(2,3)</code>，继续使用返回值。</p></div>
+    </div>
+    <h3>考试最常用的函数模板</h3>
+    <pre><code>def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+<span class="comment"># 可简写成：</span>
+def is_even(n):
+    return n % 2 == 0</code></pre>
+    <ul>
+      <li><strong>默认参数：</strong><code>def power(x, n=2)</code>，不传 n 时使用 2。</li>
+      <li><strong>关键字参数：</strong><code>power(n=3, x=2)</code>，按名字传值。</li>
+      <li><strong>多个返回值：</strong><code>return minimum, maximum</code>，调用时可写 <code>lo, hi = f(data)</code>。</li>
+      <li><strong>局部变量：</strong>函数内部新建的普通变量通常只能在函数内部使用。</li>
+    </ul>
+    <details class="answer"><summary>小检查：下面函数 f(4) 返回什么？</summary><pre><code>def f(n):
+    return n * n
+
+print(f(4))</code></pre><p>返回并输出 16。</p></details>
+  </section>
+
+  <section class="section" id="container">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>8. 列表、元组、字典、集合</h2>
+    <p>这四种结构都能保存多个数据，但规则不同。先记住最核心区别。</p>
+    <table>
+      <thead><tr><th>类型</th><th>示例</th><th>特点</th><th>如何取值</th></tr></thead>
+      <tbody>
+        <tr><td>列表 <code>list</code></td><td><code>[80, 90, 75]</code></td><td>有顺序、可修改、可重复</td><td>按下标：<code>a[0]</code></td></tr>
+        <tr><td>元组 <code>tuple</code></td><td><code>(80, 90, 75)</code></td><td>有顺序、不可修改</td><td>按下标：<code>t[0]</code></td></tr>
+        <tr><td>字典 <code>dict</code></td><td><code>{"name":"小王","score":90}</code></td><td>键 → 值的对应关系</td><td>按键：<code>d["score"]</code></td></tr>
+        <tr><td>集合 <code>set</code></td><td><code>{1, 2, 3}</code></td><td>无重复、无下标</td><td>通常遍历或做集合运算</td></tr>
+      </tbody>
+    </table>
+
+    <h3>8.1 列表：程序题出现最多</h3>
+    <pre><code>scores = [80, 95, 70]
+scores.append(88)        <span class="comment"># 末尾增加</span>
+scores[0] = 82           <span class="comment"># 修改第一个</span>
+print(len(scores))       <span class="comment"># 4</span>
+print(sum(scores))       <span class="comment"># 335</span></code></pre>
+    <table>
+      <thead><tr><th>操作</th><th>含义</th></tr></thead>
+      <tbody>
+        <tr><td><code>a.append(x)</code></td><td>把一个元素 x 加到末尾</td></tr>
+        <tr><td><code>a.extend(items)</code></td><td>把多个元素逐个加到末尾</td></tr>
+        <tr><td><code>a.insert(i,x)</code></td><td>在下标 i 前插入 x</td></tr>
+        <tr><td><code>a.remove(x)</code></td><td>删除第一个值为 x 的元素</td></tr>
+        <tr><td><code>a.pop()</code></td><td>删除并返回末尾元素</td></tr>
+        <tr><td><code>a.sort()</code></td><td>原地排序，返回值是 None</td></tr>
+        <tr><td><code>sorted(a)</code></td><td>返回新排序列表，原列表不变</td></tr>
+      </tbody>
+    </table>
+    <h4>筛选模板</h4>
+    <pre><code>data = [3, 8, 5, 10]
+result = []
+for x in data:
+    if x % 2 == 0:
+        result.append(x)
+print(result)            <span class="comment"># [8, 10]</span></code></pre>
+
+    <h3>8.2 字典：按键查值、做频次统计</h3>
+    <pre><code>student = {"name": "小王", "score": 90}
+print(student["name"])          <span class="comment"># 小王</span>
+print(student.get("age", 0))    <span class="comment"># 没有 age，返回默认值 0</span></code></pre>
+    <h4>字符计数模板</h4>
+    <pre><code>counts = {}
+for ch in "abaca":
+    counts[ch] = counts.get(ch, 0) + 1
+print(counts)                   <span class="comment"># {'a': 3, 'b': 1, 'c': 1}</span></code></pre>
+    <p>读法：取出 ch 原来的次数；没有就当 0；加 1 后存回。</p>
+
+    <h3>8.3 元组与集合只先掌握这些</h3>
+    <ul>
+      <li>单元素元组必须带逗号：<code>(3,)</code>；<code>(3)</code> 只是整数 3。</li>
+      <li>空集合必须写 <code>set()</code>；<code>{}</code> 是空字典。</li>
+      <li>集合会自动去重：<code>set([1,1,2])</code> 得到含 1、2 的集合。</li>
+      <li>集合运算：交集 <code>&amp;</code>、并集 <code>|</code>、差集 <code>-</code>、对称差 <code>^</code>。</li>
+    </ul>
+    <details class="answer"><summary>小检查：a=[1,2]，执行 a.append([3,4]) 后是什么？</summary><p>结果是 <code>[1, 2, [3, 4]]</code>，因为 <code>append</code> 把整个列表当成一个元素。若想得到 <code>[1,2,3,4]</code>，用 <code>a.extend([3,4])</code>。</p></details>
+  </section>
+
+  <section class="section" id="file">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>9. 文件与异常</h2>
+    <h3>9.1 文件操作三步</h3>
+    <div class="flow">
+      <span class="step">打开 open</span><span class="arrow">→</span>
+      <span class="step">读取 / 写入</span><span class="arrow">→</span>
+      <span class="step">关闭 close</span>
+    </div>
+    <p>推荐用 <code>with</code>，离开缩进块时自动关闭文件：</p>
+    <pre><code>with open("data.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+print(content)</code></pre>
+    <table>
+      <thead><tr><th>模式</th><th>作用</th><th>文件不存在时</th><th>原内容</th></tr></thead>
+      <tbody>
+        <tr><td><code>r</code></td><td>读取</td><td>报错</td><td>保留</td></tr>
+        <tr><td><code>w</code></td><td>写入</td><td>创建</td><td><strong>先清空</strong></td></tr>
+        <tr><td><code>a</code></td><td>追加</td><td>创建</td><td>保留，从末尾写</td></tr>
+        <tr><td><code>b</code></td><td>二进制模式</td><td>与 r/w/a 组合</td><td>如 <code>rb</code>、<code>wb</code></td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><code>read()</code>：读取全部内容。</li>
+      <li><code>readline()</code>：读取一行。</li>
+      <li><code>readlines()</code>：读取全部行，返回列表。</li>
+      <li><code>write(s)</code>：写一个字符串。</li>
+      <li><code>writelines(items)</code>：写多个字符串，<strong>不会自动添加换行</strong>。</li>
+    </ul>
+
+    <h3>9.2 异常：程序运行时出现的问题</h3>
+    <pre><code>try:
+    n = int(input("请输入整数："))
+    print(10 / n)
+except ValueError:
+    print("输入不是整数")
+except ZeroDivisionError:
+    print("不能除以零")
+else:
+    print("计算成功")</code></pre>
+    <p><code>try</code> 中发生对应异常，就进入相应 <code>except</code>；没有异常才执行 <code>else</code>。</p>
+    <details class="answer"><summary>小检查：用 w 模式打开已有文件，最危险的地方是什么？</summary><p>打开时会先清空原内容。只想在末尾增加内容时应使用 <code>a</code>。</p></details>
+  </section>
+
+  <section class="section" id="trace">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>10. 程序阅读四步法</h2>
+    <div class="callout good big"><strong>代码题不要靠“感觉”。</strong>把每次赋值后的变量写下来，答案会自己出现。</div>
+    <ol>
+      <li><strong>圈输入和初值：</strong>哪些变量一开始是什么？</li>
+      <li><strong>标出循环范围：</strong><code>range</code> 到底产生哪些数？</li>
+      <li><strong>每轮更新变量表：</strong>特别关注累加器、列表和计数器。</li>
+      <li><strong>最后才看 print：</strong>它在循环内还是循环外？输出的是值还是返回值？</li>
+    </ol>
+    <h3>示例：逐轮计算</h3>
+    <pre><code>total = 0
+for i in range(1, 5):
+    if i % 2 == 0:
+        total = total + i
+print(total)</code></pre>
+    <table class="trace">
+      <thead><tr><th>轮次</th><th>i</th><th>i 是否为偶数</th><th>total 变化</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>1</td><td>否</td><td>0</td></tr>
+        <tr><td>2</td><td>2</td><td>是</td><td>0 → 2</td></tr>
+        <tr><td>3</td><td>3</td><td>否</td><td>2</td></tr>
+        <tr><td>4</td><td>4</td><td>是</td><td>2 → 6</td></tr>
+      </tbody>
+    </table>
+    <p>循环结束后才执行 <code>print(total)</code>，所以只输出一次 6。</p>
+    <h3>看到函数时再加两步</h3>
+    <ul>
+      <li>把实参代入形参：例如 <code>f(3)</code> 就在函数内先写 n=3。</li>
+      <li>碰到 <code>return</code> 立即停止本次函数，返回调用处。</li>
+    </ul>
+    <details class="answer"><summary>自己追踪：下面输出什么？</summary><pre><code>x = 1
+for i in range(3):
+    x = x * 2
+print(x)</code></pre><p><code>range(3)</code> 循环 3 次。x 依次为 1→2→4→8，最后输出 8。</p></details>
+  </section>
+
+  <section class="section" id="errors">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>11. 零基础常见报错</h2>
+    <table>
+      <thead><tr><th>报错</th><th>常见原因</th><th>例子</th><th>怎么想</th></tr></thead>
+      <tbody>
+        <tr><td><code>SyntaxError</code></td><td>语法写法不合法</td><td>漏冒号、括号没配对、位置参数放在关键字参数后</td><td>程序根本无法开始运行</td></tr>
+        <tr><td><code>IndentationError</code></td><td>缩进错误</td><td>if/for/def 后没有正确缩进</td><td>先检查对齐</td></tr>
+        <tr><td><code>NameError</code></td><td>名字不存在</td><td>变量没赋值、拼写错误</td><td>检查是否“先定义后使用”</td></tr>
+        <tr><td><code>TypeError</code></td><td>类型不适合该操作</td><td><code>"3" + 2</code></td><td>字符串和整数不能直接相加</td></tr>
+        <tr><td><code>ValueError</code></td><td>类型形式对，但值无法转换</td><td><code>int("3.5")</code></td><td>"3.5" 不是整数字符串</td></tr>
+        <tr><td><code>IndexError</code></td><td>下标越界</td><td><code>[1,2][2]</code></td><td>长度 2 的列表只有下标 0、1</td></tr>
+        <tr><td><code>KeyError</code></td><td>字典中没有该键</td><td><code>d["age"]</code></td><td>不确定时用 <code>d.get("age")</code></td></tr>
+        <tr><td><code>ZeroDivisionError</code></td><td>除数为零</td><td><code>10 / 0</code></td><td>除法、整除、取余都要防 0</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warn"><strong>考试做题顺序：</strong>先看是否语法错误，再看运行时是否报错，最后才计算输出。不要看到 <code>print</code> 就急着选数字答案。</div>
+  </section>
+
+  <section class="section" id="quiz">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>12. 入门自测（15 题）</h2>
+    <p>先用纸写答案，再展开解析。建议限时 20 分钟；答对 12 题即可进入正式复习资料。</p>
+    <div class="toolbar">
+      <button class="btn blue" onclick="setAnswers(true)">展开全部答案</button>
+      <button class="btn soft" onclick="setAnswers(false)">收起全部答案</button>
+    </div>
+
+    <div class="q"><strong>1.</strong> <code>print(7 // 2, 7 % 2)</code> 输出什么？</div>
+    <details class="answer"><summary>答案</summary><p><code>3 1</code>。整除商 3，余数 1。</p></details>
+
+    <div class="q"><strong>2.</strong> <code>input()</code> 得到的值默认是什么类型？</div>
+    <details class="answer"><summary>答案</summary><p><code>str</code> 字符串。</p></details>
+
+    <div class="q"><strong>3.</strong> <code>"Python"[1:4]</code> 的结果是什么？</div>
+    <details class="answer"><summary>答案</summary><p><code>"yth"</code>，取下标 1、2、3。</p></details>
+
+    <div class="q"><strong>4.</strong> <code>range(2, 8, 2)</code> 依次产生哪些数？</div>
+    <details class="answer"><summary>答案</summary><p>2、4、6，不包含结束值 8。</p></details>
+
+    <div class="q"><strong>5.</strong> <code>=</code> 和 <code>==</code> 有什么区别？</div>
+    <details class="answer"><summary>答案</summary><p><code>=</code> 是赋值，<code>==</code> 是比较是否相等。</p></details>
+
+    <div class="q"><strong>6.</strong> 下面程序输出什么？<pre><code>x = 5
+if x &gt; 3:
+    print("A")
+else:
+    print("B")</code></pre></div>
+    <details class="answer"><summary>答案</summary><p>输出 A。</p></details>
+
+    <div class="q"><strong>7.</strong> 下面程序输出什么？<pre><code>total = 0
+for i in range(1, 4):
+    total += i
+print(total)</code></pre></div>
+    <details class="answer"><summary>答案</summary><p>1+2+3=6，输出 6。</p></details>
+
+    <div class="q"><strong>8.</strong> <code>break</code> 和 <code>continue</code> 的区别是什么？</div>
+    <details class="answer"><summary>答案</summary><p><code>break</code> 结束整个循环；<code>continue</code> 只跳过本轮剩余语句。</p></details>
+
+    <div class="q"><strong>9.</strong> <code>def f(x): return x + 1</code>，那么 <code>f(4)</code> 是多少？</div>
+    <details class="answer"><summary>答案</summary><p>5。</p></details>
+
+    <div class="q"><strong>10.</strong> 执行 <code>a=[1,2]; a.append(3)</code> 后 a 是什么？</div>
+    <details class="answer"><summary>答案</summary><p><code>[1, 2, 3]</code>。</p></details>
+
+    <div class="q"><strong>11.</strong> 空字典和空集合分别怎么写？</div>
+    <details class="answer"><summary>答案</summary><p>空字典 <code>{}</code>；空集合 <code>set()</code>。</p></details>
+
+    <div class="q"><strong>12.</strong> 在字典 <code>d={"a":10}</code> 中，<code>"a" in d</code> 是真还是假？</div>
+    <details class="answer"><summary>答案</summary><p>真。对字典使用 <code>in</code> 判断的是键。</p></details>
+
+    <div class="q"><strong>13.</strong> 文件模式 <code>w</code> 和 <code>a</code> 的核心区别是什么？</div>
+    <details class="answer"><summary>答案</summary><p><code>w</code> 会先清空原文件；<code>a</code> 保留原内容并从末尾追加。</p></details>
+
+    <div class="q"><strong>14.</strong> <code>int("3.5")</code> 会得到什么？</div>
+    <details class="answer"><summary>答案</summary><p>发生 <code>ValueError</code>。可以先用 <code>float("3.5")</code> 得到 3.5。</p></details>
+
+    <div class="q"><strong>15.</strong> 下面程序输出什么？<pre><code>def count_even(data):
+    count = 0
+    for x in data:
+        if x % 2 == 0:
+            count += 1
+    return count
+
+print(count_even([1, 2, 4, 7]))</code></pre></div>
+    <details class="answer"><summary>答案</summary><p>列表中有 2、4 两个偶数，函数返回并输出 2。</p></details>
+  </section>
+
+  <section class="section" id="bridge">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>13. 如何接上正式复习资料</h2>
+    <p>完成前置后，打开 <a href="Python期末复习资料.html"><strong>Python 期末复习资料</strong></a>。不必从头逐字抄，按下面顺序复习：</p>
+    <ol>
+      <li><strong>先看正式资料的“考试结构与三天优先级”。</strong></li>
+      <li><strong>重点精读第 2—7 章：</strong>字符串 → 流程控制 → 函数 → 列表/字典 → 文件。</li>
+      <li><strong>再看“程序阅读四步法”和“简答与应用题模板”。</strong></li>
+      <li><strong>当天完成练习题，最后用 110 分钟做模拟卷。</strong></li>
+    </ol>
+    <h3>进入正式资料前的通过清单</h3>
+    <ul class="checklist">
+      <li>知道代码通常从上到下执行，缩进表示归属。</li>
+      <li>能区分 <code>=</code> 与 <code>==</code>、字符串与数字。</li>
+      <li>能读懂一个简单 if、多分支和 for 循环。</li>
+      <li>知道函数的参数、调用和 return。</li>
+      <li>能区分列表、元组、字典、集合。</li>
+      <li>知道 r/w/a 文件模式和 try/except 的作用。</li>
+      <li>能用变量表手算一个 5—10 行的小程序。</li>
+    </ul>
+    <div class="callout good big"><strong>如果还有不懂也可以继续。</strong>正式复习资料会再次讲这些知识。前置的作用是让那些内容不再像“外语”，不是要求你一次学透。</div>
+    <div class="toplinks">
+      <a class="btn blue" href="Python期末复习资料.html">现在进入正式复习资料 →</a>
+      <a class="btn soft" href="Python期末练习题.html">稍后打开练习题</a>
+    </div>
+  </section>
+
+  <section class="section" id="glossary">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>附录：符号与术语速查</h2>
+    <div class="grid2">
+      <div class="card"><h3>常见符号</h3><ul><li><code>()</code>：调用函数、改变运算顺序</li><li><code>[]</code>：列表、下标、切片</li><li><code>{}</code>：字典或非空集合</li><li><code>:</code>：引出缩进块，也用于切片</li><li><code>,</code>：分隔多个元素或参数</li><li><code>#</code>：单行注释</li></ul></div>
+      <div class="card"><h3>常见术语</h3><ul><li><strong>下标/索引：</strong>元素的位置编号</li><li><strong>遍历：</strong>把元素逐个访问一遍</li><li><strong>迭代：</strong>循环的一轮</li><li><strong>形参：</strong>函数定义中的参数名</li><li><strong>实参：</strong>函数调用时传入的实际值</li><li><strong>返回值：</strong>函数用 return 交回的结果</li></ul></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>学习顺序：零基础前置 → 正式复习资料 → 练习题 → 110 分钟模拟试卷</p>
+  </footer>
+</main>
+<script>
+  function setAnswers(openState){
+    document.querySelectorAll("details.answer").forEach(function(item){item.open=openState;});
+  }
+</script>
+</body>
+</html>

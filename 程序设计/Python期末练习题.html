@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python 程序设计基础 - 期末练习题</title>
+  <style>
+    :root{--ink:#182033;--muted:#647083;--paper:#f4f7fb;--card:#fff;--blue:#245dd8;--navy:#14346f;--teal:#0f8b8d;--line:#dce3ee;--green:#137a4c;--orange:#c56a00;--red:#bd3444;--code:#111827}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.75}.page{max-width:1120px;margin:auto;padding:28px 22px 80px}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.hero{border-radius:24px;padding:34px;color:#fff;background:linear-gradient(135deg,#13336f,#245dd8 62%,#0f8b8d);box-shadow:0 18px 42px #163d9428}.hero h1{margin:0 0 8px;font-size:clamp(28px,5vw,47px);line-height:1.2}.hero p{max-width:850px}.eyebrow{font-size:13px;letter-spacing:.15em;font-weight:800;opacity:.82}.tools,.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}.pill{border:1px solid #ffffff42;background:#ffffff1f;border-radius:999px;padding:5px 11px}.btn,.tools a{border:0;background:#fff;color:var(--navy);padding:9px 13px;border-radius:9px;font:inherit;font-weight:750;cursor:pointer}.toc,.section{background:var(--card);border:1px solid var(--line);border-radius:18px}.toc{margin-top:20px;padding:21px}.toc h2{margin:0 0 12px}.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:9px}.toc a{display:block;padding:10px 12px;border-radius:10px;background:#eef4ff;font-weight:700}.section{margin:27px 0;padding:26px;box-shadow:0 6px 18px #1720330a}.section h2{font-size:28px;margin:0 0 17px;border-bottom:3px solid #dbe7ff;padding-bottom:10px}.section h3{color:var(--navy);margin-top:27px}.back{float:right;font-size:13px;font-weight:700}.callout{border-left:5px solid var(--blue);background:#eff5ff;border-radius:10px;padding:13px 15px;margin:15px 0}.callout.warn{border-color:var(--orange);background:#fff7e6}.tag{display:inline-block;font-size:12px;font-weight:800;border-radius:7px;padding:2px 7px;margin-right:6px;background:#dbeafe;color:#1746a2}.tag.easy{background:#dcfce7;color:#166534}.tag.mid{background:#fef3c7;color:#92400e}.tag.hard{background:#fee2e2;color:#9f1239}.q{padding:15px 16px;border:1px solid var(--line);border-radius:13px;margin:12px 0;background:#fbfcff}.q>p:first-child{margin-top:0;font-weight:650}.opts{margin:7px 0 0;padding-left:25px}.opts li{margin:3px 0;padding-left:4px}.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:15px}.card{border:1px solid var(--line);border-radius:13px;padding:16px;background:#fbfcff}code{font-family:Consolas,"Cascadia Code",monospace;background:#edf1f7;color:#0f3e9e;border-radius:5px;padding:.08em .33em}pre{background:var(--code);color:#edf4ff;padding:16px 18px;border-radius:11px;overflow:auto;line-height:1.55}pre code{background:none;color:inherit;padding:0}.blank{display:inline-block;min-width:120px;border-bottom:1px solid #222;height:1.25em;vertical-align:bottom}details{border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px 14px;margin:11px 0}summary{cursor:pointer;color:var(--navy);font-weight:800}.answer{background:#f0fbf5;border-color:#bce4cd}.answer summary{color:var(--green)}table{border-collapse:collapse;width:100%;margin:13px 0;font-size:15px}th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top}th{background:#edf3ff;text-align:left}.answerkey td:first-child{font-weight:800;color:var(--blue)}.muted{color:var(--muted)}.footer{text-align:center;color:var(--muted);font-size:14px;margin-top:34px}
+    @media(max-width:650px){.page{padding:14px 12px 55px}.hero{padding:23px 19px}.section{padding:18px 15px}.section h2{font-size:23px}.q{padding:13px 12px}th,td{font-size:13px;padding:7px}}
+    @media print{body{background:#fff;font-size:10.3pt}.page{max-width:none;padding:0}.hero{background:#e8efff!important;color:#111;box-shadow:none;border-radius:0;padding:16px}.tools,.back{display:none!important}.toc,.section{box-shadow:none;border-radius:0;margin:13px 0;padding:14px}.q,.card,pre,table,details{break-inside:avoid}.answers-block{break-before:page}details.answer:not([open])>*:not(summary){display:block}a{color:inherit;text-decoration:none}}
+  </style>
+</head>
+<body id="top">
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">配套训练 · 第 1-7 章 · 由易到难</div>
+    <h1>Python 期末练习题</h1>
+    <p>先独立完成，再展开答案。题目按老师最新范围和外招卷风格改编；程序题集中练“短函数 + 列表/字典 + 分支循环 + 文件”。</p>
+    <div class="meta"><span class="pill">单选 30</span><span class="pill">判断 10</span><span class="pill">填空 10</span><span class="pill">程序阅读 8</span><span class="pill">应用题 8</span></div>
+    <div class="tools">
+      <a href="Python期末零基础前置.html">零基础前置</a><a href="Python期末复习资料.html">打开复习资料</a><a href="Python期末模拟试卷.html">打开模拟试卷</a>
+      <button class="btn" onclick="toggleAnswers(true)">展开全部答案</button><button class="btn" onclick="toggleAnswers(false)">收起全部答案</button><button class="btn" onclick="window.print()">打印</button>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="目录">
+    <h2>目录（从这里开始）</h2>
+    <div class="toc-grid">
+      <a href="#route">推荐做题路线</a><a href="#choice">A. 单项选择题</a><a href="#judge">B. 判断题</a><a href="#blank">C. 填空题</a><a href="#reading">D. 程序阅读与简答</a><a href="#coding">E. 函数与应用题</a><a href="#answers">答案与解析</a>
+    </div>
+  </nav>
+
+  <section class="section" id="route">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>推荐做题路线</h2>
+    <div class="grid2">
+      <div class="card"><h3>第一轮：查漏洞（70 分钟）</h3><ol><li>单选、判断、填空限时 40 分钟。</li><li>程序阅读限时 30 分钟。</li><li>只给不确定题做星号，不边做边看答案。</li></ol></div>
+      <div class="card"><h3>第二轮：练主观（90 分钟）</h3><ol><li>应用 1-5 独立写。</li><li>应用 6-8 当作上机同级挑战。</li><li>运行参考代码前，先手算样例。</li></ol></div>
+    </div>
+    <div class="callout warn"><strong>错题记录只写三项：</strong>错因（概念/边界/追踪/语法）、正确规则、一道同类自编小题。不要抄大段答案。</div>
+  </section>
+
+  <section class="section" id="choice">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>A. 单项选择题（30 题）</h2>
+    <div class="q"><p>1. 下列标识符中不合法的是（　）。</p><ol class="opts" type="A"><li><code>score_2</code></li><li><code>_total</code></li><li><code>4score</code></li><li><code>总分</code></li></ol></div>
+    <div class="q"><p>2. 执行 <code>x = input("请输入：")</code> 后，不论输入什么，<code>x</code> 的类型首先是（　）。</p><ol class="opts" type="A"><li><code>int</code></li><li><code>float</code></li><li><code>str</code></li><li>由输入内容自动决定</li></ol></div>
+    <div class="q"><p>3. 表达式 <code>int("3.1")</code> 会产生（　）。</p><ol class="opts" type="A"><li><code>3</code></li><li><code>3.1</code></li><li><code>ValueError</code></li><li><code>TypeError</code></li></ol></div>
+    <div class="q"><p>4. 表达式 <code>2 + 3 * 4**2 // 8</code> 的值是（　）。</p><ol class="opts" type="A"><li>8</li><li>10</li><li>14</li><li>20</li></ol></div>
+    <div class="q"><p>5. 已知 <code>A=[3,6,60,74,78,44,11,99,65]</code>，<code>A[-1:-7:-2]</code> 的结果是（　）。</p><ol class="opts" type="A"><li><code>[65,11,78]</code></li><li><code>[65,99,11]</code></li><li><code>[99,44,74]</code></li><li><code>[]</code></li></ol></div>
+    <div class="q"><p>6. 表达式 <code>"abf" &lt; "abg"</code> 的结果是（　）。</p><ol class="opts" type="A"><li><code>True</code></li><li><code>False</code></li><li><code>TypeError</code></li><li>长度不同时才可比较</li></ol></div>
+    <div class="q"><p>7. <code>"a-b-c".split("-")</code> 的结果是（　）。</p><ol class="opts" type="A"><li><code>"abc"</code></li><li><code>["a","b","c"]</code></li><li><code>("a","b","c")</code></li><li>原字符串被修改</li></ol></div>
+    <div class="q"><p>8. <code>random.randint(2,5)</code> 可能得到（　）。</p><ol class="opts" type="A"><li>只可能 2、3、4</li><li>只可能 3、4、5</li><li>2、3、4、5 都可能</li><li>区间内随机小数</li></ol></div>
+    <div class="q"><p>9. <code>list(range(2,10,3))</code> 是（　）。</p><ol class="opts" type="A"><li><code>[2,5,8]</code></li><li><code>[2,5,8,11]</code></li><li><code>[2,3,4,5,6,7,8,9]</code></li><li><code>[3,6,9]</code></li></ol></div>
+    <div class="q"><p>10. 下列关于循环 <code>else</code> 的说法正确的是（　）。</p><ol class="opts" type="A"><li>循环执行一次就执行 else</li><li>循环正常结束时执行，遇 break 通常不执行</li><li>只有 while 可带 else</li><li>continue 会永久禁止 else</li></ol></div>
+    <div class="q"><p>11. 函数中没有显式 <code>return</code> 时，调用结果默认为（　）。</p><ol class="opts" type="A"><li>0</li><li>空字符串</li><li><code>False</code></li><li><code>None</code></li></ol></div>
+    <div class="q"><p>12. 已有 <code>def f(width,height,length): ...</code>，下列调用在语法上非法的是（　）。</p><ol class="opts" type="A"><li><code>f(3,5,8)</code></li><li><code>f(3,height=5,length=8)</code></li><li><code>f(width=3,height=5,length=8)</code></li><li><code>f(3,height=5,8)</code></li></ol></div>
+    <div class="q"><p>13. 在 <code>def f(*args):</code> 中，<code>args</code> 收集为（　）。</p><ol class="opts" type="A"><li>列表</li><li>元组</li><li>字典</li><li>集合</li></ol></div>
+    <div class="q"><p>14. 执行 <code>f=lambda x,y:x-y; print(f(5,15))</code> 输出（　）。</p><ol class="opts" type="A"><li>10</li><li>-10</li><li>20</li><li><code>None</code></li></ol></div>
+    <div class="q"><p>15. 执行 <code>ls=[1,2]; ls.append([3,4])</code> 后，<code>ls</code> 是（　）。</p><ol class="opts" type="A"><li><code>[1,2,3,4]</code></li><li><code>[1,2,[3,4]]</code></li><li><code>[[1,2],[3,4]]</code></li><li><code>[3,4]</code></li></ol></div>
+    <div class="q"><p>16. 下列说法正确的是（　）。</p><ol class="opts" type="A"><li><code>sort()</code> 返回排序后的新列表</li><li><code>sorted()</code> 一定修改原列表</li><li><code>sort()</code> 原地排序并通常返回 <code>None</code></li><li>两者都只能升序</li></ol></div>
+    <div class="q"><p>17. <code>b=a.copy()</code> 对嵌套列表执行的是（　）。</p><ol class="opts" type="A"><li>同一对象赋值</li><li>浅拷贝</li><li>递归深拷贝</li><li>类型转换</li></ol></div>
+    <div class="q"><p>18. 创建只含整数 3 的单元素元组，应写（　）。</p><ol class="opts" type="A"><li><code>(3)</code></li><li><code>[3]</code></li><li><code>{3}</code></li><li><code>(3,)</code></li></ol></div>
+    <div class="q"><p>19. 创建空集合的正确写法是（　）。</p><ol class="opts" type="A"><li><code>{}</code></li><li><code>set()</code></li><li><code>[]</code></li><li><code>()</code></li></ol></div>
+    <div class="q"><p>20. 对字典 <code>d</code>，表达式 <code>x in d</code> 判断（　）。</p><ol class="opts" type="A"><li>x 是否为键</li><li>x 是否为值</li><li>x 是否为键或值</li><li>x 是否为二元键值对</li></ol></div>
+    <div class="q"><p>21. 集合 <code>{1,2,3}^{3,4}</code> 的结果是（　）。</p><ol class="opts" type="A"><li><code>{3}</code></li><li><code>{1,2,3,4}</code></li><li><code>{1,2,4}</code></li><li><code>{1,2}</code></li></ol></div>
+    <div class="q"><p>22. 下列文件模式会在打开时清空原文件内容的是（　）。</p><ol class="opts" type="A"><li><code>r+</code></li><li><code>a</code></li><li><code>w</code></li><li><code>r</code></li></ol></div>
+    <div class="q"><p>23. <code>readlines()</code> 通常返回（　）。</p><ol class="opts" type="A"><li>全文字符串</li><li>当前行字符串</li><li>由各行字符串组成的列表</li><li>CSV 字典</li></ol></div>
+    <div class="q"><p>24. 在 <code>try-except-else</code> 中，<code>else</code> 何时执行（　）。</p><ol class="opts" type="A"><li>try 中没有异常</li><li>try 中任何异常发生</li><li>except 执行失败</li><li>无论如何都执行</li></ol></div>
+    <div class="q"><p>25. 用二分查找前，数据必须（　）。</p><ol class="opts" type="A"><li>无重复</li><li>按查找规则有序</li><li>全部为整数</li><li>长度为偶数</li></ol></div>
+    <div class="q"><p>26. 对长度为 8 的有序列表，成功或失败的二分查找最坏比较次数量级最接近（　）。</p><ol class="opts" type="A"><li>1</li><li>3 到 4</li><li>8</li><li>64</li></ol></div>
+    <div class="q"><p>27. 下列会产生 <code>TypeError</code> 的是（　）。</p><ol class="opts" type="A"><li><code>int("abc")</code></li><li><code>[1,2][5]</code></li><li><code>{[1,2]:3}</code></li><li><code>{"a":1}["b"]</code></li></ol></div>
+    <div class="q"><p>28. <code>random.shuffle(ls)</code> 的正确描述是（　）。</p><ol class="opts" type="A"><li>返回打乱后的新列表</li><li>原地打乱并返回 <code>None</code></li><li>随机抽一个元素</li><li>随机抽取不重复的 k 个元素</li></ol></div>
+    <div class="q"><p>29. Python 3 中 <code>d.items()</code> 返回（　）。</p><ol class="opts" type="A"><li>列表</li><li>元组</li><li><code>dict_items</code> 视图</li><li>集合</li></ol></div>
+    <div class="q"><p>30. 下列函数定义在 Python 3 中合法的是（　）。</p><ol class="opts" type="A"><li><code>def f(a=1,b):</code></li><li><code>def f(*args,b):</code></li><li><code>def f(**kw,a):</code></li><li><code>def f(a,,b):</code></li></ol></div>
+  </section>
+
+  <section class="section" id="judge">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>B. 判断题（10 题）</h2>
+    <ol>
+      <li>字符串是可变对象，可以用 <code>s[0]="A"</code> 修改第一个字符。（　）</li>
+      <li>元组本身不可变，但元组元素可以是列表。（　）</li>
+      <li>集合支持用下标读取第 i 个元素。（　）</li>
+      <li>用 <code>a</code> 模式打开不存在的文件时可以创建文件。（　）</li>
+      <li>文本模式下，不带参数的 <code>read()</code> 返回全文字符串。（　）</li>
+      <li><code>continue</code> 会立即结束整个循环。（　）</li>
+      <li>字典字面量中同一个键出现多次时，后面的值覆盖前面的值。（　）</li>
+      <li><code>list.copy()</code> 对嵌套列表执行递归深拷贝。（　）</li>
+      <li><code>def f(*args, b):</code> 在 Python 3 中合法，调用时 <code>b</code> 需按关键字传入。（　）</li>
+      <li>使用 <code>try-except</code> 后，程序就不可能再有任何错误。（　）</li>
+    </ol>
+  </section>
+
+  <section class="section" id="blank">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>C. 填空题（10 题）</h2>
+    <ol>
+      <li>表示整数 <code>x</code> 是三位数且能被 9 整除的条件：<span class="blank"></span>。</li>
+      <li><code>len(list(range(1,10,2)))</code> 的值是 <span class="blank"></span>。</li>
+      <li><code>"{:.2f}".format(10/4)</code> 的结果是字符串 <span class="blank"></span>。</li>
+      <li>列表末尾追加一个整体对象使用方法 <span class="blank"></span>；逐个并入可迭代对象元素使用 <span class="blank"></span>。</li>
+      <li>补全字符频次语句：<code>counts[ch] = counts.<span class="blank"></span>(ch,0)+1</code>。</li>
+      <li>集合的交、并、差、对称差运算符依次为 <span class="blank"></span>。</li>
+      <li>递归函数的两个核心要素是递归出口和 <span class="blank"></span>。</li>
+      <li><code>open("data.txt")</code> 的默认模式是 <span class="blank"></span>。</li>
+      <li>CSV 写入对象一次写一行的方法名是 <span class="blank"></span>。</li>
+      <li>在 <code>try-except-else</code> 中，只有 <code>try</code> 未发生异常时才执行 <span class="blank"></span> 子句。</li>
+    </ol>
+  </section>
+
+  <section class="section" id="reading">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>D. 程序阅读与简答（8 题）</h2>
+    <div class="q"><p>R1. 写出每一行输出。</p><pre><code>a, b = 1, 2
+for i in range(3):
+    a, b = b, b-a
+    print(a, b)</code></pre></div>
+    <div class="q"><p>R2. 写出输出，并说明循环 <code>else</code> 是否执行。</p><pre><code>for i in range(1, 6):
+    if i == 4:
+        break
+    print(i, end=" ")
+else:
+    print("end")</code></pre></div>
+    <div class="q"><p>R3. 写出输出，并解释原因。</p><pre><code>a = [1, 2]
+b = a
+b.append(3)
+print(a, b)</code></pre></div>
+    <div class="q"><p>R4. 写出输出，并判断属于浅拷贝还是深拷贝。</p><pre><code>a = [3, 6, [4, 9]]
+b = a.copy()
+a[2][0] = 20
+print(a)
+print(b)</code></pre></div>
+    <div class="q"><p>R5. 写出字典 <code>counts</code> 的最终内容（按插入顺序表示）。</p><pre><code>counts = {}
+for ch in "abaca":
+    counts[ch] = counts.get(ch, 0) + 1
+print(counts)</code></pre></div>
+    <div class="q"><p>R6. 若 <code>data.txt</code> 已存在且内容为 <code>abc</code>，执行以下代码后文件内容是什么？</p><pre><code>with open("data.txt", "w", encoding="utf-8") as f:
+    f.write("XY")</code></pre></div>
+    <div class="q"><p>R7. 指出错误类型并给出最小修改。</p><pre><code>def f(a, b=2):
+    return a + b
+
+print(f(a=3, 4))</code></pre></div>
+    <div class="q"><p>R8. 简答：顺序查找与二分查找在数据要求和最坏比较次数上有什么区别？</p></div>
+  </section>
+
+  <section class="section" id="coding">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>E. 函数与应用题（8 题）</h2>
+    <div class="q"><p><span class="tag easy">基础</span>C1. 定义 <code>is_odd(n)</code>，若整数 n 为奇数返回 <code>True</code>，否则返回 <code>False</code>。</p></div>
+    <div class="q"><p><span class="tag easy">基础</span>C2. 定义 <code>sum_digits(n)</code>，返回整数 n 各位数字之和；负数按其绝对值处理。例如 <code>sum_digits(-405)=9</code>。</p></div>
+    <div class="q"><p><span class="tag easy">基础</span>C3. 定义 <code>is_prime(n)</code>，判断 n 是否为素数。要求正确处理 n&lt;2。</p></div>
+    <div class="q"><p><span class="tag mid">模拟级</span>C4. 定义 <code>analyze_scores(scores)</code>，返回“平均分”和“严格高于平均分的成绩列表”；空列表返回 <code>(0,[])</code>，不能修改原列表。</p></div>
+    <div class="q"><p><span class="tag mid">模拟级</span>C5. 定义 <code>letter_count(text)</code>，忽略大小写，只统计英文字母出现次数，返回字典。例如 <code>"A ba!"</code> 返回 <code>{'a':2,'b':1}</code>。</p></div>
+    <div class="q"><p><span class="tag mid">上机同构</span>C6. 定义 <code>is_safe_password(password)</code>。安全要求：长度 8-15；字符只能来自大写字母、小写字母、数字、<code>@#$%^</code>；且至少包含其中 3 类。满足返回 <code>True</code>。</p></div>
+    <div class="q"><p><span class="tag hard">挑战</span>C7. 定义 <code>selection_sort(a,asc=True)</code>，禁止使用 <code>sort/sorted</code>。返回排序后的新列表，不修改 a；<code>asc=True</code> 升序，否则降序。</p></div>
+    <div class="q"><p><span class="tag mid">文件</span>C8. 定义 <code>file_stats(filename)</code>，以 UTF-8 文本方式读取文件，返回二元组 <code>(行数, 单词数)</code>。单词按每行 <code>split()</code> 的结果计数。</p></div>
+  </section>
+
+  <section class="section answers-block" id="answers">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>答案与解析</h2>
+    <details class="answer"><summary>A. 单选题答案与关键规则</summary>
+      <table class="answerkey"><thead><tr><th>题</th><th>答</th><th>关键规则</th></tr></thead><tbody>
+        <tr><td>1</td><td>C</td><td>标识符不能以数字开头。</td></tr><tr><td>2</td><td>C</td><td><code>input()</code> 返回字符串。</td></tr><tr><td>3</td><td>C</td><td>内容不是合法整数字面量，产生 <code>ValueError</code>。</td></tr><tr><td>4</td><td>A</td><td><code>4**2=16</code>，<code>3*16//8=6</code>，再加 2 得 8。</td></tr><tr><td>5</td><td>A</td><td>从末尾索引 -1 开始，每次向左 2 位，终点 -7 不取。</td></tr><tr><td>6</td><td>A</td><td>逐字符比较，<code>f</code> 编码小于 <code>g</code>。</td></tr><tr><td>7</td><td>B</td><td><code>split</code> 返回分割后的字符串列表。</td></tr><tr><td>8</td><td>C</td><td><code>randint</code> 两端都包含。</td></tr><tr><td>9</td><td>A</td><td>2、5、8，10 不取。</td></tr><tr><td>10</td><td>B</td><td>正常结束执行 <code>else</code>，<code>break</code> 打断则不执行。</td></tr>
+        <tr><td>11</td><td>D</td><td>无显式 <code>return</code> 默认返回 <code>None</code>。</td></tr><tr><td>12</td><td>D</td><td>关键字参数后不能再跟位置参数。</td></tr><tr><td>13</td><td>B</td><td><code>*args</code> 收集成元组。</td></tr><tr><td>14</td><td>B</td><td><code>5-15=-10</code>。</td></tr><tr><td>15</td><td>B</td><td><code>append</code> 把列表整体作为一个元素。</td></tr><tr><td>16</td><td>C</td><td><code>sort</code> 原地修改且返回 <code>None</code>；<code>sorted</code> 返回新列表。</td></tr><tr><td>17</td><td>B</td><td><code>copy()</code> 只复制外层。</td></tr><tr><td>18</td><td>D</td><td>单元素元组的逗号不可省。</td></tr><tr><td>19</td><td>B</td><td><code>{}</code> 是空字典。</td></tr><tr><td>20</td><td>A</td><td>字典成员测试默认看键。</td></tr>
+        <tr><td>21</td><td>C</td><td>对称差为只在其中一个集合中的元素。</td></tr><tr><td>22</td><td>C</td><td><code>w/w+</code> 会截断原内容。</td></tr><tr><td>23</td><td>C</td><td>返回行字符串列表。</td></tr><tr><td>24</td><td>A</td><td>未发生异常才执行 <code>else</code>。</td></tr><tr><td>25</td><td>B</td><td>二分查找要求数据按同一规则有序。</td></tr><tr><td>26</td><td>B</td><td>约为 <code>log2(n)</code> 级；边界定义不同可为 3 或 4 次。</td></tr><tr><td>27</td><td>C</td><td>列表不可哈希，不能作字典键；A 是 ValueError，B 是 IndexError，D 是 KeyError。</td></tr><tr><td>28</td><td>B</td><td><code>shuffle</code> 原地打乱。</td></tr><tr><td>29</td><td>C</td><td>Python 3 返回视图。</td></tr><tr><td>30</td><td>B</td><td><code>b</code> 是仅限关键字参数，调用如 <code>f(1,2,b=3)</code>。</td></tr>
+      </tbody></table>
+    </details>
+
+    <details class="answer"><summary>B. 判断题答案</summary><ol><li>×：字符串不可变。</li><li>√：元组可包含可变对象。</li><li>×：集合无序且不支持下标。</li><li>√：<code>a/a+</code> 可创建文件。</li><li>√。</li><li>×：只跳过本轮。</li><li>√。</li><li>×：是浅拷贝。</li><li>√。</li><li>×：只能处理匹配的预期异常，仍可能有逻辑错误或其他异常。</li></ol></details>
+
+    <details class="answer"><summary>C. 填空题答案</summary><ol><li><code>100 &lt;= x &lt;= 999 and x % 9 == 0</code></li><li><code>5</code>（1、3、5、7、9）</li><li><code>'2.50'</code></li><li><code>append</code>；<code>extend</code></li><li><code>get</code></li><li><code>&amp; | - ^</code></li><li>递归步骤（递归调用）</li><li><code>'r'</code></li><li><code>writerow</code></li><li><code>else</code></li></ol></details>
+
+    <details class="answer"><summary>D. 程序阅读与简答答案</summary>
+      <p><strong>R1：</strong>依次输出 <code>2 1</code>、<code>1 -1</code>、<code>-1 -2</code>。右侧用旧值同时求完再解包赋值。</p>
+      <p><strong>R2：</strong>输出 <code>1 2 3 </code>；i=4 时 <code>break</code>，所以 <code>else</code> 不执行。</p>
+      <p><strong>R3：</strong>输出 <code>[1,2,3] [1,2,3]</code>；<code>a</code> 与 <code>b</code> 引用同一列表。</p>
+      <p><strong>R4：</strong>两行均为 <code>[3,6,[20,9]]</code>；<code>copy()</code> 是浅拷贝，内层列表共享。</p>
+      <p><strong>R5：</strong><code>{'a':3,'b':1,'c':1}</code>。</p>
+      <p><strong>R6：</strong>内容为 <code>XY</code>；<code>w</code> 先清空后写。</p>
+      <p><strong>R7：</strong><code>SyntaxError</code>；位置参数不能放在关键字参数之后。改成 <code>f(3,4)</code> 或 <code>f(a=3,b=4)</code>。</p>
+      <p><strong>R8：</strong>顺序查找对数据顺序无要求，最坏比较 n 次；二分查找要求数据有序，每次排除约一半，最坏比较次数约为 <code>log2(n)</code> 级。</p>
+    </details>
+
+    <details class="answer"><summary>E1-E3. 基础函数参考实现</summary><pre><code>def is_odd(n):
+    return n % 2 != 0
+
+def sum_digits(n):
+    total = 0
+    for ch in str(abs(n)):
+        total += int(ch)
+    return total
+
+def is_prime(n):
+    if n &lt; 2:
+        return False
+    i = 2
+    while i * i &lt;= n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True</code></pre></details>
+
+    <details class="answer"><summary>E4-E5. 列表分析与字母频次</summary><pre><code>def analyze_scores(scores):
+    if not scores:
+        return 0, []
+    average = sum(scores) / len(scores)
+    above = [x for x in scores if x &gt; average]
+    return average, above
+
+def letter_count(text):
+    counts = {}
+    for ch in text.lower():
+        if 'a' &lt;= ch &lt;= 'z':
+            counts[ch] = counts.get(ch, 0) + 1
+    return counts</code></pre></details>
+
+    <details class="answer"><summary>E6. 安全密码</summary><pre><code>def is_safe_password(password):
+    if not 8 &lt;= len(password) &lt;= 15:
+        return False
+
+    groups = [False, False, False, False]
+    special = "@#$%^"
+    for ch in password:
+        if 'A' &lt;= ch &lt;= 'Z':
+            groups[0] = True
+        elif 'a' &lt;= ch &lt;= 'z':
+            groups[1] = True
+        elif '0' &lt;= ch &lt;= '9':
+            groups[2] = True
+        elif ch in special:
+            groups[3] = True
+        else:
+            return False
+    return sum(groups) &gt;= 3</code></pre></details>
+
+    <details class="answer"><summary>E7. 选择排序</summary><pre><code>def selection_sort(a, asc=True):
+    result = a.copy()
+    for i in range(len(result) - 1):
+        best = i
+        for j in range(i + 1, len(result)):
+            if asc and result[j] &lt; result[best]:
+                best = j
+            elif not asc and result[j] &gt; result[best]:
+                best = j
+        result[i], result[best] = result[best], result[i]
+    return result</code></pre><p>每一轮从未排序区选出最小值（升序）或最大值（降序），放到位置 i。</p></details>
+
+    <details class="answer"><summary>E8. 文件统计</summary><pre><code>def file_stats(filename):
+    line_count = 0
+    word_count = 0
+    with open(filename, "r", encoding="utf-8") as f:
+        for line in f:
+            line_count += 1
+            word_count += len(line.split())
+    return line_count, word_count</code></pre></details>
+  </section>
+
+  <footer class="footer">做完练习后，使用同目录《Python期末模拟试卷》进行 110 分钟闭卷演练。</footer>
+</main>
+<script>
+function toggleAnswers(open){document.querySelectorAll('details.answer').forEach(d=>d.open=open);}
+</script>
+</body>
+</html>

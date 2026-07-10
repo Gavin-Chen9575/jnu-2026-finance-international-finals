@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python 程序设计基础 - 期末复习资料</title>
+  <style>
+    :root{--ink:#172033;--muted:#5f6b7a;--paper:#f5f7fb;--card:#fff;--blue:#2563eb;--blue2:#0f3e9e;--cyan:#0ea5a8;--amber:#d97706;--red:#c2414a;--green:#14804a;--line:#dfe5ee;--code:#101827}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;line-height:1.75}
+    a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.page{max-width:1120px;margin:auto;padding:28px 22px 80px}.hero{background:linear-gradient(135deg,#102a69,#2563eb 60%,#0ea5a8);color:#fff;border-radius:24px;padding:34px;box-shadow:0 18px 45px #1d4ed833}.hero h1{font-size:clamp(28px,5vw,48px);line-height:1.2;margin:0 0 10px}.hero p{margin:6px 0;max-width:850px}.eyebrow{letter-spacing:.16em;font-size:13px;font-weight:800;opacity:.82}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.pill{display:inline-block;padding:5px 11px;border-radius:999px;background:#ffffff20;border:1px solid #ffffff38;font-size:14px}.toplinks{margin:18px 0 0;display:flex;gap:10px;flex-wrap:wrap}.toplinks a,.btn{border:0;border-radius:10px;background:#fff;color:var(--blue2);padding:9px 14px;font:inherit;font-weight:700;cursor:pointer}.toc{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}.toc h2{margin:0 0 12px}.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:9px}.toc a{display:block;padding:10px 12px;border-radius:10px;background:#f0f5ff;font-weight:650}.section{margin:28px 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 6px 18px #1720330a}.section h2{font-size:28px;line-height:1.3;margin:0 0 18px;border-bottom:3px solid #dbe7ff;padding-bottom:10px}.section h3{margin-top:26px;color:var(--blue2)}.section h4{margin-bottom:5px}.lead{font-size:18px}.grid2,.grid3{display:grid;gap:16px}.grid2{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}.grid3{grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}.card{border:1px solid var(--line);border-radius:14px;padding:17px;background:#fbfcff}.card h3,.card h4{margin-top:0}.callout{border-left:5px solid var(--blue);padding:14px 16px;background:#eff5ff;border-radius:10px;margin:16px 0}.callout.warn{border-color:var(--amber);background:#fff8e8}.callout.danger{border-color:var(--red);background:#fff1f2}.callout.good{border-color:var(--green);background:#eefbf4}.tag{display:inline-block;font-size:12px;font-weight:800;border-radius:7px;padding:2px 7px;margin-right:6px;background:#dbeafe;color:#1746a2}.tag.hot{background:#fee2e2;color:#9f1239}.tag.mid{background:#fef3c7;color:#92400e}.tag.low{background:#e5e7eb;color:#4b5563}code{font-family:Consolas,"Cascadia Code",monospace;background:#edf1f7;border-radius:5px;padding:.08em .35em;color:#0f3e9e}pre{background:var(--code);color:#eaf2ff;padding:17px 19px;border-radius:12px;overflow:auto;line-height:1.55}pre code{background:none;color:inherit;padding:0}.out{color:#86efac}table{width:100%;border-collapse:collapse;margin:13px 0;font-size:15px}th,td{border:1px solid var(--line);padding:10px 11px;vertical-align:top}th{background:#edf3ff;text-align:left}.checklist{padding-left:0;list-style:none}.checklist li{margin:7px 0;padding-left:28px;position:relative}.checklist li:before{content:"□";position:absolute;left:2px;color:var(--blue);font-weight:900}.stars{color:#f59e0b;letter-spacing:2px}.kbd{font-family:Consolas,monospace;border:1px solid #bfc8d7;border-bottom-width:3px;background:white;border-radius:5px;padding:1px 5px}.back{float:right;font-size:13px;font-weight:600}details{border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0;background:#fbfcff}summary{cursor:pointer;font-weight:750;color:var(--blue2)}.sources li{margin:7px 0}.footer{text-align:center;color:var(--muted);font-size:14px;margin-top:34px}.muted{color:var(--muted)}
+    @media(max-width:650px){.page{padding:14px 12px 55px}.hero{padding:24px 20px;border-radius:18px}.section{padding:19px 16px}.section h2{font-size:24px}.grid2,.grid3,.card{min-width:0}pre{max-width:100%}table{table-layout:fixed}th,td{padding:8px 7px;font-size:13px;overflow-wrap:anywhere;word-break:break-word}}
+    @media print{body{background:#fff;font-size:10.5pt}.page{max-width:none;padding:0}.hero{box-shadow:none;border-radius:0;background:#e8efff!important;color:#111;padding:18px}.pill{border-color:#777}.toplinks,.btn,.back{display:none!important}.toc,.section{box-shadow:none;break-inside:auto}.section{border-radius:0;margin:14px 0;padding:15px}.card,pre,table,details{break-inside:avoid}a{color:inherit;text-decoration:none}pre{white-space:pre-wrap}}
+  </style>
+</head>
+<body id="top">
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">2026 春 · 程序设计基础 · 外招复习版</div>
+    <h1>Python 期末复习资料</h1>
+    <p class="lead">以老师 14 页复习板书和两张答复截图为主线，结合 21-22T2 外招卷、1-7 章课件与实验教程整理。重点是“会判断、会追踪、会补程序、会写函数”。</p>
+    <div class="meta">
+      <span class="pill">考试：7 月 13 日 10:20-12:10</span>
+      <span class="pill">范围：第 1-7 章</span>
+      <span class="pill">总分：100</span>
+      <span class="pill">当前整理：7 月 10 日</span>
+    </div>
+    <div class="toplinks">
+      <a href="Python期末零基础前置.html">零基础先看这里</a>
+      <a href="Python期末练习题.html">打开练习题</a>
+      <a href="Python期末模拟试卷.html">打开模拟试卷</a>
+      <button class="btn" onclick="window.print()">打印 / 存为 PDF</button>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="目录">
+    <h2>目录（从这里开始）</h2>
+    <div class="toc-grid">
+      <a href="#exam">0. 考试结构与范围</a>
+      <a href="#priority">1. 三天优先级</a>
+      <a href="#ch1">第 1 章 基础与 Python 简介</a>
+      <a href="#ch2">第 2 章 简单程序</a>
+      <a href="#ch3">第 3 章 流程控制</a>
+      <a href="#ch4">第 4 章 函数</a>
+      <a href="#ch5">第 5 章 列表与元组</a>
+      <a href="#ch6">第 6 章 字典与集合</a>
+      <a href="#ch7">第 7 章 文件与异常</a>
+      <a href="#trace">程序阅读四步法</a>
+      <a href="#subjective">简答与应用题模板</a>
+      <a href="#corrections">原资料纠错表</a>
+      <a href="#plan">7/10-7/13 冲刺计划</a>
+      <a href="#sources">资料依据与取舍</a>
+    </div>
+  </nav>
+
+  <section class="section" id="exam">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>0. 考试结构与范围</h2>
+    <div class="callout good"><strong>老师的最新口径：</strong>范围是第 1-7 章；重点就在复习板书里；应用题是程序题，形式可能是“设计函数”或“补空完成指定功能”；函数设计难度与上机考接近，甚至略容易。</div>
+    <table>
+      <thead><tr><th>题型</th><th>数量 × 分值</th><th>小计</th><th>应试重点</th></tr></thead>
+      <tbody>
+        <tr><td>选择题</td><td>40 × 1</td><td>40</td><td>概念辨析 + 代码输出 + 报错判断</td></tr>
+        <tr><td>判断题</td><td>10 × 1</td><td>10</td><td>边界、可变性、方法副作用、文件模式</td></tr>
+        <tr><td>填空题</td><td>10 × 1</td><td>10</td><td>表达式、结果、关键语句、术语</td></tr>
+        <tr><td>简答题</td><td>4 × 5</td><td>20</td><td><strong>概念题 2 道 + 程序题 2 道</strong>（按老师“各一半”理解）</td></tr>
+        <tr><td>应用题</td><td>2 × 10</td><td>20</td><td>完整函数设计 / 程序补空</td></tr>
+      </tbody>
+      <tfoot><tr><th colspan="2">合计</th><th>100</th><th>110 分钟，约 1.1 分钟/分</th></tr></tfoot>
+    </table>
+    <div class="grid2">
+      <div class="card"><h3>建议时间分配</h3><ul><li>选择 32 分钟</li><li>判断 + 填空 18 分钟</li><li>简答 22 分钟</li><li>应用 30 分钟</li><li>检查 8 分钟</li></ul></div>
+      <div class="card"><h3>考试当天别漏</h3><ul class="checklist"><li>纸、笔、橡皮</li><li>带清晰头像的证件</li><li>准考证号：<strong>17 + 学号后六位</strong></li><li>先做确定题，代码题在草稿上画变量表</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="priority">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>1. 三天复习优先级</h2>
+    <div class="grid3">
+      <div class="card"><span class="tag hot">最高优先</span><h3 class="stars">★★★★★</h3><ul><li>字符串索引、切片、方法</li><li>分支、循环、代码追踪</li><li>函数参数、返回值、作用域</li><li>列表/字典统计与筛选</li><li>文件模式、读写、异常</li><li>完整函数与补空题</li></ul></div>
+      <div class="card"><span class="tag mid">中优先</span><h3 class="stars">★★★★</h3><ul><li>递归出口与递归步骤</li><li><code>lambda</code>、列表生成式</li><li>随机函数的区间</li><li>浅拷贝、嵌套列表</li><li>CSV 的读写对象</li><li>循环的 <code>else</code></li></ul></div>
+      <div class="card"><span class="tag low">识记速过</span><h3 class="stars">★★★</h3><ul><li>文件式/交互式运行</li><li>两种导入语法</li><li>没有 <code>do...while</code></li><li>常用 Unicode 范围</li><li>绝对路径与相对路径</li></ul></div>
+    </div>
+    <div class="callout warn"><strong>当前不投入时间：</strong>旧专业班卷里的 pandas、numpy、matplotlib、正则表达式、爬虫、Scrapy、Tkinter、类/OOP、生成器。它们来自旧高级卷或第 8-11 章，不应挤占第 1-7 章复习时间。</div>
+  </section>
+
+  <section class="section" id="ch1">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>第 1 章　计算机基础及 Python 简介</h2>
+    <p><span class="tag low">识记题</span>分值通常不高，但适合选择、判断、填空。</p>
+    <div class="grid2">
+      <div class="card"><h3>两种运行方式</h3><ul><li><strong>交互式：</strong>在 <code>&gt;&gt;&gt;</code> 后逐句输入，立即得到结果。</li><li><strong>文件式：</strong>保存为 <code>.py</code>，整体运行；IDLE 中常用 <span class="kbd">F5</span>。</li></ul></div>
+      <div class="card"><h3>模块导入</h3><pre><code>import random
+random.randint(1, 10)
+
+from random import randint
+randint(1, 10)</code></pre><p>写了别名就必须用别名：<code>import random as rd</code> 后调用 <code>rd.random()</code>。</p></div>
+    </div>
+    <h3>语法框架与标识符</h3>
+    <ul>
+      <li>Python 用<strong>缩进</strong>表示代码块；同一层缩进必须一致。冒号后通常进入缩进块。</li>
+      <li>标识符可含字母、数字、下划线；不能以数字开头，不能用关键字；大小写敏感。</li>
+      <li>变量必须先赋值后使用；Python 是动态类型语言，变量可重新绑定不同类型对象。</li>
+      <li>单行注释以 <code>#</code> 开头。三引号本质上是字符串字面量，不要把它机械地当作真正注释语法。</li>
+      <li>Python 没有原生 <code>do...while</code> 结构。</li>
+    </ul>
+  </section>
+
+  <section class="section" id="ch2">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>第 2 章　编写简单的程序</h2>
+    <p><span class="tag hot">高频</span>这里最容易出表达式结果、字符串、切片、类型转换和报错判断。</p>
+    <h3>2.1 输入、类型转换与赋值</h3>
+    <pre><code>name = input("姓名：")        # 永远返回 str
+age = int(input("年龄："))    # 先输入字符串，再转 int
+x = float("3.13e3")           # 3130.0
+
+a = b = c = 0                 # 链式赋值
+a, b = 1, 2                   # 解包赋值
+a, b = b, a                   # 交换</code></pre>
+    <table><thead><tr><th>表达式</th><th>结果</th><th>原因</th></tr></thead><tbody>
+      <tr><td><code>int("300")</code></td><td><code>300</code></td><td>合法整数字符串</td></tr>
+      <tr><td><code>int("3.1")</code></td><td><code>ValueError</code></td><td>不能直接把小数字符串转整数</td></tr>
+      <tr><td><code>float("3.13e3")</code></td><td><code>3130.0</code></td><td>科学计数法合法</td></tr>
+      <tr><td><code>eval("8+2**3")</code></td><td><code>16</code></td><td>按表达式求值；考试会考含义，实际程序慎用不可信输入</td></tr>
+      <tr><td><code>"af" + 10</code></td><td><code>TypeError</code></td><td>字符串不能直接与整数相加</td></tr>
+    </tbody></table>
+
+    <h3>2.2 运算符与优先级</h3>
+    <table><thead><tr><th>类别</th><th>常用运算</th><th>记忆点</th></tr></thead><tbody>
+      <tr><td>算术</td><td><code>+ - * / // % **</code></td><td><code>/</code> 真除；<code>//</code> 整除；<code>%</code> 余数；<code>**</code> 乘方</td></tr>
+      <tr><td>比较</td><td><code>== != &gt; &lt; &gt;= &lt;=</code></td><td>可以链式比较：<code>1 &lt; x &lt;= 10</code></td></tr>
+      <tr><td>逻辑</td><td><code>not and or</code></td><td>常用优先级：算术 &gt; 比较 &gt; <code>not</code> &gt; <code>and</code> &gt; <code>or</code></td></tr>
+      <tr><td>成员</td><td><code>in</code>、<code>not in</code></td><td>字典上判断的是<strong>键</strong></td></tr>
+      <tr><td>身份</td><td><code>is</code>、<code>is not</code></td><td>比较是否同一对象，不等同于 <code>==</code></td></tr>
+    </tbody></table>
+    <div class="callout danger"><strong>必改错：</strong>“三位数且能被 9 整除”应写 <code>100 &lt;= x &lt;= 999 and x % 9 == 0</code>，不是 <code>x // 9 == 0</code>。</div>
+    <p>浮点数不宜直接依赖精确相等：<code>abs(a-b) &lt; 1e-9</code> 更稳妥。</p>
+
+    <h3>2.3 字符串：索引、切片、方法</h3>
+    <div class="grid2">
+      <div class="card"><h4>索引与切片</h4><pre><code>s = "PYTHON"
+s[0]       # 'P'
+s[-1]      # 'N'
+s[1:4]     # 'YTH'
+s[::-1]    # 'NOHTYP'</code></pre><p>切片规则：<strong>左闭右开</strong>，即包含起点、不包含终点。</p></div>
+      <div class="card"><h4>不可变性</h4><pre><code>s = "abc"
+print(s.upper())  # ABC
+print(s)          # abc
+
+# s[0] = "A" 会报 TypeError</code></pre><p>字符串方法通常返回新字符串，必须接住返回值才能永久保留。</p></div>
+    </div>
+    <table><thead><tr><th>用途</th><th>写法</th><th>结果/注意</th></tr></thead><tbody>
+      <tr><td>大小写</td><td><code>s.lower()</code>、<code>s.upper()</code></td><td>返回新字符串</td></tr>
+      <tr><td>查找</td><td><code>s.index(x)</code>、<code>s.find(x)</code></td><td>找不到时：<code>index</code> 报错，<code>find</code> 返回 -1</td></tr>
+      <tr><td>计数</td><td><code>s.count(x)</code></td><td>返回出现次数</td></tr>
+      <tr><td>拆分</td><td><code>s.split(sep)</code></td><td>返回列表；原字符串不变</td></tr>
+      <tr><td>替换</td><td><code>s.replace(old,new)</code></td><td>返回新字符串；原字符串不变</td></tr>
+      <tr><td>去两端字符</td><td><code>s.strip()</code></td><td>默认去两端空白，不删除中间空白</td></tr>
+      <tr><td>编码</td><td><code>chr(97)</code> / <code>ord("b")</code></td><td><code>'a'</code> / <code>98</code></td></tr>
+      <tr><td>格式化</td><td><code>"{:.2f}".format(3.14159)</code></td><td><code>'3.14'</code></td></tr>
+    </tbody></table>
+    <p>常用编码范围：数字 <code>48-57</code>，大写字母 <code>65-90</code>，小写字母 <code>97-122</code>。字符串逐字符按 Unicode 编码比较。</p>
+
+    <h3>2.4 随机函数</h3>
+    <table><thead><tr><th>函数</th><th>范围/作用</th><th>边界</th></tr></thead><tbody>
+      <tr><td><code>random()</code></td><td>随机浮点数</td><td><code>[0.0, 1.0)</code></td></tr>
+      <tr><td><code>randint(a,b)</code></td><td>随机整数</td><td><code>[a,b]</code>，两端都可能取</td></tr>
+      <tr><td><code>randrange(b)</code></td><td>随机整数</td><td><code>[0,b-1]</code></td></tr>
+      <tr><td><code>sample(seq,k)</code></td><td>不重复抽取 k 个，返回列表</td><td>现代 Python 要求序列；集合先转列表</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="section" id="ch3">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>第 3 章　程序流程控制</h2>
+    <p><span class="tag hot">高频</span>选择、判断、填空、简答程序题都会出现。代码追踪时每轮都写变量表。</p>
+    <h3>3.1 三种基本结构与分支</h3>
+    <p>三种基本结构：<strong>顺序、选择、循环</strong>。选择结构有单分支、双分支、多分支。</p>
+    <pre><code>score = int(input("成绩："))
+if score &gt;= 90:
+    level = "A"
+elif score &gt;= 80:
+    level = "B"
+elif score &gt;= 60:
+    level = "C"
+else:
+    level = "D"</code></pre>
+    <p>条件表达式：<code>表达式1 if 条件 else 表达式2</code>。例如每 4 个元素换行应使用：</p>
+    <pre><code>for i, value in enumerate(data):
+    print(value, end="\n" if (i + 1) % 4 == 0 else " ")</code></pre>
+
+    <h3>3.2 <code>for</code>、<code>while</code>、<code>range</code></h3>
+    <div class="grid2">
+      <div class="card"><h4><code>for</code> 遍历循环</h4><p>适合遍历序列/集合/字典或次数已知的循环。</p><pre><code>for i in range(1, 6):
+    print(i, end=" ")
+# 1 2 3 4 5</code></pre></div>
+      <div class="card"><h4><code>while</code> 条件循环</h4><p>适合由条件控制、次数事先不确定的循环。</p><pre><code>n = 5
+while n &gt; 0:
+    print(n)
+    n -= 1</code></pre></div>
+    </div>
+    <p><code>range(start, stop, step)</code> 同样左闭右开；<code>step</code> 不能为 0。</p>
+
+    <h3>3.3 <code>break</code>、<code>continue</code>、循环 <code>else</code></h3>
+    <table><thead><tr><th>语句</th><th>作用</th><th>下一步去哪</th></tr></thead><tbody>
+      <tr><td><code>break</code></td><td>立即结束当前最内层循环</td><td>跳到循环后；循环 <code>else</code> 不执行</td></tr>
+      <tr><td><code>continue</code></td><td>跳过本轮剩余语句</td><td>回循环头判断/取下一个元素</td></tr>
+      <tr><td>循环 <code>else</code></td><td>循环正常结束时执行</td><td>若被 <code>break</code> 打断则不执行</td></tr>
+    </tbody></table>
+    <pre><code>for i in range(2, n):
+    if n % i == 0:
+        print("不是素数")
+        break
+else:
+    print("是素数")</code></pre>
+
+    <h3>3.4 迭代、枚举与嵌套循环</h3>
+    <ul><li><strong>迭代三要素：</strong>初值、迭代关系式、终止条件。</li><li><strong>枚举法：</strong>把所有可能情况列出，再用条件筛选。</li><li>嵌套循环总次数通常是各层次数的乘积；<code>break</code> 只跳出最内层。</li></ul>
+    <pre><code># 统计英文句子中大写、小写、数字的数量
+upper = lower = digit = 0
+for ch in text:
+    if ch.isupper():
+        upper += 1
+    elif ch.islower():
+        lower += 1
+    elif ch.isdigit():
+        digit += 1</code></pre>
+  </section>
+
+  <section class="section" id="ch4">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>第 4 章　函数</h2>
+    <p><span class="tag hot">应用题核心</span>老师明确说可能直接要求设计函数，难度与实验接近或略低。</p>
+    <h3>4.1 定义、调用与返回值</h3>
+    <pre><code>def cal_sum(start, end):
+    total = 0
+    for n in range(start, end + 1):
+        total += n
+    return total
+
+answer = cal_sum(1, 100)</code></pre>
+    <ul><li>函数调用前必须已经定义。</li><li>函数可以没有 <code>return</code>，此时默认返回 <code>None</code>。</li><li><code>return a, b</code> 实际返回元组，可用 <code>x, y = func()</code> 解包。</li><li><code>return</code> 一执行，函数立刻结束。</li></ul>
+
+    <h3>4.2 参数规则</h3>
+    <table><thead><tr><th>参数方式</th><th>例子</th><th>易错点</th></tr></thead><tbody>
+      <tr><td>位置参数</td><td><code>f(3,5,8)</code></td><td>按顺序匹配</td></tr>
+      <tr><td>关键字参数</td><td><code>f(3,height=5,length=8)</code></td><td>关键字参数后不能再放普通位置参数；同一参数不能给两次</td></tr>
+      <tr><td>默认值参数</td><td><code>def f(a,b=6,c=8)</code></td><td>默认参数放在非默认参数后</td></tr>
+      <tr><td>可变位置参数</td><td><code>def f(*args)</code></td><td>收集为元组</td></tr>
+      <tr><td>可变关键字参数</td><td><code>def f(**kwargs)</code></td><td>收集为字典，且必须最后</td></tr>
+    </tbody></table>
+    <pre><code>def f(a, b=6, c=8):
+    return a**2 + b + c
+
+f(2, c=3)  # 13</code></pre>
+
+    <h3>4.3 局部变量、全局变量与 <code>global</code></h3>
+    <ul><li>函数内新赋值的变量通常是局部变量；同名时“局部优先”。</li><li>只读取全局变量一般不需声明；要在函数内重新绑定全局变量，先写 <code>global x</code>。</li><li>尽量用参数和返回值传递数据，少依赖全局变量。</li></ul>
+    <pre><code>x = 10
+def change():
+    global x
+    x = 5
+change()
+print(x)  # 5</code></pre>
+
+    <h3>4.4 递归与 <code>lambda</code></h3>
+    <div class="grid2">
+      <div class="card"><h4>递归两要素</h4><pre><code>def fact(n):
+    if n == 0:        # 递归出口
+        return 1
+    return n * fact(n-1)  # 递归步骤</code></pre><p>必须能逐步靠近出口，否则无限递归。</p></div>
+      <div class="card"><h4><code>lambda</code></h4><pre><code>sub = lambda x, y: x - y
+sub(5, 15)  # -10
+
+data.sort(key=lambda item: item[1])</code></pre><p>只写一个表达式，没有显式 <code>return</code>，表达式结果就是返回值。</p></div>
+    </div>
+
+    <h3>4.5 上机同级函数题清单</h3>
+    <p>实验教程中反复出现：奇偶判断、素数、闰年、各位数字和、重复元素、列表统计、密码强度、成绩字典、递归数列。当前应用题最可能把其中一种简化后要求“定义函数 + 主程序调用”。</p>
+  </section>
+
+  <section class="section" id="ch5">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>第 5 章　列表与元组</h2>
+    <p><span class="tag hot">高频</span>重点不只是记方法，还要分清“是否修改原对象”和“返回什么”。</p>
+    <h3>5.1 列表方法与副作用</h3>
+    <table><thead><tr><th>操作</th><th>效果</th><th>返回值/陷阱</th></tr></thead><tbody>
+      <tr><td><code>ls.append(x)</code></td><td>把 x 整体作为一个元素放末尾</td><td>原地修改，返回 <code>None</code></td></tr>
+      <tr><td><code>ls.extend(it)</code></td><td>逐个加入可迭代对象中的元素</td><td>原地修改，返回 <code>None</code></td></tr>
+      <tr><td><code>ls.insert(i,x)</code></td><td>在索引 i 前插入</td><td>原地修改</td></tr>
+      <tr><td><code>ls.remove(x)</code></td><td>删除第一个值为 x 的元素</td><td>找不到报 <code>ValueError</code></td></tr>
+      <tr><td><code>ls.pop(i)</code></td><td>删除并返回索引 i 的元素</td><td>缺省 i 时删末尾</td></tr>
+      <tr><td><code>del ls[a:b]</code></td><td>按索引/切片删除</td><td><code>del</code> 不是方法</td></tr>
+      <tr><td><code>ls.sort()</code></td><td>原地排序</td><td>返回 <code>None</code></td></tr>
+      <tr><td><code>sorted(ls)</code></td><td>生成已排序新列表</td><td>原列表不变</td></tr>
+      <tr><td><code>ls.index(x)</code></td><td>首次出现的索引</td><td>不存在报错</td></tr>
+      <tr><td><code>ls.count(x)</code></td><td>出现次数</td><td>不修改列表</td></tr>
+    </tbody></table>
+    <pre><code>a = [1, 2]
+b = a.copy()
+a.append([3, 4])   # [1, 2, [3, 4]]
+b.extend([3, 4])   # [1, 2, 3, 4]</code></pre>
+
+    <h3>5.2 列表生成式</h3>
+    <pre><code># 1 到 20 中偶数的平方
+squares = [i**2 for i in range(1, 21) if i % 2 == 0]</code></pre>
+    <p>阅读顺序：先看 <code>for</code> 的取值，再看 <code>if</code> 筛选，最后计算最左边表达式。</p>
+
+    <h3>5.3 赋值、浅拷贝与深拷贝</h3>
+    <table><thead><tr><th>写法</th><th>新外层对象？</th><th>内层对象共享？</th></tr></thead><tbody>
+      <tr><td><code>b = a</code></td><td>否，同一列表</td><td>全部共享</td></tr>
+      <tr><td><code>b = a.copy()</code> / <code>a[:]</code></td><td>是</td><td>是，属于<strong>浅拷贝</strong></td></tr>
+      <tr><td><code>b = copy.deepcopy(a)</code></td><td>是</td><td>递归复制，通常不共享</td></tr>
+    </tbody></table>
+    <pre><code>a = [3, 6, [4, 9]]
+b = a.copy()
+a[2][0] = 20
+print(b)  # [3, 6, [20, 9]]，内层列表共享</code></pre>
+
+    <h3>5.4 元组</h3>
+    <ul><li>元组本身不可变，但可包含列表等可变对象；可变对象内部仍能修改。</li><li>单元素元组必须有逗号：<code>(3,)</code>；<code>(3)</code> 只是整数 3。</li><li>元组支持索引、切片、<code>in</code>、<code>count</code>、<code>index</code>，不支持 <code>append/remove</code>。</li><li>互转：<code>list(t)</code>、<code>tuple(ls)</code>。</li></ul>
+  </section>
+
+  <section class="section" id="ch6">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>第 6 章　字典与集合</h2>
+    <h3>6.1 字典</h3>
+    <ul><li>字典是映射类型；键唯一且必须可哈希（通常用数字、字符串、元组），值可为任意类型。</li><li><code>x in d</code> 判断的是键；<code>for x in d</code> 默认遍历键。</li><li>Python 3.7+ 字典保留插入顺序，但考试不应依赖旧题中“无序输出”的具体顺序。</li></ul>
+    <pre><code>counts = {}
+for ch in text.lower():
+    if ch.isalpha():
+        counts[ch] = counts.get(ch, 0) + 1
+
+for key, value in counts.items():
+    print(key, value)</code></pre>
+    <table><thead><tr><th>操作</th><th>说明</th></tr></thead><tbody>
+      <tr><td><code>d[key]</code></td><td>访问；键不存在时抛 <code>KeyError</code></td></tr>
+      <tr><td><code>d.get(key, default)</code></td><td>不存在时返回默认值，不自动加入字典</td></tr>
+      <tr><td><code>d[key] = value</code></td><td>添加新键或修改原键值</td></tr>
+      <tr><td><code>d.pop(key, default)</code></td><td>删除并返回值；可提供默认值</td></tr>
+      <tr><td><code>d.update(other)</code></td><td>合并/更新；字典不能用 <code>+</code></td></tr>
+      <tr><td><code>d.keys()/values()/items()</code></td><td>返回视图对象；<code>items</code> 中每项为二元组</td></tr>
+    </tbody></table>
+
+    <h3>6.2 集合</h3>
+    <ul><li>集合无序、自动去重、元素唯一；集合本身可变，元素必须可哈希。</li><li>空集合写 <code>set()</code>；<code>{}</code> 是空字典。</li><li>集合不能作为另一个普通集合的元素；列表也不能作为集合元素。</li></ul>
+    <table><thead><tr><th>运算</th><th>写法</th><th>含义</th></tr></thead><tbody>
+      <tr><td>交集</td><td><code>A &amp; B</code></td><td>同时属于 A、B</td></tr>
+      <tr><td>并集</td><td><code>A | B</code></td><td>属于 A 或 B</td></tr>
+      <tr><td>差集</td><td><code>A - B</code></td><td>属于 A 但不属于 B</td></tr>
+      <tr><td>对称差</td><td><code>A ^ B</code></td><td>只属于其中一个，不在交集</td></tr>
+    </tbody></table>
+    <p><code>remove(x)</code> 不存在会报错；<code>discard(x)</code> 不存在也不报错；<code>add(x)</code> 加一个元素，<code>update(it)</code> 加入多个元素。</p>
+  </section>
+
+  <section class="section" id="ch7">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>第 7 章　文件与异常</h2>
+    <p><span class="tag hot">高频简答</span>最常考“文件类型、打开模式、三种读法、两种写法、异常执行顺序”。</p>
+    <h3>7.1 文本文件与二进制文件</h3>
+    <ul><li><strong>文本文件：</strong>有字符编码，按字符串理解，常指定 <code>encoding="utf-8"</code>。</li><li><strong>二进制文件：</strong>按字节流处理，在模式中加 <code>b</code>，读写对象是 <code>bytes</code>。</li></ul>
+
+    <h3>7.2 打开模式速查</h3>
+    <table><thead><tr><th>模式</th><th>读/写</th><th>不存在</th><th>原内容</th><th>初始位置</th></tr></thead><tbody>
+      <tr><td><code>r</code></td><td>只读</td><td>报错</td><td>保留</td><td>开头</td></tr>
+      <tr><td><code>r+</code></td><td>读写</td><td>报错</td><td>保留</td><td>开头</td></tr>
+      <tr><td><code>w</code></td><td>只写</td><td>创建</td><td><strong>清空</strong></td><td>开头</td></tr>
+      <tr><td><code>w+</code></td><td>读写</td><td>创建</td><td><strong>清空</strong></td><td>开头</td></tr>
+      <tr><td><code>a</code></td><td>追加写</td><td>创建</td><td>保留</td><td>末尾</td></tr>
+      <tr><td><code>a+</code></td><td>读写/追加</td><td>创建</td><td>保留</td><td>写入固定在末尾</td></tr>
+    </tbody></table>
+    <div class="callout danger"><strong>必须记准：</strong><code>open()</code> 未写模式时默认是 <code>'r'</code>，不是 <code>'r+'</code>。</div>
+    <pre><code>with open("data.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+# 离开 with 后自动关闭</code></pre>
+
+    <h3>7.3 读、写、指针</h3>
+    <table><thead><tr><th>方法</th><th>返回/接收</th><th>关键区别</th></tr></thead><tbody>
+      <tr><td><code>read()</code></td><td>全文字符串/字节</td><td><code>read(n)</code> 读 n 个字符或字节</td></tr>
+      <tr><td><code>readline()</code></td><td>一行字符串</td><td>通常保留行尾换行符</td></tr>
+      <tr><td><code>readlines()</code></td><td>按行组成的列表</td><td>每一行是一个字符串元素</td></tr>
+      <tr><td><code>write(s)</code></td><td>一个字符串/字节对象</td><td>不自动换行</td></tr>
+      <tr><td><code>writelines(seq)</code></td><td>字符串序列</td><td>不自动添加分隔符；元素含 <code>\n</code> 才换行</td></tr>
+    </tbody></table>
+    <p>读完后文件指针在末尾；要重读可 <code>f.seek(0)</code>。追加模式写入仍在末尾。</p>
+
+    <h3>7.4 CSV 与异常</h3>
+    <div class="grid2">
+      <div class="card"><h4>CSV</h4><ul><li><code>csv.reader(f)</code>：每行得到一个列表。</li><li><code>writer.writerow(row)</code>：写一行。</li><li><code>writer.writerows(rows)</code>：写多行。</li></ul></div>
+      <div class="card"><h4>异常执行顺序</h4><pre><code>try:
+    x = int(text)
+except ValueError:
+    print("不是整数")
+else:
+    print("转换成功", x)
+finally:
+    print("总会执行")</code></pre></div>
+    </div>
+    <ul><li><code>try</code> 中发生并被匹配的异常，转到相应 <code>except</code>。</li><li>没有异常才执行 <code>else</code>。</li><li><code>finally</code> 通常无论是否异常都执行。</li><li>异常处理不能保证程序逻辑正确，只能处理预料到的异常。</li></ul>
+  </section>
+
+  <section class="section" id="trace">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>程序阅读四步法</h2>
+    <ol>
+      <li><strong>先标类型：</strong>字符串、列表、元组、字典、集合？可变还是不可变？</li>
+      <li><strong>再画变量表：</strong>每轮循环写一行，只记录发生变化的变量。</li>
+      <li><strong>检查边界：</strong><code>range</code> 和切片的终点取不到；负步长方向是否合理；<code>break</code> 是否打断 <code>else</code>。</li>
+      <li><strong>最后看输出：</strong><code>print</code> 的 <code>end</code>、<code>sep</code>、格式化宽度、转义字符都要计入。</li>
+    </ol>
+    <h3>示例：同步赋值追踪</h3>
+    <pre><code>a, b = 1, 2
+for i in range(3):
+    a, b = b, b-a
+    print(a, b)
+
+<span class="out"># 第1轮：a=2,  b=1
+# 第2轮：a=1,  b=-1
+# 第3轮：a=-1, b=-2</span></code></pre>
+    <p><code>a,b = b,b-a</code> 会先把右侧旧值全部算完，再同时赋给左侧，不能按两条普通赋值逐条算。</p>
+    <h3>常见报错定位</h3>
+    <table><thead><tr><th>异常</th><th>常见原因</th></tr></thead><tbody>
+      <tr><td><code>SyntaxError</code></td><td>语法不合法、冒号/括号缺失、参数顺序非法</td></tr>
+      <tr><td><code>IndentationError</code></td><td>缩进层级或空格/Tab 不一致</td></tr>
+      <tr><td><code>NameError</code></td><td>变量未定义、拼写错误、超出作用域</td></tr>
+      <tr><td><code>TypeError</code></td><td>类型不支持该操作，如字符串 + 整数、列表作字典键</td></tr>
+      <tr><td><code>ValueError</code></td><td>类型形式对但值内容不合要求，如 <code>int("3.1")</code></td></tr>
+      <tr><td><code>IndexError</code></td><td>列表/元组/字符串索引越界</td></tr>
+      <tr><td><code>KeyError</code></td><td>直接访问不存在的字典键</td></tr>
+      <tr><td><code>FileNotFoundError</code></td><td>用 <code>r/r+</code> 打开不存在文件</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="section" id="subjective">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>简答题与应用题答题模板</h2>
+    <h3>概念简答：三句拿分法</h3>
+    <ol><li><strong>先定义：</strong>它是什么。</li><li><strong>再比较/规则：</strong>关键差别、适用条件、返回类型。</li><li><strong>给一个微型例子：</strong>用一行代码或结果证明。</li></ol>
+    <details><summary>示例：说明 break 与 continue 的区别</summary><p><code>break</code> 立即结束当前最内层循环，循环后的语句继续执行，并使循环的 <code>else</code> 不执行；<code>continue</code> 只跳过本轮剩余语句，返回循环头继续下一轮。两者都只影响所在的最内层循环。</p></details>
+    <details><summary>示例：说明 read、readline、readlines 的区别</summary><p><code>read()</code> 返回全部内容的字符串（可指定读取字符数）；<code>readline()</code> 返回当前一行字符串；<code>readlines()</code> 返回由各行字符串组成的列表。三者都会推进文件指针。</p></details>
+
+    <h3>程序简答：五栏追踪法</h3>
+    <p>答案至少写：①功能；②关键变量类型和作用；③循环/分支如何变化；④最终输出；⑤若有错，异常类型与最小修改。</p>
+
+    <h3>应用题：10 分函数模板</h3>
+    <pre><code>def analyze_scores(scores):
+    """返回平均分和高于平均分的列表。"""
+    if not scores:
+        return 0, []
+    average = sum(scores) / len(scores)
+    above = [x for x in scores if x &gt; average]
+    return average, above
+
+data = [78, 92, 66, 85, 99]
+avg, high = analyze_scores(data)
+print("平均分：{:.2f}".format(avg))
+print("高于平均分：", high)</code></pre>
+    <div class="grid2">
+      <div class="card"><h4>完整函数题检查</h4><ul class="checklist"><li>函数名、参数与题目完全一致</li><li>边界输入处理合理</li><li>循环/判断缩进正确</li><li>题目要求返回就用 <code>return</code></li><li>主程序能调用并显示结果</li></ul></div>
+      <div class="card"><h4>补空题检查</h4><ul class="checklist"><li>先从空格前后判断需要表达式还是语句</li><li>变量名必须沿用题目</li><li>关注方法是原地修改还是返回新对象</li><li>补完后手算给定样例</li><li>检查括号、冒号、缩进</li></ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="corrections">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>原资料纠错表（务必按这一版记）</h2>
+    <table><thead><tr><th>原资料中容易背错的说法</th><th>正确结论</th></tr></thead><tbody>
+      <tr><td>被 9 整除写成 <code>x//9==0</code></td><td>应为 <code>x%9==0</code></td></tr>
+      <tr><td><code>copy()</code> / 切片是深拷贝</td><td>它们是浅拷贝；深拷贝用 <code>copy.deepcopy()</code></td></tr>
+      <tr><td><code>open()</code> 默认 <code>r+</code></td><td>默认模式是 <code>r</code></td></tr>
+      <tr><td>字典、集合属于序列</td><td>字典是映射，集合是集合类型；常见序列为字符串、列表、元组</td></tr>
+      <tr><td><code>writelines()</code> 一定写在同一行</td><td>它不自动加换行；字符串本身含 <code>\n</code> 才换行</td></tr>
+      <tr><td><code>join()</code> 参数必须是列表</td><td>参数可为任意“元素都是字符串”的可迭代对象</td></tr>
+      <tr><td><code>random.sample(set,k)</code> 总能用</td><td>现代 Python 要求序列，集合先 <code>list(s)</code></td></tr>
+      <tr><td>可变参数都只能放最右</td><td><code>**kwargs</code> 必须最后；<code>*args</code> 后可有仅限关键字参数</td></tr>
+      <tr><td><code>def f(*args, b):</code> 是非法定义</td><td>Python 3 中合法；<code>b</code> 是必须按关键字传入的参数，例如 <code>f(1,2,b=3)</code></td></tr>
+      <tr><td>字典是“绝对无序”</td><td>Python 3.7+ 保留插入顺序，但基础题仍应避免依赖具体顺序</td></tr>
+      <tr><td><code>keys/values/items</code> 返回列表</td><td>Python 3 返回 <code>dict_keys/dict_values/dict_items</code> 视图，需要列表时再用 <code>list()</code></td></tr>
+      <tr><td><code>popitem()</code> 随机删除</td><td>现代 Python 删除并返回最后插入的键值对</td></tr>
+      <tr><td><code>random.shuffle(ls)</code> 返回打乱后的列表</td><td>它原地打乱 <code>ls</code>，返回 <code>None</code></td></tr>
+      <tr><td><code>&lt;&gt;</code> 可表示不等于</td><td>Python 3 只用 <code>!=</code>，<code>&lt;&gt;</code> 会产生语法错误</td></tr>
+      <tr><td><code>from turtle import setup</code> 非法</td><td>该导入语法合法；旧题库在不同页面给出了互相矛盾的答案</td></tr>
+      <tr><td>使用异常处理后程序不会再错</td><td>只能处理被捕获的预期异常，逻辑错误与未匹配异常仍可能发生</td></tr>
+      <tr><td><code>random.random()</code> 四舍五入后绝不可能为 1.0</td><td>原值小于 1，但 <code>round(x,2)</code> 可能得到数值 <code>1.0</code></td></tr>
+      <tr><td>字符频次循环就是“统计英文字母”</td><td>若不加 <code>isalpha()</code>，空格和标点也会被统计</td></tr>
+    </tbody></table>
+  </section>
+
+  <section class="section" id="plan">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>7/10-7/13 冲刺计划</h2>
+    <div class="grid3">
+      <div class="card"><h3>7 月 10 日：主干</h3><ul><li>精读第 2-4 章</li><li>手算 20 道输出题</li><li>独立写 3 个函数</li><li>记参数/return/作用域</li></ul></div>
+      <div class="card"><h3>7 月 11 日：容器与文件</h3><ul><li>精读第 5-7 章</li><li>做完整练习题</li><li>整理错题，只记错误原因</li><li>练 1 道补空 + 1 道函数题</li></ul></div>
+      <div class="card"><h3>7 月 12 日：实战</h3><ul><li>110 分钟闭卷做模拟卷</li><li>逐题对答案与解析</li><li>重做全部错题</li><li>最后背简答模板与文件模式</li></ul></div>
+    </div>
+    <div class="callout good"><strong>7 月 13 日考前：</strong>只看本页考试结构、纠错表、函数模板和错题；不再学习 pandas/爬虫等新内容。提前准备证件与准考证号。</div>
+  </section>
+
+  <section class="section" id="sources">
+    <a class="back" href="#top">回到顶部 ↑</a><h2>资料依据与取舍</h2>
+    <ol class="sources">
+      <li><strong>最高权重：</strong>《夸克扫描王_春程序设计基础复习》p1-p14；两张老师答复截图。决定当前范围、题型、分值和重点。</li>
+      <li><strong>高权重：</strong>《21-22T2 程序设计基础-外招试卷》（<code>python历届卷(1).pdf</code>）。决定客观题风格；另一份“往届考卷-3”是同卷批注版，不重复计频。</li>
+      <li><strong>高权重但需纠错：</strong><code>Python复习.pdf.pdf</code>、<code>Python 题目2.docx</code>、雨课堂模拟测试。用于补充简答/程序题与常见错误。</li>
+      <li><strong>课程依据：</strong>第 1-7 章课件、实践教程实验 1-9、2022 版教材第 1-7 章。</li>
+      <li><strong>降权：</strong>旧专业班/高级卷中的正则、爬虫、pandas、Tkinter、类、生成器等；只保留与当前 1-7 章重合的基础题型。</li>
+    </ol>
+    <p class="muted">本资料没有照抄旧卷答案；对旧批注和学生笔记中的错误进行了运行与规则核对。</p>
+  </section>
+
+  <footer class="footer">Python 程序设计基础 · 复习资料 · 与同目录练习题、模拟试卷配套使用</footer>
+</main>
+</body>
+</html>
