@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Python期末考前30分钟速记｜iPhone版</title>
+  <style>
+    @page { size: 108mm 192mm; margin: 0; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #dfe7ef;
+      color: #172333;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      font-size: 15pt;
+      line-height: 1.12;
+    }
+    .sheet {
+      position: relative;
+      width: 108mm;
+      height: 192mm;
+      margin: 10mm auto;
+      padding: 6.5mm 8mm 9mm;
+      overflow: hidden;
+      background: #fffefa;
+      box-shadow: 0 2mm 8mm rgba(29, 44, 62, .17);
+      break-after: page;
+      page-break-after: always;
+    }
+    .sheet:last-child { break-after: auto; page-break-after: auto; }
+    .running {
+      margin-bottom: 1mm;
+      color: #2463a7;
+      font-size: 9.5pt;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p, ul, ol, pre { margin-top: 0; }
+    h1 { margin-bottom: 1.4mm; font-size: 21pt; line-height: 1.08; color: #0b315c; }
+    h2 { margin-bottom: 1.1mm; font-size: 18pt; line-height: 1.08; color: #0b315c; }
+    h3 { margin-bottom: .4mm; font-size: 15pt; line-height: 1.08; color: #174c82; }
+    p { margin-bottom: .7mm; }
+    ul, ol { margin-bottom: .7mm; padding-left: 1.18em; }
+    li { margin: .15mm 0; }
+    code, pre {
+      font-family: Consolas, "Cascadia Mono", "Microsoft YaHei", monospace;
+    }
+    code { color: #9b2c2c; font-size: .92em; }
+    pre {
+      margin-bottom: .8mm;
+      padding: 1.05mm 1.5mm;
+      border: .35mm solid #bfd1e4;
+      border-radius: 2mm;
+      background: #f4f8fc;
+      color: #10263f;
+      font-size: 13pt;
+      line-height: 1.12;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+    pre code { color: inherit; font-size: inherit; }
+    .card {
+      margin-bottom: .8mm;
+      padding: 1.05mm 1.45mm;
+      border: .35mm solid #d2dfeb;
+      border-radius: 2.2mm;
+      background: #fbfdff;
+      break-inside: avoid;
+    }
+    .card > :last-child { margin-bottom: 0; }
+    .key { border-left: 1.4mm solid #1677c8; background: #edf6ff; }
+    .warn { border-left: 1.4mm solid #ef7f1a; background: #fff5e9; }
+    .must { border-left: 1.4mm solid #d33b48; background: #fff0f1; }
+    .good { border-left: 1.4mm solid #238657; background: #effaf4; }
+    .conclusion { font-weight: 800; color: #0b4d82; }
+    .answer { font-weight: 800; color: #9b2c2c; }
+    .tag {
+      display: inline-block;
+      margin-right: 1mm;
+      padding: .4mm 1.2mm;
+      border-radius: 9mm;
+      background: #174c82;
+      color: white;
+      font-size: 10pt;
+      font-weight: 800;
+      vertical-align: .15em;
+    }
+    .route { margin: .5mm 0 .8mm; }
+    .route a {
+      display: inline-block;
+      margin: 0 .6mm .5mm 0;
+      padding: .55mm 1.2mm;
+      border: .3mm solid #aac5df;
+      border-radius: 1.5mm;
+      color: #174c82;
+      background: #f1f7fc;
+      font-size: 11pt;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .steps { counter-reset: step; list-style: none; padding-left: 0; }
+    .steps li { position: relative; padding-left: 7mm; margin: .45mm 0; }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: -.2mm;
+      width: 5.5mm;
+      height: 5.5mm;
+      border-radius: 50%;
+      background: #1677c8;
+      color: white;
+      font-size: 11pt;
+      font-weight: 800;
+      line-height: 5.5mm;
+      text-align: center;
+    }
+    .trace { margin-bottom: .7mm; }
+    .trace h3 { margin-bottom: .3mm; }
+    .trace p { margin-bottom: .35mm; }
+    .trace pre { margin-bottom: .35mm; }
+    .hand { line-height: 1.1; }
+    .hand strong { color: #0b4d82; }
+    .compact { line-height: 1.08; }
+    .compact li { margin: .1mm 0; }
+    .check { padding-left: 0; list-style: none; }
+    .check li::before { content: "□ "; color: #1677c8; font-weight: 800; }
+    .footer {
+      position: absolute;
+      left: 8.5mm;
+      right: 8.5mm;
+      bottom: 3mm;
+      display: flex;
+      justify-content: space-between;
+      color: #607386;
+      font-size: 9pt;
+      border-top: .25mm solid #d6e0e9;
+      padding-top: .6mm;
+    }
+    .no-break { break-inside: avoid; }
+    @media print {
+      body { background: white; }
+      .sheet { margin: 0; box-shadow: none; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="sheet" id="start">
+  <div class="running">第一部分｜考试前 2 分钟</div>
+  <h1>Python期末考前30分钟速记</h1>
+  <div class="card key">
+    <h3>已按老师最新材料确认</h3>
+    <p><strong>7月13日 10:20—12:10，共110分钟；范围第1—7章。</strong><br>单选40｜判断10｜填空10｜简答20（概念/程序各半）｜应用20（函数设计/补空）。</p>
+  </div>
+  <nav class="route" aria-label="阅读路线">
+    <a href="#objective">客观题 10′</a><a href="#trace">追踪 5′</a><a href="#short">简答 5′</a><a href="#function">函数 6′</a><a href="#final">检查 2′</a>
+  </nav>
+  <div class="card good compact">
+    <h3>110分钟这样分</h3>
+    <p>单选28′ → 判断+填空17′ → 简答22′ → 应用33′ → 检查10′。<strong>客观题卡45秒、填空卡90秒先跳</strong>，做记号再回收。</p>
+  </div>
+  <div class="card warn compact">
+    <h3>每类题的保命动作</h3>
+    <ul>
+      <li><strong>输出：</strong>画“轮次｜变量｜输出”三栏，每轮只改本轮值。</li>
+      <li><strong>简答：</strong>“结论＋规则/区别＋最小例子”，先写关键词。</li>
+      <li><strong>应用：</strong>函数头 → 初值 → 循环/判断/更新 → <code>return</code> → 调用；不会也别空。</li>
+      <li><strong>检查：</strong>冒号、缩进、括号/引号、<code>=/==</code>、边界、<code>return</code>。</li>
+    </ul>
+  </div>
+  <div class="footer"><span>答题策略</span><span>1 / 22</span></div>
+</section>
+
+<section class="sheet" id="objective">
+  <div class="running">第二部分｜客观题高频</div>
+  <h2>输入输出、类型与运算</h2>
+  <div class="card key">
+    <p><span class="conclusion">结论：</span><code>input()</code> 永远先返回字符串；要计算就转换。</p>
+    <pre><code>age = int(input()); x = float("3.5")
+print(1, 2, sep="-", end="!")  # 1-2!</code></pre>
+    <p><strong>易错：</strong><code>"3"+"4"</code> 得 <code>"34"</code>；<code>3+"4"</code> 报 <code>TypeError</code>。</p>
+  </div>
+  <div class="card">
+    <p><span class="conclusion">结论：</span><code>/</code> 真除；<code>//</code> 向下取整；<code>%</code> 取余；<code>**</code> 乘方。</p>
+    <pre><code>10 / 4    # 2.5
+10 // 4   # 2
+-10 // 4  # -3
+10 % 4    # 2</code></pre>
+    <p><strong>易错：</strong>判断“能被9整除”写 <code>x % 9 == 0</code>，不是 <code>x // 9 == 0</code>。</p>
+  </div>
+  <div class="card warn compact">
+    <h3>优先级（高 → 低）</h3>
+    <p><code>()</code> → <code>**</code> → 正负号 → <code>* / // %</code> → <code>+ -</code> → 比较/<code>in</code> → <code>not</code> → <code>and</code> → <code>or</code>。</p>
+    <p><code>2**3**2 == 512</code>（乘方右结合）；<code>-2**2 == -4</code>。</p>
+  </div>
+  <div class="card compact">
+    <p><code>=</code> 赋值，<code>==</code> 判等；<code>1&lt;x&lt;=10</code> 合法。<code>0 or 8</code> 得8，<code>3 and 5</code> 得5；浮点数比较可用 <code>abs(a-b)&lt;1e-9</code>。</p>
+  </div>
+  <div class="footer"><span>客观题｜输入与运算</span><span>2 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第二部分｜客观题高频</div>
+  <h2>字符串索引、切片与方法</h2>
+  <div class="card key">
+    <p><span class="conclusion">切片口诀：</span><code>s[开始:结束:步长]</code>，<strong>包含开始，不含结束</strong>。</p>
+    <pre><code>s = "television"
+s[0]       # 't'       s[-1]     # 'n'
+s[-6:6]    # 'vi'      s[::-1]   # 'noisivelet'
+s[4:0:-1]  # 'vele'    s[0:4:-1] # ''</code></pre>
+    <p><strong>负步长：</strong>从右向左，开始位置必须在结束位置右边；省略两端的 <code>[::-1]</code> 最稳。</p>
+  </div>
+  <div class="card compact">
+    <h3>方法一眼分清</h3>
+    <ul>
+      <li><code>find</code> 找不到返回 <code>-1</code>；<code>index</code> 找不到报错；<code>count</code> 计数。</li>
+      <li><code>lower/upper/replace/strip</code> 返回新串；<code>split</code> 返回列表。</li>
+      <li><code>"-".join(["a","b"])</code> 得 <code>"a-b"</code>；<code>isdigit/isalpha</code> 判断内容。</li>
+    </ul>
+  </div>
+  <div class="card warn">
+    <p><span class="conclusion">字符串不可变：</span><code>s[0]="A"</code> 报错；<code>s.upper()</code> 返回新串，原串不变。<code>join</code> 接受“元素均为字符串”的可迭代对象，不只限列表。</p>
+  </div>
+  <div class="footer"><span>客观题｜字符串与切片</span><span>3 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第二部分｜客观题高频</div>
+  <h2>分支、循环、range 与 random</h2>
+  <div class="card key compact">
+    <p><span class="conclusion">顺序、选择、循环。</span><code>if/elif/else</code> 只执行首个成立分支；<code>for</code> 适合遍历，<code>while</code> 适合条件控制；无 <code>do...while</code>。</p>
+  </div>
+  <div class="card">
+    <p><span class="conclusion">range 也不含结束值。</span></p>
+    <pre><code>list(range(2, 8, 2))   # [2, 4, 6]
+list(range(5, 0, -2))  # [5, 3, 1]</code></pre>
+    <p><strong>易错：</strong>步长不能为0；负步长时开始应大于结束。</p>
+  </div>
+  <div class="card warn compact">
+    <p><code>break</code> 结束<strong>最内层</strong>循环；<code>continue</code> 跳过本轮。循环 <code>else</code> 仅在未执行 <code>break</code> 时运行。</p>
+  </div>
+  <div class="card compact">
+    <h3>随机函数边界</h3>
+    <p><code>random()</code>：<code>[0,1)</code>；<code>randint(a,b)</code>：含两端；<code>randrange(a,b)</code>：不含 <code>b</code>。</p>
+    <p><code>choice</code> 抽1个；<code>sample(seq,k)</code> 不重复抽并返回列表；<code>shuffle</code> 原地打乱、返回 <code>None</code>。</p>
+    <p><strong>陷阱：</strong><code>random()</code> 取不到1，但四舍五入后可能得到 <code>1.0</code>。</p>
+  </div>
+  <div class="footer"><span>客观题｜流程与随机</span><span>4 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第二部分｜客观题高频</div>
+  <h2>函数：参数、返回值、作用域</h2>
+  <div class="card must">
+    <h3>return、print、None</h3>
+    <p><code>print</code> 只显示；<code>return</code> 交回结果并结束函数；无显式 <code>return</code> 就返回 <code>None</code>。</p>
+    <pre><code>def show(x):
+    print(x * 2)
+r = show(3)   # 先显示6
+print(r)      # 再显示None</code></pre>
+  </div>
+  <div class="card key compact">
+    <h3>参数规则</h3>
+    <ul>
+      <li>位置参数按顺序；关键字参数按名字，放在位置实参后且不得重复。</li>
+      <li>默认参数在非默认参数右边：<code>def f(a,b=2)</code>。</li>
+      <li><code>*args</code> 收集位置实参为元组；<code>**kwargs</code> 收集关键字实参为字典。</li>
+      <li><code>def f(*args,b):</code> 合法，调用时 <code>b</code> 必须写名字。</li>
+    </ul>
+  </div>
+  <div class="card compact">
+    <p><code>return a,b</code> 返回元组，可写 <code>x,y=f()</code>。同名变量<strong>局部优先</strong>；重绑全局变量先写 <code>global x</code>。</p>
+    <p>列表/字典/集合原地修改可能影响实参；<code>lambda x,y:x+y</code> 的表达式结果自动返回。</p>
+  </div>
+  <div class="footer"><span>客观题｜函数</span><span>5 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第二部分｜客观题高频</div>
+  <h2>列表、元组、字典、集合</h2>
+  <div class="card key compact">
+    <h3>列表 list：有序、可变</h3>
+    <ul>
+      <li><code>append</code> 加整体；<code>extend</code> 逐个加；<code>insert(i,x)</code> 在 <code>i</code> 前插。</li>
+      <li><code>pop</code> 删除并返回；<code>remove</code> 删除第一个匹配值。</li>
+      <li>上述修改方法及 <code>sort()</code> 通常返回 <code>None</code>。</li>
+    </ul>
+  </div>
+  <div class="card compact">
+    <h3>元组 tuple：有序、容器不可变</h3>
+    <p><code>(5,)</code> 才是单元素元组。元组可索引/切片/遍历，不能增删换；内部若含列表，列表内部仍可改。</p>
+  </div>
+  <div class="card compact">
+    <h3>字典 dict：键 → 值的映射</h3>
+    <p>键唯一且可哈希，值可重复。<code>x in d</code> 查键；<code>d.get(k,0)</code> 找不到不报错；三种遍历方法返回视图。字典不能按位置索引/切片。</p>
+  </div>
+  <div class="card compact">
+    <h3>集合 set：无序、唯一、可变</h3>
+    <p>空集合写 <code>set()</code>；元素须可哈希，列表不能作元素。<code>&amp;</code>交、<code>|</code>并、<code>-</code>差、<code>^</code>对称差；<code>remove</code> 不存在报错，<code>discard</code> 不报。</p>
+  </div>
+  <div class="footer"><span>客观题｜组合数据</span><span>6 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第二部分｜客观题高频</div>
+  <h2>赋值、浅拷贝、排序与查找</h2>
+  <div class="card must">
+    <p><span class="conclusion">直接赋值：</span>同一个对象；<span class="conclusion">浅拷贝：</span>外层新对象，嵌套可变对象仍共享。</p>
+    <pre><code>a = [1, [2, 3]]
+b = a          # 同一个列表
+c = a.copy()   # 浅拷贝，也可 a[:]
+c[1][0] = 9    # a 的内层也变为 [9,3]</code></pre>
+    <p><strong>易错：</strong><code>copy()</code>/切片不是深拷贝；判断时分清“外层新、内层共享”。</p>
+  </div>
+  <div class="card key compact">
+    <h3>sort 与 sorted</h3>
+    <p><code>ls.sort()</code> 原地修改并返回 <code>None</code>；<code>sorted(ls)</code> 返回新列表，不改原对象。二者均可用 <code>reverse=True</code> 和 <code>key=...</code>。</p>
+  </div>
+  <div class="card compact">
+    <h3>顺序查找 vs 二分查找</h3>
+    <p><strong>顺序：</strong>从头逐个比，不要求有序，最坏比较 <code>n</code> 次。</p>
+    <p><strong>二分：</strong>数据必须按同一规则有序；每次与中间值比较并排除约一半，约 <code>log₂n</code> 级。</p>
+    <p><code>mid=(low+high)//2</code>；关键字小则 <code>high=mid-1</code>，大则 <code>low=mid+1</code>。</p>
+  </div>
+  <div class="card warn compact">
+    <p><strong>选择排序：</strong>第 <code>i</code> 轮在未排序区找最小下标，再与位置 <code>i</code> 交换。</p>
+  </div>
+  <div class="footer"><span>客观题｜拷贝、排序、查找</span><span>7 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第二部分｜客观题高频</div>
+  <h2>文件、CSV 与异常</h2>
+  <div class="card key compact">
+    <h3>模式：先看主字母，再看 + / b</h3>
+    <p><code>r</code> 只读且不存在报错（省略模式就默认 <code>r</code>）；<code>w</code> 创建/清空；<code>a</code> 创建/末尾追加、不清空。</p>
+    <p><code>+</code> 增加读写能力；<code>b</code> 表示二进制。<code>with open(...) as f</code> 离开代码块自动关闭。</p>
+  </div>
+  <div class="card compact">
+    <h3>读写方法</h3>
+    <p><code>read</code> → 全部字符串；<code>readline</code> → 一行字符串；<code>readlines</code> → 行列表。<code>write</code> 写一串；<code>writelines</code> 连续写多串，<strong>不自动换行</strong>。重读可 <code>seek(0)</code>。</p>
+  </div>
+  <div class="card compact">
+    <h3>CSV</h3>
+    <p><code>reader</code> 每行读成字符串列表；<code>writerow</code> 写一行，<code>writerows</code> 写多行；常用 <code>newline=""</code>。</p>
+  </div>
+  <div class="card warn compact">
+    <h3>异常执行顺序</h3>
+    <p><code>try</code> 发生并匹配异常 → <code>except</code>；无异常 → <code>else</code>。常见 <code>TypeError / ValueError / IndexError / KeyError / FileNotFoundError</code>。捕获异常不保证逻辑正确。</p>
+  </div>
+  <div class="footer"><span>客观题｜文件与异常</span><span>8 / 22</span></div>
+</section>
+
+<section class="sheet" id="trace">
+  <div class="running">第三部分｜程序阅读追踪 1/4</div>
+  <h2>运算、切片、for</h2>
+  <div class="card trace">
+    <h3>追踪1｜运算顺序</h3>
+    <pre><code>x = 2 + 3 * 4 ** 2 // 8
+print(x)</code></pre>
+    <p><strong>变化：</strong><code>4**2=16 → 3*16=48 → 48//8=6 → 2+6=8</code></p>
+    <p><strong>输出：</strong><span class="answer">8</span>　<strong>最快：</strong>先圈括号/乘方，再乘除整除，最后加减。</p>
+  </div>
+  <div class="card trace">
+    <h3>追踪2｜正反切片</h3>
+    <pre><code>s = "television"
+print(s[-6:6], s[::-3])</code></pre>
+    <p><strong>关键：</strong><code>-6</code> 等于正索引4；<code>[::-3]</code> 取索引 <code>9,6,3,0</code>。</p>
+    <p><strong>输出：</strong><span class="answer">vi nset</span>　<strong>最快：</strong>先写正/负下标，再列实际索引。</p>
+  </div>
+  <div class="card trace">
+    <h3>追踪3｜for 累加</h3>
+    <pre><code>total = 0
+for i in range(1, 6, 2):
+    total += i
+print(total)</code></pre>
+    <p><strong>每轮：</strong><code>i: 1,3,5</code>；<code>total: 0→1→4→9</code></p>
+    <p><strong>输出：</strong><span class="answer">9</span>　<strong>最快：</strong>先把 <code>range</code> 展开，循环就只剩逐项代入。</p>
+  </div>
+  <div class="footer"><span>追踪｜运算、切片、for</span><span>9 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第三部分｜程序阅读追踪 2/4</div>
+  <h2>while、continue、循环 else</h2>
+  <div class="card trace">
+    <h3>追踪4｜while</h3>
+    <pre><code>a, b = 1, 1
+while a &lt; 5:
+    a += 1; b *= 2
+print(a + b)</code></pre>
+    <p><strong>每轮：</strong><code>a:1→2→3→4→5；b:1→2→4→8→16</code>；<strong>输出21</strong>。<strong>快：</strong>先判后做。</p>
+  </div>
+  <div class="card trace">
+    <h3>追踪5｜continue</h3>
+    <pre><code>out = ""
+for ch in "testatest":
+    if ch in "ae": continue
+    out += ch
+print(out)</code></pre>
+    <p><strong>变化：</strong><code>e/a/e</code> 跳过，留 <code>t,s,t,t,s,t</code>；<strong>输出 tsttst</strong>。<strong>快：</strong>划掉本轮后续。</p>
+  </div>
+  <div class="card trace">
+    <h3>追踪6｜循环 else</h3>
+    <pre><code>for i in range(1, 6):
+    if i % 4 == 0: break
+    print(i, end=" ")
+else:
+    print("end")</code></pre>
+    <p><strong>每轮：</strong><code>1,2,3</code> 输出，4时 <code>break</code>；<strong>结果1 2 3，无 end</strong>。<strong>快：</strong>见 <code>break</code> 划掉 <code>else</code>。</p>
+  </div>
+  <div class="footer"><span>追踪｜while、continue、else</span><span>10 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第三部分｜程序阅读追踪 3/4</div>
+  <h2>默认参数、None 与作用域</h2>
+  <div class="card trace must">
+    <h3>追踪7｜默认/关键字参数＋None</h3>
+    <pre><code>def show(a, b=2):
+    print(a + b)
+r = show(3, b=4)
+print(r)</code></pre>
+    <p><strong>绑定：</strong><code>a=3</code>（位置），<code>b=4</code>（关键字，覆盖默认2）。</p>
+    <p><strong>函数内：</strong><code>print(7)</code> 只显示；没有 <code>return</code>，所以 <code>r=None</code>。</p>
+    <p><strong>最终输出：</strong><span class="answer">先 7，后 None</span></p>
+    <p><strong>最快：</strong>把“显示了什么”和“返回了什么”分成两栏，绝不混写。</p>
+  </div>
+  <div class="card trace key">
+    <h3>追踪8｜局部变量与全局变量</h3>
+    <pre><code>x = 10
+def f():
+    x = 3
+    return x * 2
+print(f(), x)</code></pre>
+    <p><strong>变化：</strong>调用 <code>f()</code> 时新建局部 <code>x=3</code>，返回6；外部全局 <code>x=10</code> 未变。</p>
+    <p><strong>输出：</strong><span class="answer">6 10</span></p>
+    <p><strong>最快：</strong>同名变量画两个框：“函数内 x”“函数外 x”；除非看到 <code>global</code>，不要混。</p>
+  </div>
+  <div class="footer"><span>追踪｜参数、None、作用域</span><span>11 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第三部分｜程序阅读追踪 4/4</div>
+  <h2>直接赋值、浅拷贝、字典频次</h2>
+  <div class="card trace must">
+    <h3>追踪9｜同一对象 vs 浅拷贝</h3>
+    <pre><code>a = [1, [2]]
+b = a
+c = a.copy()
+b[0] = 9
+c[1].append(3)
+print(a, b, c)</code></pre>
+    <p><strong>第1改：</strong><code>b</code> 与 <code>a</code> 同对象，所以两者外层首项都变9；<code>c</code> 外层独立，首项仍1。</p>
+    <p><strong>第2改：</strong><code>c</code> 与 <code>a</code> 的内层列表共享，所以三者内层都变 <code>[2,3]</code>。</p>
+    <p><strong>输出：</strong><span class="answer">[9,[2,3]] [9,[2,3]] [1,[2,3]]</span></p>
+    <p><strong>最快：</strong>先画外层箭头，再单独圈出共享的内层列表。</p>
+  </div>
+  <div class="card trace key">
+    <h3>追踪10｜字典频次</h3>
+    <pre><code>counts = {}
+for ch in "aba":
+    counts[ch]=counts.get(ch,0)+1
+print(counts)</code></pre>
+    <p><strong>每轮：</strong><code>a → {'a':1}</code>；<code>b → {'a':1,'b':1}</code>；<code>a → {'a':2,'b':1}</code>。</p>
+    <p><strong>输出：</strong><span class="answer">{'a': 2, 'b': 1}</span></p>
+    <p><strong>最快：</strong>每遇一个元素只问两句：“旧值是多少？旧值+1是多少？”</p>
+  </div>
+  <div class="footer"><span>追踪｜引用与频次</span><span>12 / 22</span></div>
+</section>
+
+<section class="sheet" id="short">
+  <div class="running">第四部分｜简答题保命答案 1/3</div>
+  <h2>容器与排序：直接手写</h2>
+  <div class="card hand">
+    <h3>1｜列表与元组</h3>
+    <p><strong>列表和元组都是有序序列</strong>，都支持索引、切片和遍历。列表用 <code>[]</code>，长度和元素可修改；元组常用 <code>()</code>，容器创建后不可修改。单元素元组必须写 <code>(5,)</code>。</p>
+  </div>
+  <div class="card hand">
+    <h3>2｜字典与集合</h3>
+    <p><strong>字典是键值映射</strong>，键唯一且可哈希，按键访问值；值可重复。<strong>集合存放无序且不重复的可哈希元素</strong>，常用于去重和交并差运算。空字典是 <code>{}</code>，空集合是 <code>set()</code>。</p>
+  </div>
+  <div class="card hand">
+    <h3>3｜sort() 与 sorted()</h3>
+    <p><code>list.sort()</code> <strong>原地修改列表并返回 None</strong>；<code>sorted(iterable)</code> 返回新的有序列表，不改变原对象。两者都可用 <code>reverse=True</code> 降序，也可用 <code>key</code> 指定排序关键字。</p>
+  </div>
+  <div class="card hand warn">
+    <h3>4｜直接赋值与浅拷贝</h3>
+    <p><code>b=a</code> 只让两个变量指向同一对象，修改一方可影响另一方。<code>a.copy()</code> 或 <code>a[:]</code> 创建新的外层列表，但嵌套的可变元素仍共享，所以叫浅拷贝。</p>
+  </div>
+  <div class="footer"><span>简答｜容器与排序</span><span>13 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第四部分｜简答题保命答案 2/3</div>
+  <h2>文件方法：关键词写全</h2>
+  <div class="card hand">
+    <h3>5｜r、w、a、+</h3>
+    <p><code>r</code> 只读，不存在报错；<code>w</code> 写入，不存在创建、存在先清空；<code>a</code> 追加，不存在创建、原内容保留。<code>+</code> 与主模式合用，增加读写能力，但是否清空/追加仍由主模式决定。</p>
+  </div>
+  <div class="card hand">
+    <h3>6｜read、readline、readlines</h3>
+    <p><code>read()</code> 读全部内容并返回字符串；<code>readline()</code> 每次读一行并返回字符串；<code>readlines()</code> 读所有行并返回“每行为一个字符串”的列表。三者都会推进文件指针。</p>
+  </div>
+  <div class="card hand">
+    <h3>7｜write、writelines</h3>
+    <p><code>write(s)</code> 写一个字符串；<code>writelines(seq)</code> 依次写入字符串序列。二者都从当前指针位置写，<strong>不会自动添加分隔符或换行符</strong>，需要自己写 <code>\n</code>。</p>
+  </div>
+  <div class="card hand warn">
+    <h3>8｜文本文件与二进制文件</h3>
+    <p>文本文件按字符编码解释，读写对象是字符串；二进制文件按字节流处理，模式中加 <code>b</code>，读写对象是字节。两者主要区别是是否按统一字符编码解释内容。</p>
+  </div>
+  <div class="footer"><span>简答｜文件</span><span>14 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第四部分｜简答题保命答案 3/3</div>
+  <h2>算法、流程与程序功能</h2>
+  <div class="card hand">
+    <h3>9｜递归函数的必要组成</h3>
+    <p>递归函数在函数体内调用自身，必须包含<strong>递归出口</strong>和<strong>递归步骤</strong>。出口在满足条件时直接返回、不再递归；递归步骤把原问题转成规模更小的问题，并逐步接近出口。</p>
+  </div>
+  <div class="card hand">
+    <h3>10｜二分查找的使用条件</h3>
+    <p>二分查找要求数据<strong>按同一规则有序</strong>。每次比较中间元素，若关键字小就缩小右边界，若大就增大左边界，每次排除约一半数据，效率约为 <code>log₂n</code> 级。</p>
+  </div>
+  <div class="card hand">
+    <h3>11｜break、continue、循环 else</h3>
+    <p><code>break</code> 立即结束最内层循环；<code>continue</code> 只结束本轮，继续下一轮。循环 <code>else</code> 仅在循环正常结束、没有执行 <code>break</code> 时运行。</p>
+  </div>
+  <div class="card hand key">
+    <h3>12｜程序功能说明通用句式</h3>
+    <p>“程序先<strong>遍历/读取</strong>____；对每个____按____条件进行<strong>判断、统计/筛选/累加</strong>；结果保存在____中；最后<strong>返回/输出</strong>____。其中变量____用于____。”</p>
+  </div>
+  <div class="footer"><span>简答｜算法与程序说明</span><span>15 / 22</span></div>
+</section>
+
+<section class="sheet" id="function">
+  <div class="running">第五部分｜函数应用题 1/6</div>
+  <h2>应用题下笔四步法</h2>
+  <ol class="steps">
+    <li><strong>参数：</strong>题目给什么输入？先写 <code>def 函数名(参数):</code>。</li>
+    <li><strong>中间结果：</strong>要保存计数、总和、列表还是字典？</li>
+    <li><strong>循环：</strong>对谁逐个处理？判断什么？怎样更新？</li>
+    <li><strong>返回：</strong>题目最终要哪个对象？写进 <code>return</code>。</li>
+  </ol>
+  <div class="card key compact">
+    <h3>自然语言 → 代码动作</h3>
+    <p>统计 → <code>count=0</code>；求和 → <code>total=0</code>；找出所有 → <code>result=[]</code>。</p>
+    <p>是否 → <code>True/False</code>；次数 → 字典；顺序不变 → 原序遍历＋<code>append</code>。</p>
+    <p>不得改原列表 → 新建结果；两个结果 → <code>return a,b</code>。</p>
+  </div>
+  <div class="card good">
+    <h3>主程序接收多个返回值</h3>
+    <pre><code>average, above = score_report(scores)
+print(average, above)</code></pre>
+    <p>题目写“返回”就用 <code>return</code>；主程序再 <code>print</code>。</p>
+  </div>
+  <div class="card must"><strong>先圈题干：</strong>参数、条件、结果、是否修改原数据。</div>
+  <div class="footer"><span>函数｜下笔四步</span><span>16 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第五部分｜函数应用题 2/6</div>
+  <h2>通用骨架与步骤分写法</h2>
+  <div class="card must">
+    <h3>完全不会时也写这个框</h3>
+    <pre class="concept"><code>def 函数名(参数):
+    result = 初始值
+    for 元素 in 参数:
+        if 条件:
+            更新结果
+    return result</code></pre>
+    <p>再补：<code>ans=函数名(测试数据)</code>，按题意输出。</p>
+  </div>
+  <div class="card key compact">
+    <h3>会随题目改变的六处</h3>
+    <p>函数名/参数、结果初值、遍历对象、判断条件、更新语句、返回对象。</p>
+    <p>计数：<code>0/+1</code>；求和：<code>0/+x</code>；筛选：<code>[]/append</code>；频次：<code>{}/get</code>。</p>
+  </div>
+  <div class="card good compact">
+    <h3>每一段体现的步骤</h3>
+    <p><code>def/参数</code> 是接口；初值是保存结果；<code>for</code> 是范围；<code>if</code> 是规则；更新是核心；<code>return</code> 是交回结果；调用是测试。</p>
+  </div>
+  <div class="card warn compact">
+    <h3>程序补空最快顺序</h3>
+    <p>循环前多为<strong>初始化</strong>，循环内多为<strong>判断/更新</strong>，函数末多为 <strong>return</strong>；再核对变量名与缩进。</p>
+  </div>
+  <div class="footer"><span>函数｜骨架与步骤</span><span>17 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第五部分｜函数应用题 3/6</div>
+  <h2>模板A：计数、筛选、求和平均</h2>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“统计满足条件的个数”</h3>
+    <pre><code>def count_even(nums):
+    count = 0
+    for x in nums:
+        if x % 2 == 0:
+            count += 1
+    return count
+</code></pre>
+  </div>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“找出所有……并保持顺序”</h3>
+    <pre><code>def positives(nums):
+    result = []
+    for x in nums:
+        if x &gt; 0:
+            result.append(x)
+    return result
+</code></pre>
+  </div>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“求和与平均值”</h3>
+    <pre><code>def sum_average(nums):
+    total = 0
+    for x in nums:
+        total += x
+    average = total / len(nums)
+    return total, average
+</code></pre>
+  </div>
+  <div class="card warn compact"><strong>边界：</strong>平均值模板默认列表非空；若题目可能给空列表，先约定或单独处理。</div>
+  <div class="footer"><span>函数模板｜计数、筛选、平均</span><span>18 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第五部分｜函数应用题 4/6</div>
+  <h2>模板B：真假、频次、最大最小</h2>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“判断是否……”</h3>
+    <pre><code>def all_positive(nums):
+    for x in nums:
+        if x &lt;= 0:
+            return False
+    return True
+</code></pre>
+    <p><strong>套路：</strong>发现反例立刻 <code>return False</code>；遍历完没反例才 <code>True</code>。</p>
+  </div>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“统计字符/元素出现次数”</h3>
+    <pre><code>def frequency(data):
+    counts = {}
+    for x in data:
+        old = counts.get(x, 0)
+        counts[x] = old + 1
+    return counts
+</code></pre>
+  </div>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“找最大值/最小值（不能用内置）”</h3>
+    <pre><code>def find_max(nums):
+    best = nums[0]
+    for x in nums[1:]:
+        if x &gt; best:
+            best = x
+    return best
+</code></pre>
+    <p><strong>求最小：</strong>把 <code>&gt;</code> 改成 <code>&lt;</code>；模板默认列表非空。</p>
+  </div>
+  <div class="footer"><span>函数模板｜真假、频次、最值</span><span>19 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第五部分｜函数应用题 5/6</div>
+  <h2>模板C：顺序去重、平均分</h2>
+  <div class="card key">
+    <h3><span class="tag">关键词</span>“去重并保持原顺序；不改原列表”</h3>
+    <pre><code>def unique_keep_order(data):
+    result = []
+    for x in data:
+        if x not in result:
+            result.append(x)
+    return result</code></pre>
+    <p><strong>不用 set 直接返回：</strong>题目要原序，就按原列表遍历。</p>
+  </div>
+  <div class="card must">
+    <h3><span class="tag">关键词</span>“平均分＋严格高于平均分；返回两个结果”</h3>
+    <pre><code>def score_report(scores):
+    total = sum(scores)
+    average = total / len(scores)
+    above = []
+    for score in scores:
+        if score &gt; average:
+            above.append(score)
+    return average, above</code></pre>
+    <p><strong>阅卷点：</strong>新建列表不改原数据；“高于”用 <code>&gt;</code>，不是 <code>&gt;=</code>。</p>
+  </div>
+  <div class="card warn compact">
+    <p><strong>“保留最后出现顺序”：</strong>已出现就先 <code>remove</code>，再 <code>append</code> 到末尾。</p>
+  </div>
+  <div class="footer"><span>函数模板｜去重与成绩</span><span>20 / 22</span></div>
+</section>
+
+<section class="sheet">
+  <div class="running">第五部分｜函数应用题 6/6</div>
+  <h2>模板D：文件、递归、数字处理</h2>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“逐行读取并统计行数/单词数”</h3>
+    <pre><code>def file_stats(filename):
+    lines = words = 0
+    with open(filename) as f:
+        for line in f:
+            lines += 1
+            items = line.split()
+            words += len(items)
+    return lines, words</code></pre>
+  </div>
+  <div class="card compact">
+    <h3><span class="tag">关键词</span>“递归求阶乘”</h3>
+    <pre><code>def fact(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * fact(n - 1)</code></pre>
+  </div>
+  <div class="card compact">
+    <h3><span class="tag">实验高频</span>“求整数各位数字之和”</h3>
+    <pre><code>def digit_sum(n):
+    total = 0
+    for ch in str(n):
+        total += int(ch)
+    return total</code></pre>
+    <p><strong>变式：</strong>判断各位是否重复，可遍历字符串并用集合/频次字典。</p>
+  </div>
+  <div class="footer"><span>函数模板｜文件、递归、数字</span><span>21 / 22</span></div>
+</section>
+
+<section class="sheet" id="final">
+  <div class="running">第六部分｜最后 2 分钟</div>
+  <h2>进考场前最后一眼</h2>
+  <div class="card must compact">
+    <p><strong>语法与边界：</strong><code>=</code> 赋值，<code>==</code> 判等；<code>if/for/while/def</code> 末有冒号，缩进一致，括号引号成对。切片与 <code>range</code> 不含末端；负步长方向相反。整除用 <code>%==0</code>；<code>break</code> 阻止循环 <code>else</code>。</p>
+  </div>
+  <div class="card key compact">
+    <p><strong>字符串与容器：</strong>字符串不可变；<code>append</code> 加整体，<code>extend</code> 逐个加；<code>pop</code> 返回被删项；<code>sort</code> 原地改并返回 <code>None</code>。<code>(5,)</code> 才是单元组。字典键唯一、值可重复；频次用 <code>d[x]=d.get(x,0)+1</code>。<code>b=a</code> 同对象；<code>copy()</code> 浅拷贝、内层仍可能共享。</p>
+  </div>
+  <div class="card good compact">
+    <p><strong>函数：</strong>无显式 <code>return</code> 就返回 <code>None</code>；<code>print</code> 不等于返回。默认参数在非默认参数后；<code>*args</code> 是元组；同名变量局部优先。应用题别漏：函数头、初值、循环/判断、更新、<code>return</code>、测试调用。</p>
+  </div>
+  <div class="card warn compact">
+    <p><strong>文件、异常、查找：</strong><code>open()</code> 默认 <code>r</code>；<code>w</code> 清空，<code>a</code> 追加，<code>+</code> 增加读写。<code>readline</code> 得一行字符串，<code>readlines</code> 得行列表，<code>writelines</code> 不自动换行。二分查找要求有序；异常处理不保证逻辑正确。</p>
+  </div>
+  <div class="footer"><span>最后检查</span><span>22 / 22</span></div>
+</section>
+</body>
+</html>
